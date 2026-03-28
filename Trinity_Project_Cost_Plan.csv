@@ -1,0 +1,94 @@
+Project Trinity - Draft IT Cost Plan
+Generated: 2026-03-28 | Based on: Trinity_Project_Schedule.csv (192 tasks / 6 phases)
+Assumptions: 8 hrs/day; costs are fully-loaded labour only (excl. hardware / software licences / travel); shared tasks charged to each assigned resource in full; 0-day milestones = 0 hrs
+,,,,
+CATEGORY,RESOURCE,TOTAL DAYS,TOTAL HRS,HOURLY RATE (EUR),TOTAL COST (EUR)
+,,,,
+--- GOVERNANCE / PMO ---,,,,,
+,IT PM,410,3280,180,"590,400"
+,PMO,25,200,180,"36,000"
+,Steering Committee (active tasks only),5,40,180,"7,200"
+,SUBTOTAL - Governance / PMO,440,3520,180,"633,600"
+,,,,
+--- BOSCH IT TEAM ---,,,,,
+,Bosch IT PM,25,200,120,"24,000"
+,Bosch IT Architects,90,720,120,"86,400"
+,Bosch Infra,407,3256,120,"390,720"
+,Bosch AD Team,50,400,120,"48,000"
+,Bosch Azure Team,175,1400,120,"168,000"
+,Bosch Cloud Team,30,240,120,"28,800"
+,Bosch Telecom,60,480,120,"57,600"
+,Bosch SAP / ERP Team,312,2496,120,"299,520"
+,Bosch IAM Team,90,720,120,"86,400"
+,Bosch CISO,45,360,120,"43,200"
+,Bosch CWP Team,140,1120,120,"134,400"
+,Bosch ITSM Team,60,480,120,"57,600"
+,Bosch IT Org / HR,20,160,120,"19,200"
+,Bosch Procurement,90,720,120,"86,400"
+,Bosch IT Ops / Help Desk,221,1768,120,"212,160"
+,Bosch IT (Joint JCI collaboration tasks),221,1768,120,"212,160"
+,SUBTOTAL - Bosch IT Team,2036,16288,120,"1,954,560"
+,,,,
+--- JCI TEAM ---,,,,,
+,JCI IT (General + TSA Services),446,3568,85,"303,280"
+,JCI IT Architects,75,600,85,"51,000"
+,JCI Infra Team,160,1280,85,"108,800"
+,JCI ERP Team,40,320,85,"27,200"
+,JCI HR IT,30,240,85,"20,400"
+,JCI OT + Production IT,30,240,85,"20,400"
+,JCI Procurement + IT,40,320,85,"27,200"
+,SUBTOTAL - JCI Team,821,6568,85,"558,280"
+,,,,
+--- EXTERNAL PARTNERS ---,,,,,
+,KPMG,360,2880,90,"259,200"
+,Migration Partner (ERP / SAP),95,760,90,"68,400"
+,WAN Provider / WAN Team,260,2080,90,"187,200"
+,SUBTOTAL - External Partners,715,5720,90,"514,800"
+,,,,
+--- CROSS-FUNCTIONAL TEAMS ---,,,,,
+,App Teams / SWS3,217,1736,75,"130,200"
+,Integration Team,60,480,75,"36,000"
+,Dev Teams,30,240,75,"18,000"
+,OT Security Team,30,240,75,"18,000"
+,Legal,195,1560,75,"117,000"
+,Finance,35,280,75,"21,000"
+,Procurement (cross-functional),45,360,75,"27,000"
+,Business / Key Users,90,720,75,"54,000"
+,Comms Team,21,168,75,"12,600"
+,Test Team,20,160,75,"12,000"
+,All WS Leads,45,360,75,"27,000"
+,SUBTOTAL - Cross-Functional,788,6304,75,"472,800"
+,,,,
+--- REGIONAL TEAMS ---,,,,,
+,AP IT Team (incl. Regional IT Leads - AP share),97,776,99,"76,824"
+,AM IT Team (incl. Regional IT Leads - AM share),97,776,165,"128,040"
+,EMEA IT Team (incl. Regional IT Leads - EMEA share),62,496,180,"89,280"
+,SUBTOTAL - Regional Teams,256,2048,—,"294,144"
+,,,,
+--- EXECUTIVE ---,,,,,
+,Executive Leadership (Bosch + JCI),60,480,180,"86,400"
+,SUBTOTAL - Executive,60,480,180,"86,400"
+,,,,
+====================,====================,====================,====================,====================,====================
+OVERALL PROJECT TOTAL,ALL RESOURCES,5116,40928,—,"4,514,584"
+====================,====================,====================,====================,====================,====================
+,,,,
+COST BREAKDOWN BY CATEGORY,,,,,
+,Governance / PMO,,,,"633,600"
+,Bosch IT Team,,,,"1,954,560"
+,JCI Team,,,,"558,280"
+,External Partners,,,,"514,800"
+,Cross-Functional,,,,"472,800"
+,Regional Teams,,,,"294,144"
+,Executive,,,,"86,400"
+,TOTAL,,,,"4,514,584"
+,,,,
+NOTES,,,,,
+,1. Days = sum of task durations from Trinity_Project_Schedule.csv for each assigned resource (shared tasks charged to each resource in full),,,,,
+,2. Regional IT Leads (111 shared days) split equally across AP / AM / EMEA and added to respective regional team totals,,,,,
+,3. JCI IT (General + TSA Services) covers all 6 phases including 18-month TSA operations period (Phase 5–6),,,,,
+,4. Bosch IT (Joint JCI collaboration tasks) covers Phase 3–6 joint handover / TSA exit tasks where resource is listed as JCI IT + Bosch IT,,,,,
+,5. Steering Committee 0-day quality gate milestones billed at 0 hrs; only Project Charter Approval (5 days) billed,,,,,
+,6. Co-Locator Partners and MSP/ITO field support costs not included — to be added as separate vendor contracts,,,,,
+,7. Hardware / software / WAN circuit / data centre lease costs excluded — labour only,,,,,
+,8. Blended EMEA rate applied at EUR 180/hr per instruction; note EMEA region is smallest in device count (~700 devices) but highest day rate,,,,,
