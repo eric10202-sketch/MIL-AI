@@ -13,6 +13,9 @@ Usage:
 Requirements: pip install openpyxl
 """
 
+import sys, os
+sys.path.insert(0, os.path.join(os.path.expanduser("~"), "py_packages"))
+
 import argparse
 import copy
 from datetime import date

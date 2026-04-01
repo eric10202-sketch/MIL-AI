@@ -1,0 +1,109 @@
+Project AlphaX - Draft IT Cost Plan
+Generated: 2026-04-01 | Based on: AlphaX_Project_Schedule.csv (167 tasks / 5 phases)
+Scope: Bosch Battery Division -> NewCo Battery | Stand Alone model | No Merger Zone
+Assumptions: 8 hrs/day; costs are fully-loaded labour only (excl. hardware / co-lo lease / WAN circuits / software licences / travel); shared tasks charged to each assigned resource in full; 0-day milestones = 0 hrs
+,,,,
+CATEGORY,RESOURCE,TOTAL DAYS,TOTAL HRS,HOURLY RATE (EUR),TOTAL COST (EUR)
+,,,,
+--- GOVERNANCE / PMO ---,,,,,
+,AlphaX IT PM,290,2320,180,"417,600"
+,PMO,20,160,180,"28,800"
+,Steering Committee (active tasks only),5,40,180,"7,200"
+,SUBTOTAL - Governance / PMO,315,2520,180,"453,600"
+,,,,
+--- BOSCH IT TEAM (Seller) ---,,,,,
+,Bosch IT PM,25,200,120,"24,000"
+,Bosch IT Architects,85,680,120,"81,600"
+,Bosch Infra,265,2120,120,"254,400"
+,Bosch AD Team,50,400,120,"48,000"
+,Bosch Azure Team,120,960,120,"115,200"
+,Bosch Cloud Team,25,200,120,"24,000"
+,Bosch Telecom,55,440,120,"52,800"
+,Bosch ERP / SAP Team,220,1760,120,"211,200"
+,Bosch IAM Team,75,600,120,"72,000"
+,Bosch CISO,45,360,120,"43,200"
+,Bosch CWP Team,105,840,120,"100,800"
+,Bosch ITSM Team,55,440,120,"52,800"
+,Bosch IT Org / HR,20,160,120,"19,200"
+,Bosch Procurement,70,560,120,"67,200"
+,Bosch IT Ops / Help Desk,130,1040,120,"124,800"
+,Bosch IT + NewCo (joint tasks),95,760,120,"91,200"
+,SUBTOTAL - Bosch IT Team,1440,11520,120,"1,382,400"
+,,,,
+--- NEWCO BATTERY TEAM (Buyer / NewCo) ---,,,,,
+,NewCo Management,30,240,120,"28,800"
+,NewCo IT (ramp-up and onboarding),80,640,100,"64,000"
+,NewCo IT Architects,40,320,100,"32,000"
+,SUBTOTAL - NewCo Battery Team,150,1200,—,"124,800"
+,,,,
+--- EXTERNAL PARTNERS ---,,,,,
+,KPMG,260,2080,90,"187,200"
+,Migration Partner (ERP / SAP),90,720,90,"64,800"
+,WAN Provider + Bosch Infra,175,1400,90,"126,000"
+,SUBTOTAL - External Partners,525,4200,90,"378,000"
+,,,,
+--- CROSS-FUNCTIONAL TEAMS ---,,,,,
+,App Teams + App Owners,185,1480,75,"111,000"
+,Integration Team,50,400,75,"30,000"
+,Dev Teams,25,200,75,"15,000"
+,OT Security Team,25,200,75,"15,000"
+,Legal,110,880,75,"66,000"
+,Finance,20,160,75,"12,000"
+,Procurement (cross-functional),30,240,75,"18,000"
+,Business Key Users,50,400,75,"30,000"
+,Comms + Regional IT,30,240,75,"18,000"
+,Test Team + Business,25,200,75,"15,000"
+,All WS Leads,35,280,75,"21,000"
+,SUBTOTAL - Cross-Functional,585,4680,75,"351,000"
+,,,,
+--- REGIONAL TEAMS ---,,,,,
+,EMEA IT Team (15 sites - hub-first; primary region),75,600,180,"108,000"
+,AP IT Team (12 sites - China / India complexity),60,480,99,"47,520"
+,AM IT Team (8 sites - Mexico legal entity delays),45,360,165,"59,400"
+,SUBTOTAL - Regional Teams,180,1440,—,"214,920"
+,,,,
+--- EXECUTIVE ---,,,,,
+,Executive Leadership (Bosch + NewCo),45,360,180,"64,800"
+,SUBTOTAL - Executive,45,360,180,"64,800"
+,,,,
+====================,====================,====================,====================,====================,====================
+OVERALL PROJECT TOTAL,ALL RESOURCES,3240,25920,—,"2,969,520"
+====================,====================,====================,====================,====================,====================
+,,,,
+COST BREAKDOWN BY CATEGORY,,,,,
+,Governance / PMO,,,,"453,600"
+,Bosch IT Team (Seller),,,,"1,382,400"
+,NewCo Battery Team (Buyer),,,,"124,800"
+,External Partners,,,,"378,000"
+,Cross-Functional,,,,"351,000"
+,Regional Teams,,,,"214,920"
+,Executive,,,,"64,800"
+,TOTAL,,,,"2,969,520"
+,,,,
+COST BREAKDOWN BY PHASE,,,,,
+,Phase 1 - Initialization (Jun-Aug 2026),,,,"148,476"
+,Phase 2 - Concept (Sep-Nov 2026),,,,"385,038"
+,Phase 3 - Development & Build (Dec 2026 - Jun 2027),,,,"1,306,589"
+,Phase 4 - Implementation (Jul-Sep 2027),,,,"830,657"
+,Phase 5 - GoLive & Closure (Oct-Dec 2027),,,,"298,760"
+,TOTAL,,,,"2,969,520"
+,,,,
+CAPEX / ADDITIONAL COSTS (NOT INCLUDED IN LABOUR TOTAL),,,,,
+,Co-location data centre lease (1 EMEA regional hub),TBC,,,Confirm at QG2
+,WAN circuit installation and monthly fees (35 sites),TBC,,,Confirm at QG2; 4-6 month lead time; order at QG2
+,Hardware refresh (out-of-support devices ~2500 units),TBC,,,Confirm at QG1 inventory
+,Software re-licensing (~200 Battery apps),TBC,,,Confirm at QG2 post change-of-control review
+,NewCo ITSM / ServiceNow licence,TBC,,,Confirm at QG2
+,MSP / field support contracts (35 Battery sites),TBC,,,Confirm at QG3
+,,,,
+NOTES,,,,,
+,1. Days = estimated labour effort from AlphaX_Project_Schedule.csv for each assigned resource group,,,,,
+,2. Stand Alone model: no Bosch-integration phase; replaces Trinity Phase 6 (Stabilisation / Merger Zone exit),,,,,
+,3. No JCI / seller team costs — Bosch is the seller; Bosch IT Team rows cover all seller-side delivery tasks,,,,,
+,4. NewCo Battery Team covers NewCo ramp-up effort only; full NewCo IT organisation costs not included until buyer confirmed,,,,,
+,5. KPMG rate at EUR 90/hr is blended methodology and PMO support rate; excludes specialist technical advisory,,,,,
+,6. Migration Partner (ERP/SAP) covers shell copy execution and SIT1/SIT2 support; excludes SAP licence costs,,,,,
+,7. Regional rates: EMEA EUR 180/hr | AP EUR 99/hr | AM EUR 165/hr (consistent with Trinity benchmarks),,,,,
+,8. Bosch TSA residual services in Phase 5 charged as Bosch IT Ops; TSA is minimal scope versus Trinity 18-month full TSA,,,,,
+,9. Total is ~34% lower than Trinity (EUR 4.51M) reflecting smaller scope: 35 vs 180 sites / 3K vs 8K users / 5 vs 6 phases,,,,,
+,10. Budget baseline to be formally approved and locked at QG1 (31 Aug 2026),,,,,
