@@ -155,7 +155,8 @@ if __name__ == "__main__":
         [sys.executable,
          str(HERE / "generate_msp_xml.py"),
          "--csv", str(CSV_PATH),
-         "--out", str(XML_PATH)],
+         "--out", str(XML_PATH),
+         "--project", "Project Falcon"],
         capture_output=True, text=True
     )
     if result.returncode == 0:

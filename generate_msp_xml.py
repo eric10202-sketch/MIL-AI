@@ -175,7 +175,19 @@ def xml_task(t: dict, summary_ids: set) -> list:
 
 
 def generate_xml(tasks: list, summary_ids: set,
-                 resource_list: list, resource_uid: dict) -> list:
+                 resource_list: list, resource_uid: dict,
+                 project_name: str = "Trinity") -> tuple:
+    from datetime import datetime
+
+    # Derive project start/finish and root-task working hours from task data
+    starts   = [t["start"]  for t in tasks if t["start"]]
+    finishes = [t["finish"] for t in tasks if t["finish"]]
+    proj_start  = min(starts)[:10]   if starts   else "2026-01-01"
+    proj_finish = max(finishes)[:10] if finishes  else "2026-12-31"
+    d0 = datetime.strptime(proj_start,  "%Y-%m-%d")
+    d1 = datetime.strptime(proj_finish, "%Y-%m-%d")
+    working_hours = round((d1 - d0).days * 5 / 7) * 8
+
     lines = []
 
     # ── XML declaration + root ──
@@ -183,11 +195,11 @@ def generate_xml(tasks: list, summary_ids: set,
         '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>',
         '<Project xmlns="http://schemas.microsoft.com/project">',
         "  <SaveVersion>14</SaveVersion>",
-        "  <Name>Trinity IT Carve-Out Project</Name>",
-        "  <Title>Project Trinity</Title>",
+        f"  <Name>{escape(project_name)} IT Carve-Out Project</Name>",
+        f"  <Title>{escape(project_name)}</Title>",
         "  <Manager>IT PM</Manager>",
-        "  <StartDate>2026-07-01T08:00:00</StartDate>",
-        "  <FinishDate>2029-12-31T17:00:00</FinishDate>",
+        f"  <StartDate>{proj_start}T08:00:00</StartDate>",
+        f"  <FinishDate>{proj_finish}T17:00:00</FinishDate>",
         "  <ScheduleFromStart>1</ScheduleFromStart>",
         "  <CalendarUID>1</CalendarUID>",
         "  <DefaultStartTime>08:00:00</DefaultStartTime>",
@@ -233,11 +245,11 @@ def generate_xml(tasks: list, summary_ids: set,
         "    <Task>",
         "      <UID>0</UID>",
         "      <ID>0</ID>",
-        "      <Name>Project Trinity</Name>",
-        "      <Duration>PT27520H0M0S</Duration>",
+        f"      <Name>{escape(project_name)}</Name>",
+        f"      <Duration>PT{working_hours}H0M0S</Duration>",
         "      <DurationFormat>7</DurationFormat>",
-        "      <Start>2026-07-01T08:00:00</Start>",
-        "      <Finish>2029-12-31T17:00:00</Finish>",
+        f"      <Start>{proj_start}T08:00:00</Start>",
+        f"      <Finish>{proj_finish}T17:00:00</Finish>",
         "      <Summary>1</Summary>",
         "      <Milestone>0</Milestone>",
         "      <OutlineLevel>0</OutlineLevel>",
@@ -301,7 +313,7 @@ def generate_xml(tasks: list, summary_ids: set,
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Convert Trinity_Project_Schedule.csv to MS Project XML"
+        description="Convert a project schedule CSV to MS Project XML"
     )
     parser.add_argument(
         "--csv",
@@ -315,6 +327,11 @@ def main():
         default=Path(__file__).parent / "Trinity_Project_Schedule.xml",
         help="Path to output XML (default: same directory as script)",
     )
+    parser.add_argument(
+        "--project",
+        default="Trinity",
+        help="Project name used in XML metadata (default: Trinity)",
+    )
     args = parser.parse_args()
 
     print(f"Reading : {args.csv}")
@@ -323,7 +340,7 @@ def main():
     resource_list, resource_uid = build_resource_pool(tasks)
 
     xml_lines, assignment_count = generate_xml(
-        tasks, summary_ids, resource_list, resource_uid
+        tasks, summary_ids, resource_list, resource_uid, args.project
     )
 
     args.out.write_text("\n".join(xml_lines), encoding="utf-8")

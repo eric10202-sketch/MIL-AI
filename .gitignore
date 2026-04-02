@@ -2,3 +2,6 @@
 !.claude/skills/
 !.claude/skills/**/
 !.claude/skills/**/SKILL.md
+
+generate_falcon_risk_register.py
+logo_b64.txt

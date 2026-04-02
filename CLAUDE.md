@@ -30,6 +30,9 @@ Confirm all fields before generating any deliverable:
 - PMO / methodology lead
 - Number of worldwide sites
 - Number of IT users
+- Project start date
+- Project GoLive date
+- Project completion date
 
 If any are missing:
 

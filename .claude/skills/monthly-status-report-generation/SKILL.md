@@ -15,7 +15,7 @@ Create scheduled executive PDF status reports with current-date calculations.
 1. Copy script to generate_{ProjectName}_monthly_report.py.
 2. Update project configuration block.
 3. Validate date dictionary and section content.
-4. Confirm Bosch-Logo.png path and output folder.
+4. Confirm Bosch.png path and output folder.
 5. Run script to produce {ProjectName}_Monthly_Status_Report_{MMM_YYYY}.pdf.
 
 ## Rules

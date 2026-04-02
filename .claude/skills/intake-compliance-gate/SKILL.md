@@ -17,6 +17,9 @@ Apply non-negotiable engagement validation before any deliverable generation.
 - PMO / methodology lead
 - Number of worldwide sites
 - Number of IT users
+- Project start date
+- Project GoLive date
+- Project completion date
 
 ## Rules
 - Never generate deliverables if mandatory inputs are missing.

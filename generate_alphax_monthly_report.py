@@ -101,7 +101,7 @@ FILE_MONTH   = TODAY.strftime("%b_%Y")          # e.g. Apr_2026
 NEXT_REVIEW  = (TODAY + datetime.timedelta(days=14)).strftime("%B %d, %Y")
 
 HERE      = os.path.dirname(os.path.abspath(__file__))
-LOGO_PATH = os.path.join(HERE, "Bosch-Logo.png")
+LOGO_PATH = os.path.join(HERE, "Bosch.png")
 OUT_DIR   = os.path.join(HERE, "AlphaX")
 os.makedirs(OUT_DIR, exist_ok=True)
 OUT_PATH  = os.path.join(OUT_DIR, f"AlphaX_Monthly_Status_Report_{FILE_MONTH}.pdf")
