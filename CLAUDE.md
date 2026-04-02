@@ -48,17 +48,28 @@ If any are missing:
 
 ### 4) Deliverable Orchestration
 
-For a confirmed new engagement, create all mandatory deliverables in dependency order:
+For a confirmed new engagement, create all mandatory deliverables in this exact dependency order:
 
 1. Schedule (CSV + XML)
-2. Cost plan
-3. Risk register
+2. Risk register (Excel template format: XLS/XLSX)
+3. Cost plan
 4. Project charter
 5. Executive dashboard
 6. Management KPI dashboard
 7. Monthly status report
 
 Do not generate Open Points List unless explicitly requested.
+
+**Each deliverable depends on all preceding ones being complete and consistent.**
+The cost plan must be cross-checked against both the schedule and the risk register before generation (see cost-plan-generation skill).
+
+### 5) Output Format Standards
+
+- Schedule must always be delivered in both CSV and MS Project XML formats.
+- Risk register must always be delivered in Excel template format (XLS/XLSX) aligned with `Risk_analysis_template.xlsx` structure.
+- Project charter, executive dashboard, and management KPI dashboard must include an embedded Bosch logo in the document header/cover.
+  - Default logo file: `Bosch.png` (workspace root) — embed as `data:image/png;base64,...` at `height:36px`.
+  - `.bosch-logo` container CSS: `display:flex; align-items:center;` (do **not** use fixed `width`/`height` or `display:grid` — those clip the image).
 
 ## Skill Routing
 

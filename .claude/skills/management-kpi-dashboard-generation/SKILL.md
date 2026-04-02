@@ -15,6 +15,16 @@ Create the operational steering dashboard for PMO and SteerCo.
 - Self-contained HTML and Bosch visual standards.
 - 12-column CSS grid card layout.
 - SharePoint offline compatibility.
+- Embedded Bosch logo in the dashboard header.
+
+## Bosch Logo Embedding
+Read `Bosch.png` from workspace root and base64-encode it, then use:
+```html
+<img src="data:image/png;base64,<BASE64>" alt="Bosch — Invented for Life" style="height:36px;display:block;" />
+```
+Wrap in a white background container: `background:#fff; padding:4px 8px; border-radius:4px;`
+
+`.bosch-logo` CSS must use `display:flex; align-items:center;` — do **not** use fixed `width`/`height` or `display:grid`.
 
 ## Required KPI Areas
 - Schedule performance (SPI)
