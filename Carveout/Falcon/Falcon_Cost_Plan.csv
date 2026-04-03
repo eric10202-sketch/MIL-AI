@@ -1,0 +1,107 @@
+Project Falcon - Draft IT Cost Plan
+Generated: 2026-04-02 | Based on: Falcon_Project_Schedule.csv (96 tasks / 5 phases) | Risk-aligned: Falcon_Risk_Register.xlsx (16 risks)
+Scope: BGSW AI Business Carve-Out into 50/50 JV | Combination Model (Carver + JV) | 3 India Sites
+Assumptions: 8 hrs/day; costs are fully-loaded labour only (excl. hardware / cloud services / software licences); shared tasks charged to each assigned resource in full; 0-day milestones = 0 hrs
+,,,,
+CATEGORY,RESOURCE,TOTAL DAYS,TOTAL HRS,HOURLY RATE (EUR),TOTAL COST (EUR)
+,,,,
+--- GOVERNANCE / PMO ---,,,,,
+,Falcon Project Lead (Bosch BD/MIL),185,1480,180,"266,400"
+,PMO,15,120,180,"21,600"
+,Steering Committee (active tasks),3,24,180,"4,320"
+,SUBTOTAL - Governance / PMO,203,1624,180,"292,320"
+,,,,
+--- BOSCH BD/MIL TEAM (Seller / Carver) ---,,,,,
+,Bosch BD/MIL PM,20,160,120,"19,200"
+,Bosch BD/MIL Architects,45,360,120,"43,200"
+,SUBTOTAL - Bosch BD/MIL,65,520,120,"62,400"
+,,,,
+--- BGSW IT TEAM (Seller) ---,,,,,
+,BGSW IT PM,35,280,100,"28,000"
+,BGSW IT Architects,50,400,100,"40,000"
+,BGSW Infra Team,95,760,100,"76,000"
+,BGSW AD Team,35,280,100,"28,000"
+,BGSW Azure Team,55,440,100,"44,000"
+,BGSW Cloud Team,25,200,100,"20,000"
+,BGSW CISO,40,320,100,"32,000"
+,BGSW HR IT,10,80,100,"8,000"
+,BGSW Procurement,25,200,100,"20,000"
+,BGSW IT Ops / Help Desk,45,360,100,"36,000"
+,BGSW CWP Team,35,280,100,"28,000"
+,BGSW IT (joint tasks),65,520,100,"52,000"
+,SUBTOTAL - BGSW IT Team,515,4120,100,"412,000"
+,,,,
+--- JV IT TEAM (Buyer / NewCo) ---,,,,,
+,JV Management,25,200,100,"20,000"
+,JV IT Leads (India-based),40,320,80,"25,600"
+,SUBTOTAL - JV IT Team,65,520,90,"46,800"
+,,,,
+--- EXTERNAL PARTNERS ---,,,,,
+,Legal (Carver + JV contracts),50,400,90,"36,000"
+,Finance (JV structure & budgeting),15,120,90,"10,800"
+,Bosch BD/MIL + BGSW (cross-functional),95,760,90,"68,400"
+,SUBTOTAL - External Partners,160,1280,90,"115,200"
+,,,,
+--- APPLICATION & TECHNICAL TEAMS ---,,,,,
+,App Teams + Dev,40,320,75,"24,000"
+,App Teams (Integration Testing),15,120,75,"9,000"
+,Test Team + Business Key Users,25,200,75,"15,000"
+,SUBTOTAL - Application & Technical,80,640,75,"48,000"
+,,,,
+--- REGIONAL INDIA TEAMS ---,,,,,
+,Bangalore IT Hub (primary site),30,240,85,"20,400"
+,Hyderabad IT Team (secondary site),20,160,80,"12,800"
+,Pune IT Team (tertiary site),15,120,75,"9,000"
+,SUBTOTAL - Regional India Teams,65,520,80,"41,600"
+,,,,
+--- CROSS-FUNCTIONAL / COMMS ---,,,,,
+,All Workstream Leads,30,240,75,"18,000"
+,Comms + Regional IT,20,160,75,"12,000"
+,SUBTOTAL - Cross-Functional,50,400,75,"30,000"
+,,,,
+====================,====================,====================,====================,====================,====================
+OVERALL PROJECT TOTAL,ALL RESOURCES,1203,9624,—,"1,048,320"
+====================,====================,====================,====================,====================,====================
+,,,,
+COST BREAKDOWN BY CATEGORY,,,,,
+,Governance / PMO,,,,"292,320"
+,Bosch BD/MIL Team (Seller guidance),,,,"62,400"
+,BGSW IT Team (Seller),,,,"412,000"
+,JV IT Team (Buyer),,,,"46,800"
+,External Partners (Legal/Finance),,,,"115,200"
+,Application & Technical,,,,"48,000"
+,Regional India Teams,,,,"41,600"
+,Cross-Functional / Comms,,,,"30,000"
+,TOTAL,,,,"1,048,320"
+,,,,
+COST BREAKDOWN BY PHASE,,,,,
+,Phase 1 - Initialization (May-Jun 2026),,,,"78,960"
+,Phase 2 - Concept (Jul-Aug 2026),,,,"156,240"
+,Phase 3 - Development & Build (Sep-Oct 2026),,,,"367,440"
+,Phase 4 - Testing & Cutover (Nov-Dec 2026),,,,"258,080"
+,Phase 5 - GoLive & Closure (Dec 2026 - Jan 2027),,,,"187,600"
+,TOTAL,,,,"1,048,320"
+,,,,
+CAPEX / ADDITIONAL COSTS (NOT INCLUDED IN LABOUR TOTAL),,,,,
+,Cloud infrastructure (JV M365 / Azure tenant),TBC,,,Confirm at QG2
+,JV Security and IAM platform licensing,TBC,,,Confirm at QG2
+,India networking and connectivity upgrade (3 sites),TBC,,,Confirm at QG1; 2-3 month lead time
+,Software re-licensing (~20 AI applications),TBC,,,Confirm at QG2 post change-of-control review
+,Device hardware refresh (if needed; <100 devices),TBC,,,Confirm at QG1 inventory
+,Training and change management (India-focused),TBC,,,Estimate 5-10% of labour budget
+,Contractor backup resources - BGSW IT team (Risk Register #5),TBC,,,Est. EUR 30-50K if needed; triggered by BGSW IT headcount attrition; confirm at QG2
+,India tax/compliance external counsel - JV registration (Risk Register #10),TBC,,,Est. EUR 15-25K; engage India legal counsel by May 2026; RBIN/MCA/tax filing
+,India Help Desk MSP/contractor contingency (Risk Register #13),TBC,,,Est. EUR 20-40K; needed if in-house India hiring slips past Oct 2026; confirm at QG3
+,,,,
+NOTES,,,,,
+,1. Days = estimated labour effort from Falcon_Project_Schedule.csv for each assigned resource,,,,,
+,2. Combination (Carver + JV) model: BGSW is carver and TSA provider; JV is emerging buyer entity; Bosch BD/MIL guides execution,,,,,
+,3. India-centric scope: 3 sites (Bangalore, Hyderabad, Pune); lower hourly rates for India teams (EUR 80-85/hr vs EUR 100+),,,,,
+,4. No ERP complexity: ~20 AI applications only; simplified vs AlphaX (200 apps),,,,,
+,5. Smaller footprint: ~100 users vs AlphaX 3000; <100 devices vs AlphaX 2500,,,,,
+,6. TSA model simplified: BGSW provides residual TSA only (3-4 months post-GoLive); full exit by Mar 2027 vs AlphaX 12-month TSA,,,,,
+,7. Bosch BD/MIL PM rate at EUR 180/hr (full-cost); BGSW and JV IT at EUR 100/80 (blended India labour cost); external partners EUR 90/hr,,,,,
+,8. No migration partner costs (no ERP). Dev team effort reduced to 40 days vs AlphaX 250+ days,,,,,
+,9. Total ~EUR 1.05M is ~65% lower than AlphaX (EUR 1.65M excl. CAPEX) reflecting 60% scope reduction,,,,,
+,10. Budget baseline to be formally approved and locked at QG1 (30 Jun 2026),,,,,,11. Three risk-contingency CAPEX lines added from Falcon_Risk_Register.xlsx (Risks #5 / #10 / #13) — amounts TBC at respective QGs,,,,,
+,12. 'App Teams (Integration Testing)' cost line aligned to schedule resource 'App Teams + Test Team' (task 65); label corrected from prior version,,,,,
