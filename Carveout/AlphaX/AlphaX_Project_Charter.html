@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project AlphaX – Project Charter</title>
+  
+  
+  <style>
+    :root {
+      --ink: #0f1923;
+      --muted: #5a6478;
+      --line: #d8dde8;
+      --bg: #f0f3f8;
+      --card: #ffffff;
+      --brand: #005eb8;
+      --brand-lt: #e4edf9;
+      --good: #14743f;
+      --warn: #b65c00;
+      --risk: #a8201a;
+      --shadow: 0 2px 20px rgba(15,25,35,0.07);
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 13.5px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { max-width: 1020px; margin: 0 auto; padding: 32px 28px 64px; }
+
+    /* ── COVER ── */
+    .cover {
+      background: linear-gradient(145deg, #051e40 0%, #005eb8 70%, #0090d4 100%);
+      border-radius: 18px;
+      color: #fff;
+      padding: 40px 44px 36px;
+      margin-bottom: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::after {
+      content: "";
+      position: absolute;
+      width: 420px; height: 420px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      right: -120px; bottom: -180px;
+    }
+    .cover-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 6px; padding: 5px 12px;
+      font-size: 11px; font-weight: 700; letter-spacing: 1.2px;
+      text-transform: uppercase; margin-bottom: 18px;
+    }
+    .cover h1 {
+      font-size: 42px; font-weight: 700; letter-spacing: -0.8px; line-height: 1.1;
+      margin-bottom: 10px;
+    }
+    .cover .sub {
+      font-size: 16px; opacity: 0.82; max-width: 640px; margin-bottom: 28px;
+    }
+    .cover-meta {
+      display: flex; gap: 32px; flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,0.18);
+      padding-top: 20px; margin-top: 8px;
+    }
+    .cover-meta-item { }
+    .cover-meta-item .cl { font-size: 11px; opacity: 0.6; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+    .cover-meta-item .cv { font-size: 14px; font-weight: 600; margin-top: 4px; }
+
+    /* ── SECTION ── */
+    .section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow);
+    }
+    .section h2 {
+      font-size: 17px; font-weight: 700; margin-bottom: 16px;
+      padding-bottom: 10px; border-bottom: 2px solid var(--brand-lt);
+      color: var(--brand); display: flex; align-items: center; gap: 10px;
+    }
+    .section h2 .icon { font-size: 18px; }
+    .section p { margin-bottom: 10px; color: #2a3448; }
+    .section p:last-child { margin-bottom: 0; }
+    .section strong { color: var(--ink); }
+
+    /* ── TABLE ── */
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+    th, td { padding: 9px 12px; border: 1px solid var(--line); vertical-align: top; text-align: left; }
+    th { background: var(--brand-lt); color: var(--brand); font-weight: 700; font-size: 11px;
+         text-transform: uppercase; letter-spacing: 0.7px; }
+    tr:nth-child(even) td { background: #f9fafd; }
+
+    /* ── 2-COL ── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .two-col .section { margin-bottom: 0; }
+
+    /* ── TAG ── */
+    .tag {
+      display: inline-block; border-radius: 6px;
+      padding: 3px 10px; font-size: 11.5px; font-weight: 700;
+    }
+    .t-blue { background: #deeaf8; color: #004a99; }
+    .t-green { background: #d6f0e2; color: #0e6133; }
+    .t-amber { background: #fdebd2; color: #7a3d00; }
+    .t-red { background: #fddcdb; color: #7a1010; }
+
+    /* ── MILESTONE ── */
+    .ms-list { display: grid; gap: 10px; }
+    .ms {
+      display: grid; grid-template-columns: 140px 1fr;
+      gap: 12px; align-items: center;
+    }
+    .ms-date {
+      background: var(--brand-lt); color: var(--brand);
+      border: 1px solid #b8d0f0; border-radius: 999px;
+      text-align: center; padding: 6px 10px;
+      font-size: 12px; font-weight: 700;
+      font-family: "IBM Plex Mono", monospace;
+    }
+    .ms-body .ms-title { font-weight: 700; font-size: 13.5px; }
+    .ms-body .ms-sub { color: var(--muted); font-size: 12px; }
+
+    /* ── RACI ── */
+    .raci-dot {
+      display: inline-block; width: 22px; height: 22px;
+      border-radius: 50%; text-align: center;
+      line-height: 22px; font-size: 11px; font-weight: 700;
+    }
+    .r { background: #1565c0; color: #fff; }
+    .a { background: #00897b; color: #fff; }
+    .c { background: #f9a825; color: #fff; }
+    .i { background: #e0e0e0; color: #555; }
+
+    footer {
+      margin-top: 40px; text-align: center;
+      color: var(--muted); font-size: 11.5px;
+      border-top: 1px solid var(--line); padding-top: 16px;
+    }
+    @media print {
+      body { background: #fff; font-size: 11px; }
+      .page { padding: 10px; }
+      .cover { break-after: page; }
+    }
+  
+    /* ── BOSCH DIGITAL COLOR THEME (New Bosch Digital color theme.png) ── */
+    :root {
+      --bosch-red:    #ED0007;
+      --brand:        #ED0007;
+      --brand-soft:   #FEE8EA;
+      --brand-lt:     #FEE8EA;
+      --bosch-dark:   #004975;
+      --ink:          #43464A;
+      --muted:        #71767C;
+      --good:         #00884A;
+      --warn:         #C66000;
+      --risk:         #9B0006;
+      --accent:       #9E2896;
+      --bd-blue:      #007BC0;
+      --bd-teal:      #18837E;
+      --bd-teal-dk:   #0A4F4B;
+      --bd-green-dk:  #00512A;
+      --bd-navy:      #004975;
+      --bd-purple:    #9E2896;
+    }
+    </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- ── COVER ── -->
+    <div class="cover">
+      
+      <div style="margin-bottom:20px;"><img src="data:image/png;base64,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" alt="Bosch" style="height:50px;display:block;" /></div>      <div class="cover-badge">🔋 Project Charter · Confidential</div>
+      <h1>Project AlphaX</h1>
+      <p class="sub">
+        IT Carve-Out of Bosch Battery Division into a standalone NewCo legal entity.
+        Full separation from the Bosch corporate IT environment — no Merger Zone.
+      </p>
+      <div class="cover-meta">
+        <div class="cover-meta-item"><div class="cl">Seller / Sponsor Contractor</div><div class="cv">Bosch (Robert Bosch GmbH)</div></div>
+        <div class="cover-meta-item"><div class="cl">Buyer / Sponsor Customer</div><div class="cv">NewCo — Battery Division (legal entity TBC)</div></div>
+        <div class="cover-meta-item"><div class="cl">Delivery Lead</div><div class="cv">KPMG (Methodology)</div></div>
+        <div class="cover-meta-item"><div class="cl">Carve-Out Model</div><div class="cv">Stand Alone (Full Separation)</div></div>
+        <div class="cover-meta-item"><div class="cl">Program Duration</div><div class="cv">Jun 2026 – Dec 2027 (19 months)</div></div>
+        <div class="cover-meta-item"><div class="cl">Document Date</div><div class="cv">April 1, 2026</div></div>
+      </div>
+    </div>
+
+    <!-- ── EXECUTIVE SUMMARY ── -->
+    <div class="section">
+      <h2><span class="icon">📋</span> 1. Executive Summary</h2>
+      <p>
+        Project AlphaX is the IT workstream delivering the full technological separation of the Bosch Battery Division
+        into a <strong>standalone, independently operating NewCo entity</strong>. Unlike integration-model carve-outs,
+        AlphaX has no Merger Zone concept — all Battery IT systems, data, and infrastructure must be cleanly
+        separated from the Bosch corporate environment and stood up independently within NewCo's own IT landscape.
+      </p>
+      <p>
+        Bosch acts as <strong>Sponsor Contractor</strong>: it currently owns and operates all Battery IT and will
+        maintain Transitional Service Agreement (TSA) support for NewCo until handover completion in Q4 2027.
+        NewCo is the <strong>Sponsor Customer</strong>: the Battery Division's new operating entity, whose permanent
+        buyer is still in sourcing; NewCo will operate as an independent legal entity from Day 1.
+      </p>
+      <p>
+        The total programme spans <strong>19 months</strong> (June 2026 – December 2027) across
+        ~35 Battery sites and ~3,000 users. This is an aggressive timeline requiring strict scope governance,
+        early vendor contracting, and parallel workstream execution from kick-off.
+      </p>
+    </div>
+
+    <!-- ── PROJECT CONTEXT ── -->
+    <div class="section">
+      <h2><span class="icon">🔍</span> 2. Programme Context and Business Rationale</h2>
+      <p>
+        Bosch has decided to divest its Battery Division as a strategic portfolio decision to sharpen its core
+        technology focus. The Battery Division must be established as a fully independent business, requiring its own:
+      </p>
+      <table>
+        <thead><tr><th>IT Domain</th><th>Current State (Bosch)</th><th>Target State (NewCo — Stand Alone)</th></tr></thead>
+        <tbody>
+          <tr><td>ERP (SAP)</td><td>Shared Bosch SAP landscape</td><td>Independent SAP environment — greenfield or shell copy</td></tr>
+          <tr><td>Network / WAN</td><td>Bosch WAN and AD-managed</td><td>NewCo-owned WAN contracts, new Active Directory</td></tr>
+          <tr><td>Microsoft 365</td><td>Bosch M365 tenant</td><td>New NewCo M365 tenant — email, Teams, SharePoint</td></tr>
+          <tr><td>Applications (~200)</td><td>On Bosch-shared platforms</td><td>Migrated or re-licensed under NewCo contracts</td></tr>
+          <tr><td>Security &amp; IAM</td><td>Bosch IAM (Saviynt)</td><td>NewCo standalone IAM — new identity provider</td></tr>
+          <tr><td>ITSM (ServiceNow)</td><td>Bosch ServiceNow instance</td><td>NewCo own ITSM platform or MSP-provided</td></tr>
+          <tr><td>OT / Production IT</td><td>Bosch-governed OT networks</td><td>Separated OT environments per Battery site</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:14px;">
+        <strong>Key structural difference vs integration-model projects:</strong> there is no Merger Zone transition layer.
+        All Battery IT must be live-operable in NewCo's own environment on Day 1 (1 Oct 2027).
+        Bosch provides TSA-covered services as a bridge for non-Day-1-ready systems only.
+      </p>
+    </div>
+
+    <!-- ── SCOPE ── -->
+    <div class="section">
+      <h2><span class="icon">📐</span> 3. Scope Statement</h2>
+      <table>
+        <thead><tr><th style="width:30%">Workstream</th><th>In Scope</th><th>Out of Scope / Exclusions</th></tr></thead>
+        <tbody>
+          <tr><td>1 – IT Infrastructure</td><td>WAN/LAN for 35 sites, new AD forest, servers, co-location hub, VPN</td><td>Bosch corporate data centres (remain Bosch); NewCo co-lo selection is an AlphaX gate</td></tr>
+          <tr><td>2 – ERP / Commercial IT</td><td>SAP shell copy for Battery processes; CRM and pricing tools</td><td>Non-Battery SAP modules retained by Bosch; Brazil and China ERP complexity may defer</td></tr>
+          <tr><td>3 – Applications (~200)</td><td>Application inventory, wave plan, re-licensing or migration per app</td><td>Bosch group applications with no Battery usage</td></tr>
+          <tr><td>4 – Engineering IT</td><td>PLM/Windchill separation, FOSS compliance, dev toolchains</td><td>Bosch R&amp;D shared platforms if Battery has no dedicated usage</td></tr>
+          <tr><td>5 – Production IT / OT</td><td>OT separation at Battery manufacturing sites</td><td>Bosch production OT unrelated to Battery lines</td></tr>
+          <tr><td>6 – HR IT</td><td>Personnel master data separation, HR self-service, payroll IT</td><td>Bosch HR processes for non-transferred staff</td></tr>
+          <tr><td>7 – IT Org &amp; Processes</td><td>NewCo ITSM setup, TOM, MSP contracting, ServiceDesk</td><td>Bosch IT operating model (business as usual)</td></tr>
+          <tr><td>8 – Contracts &amp; Licenses</td><td>Change-of-control clauses, SAM audit, software re-licensing</td><td>Bosch enterprise agreements with no Battery entitlement</td></tr>
+          <tr><td>9 – IT Security</td><td>NewCo IAM, CISO appointment, ISO 27001 baseline, GDPR compliance</td><td>Bosch CISO scope (retained); Bosch SOC services covered by TSA</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ── MILESTONES ── -->
+    <div class="section">
+      <h2><span class="icon">📅</span> 4. Key Milestones and Phase Gates</h2>
+      <div class="ms-list">
+        <div class="ms">
+          <div class="ms-date">01 Jun 2026</div>
+          <div class="ms-body"><div class="ms-title">Deal Closing — Program Kick-Off</div><div class="ms-sub">Project AlphaX programme start; NewCo legal entity registration initiated; Bosch TSA obligations commence</div></div>
+        </div>
+        <div class="ms">
+          <div class="ms-date">15 Jun 2026</div>
+          <div class="ms-body"><div class="ms-title">Signing / QG0 — Frozen Zone Begins</div><div class="ms-sub">Frozen Zone activated; no production changes to Battery IT without SteerCo approval</div></div>
+        </div>
+        <div class="ms">
+          <div class="ms-date">31 Aug 2026</div>
+          <div class="ms-body"><div class="ms-title">QG1 — Initialization Complete</div><div class="ms-sub">Governance established; full site/app/user inventory confirmed; TSA catalogue draft complete</div></div>
+        </div>
+        <div class="ms">
+          <div class="ms-date">30 Nov 2026</div>
+          <div class="ms-body"><div class="ms-title">QG2 — Concept Approved</div><div class="ms-sub">Architecture design frozen; ERP strategy decided; WAN/co-lo vendor selected; all workstream concept documents signed off</div></div>
+        </div>
+        <div class="ms">
+          <div class="ms-date">30 Jun 2027</div>
+          <div class="ms-body"><div class="ms-title">QG3 — Development Complete</div><div class="ms-sub">NewCo IT environment built and tested (WAN live, AD live, SAP SIT1 complete, M365 tenant ready); all cutover waves planned</div></div>
+        </div>
+        <div class="ms">
+          <div class="ms-date">15 Sep 2027</div>
+          <div class="ms-body"><div class="ms-title">QG4 / Go-No-Go Decision</div><div class="ms-sub">All readiness criteria met; final SteerCo approval to proceed to Day 1 cutover; no open P1/P2 defects</div></div>
+        </div>
+        <div class="ms">
+          <div class="ms-date">01 Oct 2027</div>
+          <div class="ms-body"><div class="ms-title">Day 1 — NewCo GoLive</div><div class="ms-sub">Full IT separation live; 3,000 users operating on NewCo IT; 90-day hypercare begins; TSA services minimal subset only</div></div>
+        </div>
+        <div class="ms">
+          <div class="ms-date">30 Sep 2027</div>
+          <div class="ms-body"><div class="ms-title">TSA Exit</div><div class="ms-sub">All Bosch TSA services handed over to NewCo; Bosch IT access decommissioned for Battery systems</div></div>
+        </div>
+        <div class="ms">
+          <div class="ms-date">31 Dec 2027</div>
+          <div class="ms-body"><div class="ms-title">Program Closure</div><div class="ms-sub">Hypercare stablilised; all deliverables accepted; project formally closed by SteerCo</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── APPROACH ── -->
+    <div class="section">
+      <h2><span class="icon">🗺️</span> 5. Delivery Approach and Model</h2>
+      <p>
+        <strong>Stand Alone model</strong> — the Battery Division becomes fully IT-independent rather than merging
+        into a buyer's existing environment. This is the highest-complexity carve-out model because NewCo must build
+        an entirely new IT stack from scratch, while Bosch TSA covers continuity in the interim.
+      </p>
+      <p>
+        <strong>No Merger Zone:</strong> there is no intermediate hybrid environment. Battery IT systems are either
+        migrated to the NewCo environment at cutover or remain under TSA until individually separated. This requires
+        a highly disciplined wave plan and strict cutover sequencing.
+      </p>
+      <p>
+        <strong>Key approach principles:</strong>
+      </p>
+      <table>
+        <thead><tr><th>Principle</th><th>Application for AlphaX</th></tr></thead>
+        <tbody>
+          <tr><td>"First make it work, then make it better"</td><td>Day 1 readiness is the goal; optimise NewCo IT landscape post-separation</td></tr>
+          <tr><td>TSA = transition bridge, not permanent state</td><td>All TSA services must have defined exit criteria; no open-ended TSA lines</td></tr>
+          <tr><td>Big Bang vs staggered</td><td>Staggered wave migration by site region; SAP and M365 in coordinated cutover</td></tr>
+          <tr><td>Frozen Zone from Signing</td><td>No production changes to Battery IT from 15 Jun 2026 without SteerCo approval</td></tr>
+          <tr><td>Point of No Return</td><td>SAP shell copy execution and WAN cutover per site are Points of No Return; require go/no-go gate</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ── RACI ── -->
+    <div class="section">
+      <h2><span class="icon">👥</span> 6. Governance and RACI</h2>
+      <p style="margin-bottom:14px;">R = Responsible · A = Accountable · C = Consulted · I = Informed</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Activity</th>
+            <th>Bosch CIO</th>
+            <th>NewCo CIO</th>
+            <th>IT PM (AlphaX)</th>
+            <th>KPMG</th>
+            <th>Bosch IT Teams</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Programme governance &amp; SteerCo</td><td><span class="raci-dot a">A</span></td><td><span class="raci-dot a">A</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot c">C</span></td><td><span class="raci-dot i">I</span></td></tr>
+          <tr><td>TSA catalogue definition</td><td><span class="raci-dot a">A</span></td><td><span class="raci-dot c">C</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot c">C</span></td></tr>
+          <tr><td>As-is IT inventory (Battery scope)</td><td><span class="raci-dot c">C</span></td><td><span class="raci-dot i">I</span></td><td><span class="raci-dot a">A</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot r">R</span></td></tr>
+          <tr><td>NewCo IT architecture design</td><td><span class="raci-dot c">C</span></td><td><span class="raci-dot a">A</span></td><td><span class="raci-dot c">C</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot r">R</span></td></tr>
+          <tr><td>WAN / infrastructure build</td><td><span class="raci-dot i">I</span></td><td><span class="raci-dot a">A</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot c">C</span></td><td><span class="raci-dot r">R</span></td></tr>
+          <tr><td>SAP shell copy &amp; migration</td><td><span class="raci-dot i">I</span></td><td><span class="raci-dot a">A</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot r">R</span></td></tr>
+          <tr><td>Security &amp; IAM</td><td><span class="raci-dot c">C</span></td><td><span class="raci-dot a">A</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot c">C</span></td></tr>
+          <tr><td>Cutover planning &amp; execution</td><td><span class="raci-dot c">C</span></td><td><span class="raci-dot a">A</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot r">R</span></td></tr>
+          <tr><td>TSA exit &amp; Bosch decommission</td><td><span class="raci-dot a">A</span></td><td><span class="raci-dot a">A</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot c">C</span></td><td><span class="raci-dot r">R</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="two-col">
+      <!-- ── ASSUMPTIONS ── -->
+      <div class="section">
+        <h2><span class="icon">✅</span> 7. Key Assumptions</h2>
+        <table>
+          <thead><tr><th>#</th><th>Assumption</th></tr></thead>
+          <tbody>
+            <tr><td>A1</td><td>NewCo legal entity is registered and operational by 1 Jun 2026</td></tr>
+            <tr><td>A2</td><td>Bosch provides full data access (CMDB, app inventory, contract list) from Day 1 of programme</td></tr>
+            <tr><td>A3</td><td>Battery Division scope is fixed — no additional Bosch divisions included after QG1</td></tr>
+            <tr><td>A4</td><td>WAN procurement can commence immediately after QG2 (Nov 2026); 7-month lead time assumed</td></tr>
+            <tr><td>A5</td><td>SAP greenfield/shell-copy strategy decided by QG2; migration partner contract signed by QG2</td></tr>
+            <tr><td>A6</td><td>NewCo co-location data centre selected by QG2 and build commences immediately after</td></tr>
+            <tr><td>A7</td><td>Budget sufficient to operate full Stand Alone IT build over 19 months (no shared services reduction mid-project)</td></tr>
+            <tr><td>A8</td><td>Bosch TSA covers all Battery systems not yet separated at Day 1; maximum TSA duration = Dec 2027</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- ── CONSTRAINTS ── -->
+      <div class="section">
+        <h2><span class="icon">⛔</span> 8. Constraints and Boundaries</h2>
+        <table>
+          <thead><tr><th>#</th><th>Constraint</th></tr></thead>
+          <tbody>
+            <tr><td>C1</td><td>Programme must complete by <strong>31 Dec 2027</strong> — hard deadline, no extension</td></tr>
+            <tr><td>C2</td><td>No Merger Zone — Battery IT must land in NewCo environment directly; no hybrid intermediate state</td></tr>
+            <tr><td>C3</td><td>Frozen Zone from <strong>15 Jun 2026</strong>: all Battery production changes require SteerCo approval</td></tr>
+            <tr><td>C4</td><td>Buyer identity not yet finalised — all NewCo decisions must be revertible until permanent buyer confirmed</td></tr>
+            <tr><td>C5</td><td>Bosch CISO policies apply to all Battery IT during TSA period; Bosch security standards must not be breached</td></tr>
+            <tr><td>C6</td><td>GDPR / data protection compliance mandatory for all cross-border data transfers during separation</td></tr>
+            <tr><td>C7</td><td>Budget and headcount approved through QG gates only — no pre-spend without governance approval</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── TOP RISKS ── -->
+    <div class="section">
+      <h2><span class="icon">⚠️</span> 9. Top Programme Risks at Charter Stage</h2>
+      <table>
+        <thead><tr><th>#</th><th>Risk</th><th>Prob</th><th>Impact</th><th>RZ</th><th>Category</th><th>Primary Mitigation</th></tr></thead>
+        <tbody>
+          <tr><td>R1</td><td>NewCo legal entity setup delayed — permanent buyer not confirmed</td><td>4</td><td>4</td><td><span class="tag t-red">16</span></td><td>LR</td><td>Legal counsel engaged immediately; parallel setup path for interim NewCo</td></tr>
+          <tr><td>R2</td><td>WAN ordering for 35 sites delayed (4-6 month lead time)</td><td>3</td><td>5</td><td><span class="tag t-red">15</span></td><td>ScR</td><td>Order immediately after QG2; dual-vendor per region</td></tr>
+          <tr><td>R3</td><td>Battery IT inventory incomplete — apps/OT systems undiscovered</td><td>4</td><td>3</td><td><span class="tag t-amber">12</span></td><td>SR</td><td>Discovery scan and CMDB audit in first 60 days</td></tr>
+          <tr><td>R4</td><td>SAP shell copy decision delayed causing Phase 3 ERP build slip</td><td>3</td><td>4</td><td><span class="tag t-amber">12</span></td><td>ScR</td><td>ERP strategy workshop by end of Phase 1</td></tr>
+          <tr><td>R5</td><td>Bosch data access or cooperation withheld pre-Signing</td><td>3</td><td>4</td><td><span class="tag t-amber">12</span></td><td>RR</td><td>SPA data access protocol agreed pre-kick-off</td></tr>
+          <tr><td>R6</td><td>19-month timeline is compressed for Stand Alone model</td><td>4</td><td>3</td><td><span class="tag t-amber">12</span></td><td>ScR</td><td>Parallel workstream execution from Phase 1; no sequential gating</td></tr>
+          <tr><td>R7</td><td>Bosch TSA resourcing becomes inadequate post-Day 1 (staff attrition)</td><td>3</td><td>3</td><td><span class="tag t-amber">9</span></td><td>RR</td><td>TSA retention clauses; KT programme from Day 1</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ── SIGN-OFF ── -->
+    <div class="section">
+      <h2><span class="icon">✍️</span> 10. Charter Sign-Off</h2>
+      <table>
+        <thead><tr><th>Role</th><th>Name</th><th>Organisation</th><th>Date</th><th>Signature</th></tr></thead>
+        <tbody>
+          <tr><td>Programme Sponsor (Bosch)</td><td>___________________________</td><td>Robert Bosch GmbH</td><td>___________</td><td>___________________________</td></tr>
+          <tr><td>Programme Sponsor (NewCo)</td><td>___________________________</td><td>NewCo Battery Division</td><td>___________</td><td>___________________________</td></tr>
+          <tr><td>IT Programme Manager</td><td>___________________________</td><td>AlphaX PMO</td><td>___________</td><td>___________________________</td></tr>
+          <tr><td>Methodology Lead</td><td>___________________________</td><td>KPMG</td><td>___________</td><td>___________________________</td></tr>
+          <tr><td>Bosch CIO</td><td>___________________________</td><td>Robert Bosch GmbH</td><td>___________</td><td>___________________________</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer>
+      Project AlphaX — Project Charter v1.0 · Prepared by AlphaX PMO / KPMG · April 1, 2026 · CONFIDENTIAL
+    </footer>
+  </div>
+</body>
+</html>
