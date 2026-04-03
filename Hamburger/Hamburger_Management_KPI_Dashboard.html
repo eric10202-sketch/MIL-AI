@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Project Hamburger — Management KPI Dashboard</title>
+<style>
+:root{
+  --bg:#f0f3f8;--card:#fff;--ink:#43464A;--muted:#71767C;--line:#d8dde8;
+  --brand:#ED0007;--brand-soft:#FEE8EA;
+  --good:#00884A;--warn:#C66000;--risk:#9B0006;
+  --bosch-dark:#004975;--bosch-blue:#007BC0;--bosch-teal:#18837E;
+  --shadow:0 4px 24px rgba(15,25,35,0.09);--r:14px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;
+  background:radial-gradient(circle at 8% 0%,#d8e8ff 0%,transparent 35%),
+             radial-gradient(circle at 90% 5%,#fee8ea 0%,transparent 28%),
+             var(--bg);
+  color:var(--ink);min-height:100vh;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1540px;margin:0 auto;padding:26px;}
+/* HERO */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#051e40 0%,var(--bosch-dark) 55%,var(--bosch-blue) 100%);
+  border-radius:20px;color:#fff;padding:28px 32px;margin-bottom:18px;
+  box-shadow:var(--shadow);
+}
+.hero::before{
+  content:"";position:absolute;width:380px;height:380px;border-radius:50%;
+  background:rgba(255,255,255,0.07);right:-80px;top:-120px;
+}
+.hero-inner{position:relative;z-index:1;display:flex;gap:28px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;}
+.hero-left{flex:0 0 auto;max-width:680px;}
+.eyebrow{font-size:11px;letter-spacing:1.8px;text-transform:uppercase;opacity:0.75;font-weight:700;margin-bottom:8px;}
+.hero h1{font-size:34px;letter-spacing:-0.6px;line-height:1.08;margin-bottom:10px;}
+.hero-sub{font-size:14px;opacity:0.85;line-height:1.6;margin-bottom:18px;}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.28);
+  border-radius:999px;padding:5px 12px;font-size:11.5px;font-weight:600;
+}
+.health-pill{
+  margin-top:16px;display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,178,33,0.18);border:1px solid rgba(255,178,33,0.42);
+  border-radius:999px;padding:7px 14px;font-size:12.5px;font-weight:700;color:#ffd86b;
+}
+.dot{width:9px;height:9px;border-radius:50%;background:#ffb221;animation:blink 1.8s infinite;}
+.hero-right{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;width:min(100%,420px);}
+.hkpi{
+  background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.22);
+  border-radius:12px;padding:12px 14px;backdrop-filter:blur(4px);
+}
+.hkpi .v{font-size:30px;font-weight:700;line-height:1;}
+.hkpi .l{font-size:11px;text-transform:uppercase;letter-spacing:0.7px;opacity:0.82;font-weight:600;margin-top:6px;}
+/* GRID */
+.grid{display:grid;gap:12px;grid-template-columns:repeat(12,1fr);}
+.s3{grid-column:span 3;}.s4{grid-column:span 4;}.s5{grid-column:span 5;}
+.s6{grid-column:span 6;}.s7{grid-column:span 7;}.s8{grid-column:span 8;}
+.s9{grid-column:span 9;}.s12{grid-column:span 12;}
+/* CARD */
+.card{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--r);padding:18px 20px;box-shadow:var(--shadow);
+}
+.card h2{font-size:16px;letter-spacing:-0.2px;margin-bottom:6px;font-weight:700;}
+.card .meta{color:var(--muted);font-size:11.5px;margin-bottom:14px;}
+/* KPI BOX */
+.kpi-box{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:linear-gradient(180deg,#fff,#f7f9ff);}
+.kl{font-size:11px;text-transform:uppercase;letter-spacing:0.8px;color:var(--muted);font-weight:700;}
+.kv{font-size:36px;line-height:1;margin:8px 0 4px;font-weight:700;}
+.kn{font-size:12px;color:var(--muted);}
+.good{color:var(--good);}.warn{color:var(--warn);}.risk{color:var(--risk);}
+/* BARS */
+.bars{display:grid;gap:7px;}
+.bar-row{display:grid;grid-template-columns:150px 1fr 50px;align-items:center;gap:8px;font-size:13px;}
+.track{height:10px;background:#e8ecf5;border-radius:999px;overflow:hidden;}
+.fill{height:100%;border-radius:999px;animation:grow 800ms ease-out;transform-origin:left;}
+.fill-b{background:linear-gradient(90deg,var(--bosch-dark),var(--bosch-blue));}
+.fill-g{background:linear-gradient(90deg,#006030,var(--good));}
+.fill-w{background:linear-gradient(90deg,#a04400,var(--warn));}
+.fill-r{background:linear-gradient(90deg,var(--risk),var(--brand));}
+/* TIMELINE */
+.tl{display:grid;gap:10px;position:relative;}
+.tl::before{content:"";position:absolute;left:67px;top:10px;bottom:10px;width:2px;background:var(--line);z-index:0;}
+.ms{display:grid;grid-template-columns:140px 1fr;gap:12px;align-items:start;position:relative;z-index:1;}
+.ms-date{
+  font-family:'Consolas','Courier New',monospace;
+  background:#deeaf8;color:var(--bosch-dark);
+  border:1px solid #b0ccec;border-radius:999px;
+  padding:6px 8px;text-align:center;font-size:11.5px;font-weight:700;
+}
+.ms-date.done{background:#dcf5e7;color:#0b4e28;border-color:#8cd4ae;}
+.ms-date.crit{background:#fddcdb;color:#7a0000;border-color:#f5a0a0;}
+.ms-t{font-weight:700;font-size:13.5px;}
+.ms-s{color:var(--muted);font-size:12px;}
+/* TABLE */
+table{width:100%;border-collapse:collapse;font-size:12.5px;}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;}
+th{font-size:10.5px;text-transform:uppercase;letter-spacing:0.7px;color:var(--muted);font-weight:700;}
+tr:last-child td{border-bottom:none;}
+/* BADGES */
+.badge{display:inline-block;padding:3px 8px;border-radius:999px;font-size:11px;font-weight:700;}
+.b-r{background:#ffe3e3;color:#8b0000;}.b-w{background:#fff0d8;color:#7a3d00;}.b-g{background:#dcf5e7;color:#0e5430;}
+/* FORECAST */
+.forecast{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.fc{border:1px solid var(--line);border-radius:12px;padding:14px;background:#fcfcff;}
+.fc .fn{font-size:30px;font-weight:700;line-height:1;margin-bottom:4px;}
+.fc .fl{font-size:11px;text-transform:uppercase;letter-spacing:0.7px;color:var(--muted);font-weight:700;margin-bottom:6px;}
+.fc .fd{font-size:12px;color:var(--muted);}
+/* DIFF GRID */
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.diff-item{border:1px solid var(--line);border-radius:10px;padding:12px;background:#fcfcff;}
+.diff-item .di-title{font-weight:700;font-size:13px;margin-bottom:4px;}
+.diff-item .di-body{font-size:12.5px;color:#3a4458;line-height:1.55;}
+/* ACCORDION ROW */
+.acc-row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid #ebebeb;}
+.acc-row:last-child{border-bottom:none;}
+footer{margin-top:14px;text-align:right;font-size:11px;color:var(--muted);}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
+@keyframes grow{from{transform:scaleX(0.05);}to{transform:scaleX(1);}}
+@media(max-width:1200px){.s3,.s4,.s5,.s6,.s7,.s8,.s9{grid-column:span 6;}.forecast{grid-template-columns:repeat(2,1fr);}.hero-right{grid-template-columns:repeat(2,1fr);width:100%;}}
+@media(max-width:720px){.wrap{padding:12px;}.grid{grid-template-columns:1fr;}.s3,.s4,.s5,.s6,.s7,.s8,.s9,.s12{grid-column:span 1;}.bar-row{grid-template-columns:1fr;}.diff-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div style="background:#fff;padding:4px 8px;border-radius:4px;margin-bottom:12px;">
+      <img src="data:image/png;base64,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" alt="Bosch" style="height:44px;display:block;"/>
+    </div>
+    <div class="hero-left">
+      <div class="eyebrow">Steering Committee — Management Reporting View</div>
+      <h1>Project Hamburger<br/>KPI &amp; Delivery Dashboard</h1>
+      <p class="hero-sub">
+        Robert Bosch GmbH Solar Energy Business — Full IT Separation into Standalone Solar entity.<br/>
+        Seller: <strong>Robert Bosch GmbH</strong> · Buyer: <strong>Undisclosed (legal conf.)</strong> · Model: <strong>Stand Alone (No Merger Zone)</strong><br/>
+        QG standard: <strong>QG0–QG5</strong> · Day 1 = GoLive (same event) · Hypercare: <strong>90 calendar days</strong> (01 Dec 2026 → 01 Mar 2027) · QG5 completion: 30 May 2027
+      </p>
+      <div class="hero-chips">
+        <span class="chip">☀️ Solar Energy</span>
+        <span class="chip">🌍 17 Sites</span>
+        <span class="chip">👤 2,600 Users</span>
+        <span class="chip">🗓 Apr 2026 – May 2027</span>
+        <span class="chip">9 Workstreams</span>
+        <span class="chip">~90 Applications (est.)</span>
+      </div>
+      <div class="health-pill"><span class="dot"></span> Programme Health: Amber — ERP Strategy Decision &amp; Buyer Identification Required at QG2</div>
+    </div>
+    <div class="hero-right">
+      <div class="hkpi"><div class="v">90</div><div class="l">Days to QG1</div></div>
+      <div class="hkpi"><div class="v">242</div><div class="l">Days to Day 1 = GoLive</div></div>
+      <div class="hkpi" style="color:#ffd057;"><div class="v" style="color:#ffd057;">8</div><div class="l">High Risks Open</div></div>
+      <div class="hkpi"><div class="v">0</div><div class="l">P1 Issues Open</div></div>
+    </div>
+  </div>
+</header>
+
+<section class="grid">
+
+  <!-- SPI -->
+  <article class="card s3">
+    <h2>Schedule Performance</h2>
+    <div class="meta">EVM — against approved baseline</div>
+    <div class="kpi-box">
+      <div class="kl">SPI Index</div>
+      <div class="kv good">1.00</div>
+      <div class="kn">Programme kick-off today — baseline in progress · Target ≥ 0.95</div>
+    </div>
+  </article>
+
+  <!-- CPI -->
+  <article class="card s3">
+    <h2>Cost Performance</h2>
+    <div class="meta">EVM — against approved forecast</div>
+    <div class="kpi-box">
+      <div class="kl">CPI Index</div>
+      <div class="kv warn">TBC</div>
+      <div class="kn">Budget TBC — to be approved at QG1 · Cost baseline locked at QG1</div>
+    </div>
+  </article>
+
+  <!-- Day 1 Readiness -->
+  <article class="card s3">
+    <h2>Day 1 Readiness</h2>
+    <div class="meta">Cross-workstream composite score</div>
+    <div class="kpi-box">
+      <div class="kl">Readiness Score</div>
+      <div class="kv warn">5%</div>
+      <div class="kn">Kick-off phase — target 100% by QG4 (30 Nov 2026)</div>
+    </div>
+  </article>
+
+  <!-- Stand Alone Confidence -->
+  <article class="card s3">
+    <h2>Stand Alone Confidence</h2>
+    <div class="meta">Solar IT self-sufficiency forecast</div>
+    <div class="kpi-box">
+      <div class="kl">Independence Score</div>
+      <div class="kv risk">10%</div>
+      <div class="kn">Buyer unknown; ERP strategy not yet decided · Critical path items open</div>
+    </div>
+  </article>
+
+  <!-- Workstream Confidence -->
+  <article class="card s6">
+    <h2>Workstream Confidence Bars</h2>
+    <div class="meta">RAG confidence, cross-workstream composite — April 2026</div>
+    <div class="bars">
+      <div class="bar-row"><span>WS1 Infrastructure</span><div class="track"><div class="fill fill-w" style="width:8%;"></div></div><span class="warn">8%</span></div>
+      <div class="bar-row"><span>WS2 ERP / SAP</span><div class="track"><div class="fill fill-r" style="width:5%;"></div></div><span class="risk">5%</span></div>
+      <div class="bar-row"><span>WS3 Applications</span><div class="track"><div class="fill fill-w" style="width:5%;"></div></div><span class="warn">5%</span></div>
+      <div class="bar-row"><span>WS4 M365 / Cloud</span><div class="track"><div class="fill fill-w" style="width:10%;"></div></div><span class="warn">10%</span></div>
+      <div class="bar-row"><span>WS5 Client Devices</span><div class="track"><div class="fill fill-w" style="width:5%;"></div></div><span class="warn">5%</span></div>
+      <div class="bar-row"><span>WS6 HR IT</span><div class="track"><div class="fill fill-b" style="width:15%;"></div></div><span>15%</span></div>
+      <div class="bar-row"><span>WS7 IT Operations</span><div class="track"><div class="fill fill-b" style="width:12%;"></div></div><span>12%</span></div>
+      <div class="bar-row"><span>WS8 Contracts / Lic.</span><div class="track"><div class="fill fill-w" style="width:8%;"></div></div><span class="warn">8%</span></div>
+      <div class="bar-row"><span>WS9 IT Security</span><div class="track"><div class="fill fill-b" style="width:10%;"></div></div><span>10%</span></div>
+    </div>
+  </article>
+
+  <!-- Milestone Gate Timeline -->
+  <article class="card s6">
+    <h2>Milestone Gate Timeline</h2>
+    <div class="meta">Key delivery gates — confirmed dates from Hamburger_Project_Schedule.csv</div>
+    <div class="tl">
+      <div class="ms"><div class="ms-date done">01 Apr 2026</div><div><div class="ms-t">QG0 — Programme Kick-Off Gate</div><div class="ms-s">Programme initiated · SteerCo active · Frozen Zone imminent · Phase 1 starts</div></div></div>
+      <div class="ms"><div class="ms-date">30 Jun 2026</div><div><div class="ms-t">QG1 — Initialization</div><div class="ms-s">Charter approved · Full IT inventory · Budget baseline · WAN RFQ issued</div></div></div>
+      <div class="ms"><div class="ms-date">31 Aug 2026</div><div><div class="ms-t">QG2 — Concept</div><div class="ms-s">ERP strategy frozen · Architecture signed-off · WAN contracts awarded</div></div></div>
+      <div class="ms"><div class="ms-date">30 Oct 2026</div><div><div class="ms-t">QG3 — Development</div><div class="ms-s">Infra live all 17 sites · Apps packaged · ERP SIT1 passed</div></div></div>
+      <div class="ms"><div class="ms-date">30 Nov 2026</div><div><div class="ms-t">QG4 — Pre-GoLive</div><div class="ms-s">All readiness met · UAT passed · Day 1 / GoLive confirmed</div></div></div>
+      <div class="ms"><div class="ms-date crit">01 Dec 2026</div><div><div class="ms-t">☀️ Day 1 = GoLive (D1) — Same Event</div><div class="ms-s">Legal separation effective · 2600 users on Solar IT · TSA clock starts · 90-day hypercare begins</div></div></div>
+      <div class="ms"><div class="ms-date">01 Mar 2027</div><div><div class="ms-t">Hypercare Complete Milestone (90 days from D1)</div><div class="ms-s">90 calendar days from GoLive complete · TSA exited · Solar fully independent</div></div></div>
+      <div class="ms"><div class="ms-date">30 May 2027</div><div><div class="ms-t">QG5 — Programme Closure (Completion)</div><div class="ms-s">Completion gate · All docs archived · KT done · Programme closed</div></div></div>
+    </div>
+  </article>
+
+  <!-- Top Risk Table -->
+  <article class="card s8">
+    <h2>Top Risk Register — Open Items</h2>
+    <div class="meta">18 risks logged · 8 HIGH · 6 MEDIUM · 4 LOW · Source: Hamburger_Risk_Register.xlsx</div>
+    <table>
+      <thead>
+        <tr><th>#</th><th>Risk</th><th>Category</th><th>P</th><th>I</th><th>Rating</th><th>Status</th><th>Owner</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>R01</td><td>GoLive complexity — 17 sites / 2600 users on hard date</td><td>Programme</td><td>4</td><td>5</td><td><span class="badge b-r">20 RED</span></td><td>Open</td><td>PMO</td></tr>
+        <tr><td>R02</td><td>SAP/ERP separation — shared mandants, custom ABAP</td><td>ERP</td><td>4</td><td>5</td><td><span class="badge b-r">20 RED</span></td><td>Open</td><td>ERP Lead</td></tr>
+        <tr><td>R03</td><td>Buyer unknown — scope change risk post-reveal</td><td>Commercial</td><td>3</td><td>5</td><td><span class="badge b-w">15 AMB</span></td><td>Open</td><td>PMO/Legal</td></tr>
+        <tr><td>R04</td><td>AD migration 17 sites — hard GoLive dependency</td><td>Infra</td><td>3</td><td>4</td><td><span class="badge b-w">12 AMB</span></td><td>Open</td><td>Infra Lead</td></tr>
+        <tr><td>R05</td><td>Resource capacity — 14-month parallel BaU peak</td><td>Resource</td><td>3</td><td>4</td><td><span class="badge b-w">12 AMB</span></td><td>Open</td><td>PMO</td></tr>
+        <tr><td>R06</td><td>WAN circuit delays — 8–12 week lead time per region</td><td>Infra</td><td>3</td><td>4</td><td><span class="badge b-w">12 AMB</span></td><td>Open</td><td>Infra Lead</td></tr>
+        <tr><td>R07</td><td>Multi-jurisdiction GDPR / PIPL / LGPD compliance</td><td>Legal/Sec</td><td>3</td><td>4</td><td><span class="badge b-w">12 AMB</span></td><td>Open</td><td>CISO / Legal</td></tr>
+        <tr><td>R08</td><td>Budget overrun — WAN + ERP + licence CoC costs</td><td>Cost</td><td>3</td><td>4</td><td><span class="badge b-w">12 AMB</span></td><td>Open</td><td>PMO</td></tr>
+        <tr><td>R09–18</td><td>Medium/Low risks (M365, helpdesk, data migration, retention…)</td><td>Various</td><td>—</td><td>—</td><td><span class="badge b-g">≤9 GRN</span></td><td>Open</td><td>WS Leads</td></tr>
+      </tbody>
+    </table>
+  </article>
+
+  <!-- Stand Alone vs Integration Differences -->
+  <article class="card s4">
+    <h2>Stand Alone Model Notes</h2>
+    <div class="meta">Why Stand Alone matters for Hamburger delivery</div>
+    <div class="diff-grid">
+      <div class="diff-item">
+        <div class="di-title" style="color:var(--bosch-dark);">Stand Alone (Hamburger)</div>
+        <div class="di-body">No shared infra with Buyer. Solar must be 100% independent by Day 1. Bosch runs TSA until May 2027. No Merger Zone needed. Clean handover.</div>
+      </div>
+      <div class="diff-item">
+        <div class="di-title" style="color:var(--muted);">Integration Model (n/a)</div>
+        <div class="di-body">Not applicable to Hamburger. Stand Alone means all systems exit to standalone Solar entity. Buyer dependencies are not a sequencing factor.</div>
+      </div>
+    </div>
+    <div style="margin-top:12px;">
+      <div class="acc-row"><span style="font-weight:700;">ERP Path</span><span class="badge b-r">CRITICAL</span></div>
+      <div class="acc-row"><span style="font-weight:700;">WAN Path</span><span class="badge b-r">CRITICAL</span></div>
+      <div class="acc-row"><span style="font-weight:700;">AD / Workplace</span><span class="badge b-w">HIGH</span></div>
+      <div class="acc-row"><span style="font-weight:700;">M365 Tenant</span><span class="badge b-w">HIGH</span></div>
+      <div class="acc-row"><span style="font-weight:700;">Hypercare (90d)</span><span class="badge b-g">PLANNED</span></div>
+      <div class="acc-row"><span style="font-weight:700;">QG standard</span><span class="badge b-g">QG0–QG5</span></div>
+    </div>
+  </article>
+
+  <!-- 90-Day Action Forecast -->
+  <article class="card s12">
+    <h2>90-Day Action Forecast — April → June 2026</h2>
+    <div class="meta">Next 90 days delivering QG1 readiness (30 Jun 2026)</div>
+    <div class="forecast">
+      <div class="fc">
+        <div class="fl">Phase 1 · April</div>
+        <div class="fn" style="color:var(--bosch-dark);">PMO</div>
+        <div class="fd">Programme governance active · Steering committee established · Risk register baseline published · WAN RFQ workshop scheduled · Bosch IT inventory kick-off.</div>
+      </div>
+      <div class="fc">
+        <div class="fl">QG1 Prep · May</div>
+        <div class="fn" style="color:var(--bosch-blue);">INV</div>
+        <div class="fd">Full Solar IT inventory (17 sites · 2600 users · all apps) · ERP assessment started · WAN RFQ issued to 3+ providers · SAP migration partner shortlisted.</div>
+      </div>
+      <div class="fc">
+        <div class="fl">QG1 Gate · June</div>
+        <div class="fn" style="color:var(--warn);">QG1</div>
+        <div class="fd">Charter approved by SteerCo · Budget baseline submitted · TSA catalogue v1 · All WS leads confirmed · Day 1 / GoLive date (01 Dec 2026) locked · Hypercare = 90 days from D1 confirmed.</div>
+      </div>
+      <div class="fc">
+        <div class="fl">Looking Ahead · Jul–Aug</div>
+        <div class="fn" style="color:var(--risk);">QG2</div>
+        <div class="fd">Architecture freeze · ERP strategy decision (shell copy vs greenfield) · WAN contracts signed · Data residency plan per jurisdiction · Concept approval at QG2 (31 Aug 2026).</div>
+      </div>
+    </div>
+  </article>
+
+</section>
+
+<footer style="margin-top:14px;text-align:right;font-size:11px;color:var(--muted);">
+  Project Hamburger · Management KPI Dashboard · Robert Bosch GmbH → Undisclosed Buyer · Solar Energy · Stand Alone ·
+  QG standard: QG0–QG5 · Day 1 = GoLive (01 Dec 2026) · Hypercare: 90 calendar days → 01 Mar 2027 · QG5 closure: 30 May 2027 ·
+  Dashboard: 03 Apr 2026 · Source: Hamburger_Project_Schedule.csv + Hamburger_Risk_Register.xlsx · <strong>CONFIDENTIAL</strong>
+</footer>
+
+</div>
+</body>
+</html>

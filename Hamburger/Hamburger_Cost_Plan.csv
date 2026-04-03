@@ -1,0 +1,105 @@
+Project Hamburger - Draft IT Cost Plan
+Generated: 2026-04-03 | Based on: Hamburger_Project_Schedule.csv (107 tasks / 6 phases) | Risk-aligned: Hamburger_Risk_Register.xlsx
+Scope: Robert Bosch GmbH (Seller) -> Undisclosed Buyer | Stand Alone model | No Merger Zone | 17 worldwide sites | 2600 IT users
+Assumptions: 8 hrs/day; costs are fully-loaded labour only (excl. hardware / co-lo lease / WAN circuits / software licences / travel); shared tasks charged to each assigned resource in full; 0-day milestones = 0 hrs
+Budget baseline: TBC - to be approved at QG1
+,,,,
+CATEGORY,RESOURCE,TOTAL DAYS,TOTAL HRS,HOURLY RATE (EUR),TOTAL COST (EUR)
+,,,,
+--- GOVERNANCE / PMO ---,,,,,
+,Erik Ho (BD/MIL-ICC),295,2360,180,"424,800"
+,IT PM,60,480,180,"86,400"
+,PMO,25,200,180,"36,000"
+,Steering Committee (active tasks only),10,80,180,"14,400"
+,SUBTOTAL - Governance / PMO,390,3120,180,"561,600"
+,,,,
+--- BOSCH IT TEAM (Seller) ---,,,,,
+,Bosch IT PM,40,320,120,"38,400"
+,Bosch IT Architects,95,760,120,"91,200"
+,Bosch CIO,10,80,120,"9,600"
+,Bosch Infra,185,1480,120,"177,600"
+,Bosch AD Team,75,600,120,"72,000"
+,Bosch Azure Team,120,960,120,"115,200"
+,Bosch Cloud Team,30,240,120,"28,800"
+,Bosch Telecom,40,320,120,"38,400"
+,Bosch ERP / SAP Team,165,1320,120,"158,400"
+,Bosch IAM Team,60,480,120,"57,600"
+,Bosch CISO,55,440,120,"52,800"
+,Bosch CWP Team,90,720,120,"86,400"
+,Bosch HR IT,25,200,120,"24,000"
+,Bosch Procurement,60,480,120,"57,600"
+,Bosch IT Ops / Help Desk,120,960,120,"115,200"
+,Solar IT PM,40,320,120,"38,400"
+,SUBTOTAL - Bosch IT Team,1210,9680,120,"1,161,600"
+,,,,
+--- BUYER / SOLAR TEAM ---,,,,,
+,Buyer IT (ramp-up and onboarding),60,480,100,"48,000"
+,Buyer IT Architects,30,240,100,"24,000"
+,Solar Senior Mgmt,15,120,100,"12,000"
+,SUBTOTAL - Buyer / Solar Team,105,840,—,"84,000"
+,,,,
+--- EXTERNAL PARTNERS ---,,,,,
+,Migration Partner (ERP / SAP),110,880,90,"79,200"
+,WAN Provider + Bosch Infra,140,1120,90,"100,800"
+,System Integrator (Global Sites),200,1600,90,"144,000"
+,SUBTOTAL - External Partners,450,3600,90,"324,000"
+,,,,
+--- CROSS-FUNCTIONAL TEAMS ---,,,,,
+,App Teams,160,1280,75,"96,000"
+,App Owners,40,320,75,"24,000"
+,Dev Teams,35,280,75,"21,000"
+,Test Team,25,200,75,"15,000"
+,Legal,110,880,75,"66,000"
+,Finance,25,200,75,"15,000"
+,Bosch + Buyer (joint tasks),30,240,75,"18,000"
+,Asset Mgmt,20,160,75,"12,000"
+,Business Key Users,60,480,75,"36,000"
+,Comms + Regional IT,40,320,75,"24,000"
+,All WS Leads,50,400,75,"30,000"
+,Executive Leadership,5,40,75,"3,000"
+,SUBTOTAL - Cross-Functional,600,4800,75,"360,000"
+,,,,
+--- REGIONAL TEAMS ---,,,,,
+,EMEA IT Team (10 sites – primary region),120,960,90,"86,400"
+,Americas IT Team (4 sites),60,480,90,"43,200"
+,APAC IT Team (3 sites),40,320,90,"28,800"
+,SUBTOTAL - Regional Teams,220,1760,90,"158,400"
+,,,,
+OVERALL PROJECT TOTAL,,,,,
+,Total Labour Days,2975,,,"2,649,600"
+,Total Labour Hours,23800,,,
+,,,,
+COST BREAKDOWN BY CATEGORY,,,,,
+,Governance / PMO,390 days,,"21%","561,600"
+,Bosch IT Team,1210 days,,"44%","1,161,600"
+,Buyer / Solar Team,105 days,,"3%","84,000"
+,External Partners,450 days,,"17%","324,000"
+,Cross-Functional,600 days,,"23%","360,000"
+,Regional Teams,220 days,,"8%","158,400"
+,,,,
+COST BREAKDOWN BY PHASE,,,,,
+,Phase 1 - Initialization (01 Apr 2026 – 30 Jun 2026),320 days,,"12%","288,000"
+,Phase 2 - Concept (01 Jul 2026 – 31 Aug 2026),450 days,,"17%","405,000"
+,Phase 3 - Development and Build (01 Sep 2026 – 30 Oct 2026),850 days,,"32%","765,000"
+,Phase 4 - Testing and Cutover (02 Nov 2026 – 30 Nov 2026),480 days,,"18%","432,000"
+,Phase 5 - GoLive and Stabilisation (01 Dec 2026 – 28 Feb 2027),560 days,,"21%","504,000"
+,Phase 6 - Programme Closure (01 Mar 2027 – 30 May 2027),315 days,,"12%","283,500"
+,NOTE: days above are indicative phase totals; overall project total is authoritative,,,,
+,,,,
+CAPEX / ADDITIONAL COSTS (excluded from labour total),,,,,
+,WAN circuits – 17 global sites (EMEA / Americas / APAC),"TBC – firm quotes by QG1","Excl. from labour total","",""
+,Server and storage hardware – Solar data centres (primary + DR),"TBC – sizing by QG2","Excl. from labour total","",""
+,M365 / Azure licences – 2600 users (first 12 months),"TBC – vendor quote by QG1","Excl. from labour total","",""
+,SAP licences – Solar standalone (change-of-control uplift est. 30-50%),"TBC – Procurement review by QG2","Excl. from labour total","",""
+,ISV licence change-of-control costs – full application portfolio,"TBC – audit by QG2","Excl. from labour total","",""
+,ERP / SAP migration tooling and environment costs,"TBC – Migration Partner quote by QG1","Excl. from labour total","",""
+,Risk Register Contingency – Risk #1 (GoLive complexity): buffer resources,"TBC – to be approved at QG1","Excl. from labour total","",""
+,Risk Register Contingency – Risk #2 (ERP separation): SAP specialist uplift,"TBC – to be approved at QG1","Excl. from labour total","",""
+,Risk Register Contingency – Risk #6 (Budget overrun – WAN / network),"Est. +25% on WAN CAPEX","Excl. from labour total","",""
+,,,,
+NOTES,,,,,
+,Stand Alone model: no Merger Zone; all costs relate to full separation and hand-over to Undisclosed Buyer,,,,
+,Labour total excludes hardware / co-lo / WAN circuits / licences / travel – these are tracked separately as CAPEX,,,,
+,Risk contingency lines above reference Hamburger_Risk_Register.xlsx risks #1 (P×I=20) and #2 (P×I=20),,,,
+,Resource rates: Governance/PMO 180 EUR/hr; Bosch IT 120 EUR/hr; External Partners 90 EUR/hr; Cross-Functional 75 EUR/hr,,,,
+,Budget baseline is TBC – to be approved at QG1 (30 Jun 2026),,,,

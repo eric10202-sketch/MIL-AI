@@ -1,14 +1,17 @@
-# CLAUDE.md
+# Carveout AI Toolkit — Copilot Instructions
 
 > **Last reviewed:** April 2026
 
-This file contains always-on rules for this repository. Detailed workflows are split into specialized skills under `.claude/skills/`.
+This file is automatically loaded by GitHub Copilot for all users of this workspace.
+Detailed skill workflows are in `.claude/skills/` (relative to this workspace root).
 
 ## Purpose
 
-This repository is a generic knowledge base and toolkit for IT carve-out project document generation.
+This workspace is a generic knowledge base and toolkit for IT carve-out project document generation.
 
-Use reference assets for methodology only. Do not copy reference project facts into active engagement deliverables.
+Use reference assets (in `references/`, `archive/`) for methodology only. Do not copy reference project facts into active engagement deliverables.
+
+---
 
 ## Global Guardrails (Always On)
 
@@ -20,7 +23,7 @@ Use reference assets for methodology only. Do not copy reference project facts i
 
 ### 2) Mandatory Inputs Before Any Deliverable Generation
 
-Confirm all fields before generating any deliverable:
+Confirm ALL of the following fields before generating any deliverable:
 
 - Project name
 - Seller
@@ -36,7 +39,7 @@ Confirm all fields before generating any deliverable:
 
 If any are missing:
 
-1. Block generation.
+1. **Block generation.**
 2. Ask for all missing fields at once.
 3. Do not use estimates or reference-project placeholders for missing values.
 4. Budget exception only: if the user explicitly says budget is unknown, use `TBC - to be approved at QG1`.
@@ -45,7 +48,7 @@ If any are missing:
 
 - Sponsor Customer = Buyer.
 - Sponsor Contractor = Seller.
-- IT flow direction = Seller IT -> Merger Zone (if Integration model) -> Buyer IT.
+- IT flow direction = Seller IT → Merger Zone (if Integration model) → Buyer IT.
 - TSA = Seller operates services until buyer-side readiness.
 - Stand Alone model = no Merger Zone.
 
@@ -64,7 +67,7 @@ For a confirmed new engagement, create all mandatory deliverables in this exact 
 Do not generate Open Points List unless explicitly requested.
 
 **Each deliverable depends on all preceding ones being complete and consistent.**
-The cost plan must be cross-checked against both the schedule and the risk register before generation (see cost-plan-generation skill).
+The cost plan must be cross-checked against both the schedule and the risk register before generation.
 
 ### 5) Output Format Standards
 
@@ -76,29 +79,26 @@ The cost plan must be cross-checked against both the schedule and the risk regis
   - Default logo file: `Bosch.png` (workspace root) — embed as `data:image/png;base64,...` at `height:36px`.
   - `.bosch-logo` container CSS: `display:flex; align-items:center;` (do **not** use fixed `width`/`height` or `display:grid` — those clip the image).
 
+---
+
 ## Skill Routing
 
-Use these skills for detailed execution:
+When executing a task, read the relevant skill file from this workspace before proceeding:
 
-- intake-compliance-gate
-- schedule-generation
-- cost-plan-generation
-- risk-register-generation
-- executive-dashboard-generation
-- management-kpi-dashboard-generation
-- monthly-status-report-generation
-- repository-governance-updates
+| Task | Skill file |
+|------|-----------|
+| Validate intake / check missing fields | `.claude/skills/intake-compliance-gate/SKILL.md` |
+| Create or adapt project schedule | `.claude/skills/schedule-generation/SKILL.md` |
+| Derive cost plan from schedule | `.claude/skills/cost-plan-generation/SKILL.md` |
+| Generate risk register | `.claude/skills/risk-register-generation/SKILL.md` |
+| Create executive dashboard | `.claude/skills/executive-dashboard-generation/SKILL.md` |
+| Create management KPI dashboard | `.claude/skills/management-kpi-dashboard-generation/SKILL.md` |
+| Generate monthly status report | `.claude/skills/monthly-status-report-generation/SKILL.md` |
+| Update repository metadata | `.claude/skills/repository-governance-updates/SKILL.md` |
 
-## Skill Locations
+> All paths above are relative to the workspace root. Use the `read_file` tool to load the skill content before generating the deliverable.
 
-- `.claude/skills/intake-compliance-gate/SKILL.md`
-- `.claude/skills/schedule-generation/SKILL.md`
-- `.claude/skills/cost-plan-generation/SKILL.md`
-- `.claude/skills/risk-register-generation/SKILL.md`
-- `.claude/skills/executive-dashboard-generation/SKILL.md`
-- `.claude/skills/management-kpi-dashboard-generation/SKILL.md`
-- `.claude/skills/monthly-status-report-generation/SKILL.md`
-- `.claude/skills/repository-governance-updates/SKILL.md`
+---
 
 ## Repository Maintenance
 
@@ -108,6 +108,6 @@ Keep repository metadata current when:
 - A new generator script is added
 - A new active project file is introduced
 - A template/spec changes
-- A project status moves active <-> closed
+- A project status moves active ↔ closed
 
-When repository metadata changes, update Last reviewed.
+When repository metadata changes, update **Last reviewed** at the top of this file.

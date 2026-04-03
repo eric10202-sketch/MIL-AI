@@ -136,22 +136,40 @@ def xml_task(t: dict, summary_ids: set) -> list:
         note_parts.append(t["notes"])
     note_text = " | ".join(note_parts)
 
+    # MSPDI schema element ordering is strict. TaskMode MUST come immediately
+    # after Name. ManualDuration after DurationFormat. ManualStart/ManualFinish
+    # after Start/Finish. ConstraintType/ConstraintDate after Milestone.
+    # Wrong ordering causes MS Project to silently ignore TaskMode and fall
+    # back to auto-scheduling, recalculating all dates from the predecessor chain.
     lines = [
         "    <Task>",
         f"      <UID>{t['id']}</UID>",
         f"      <ID>{t['id']}</ID>",
         f"      <Name>{escape(t['name'])}</Name>",
+        "      <TaskMode>1</TaskMode>",           # MUST be immediately after Name
         f"      <Duration>{t['duration']}</Duration>",
         "      <DurationFormat>7</DurationFormat>",
+        f"      <ManualDuration>{t['duration']}</ManualDuration>",
     ]
     if t["start"]:
         lines.append(f"      <Start>{t['start']}</Start>")
+        lines.append(f"      <ManualStart>{t['start']}</ManualStart>")
     if t["finish"]:
         lines.append(f"      <Finish>{t['finish']}</Finish>")
+        lines.append(f"      <ManualFinish>{t['finish']}</ManualFinish>")
     lines += [
         f"      <OutlineLevel>{t['outline_level']}</OutlineLevel>",
         f"      <Summary>{1 if is_summary else 0}</Summary>",
         f"      <Milestone>{1 if t['milestone'] else 0}</Milestone>",
+    ]
+    # ConstraintType=2 (Must Start On) pins the date as a hard constraint —
+    # belt-and-suspenders on top of manual scheduling.
+    if not is_summary and t["start"]:
+        lines += [
+            "      <ConstraintType>2</ConstraintType>",
+            f"      <ConstraintDate>{t['start']}</ConstraintDate>",
+        ]
+    lines += [
         "      <CalendarUID>-1</CalendarUID>",
         "      <IgnoreResourceCalendar>0</IgnoreResourceCalendar>",
         "      <EffortDriven>0</EffortDriven>",
@@ -207,7 +225,8 @@ def generate_xml(tasks: list, summary_ids: set,
         "  <MinutesPerDay>480</MinutesPerDay>",
         "  <MinutesPerWeek>2400</MinutesPerWeek>",
         "  <DaysPerMonth>20</DaysPerMonth>",
-        "  <DefaultTaskType>0</DefaultTaskType>",
+        "  <DefaultTaskType>1</DefaultTaskType>",
+        "  <NewTasksAreManual>1</NewTasksAreManual>",
         "  <DefaultFixedCostAccrual>3</DefaultFixedCostAccrual>",
         "  <CriticalSlackLimit>0</CriticalSlackLimit>",
         "  <CurrencySymbol>€</CurrencySymbol>",

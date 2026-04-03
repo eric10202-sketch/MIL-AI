@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Hamburger – Project Charter</title>
+  <style>
+    :root {
+      --bosch-red:  #ED0007;
+      --brand:      #ED0007;
+      --brand-soft: #FEE8EA;
+      --brand-lt:   #FEE8EA;
+      --bosch-dark: #004975;
+      --ink:        #43464A;
+      --muted:      #71767C;
+      --line:       #d8dde8;
+      --bg:         #f0f3f8;
+      --card:       #ffffff;
+      --good:       #00884A;
+      --warn:       #C66000;
+      --risk:       #9B0006;
+      --shadow:     0 2px 20px rgba(15,25,35,0.07);
+      --radius:     14px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 13.5px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { max-width: 1020px; margin: 0 auto; padding: 32px 28px 64px; }
+
+    /* COVER */
+    .cover {
+      background: linear-gradient(145deg, #051e40 0%, #004975 60%, #007BC0 100%);
+      border-radius: 18px;
+      color: #fff;
+      padding: 40px 44px 36px;
+      margin-bottom: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::after {
+      content: "";
+      position: absolute;
+      width: 420px; height: 420px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      right: -120px; bottom: -180px;
+    }
+    .cover-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 6px; padding: 5px 12px;
+      font-size: 11px; font-weight: 700; letter-spacing: 1.2px;
+      text-transform: uppercase; margin-bottom: 18px;
+    }
+    .cover h1 { font-size: 42px; font-weight: 700; letter-spacing: -0.8px; line-height: 1.1; margin-bottom: 10px; }
+    .cover .sub { font-size: 16px; opacity: 0.82; max-width: 640px; margin-bottom: 28px; }
+    .cover-meta {
+      display: flex; gap: 32px; flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,0.18);
+      padding-top: 20px; margin-top: 8px;
+    }
+    .cover-meta-item .cl { font-size: 11px; opacity: 0.6; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+    .cover-meta-item .cv { font-size: 14px; font-weight: 600; margin-top: 4px; }
+
+    /* SECTION */
+    .section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow);
+    }
+    .section h2 {
+      font-size: 17px; font-weight: 700; margin-bottom: 16px;
+      padding-bottom: 10px; border-bottom: 2px solid var(--brand-lt);
+      color: var(--brand); display: flex; align-items: center; gap: 10px;
+    }
+    .section h2 .icon { font-size: 18px; }
+    .section p { margin-bottom: 10px; color: #2a3448; }
+    .section p:last-child { margin-bottom: 0; }
+    .section strong { color: var(--ink); }
+
+    /* TABLE */
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+    th, td { padding: 9px 12px; border: 1px solid var(--line); vertical-align: top; text-align: left; }
+    th { background: var(--brand-lt); color: var(--brand); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.7px; }
+    tr:nth-child(even) td { background: #f9fafd; }
+
+    /* 2-COL */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .two-col .section { margin-bottom: 0; }
+
+    /* TAG */
+    .tag { display: inline-block; border-radius: 6px; padding: 3px 10px; font-size: 11.5px; font-weight: 700; }
+    .t-red   { background: #fddcdb; color: #7a1010; }
+    .t-amber { background: #fdebd2; color: #7a3d00; }
+    .t-green { background: #d6f0e2; color: #0e6133; }
+    .t-blue  { background: #deeaf8; color: #004a99; }
+
+    /* MILESTONES */
+    .ms-list { display: grid; gap: 10px; }
+    .ms { display: grid; grid-template-columns: 150px 1fr; gap: 12px; align-items: center; }
+    .ms-date {
+      background: var(--brand-lt); color: var(--brand);
+      border: 1px solid #f0b8bb; border-radius: 999px;
+      text-align: center; padding: 6px 10px;
+      font-size: 12px; font-weight: 700;
+    }
+    .ms-body .ms-title { font-weight: 700; font-size: 13.5px; }
+    .ms-body .ms-sub { color: var(--muted); font-size: 12px; }
+
+    /* RACI */
+    .raci-dot {
+      display: inline-block; width: 22px; height: 22px;
+      border-radius: 50%; text-align: center;
+      line-height: 22px; font-size: 11px; font-weight: 700;
+    }
+    .r { background: #1565c0; color: #fff; }
+    .a { background: #00897b; color: #fff; }
+    .c { background: #f9a825; color: #fff; }
+    .i { background: #e0e0e0; color: #555; }
+
+    footer {
+      margin-top: 40px; text-align: center;
+      color: var(--muted); font-size: 11.5px;
+      border-top: 1px solid var(--line); padding-top: 16px;
+    }
+    @media print {
+      body { background: #fff; font-size: 11px; }
+      .page { padding: 10px; }
+      .cover { break-after: page; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div style="margin-bottom:20px;">
+      <div style="background:#fff;padding:4px 8px;border-radius:4px;display:flex;align-items:center;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPQAAABSCAYAAABjavkNAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAScwAAEnMBjCK5BwAAGIVJREFUeF7tnfd/FNXXx58/5Pt8LfQEQightFCkd5Dem4i0SJUmRUSQXhWkhqJ0VBTpCAgoUhMEFOlSpGRmy2x+Pc/9nM1sZjY3u5vNbPSZ3B/eL2XuPXN3s/O57Zx75n/y8vJIoVC4AyVohcJFKEErFC5CCVqhcBFK0AqFi1CCVihchBK0QuEilKAVChehBK1QuAglaIXCRShBKxQuQglaoXARStAKhYtQglYoXIQStELhIpSgFQoXoQStULiIf4WgDcOg3Fev6MmTJ/Tg/n26c+cOc/fuXXrw4AE9f/6cPB6P1FahUBTwjwkaIs6+lk3btm6lGdOn03vvvks9unajtq1aU/OmbzEtmzWnjm3b0cB+/Wlc5vu0bMkSOvTDD/T48WPpPRWKsk6pCxpC3r93H7Vr3YaSK1Wmim+Wo3KvvR4TFd54kyqXr0Cp1VJo0vgJdD0nhwKBgLQdhaIsUmqCvn37Nn3x+Rpq3qSpTaB1a6dRl46daOigwTxSL1uylDauX898sWYtLVqwgMZmZlLfXr2pxVvNqHpyVSr/+htsn1SxEo0YPpyOHTtGL168kLarUJQlEi5oTdNoa9YWaiWmz5XKlQ8JsZ8Q6Jfbt9PFX3+lhw8fRlwjYxR++eIl3bp5i06eOEHzP5lHDdLrhjqG1KrV6L1h79KN336T2isUZYWECvrJ4yc0ZtQoHokxqlatXIW6du5MvwoRl3Sq7PP5aP0X66henfTQtB3T8d27dpHX65XaKBRuJyGCxjr5x5MnqVO79qFRtE/PnnTg22+5TGYTL/fv3aeF8z+lhnXrcTuYks+aMUNNwRVlkoQI+rhY05oCq1KhIi0X6+Jnz54lbAPLL0brSxcvUtOMRtwmRuxBAwao3XBFmcNRQUOwZ3/6iWqn1mBh4b9wS/n9fml9p3n16hWNGTmK1+qY5mMz7dXLl9K6CQUdF2YIYskRL4EnTynwKjd4L1kb8YB7oWPNziH/t9+Tb/kq8o77oIC5n5Lvq10UuHiJAmLmk+fE74Y2nz+nwLVs8n9zgLwLl5A3cwJ5+g0hT98h5H1/InkXLxNl33GdAL6/E98Z93ga/K7GkWPkX7OO/PMW8vf0zJhD3qUrxN9AtHnpCgUePYrpuwYwuxTfRfZ7mQTEMyiztSHuE/j7b6l9iFzx28tso+CooE+fOk2N6jdgMTdq0JB9xuFTbEyFMVqXVOS6rvMIHL5exrWZ0z8MjtTlytGEceMoN84/TrwEPB7yfTyf9Ld7xY2ne1/yDB5O3tlzyb//Wwo8L+ESQjzc3tVrSe/Rj7Sa9Sj3P+WLRKtUnfTWncg7fbYQ9+X4BSZmTv7NW0nvO5hyU9Mp978Vpe0x/1uBcqunk6dbH/ItXUmB+w/k94yBwJ93RMextOC74t6yNgVaUk3SO3Yjn+jMjJzIm6r4DbzTZkp/LxPftq+ktjbEfTyTP5Tam/i+3Cm3jYJjgoZIu7/dlYVUq3oqnTh+3FaO0XvnVzt4Olw/PZ1u//GHrby4bM3K4nt1FOv0x3/9ZStDWxid8VnAimXLEzbdlxHQNNL7iYdY8gDFhXggtbqNyX/mrLS9aBjnfyYtvVHEB7sotArVyLvys2KP1oHbt+Nuk7+v6FQwWyhuZ4KRPjclrdjtamizcir5t+/gEVR278DTp6R36Sm1N/EtWCK1tSFmX3qHblJ7E++ipXLbKDgiaIy2s2fO4p1siGzD+vW8rjXLMZouWriQqlVJYoHVS6tTYkFv2bw5JNiWzZoV6kCeiT8+IszwmeDiwlLAWp5IHBd0PtrrlcVIsiA47ZO0G07gxUvyiakmxCG7X6xoYmT1DB9Dgd9j+80M0fHojVpI71UctPJVyStGMp6CStqxEnjwkDyTppH2RhXpvWJG2PtmzaXAX4X3X8qMoL//7nt2GUFc0yZPsfmUsa6dKq5hc8wUoNOChmixCXf61KlQOUbky5cvs48adfr06Flqa/lECZopl0y+Zauk7doQSxFMOzVRX3qfOPCIKWzgzl15e/kE7t4jrV4TqX1cvF6JPEJEEKysPRAQyzjP8NGkvVZJfo/iIkZrz6hxFHgm1rnWdsqCoJ8+ecLx1hBN+zZtbJtQEBAiv7BJhfUspuJOCzq5cpXQffH/Vy5fsU2vd+0ITvNRvmnjRts9EkVCBQ2qpPJDIWvbhKeebybJ7UuAJ3MCr41lbWLvQO8zSGpXIjBqrtskbTPP5yfvrI/ldiVBiNr36WLbUqNMCBqBHAgYAYj8sorp6JEjVDOlOotp9IiRtHjBQscF3aBuXTp29FhoM653jx70l2VNjU25IQMHcVnTRo3o3t3II4wTJFzQAs8H06Vtg4Do1LSUOlK7EvNaRfKtXitd2/p/PE25yTXldnHCa+mVn1OeLJJQfAbflu1iKeLQyBwGpvzWTa4yIWiEcEIsrVu2tAVz4ChkrRpB91Xblq3oxfMXtHnjJv6304KGaOEew78xGi9ZJHpWS90jhw9zwAlmCqUxSkcTNNakWo26lJuWUZik2ASBzSp2a4W3revsEpLZOEZKmug0rtrbFuLyLlkRdTMK02LP2A/Iv3sf+Q8eIt+qNaR36yPfAcfy4vN1FChiqRT44zZpTVsXtnMQ7+hxvHzh9twu6Js3b4qpdDA++8tt20PXEZY5bcpUvp5euzblZGfz9UQJGv+GqBFmivV0cuXKdPVqwQOH89Q4mon6OASC+HKzLBFEFbQYdeD/lNliCunbsZu0VCF4iW0IIQz4bcPt/SdPBXd5ZTYW9IbNyDt1BvkPHSHj4mXeyPIuW016+648CstsTCBK77yF9p1v8Zt7Rr4vrW+iN2lFxo2bts9rgr+HF+vgitW4Lo+O8xfzNF5WH/jXb+KNwvB2wtFq1eelgnHwMH/XwC8X2J3m6TuI25HZ6I1bkj/MBeV6QU8cP55FAp+zVSQ52TnUuGEGj5Y4SAGB43oiBQ3gOnurUWO+PnzYsFC7AHHfuF5TrLeROMG8nghKJGiAqaSY1spsQ4gRzX/0RCFb78w5UUdJz7BRHHAhG/kQZOH77IuQsIpCa9GO8iybRpgZwH8qq8uITgCjbSQ3FIIyfDt3k57RXHyGtRHFDPR2XeRtWYBf2xACDngLr/vZC7Brb9BHnl8fm4ieiVPF3+d6IfeVqwWN3WtzZ3vhp5/aykLiEevn364XOOtNQVetUoXeGTyEMkeNjptO7TvwvayCBqtWruIosfRatfkkl3n9yePHoc+7JSvLZuM0JRa0IPDoL6ltCCFo41SYK06IhX2/svr5eLr2pjxEKVntJCB6K9pIbZz7OVSfv3ObztJ6gEdcIVZrG0WCaKsiptkmEJysHSt62862TqcosE7mkbpqLfLt/brITsfVgj5z5gyPwHBH4SCGtax712CASebo0bbrpqCdJFzQEHFdMQPAennjhg22Tbr+ffqyDf5rtXEaJwTt/+mc1DYEptxhfmHj10vyuvngocXut9WmKOB+0lt1kN7HxCOm7KH62OHuNUBaDyBwwzNkOIeeWtuJF99Hn0jbMcEeg/HdD1LbcOD2wsabgVFZUm7iakFjFMZI2CSjEd24cSN0/Q8xlTZHwgu//GKzMQWNTCW9e/SkQf0HxA3SE8kEjVDQbm+/zWVjxEhuDXDZuH4DX8d57ESuo0ssaPGARXtwtKatKCDW21Y7rDlldU2whsXU2GpTJKIj9C5bJb2PidagaUF9uI8mTJHWM8F6V+/Qlfx79lOghOG4aFvWhgn+ftGm7DYiLAVMYhG0d8YcMu49iMy1HNLadJLam5SqoDHq4YgixIHNpqeixzHLtm/bxtcR6GG1AYleQ5ssXriIyyB6a5ALfNTYNENZTk6OzcZJogparE/9+74JrmOtXL1Gvt17ed0XcR0s1nnGyYIgGhO9cw95/Xy8cP+E2UQCo3TE+GtB4GnBiOvP2ka5MWxSAS0ljTxDR7B/Gd/buHOXR8qYhCWWI1oUHzsOn8hsS0IsgnaKUhU0RrdR741gYQwbMpRDO82yCWPHha5bbUBpCRrHN1GGQBNslJnX79+7RzVSUrjsh4OxTcfiIZqgSwI2bTDdLNSuEEJutdpSG5PAlWuF7aKgNXhLei8TnMwy6+Jwg1YnQ1ovIqIT0Bo2I8+AoeSdvygYsx42+7BiXL4aueMQf6NY9gmKi2sFDX/zkIEDWRjj3x9rK+vYLhg1ht1t63VQWoJG8AjKwPXrBesiBJyYZ6Y3bUicPzqRgvZ+OFs+XX32d+QwTzHSFnXoIBKewe/K75eP/8ixgvqYpi9eLq0XM+JzYv2r9+xX5JrWf+Q4h4RK7QWII5fZlRTXCvpvMer17dWLhfHRrFm2MogV11etWGm7DkpL0PBJowwcPnQodB0pkVo3b8HX136+xmbjJAkRdPlkIeaPKE9yaIDbFMueSIKGX1tmFw3v1JnS+5n4d4TtXIu/PdbSETuXGNGq1uJpfPg03Dh0JLKgO3az1XeKMilo+HlxHRk7rddBaQkaoAy4RtCgYgofkECIZaE2/y2CFuDwvm/eQmn9YlOlhlhn22dTUQXdQQm6WGBd2q93MOQTyQSsZUiQj+tLF9vDL0FpCRpLApSBUz/+GLoOQSP7KK7LOhynSOSUm6mcyi4q68iFzamIgq5YLaYNp3C8I8dK72fi/+6g1A5grcu+afG54LaS2ccEXHSWUFP/sRMRBY31uPVzOIVrBY0TVdj0gjCQ8sd6LLFf7z58ffKkSTYbUFqCvnL5MpdhRxuv1DGvI11w/TrpXIZDJVYbJ0m4oAVaUg0yfjpX0K7Xxwf0ZXVNjD9u2z5nLOitOkrvZWL7DBIQjWUcPMSZPhDUggwiWpSAlUKIzoCXG/kbZdgVj7YpFojxzHhxcK2gEVI5cfwEFgaCNKyHMhYvDJ6o6ta5i80GlJagceoLZXVq1rL5myFu81z2T2cSl/AgmqCLdFuBK9fIt/VL0lu0l9pa4RDOlwU5rPSWkW1iSo9jAWKMljAAri2ZbSHQ6YtZBDoV49Rp3jzTEDceo5sLLjkz0QGEFdVtdfBw4c9QQmIRtN49mEIpImI5Ei2ir1QFDZCBBCNgh7Zt2R1kXkeSAQgGwnkR1kuagq5dowZ9d+AAXbhwIW7mz50rFTR85Jg1oKxnt+62nGNYT+M6Pvf9+/dtdk4SVdAxRIpBAN4JkyP6gXHowPitIKgH2T1k9Uzg347kDgrHt3OP9D4mWmq61C5mxG8VuHmLR+9oxy71uo3JsETGRcuIghNnsvjtkhCLoP/fRort3b2HI8WQ2fPqlYKHE2+RrFOrNgsna9Nmm40paCcJFzTeXolX5kC0c+fMsSUpnD1zJttk1G9gu+40jghaYPx8gbTqBQcHCoF47kNHQvX9R4/J65lUSiHj7HlbG0UiOmO9R1/5ffLxjMiU22KtjqyhsrIi8G/MIq2C/OQTIwRv5BS4sbxzF8jr5aPhu56OcRYmPq/xw2EOWJGW5+NqQd+8cTOUCWTfvn22MvMUFk4+WU88lYagMfIj2QLylyGxv7WsYb1grvDpU6fZrjuNY4K+/htv8MjuYeLfYOk0xYOJXWFZPRPvmPGUF0P4J5YE0U5cGQfk0VgBITwNJ6Z27ZWWy4DPOVIQC/YHsCQJ1RczE1k9K3rfQbxssLYjw7h0mXQxBdbrZETs8FwtaGyEYSSEQJARxFqGKKyUpGSO2f72G7FWRI8trpuCrpWaSl+LTgCJ++JlzuzZhQSNdvCOK1xv3aIFj9ZmGWxwHZ1QItfPwDFBHz3OO9qye5j4lq+22XhHj5fWM8FOuFes47CetdqFEEsU4/hJ0upEXuMhC2mhRHpi1mP8eIq0tIbBOjg3vfLzYEintZ4E4/wvnMY3vB0TJISwLi+A3rG7tK4JNt88YyeRcftOkTv8OJ/tsR4qSa5FvhWrpWmEXS1oYGYJwWGHP//8M3QdRxXxDiuUWTfNEr0phjzg+Cy4vuazz0LXMb3G62dxHX5oJDwwyxKBE4I2rmXz8T+ZvRWsc612OE2F6aasbog3qvBDzPHOlj0G4/IV8k6ZwccIpXYmODk1YYrNltsWHVD4Zg9Gec+AdygAN5ulrg0xOHjgHouwX6A3a1NoA86/QUzTo22qic+KnXrf2vUsJNMW02tc0xuLtXi4S+2/wqZzj0JTdtcLGqO0+ZaMSWKabV2X7t2zJzQl37I5i8sSKei7d+5QSnIyX2slRGt1peE02FuNG/O6evaMmbYTWIkgmqBZUKPGcjKCcDxw73TsFlOeLK1iCrtwbO3zw9JVWl8KHua0jOidgAVMf40TBf59XoNimh0pjlsIDwn3/WKabuC3f/SI387hP3AwpjRCnndGFnqbRLFTEInvyplgataXl4eBHX4cqwzkPy+uFzT45OO5vDmWVqOmLe0Pu7bGjWMRVUtK4in2pg3B44tOCxqJ9k2/ODoYazpf8NmqVdy5IK8YXkdrLUsEUQXtEFZXjhWIJBEZP0084yZxyiGzPaRCMqfZscCjqljrI2ZbVl4IMXLDlWf9jozoSJBKKNLIXlIwkwnkH/ApE4L++fx5Sq+dxqL+cOo02yYYEgV2zz+bDBEjLZDTgsa9Ppg4iQWLzgNHJ32WqSDCVPFSedTt06uX7fMlilIRtBhtkFNLujaEywsJ+2R2JURv/7bN9w3wwGsx+M3jBfnPinzXk/g9dbj3JHYlpnZDyrNkkC0TgoZApk6ezILBCAiBW8vPnT1LTRpmcLmJk4I2QYYSpDVCaiSzDlxow4YM4fIa1VJsJ68SScIF/Vol0gcM5XZk7TMvXpJ3RKajo5feqHkw5FTSHuK3EVSBzyazjRdM44tKLBgCbePv7eB3xYzDf9IeM18mBA0ePHjASQEhHKxV4dIyy7DzfO7sOWrWpGlIfE4LGhlSkGXUGsiCjmbd2i945EaSf9npr0SRUEELwXjen8gvPJO1bQU7tXgDhPQ+xURr1IKMU2eKTKkLEPiBtLcy+3jATrpx+Ki0rXCMW7+T/s4I6X2KDfYIkL4oLAinzAganD93jv2/EBh2tv8OO2B+69Ytat2iJU+L66alOSZo3A9TfWuSBXDp0iVKFaMy6iBizJpVJdEkQtB8uEGMQAiZzPPYd5ej4V+zPqpPuUhEm5gNcOI+yb1l+DduodykyP7wiIjvqrfsEHylreT+kcDbLhDLLb1vDMDvH+4eMylTgkaIJeK4kacb019Mw1+G+R+RPhd1VixfbsskEg8I/5w3dy59s3+/bXcd/3/m9OnQC+eR/ROdjdU20UDQ2JXNrVS9ZCTXDGby6Nmf438RaCJrLypiVEWGTu/YSRzwEcs7oLTqdciDXWm8L7oYYmaw6519nbwfzw/u2CdHcYMB7EDjdbJwp23aUqwOxArCPXEayztspJg2Z/BLDaTtWXkzidMS40WAeBWt7L6MeGb13gPlv1U+iNWW2lp5+ox/U5m9CXzhUtsoOCZoAH/zpAlBfy+mudgEe1zEgfxEcfzo0dCaHTvvCCgxA1tKDdGpYApoXLxUInBk0Lh5i7OR8MvGZW0VAyTN48916Aj55szjLJ1aszak1W7A/lhNjBre8VPIm7U96A6LISAkGoGHD/l7+LbtIO9Hn5Cnz2DOp83tNm/L57s9Uz4k/5c7gymSYki7GwvI6oKUSH7kaBs3WYyIXSkX74rOR2vSkmdR6CiR39yAkKP9jcUUHKO37LcyyXv4SG5rJYb74O8mtY2Co4IG8P++O/QdHqUxHR7Urz/9eft2wkWFl7ofPnw49OK6mtWr084d4iEpbTErFP8gjgsawC88fUrwVTigVfPmHFX2Moa42ni4eeMGTZn0Qei1PBn16nMcd2m4qBSKfxMJETTAJtWWrC2hjTIcpxzYvz/duhnFBVEMkKIXb8FIq1mL/eBop32btpR97ZoamRVlkoQJGmCDCvHVXTp2CiXfh/CQ6hepdpGds7ijKPzM2deyabsY8du0bMXTetwX6+WxYzI5K4nMTqEoCyRU0CZIJgCfcOOGDVl8oGqVJE6OMDYzkzauX8+bV9b3OptgpMf7sQ5+f5Dmzf2EXWI4z2zeByCl8Injx9UUW1HmKRVBm2B0Xbp4CacGwqaZVZQmuI41cEb9+lzPHIGtYJTH0cyunbvQLz8XvDBNoSjrlKqgTRDjvW/PXpo6eQr16dmLGqTXDeX6kgFRp1atxkcfcd4ZGUXxUjo1IisUdv4RQZtAkM+ePqXfb93iTJ1f7/+aT2QtW7KEWb1yJW3N2sKnp67n5Ig19z3OOKo2vBQKOf+ooBUKhbMoQSsULkIJWqFwEUrQCoWLUIJWKFyEErRC4SKUoBUKF6EErVC4CCVohcJFKEErFC5CCVqhcBFK0AqFi1CCVihchBK0QuEilKAVCteQR/8H5ko81i7zcFwAAAAASUVORK5CYII=" alt="Bosch — Invented for Life" style="height:36px;display:block;" />
+      </div>
+    </div>
+    <div class="cover-badge">☀️ Project Charter · Confidential</div>
+    <h1>Project Hamburger</h1>
+    <p class="sub">
+      IT Carve-Out of the Bosch Solar Energy Business into a fully standalone entity.
+      Full separation from Bosch corporate IT — Stand Alone model, no Merger Zone.
+    </p>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><div class="cl">Seller / Sponsor Contractor</div><div class="cv">Robert Bosch GmbH</div></div>
+      <div class="cover-meta-item"><div class="cl">Buyer / Sponsor Customer</div><div class="cv">Undisclosed Buyer (legal confidentiality)</div></div>
+      <div class="cover-meta-item"><div class="cl">Programme Lead</div><div class="cv">Erik Ho (BD/MIL-ICC)</div></div>
+      <div class="cover-meta-item"><div class="cl">Carve-Out Model</div><div class="cv">Stand Alone — Full Separation</div></div>
+      <div class="cover-meta-item"><div class="cl">Worldwide Sites</div><div class="cv">17 sites (EMEA · Americas · APAC)</div></div>
+      <div class="cover-meta-item"><div class="cl">IT Users</div><div class="cv">2,600</div></div>
+      <div class="cover-meta-item"><div class="cl">Programme Duration</div><div class="cv">01 Apr 2026 – 30 May 2027 (14 months)</div></div>
+      <div class="cover-meta-item"><div class="cl">GoLive</div><div class="cv">01 Dec 2026</div></div>
+      <div class="cover-meta-item"><div class="cl">Document Date</div><div class="cv">03 April 2026</div></div>
+    </div>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <div class="section">
+    <h2><span class="icon">📋</span> 1. Executive Summary</h2>
+    <p>
+      Project Hamburger is the IT workstream delivering the full technological separation of the <strong>Bosch Solar Energy Business</strong>
+      into a <strong>standalone, independently operating legal entity</strong> ready to be handed over to the Undisclosed Buyer.
+      The buyer identity is withheld for legal reasons; accordingly, the programme is designed as a fully self-sufficient
+      <strong>Stand Alone model</strong> with no dependency on any buyer-side IT infrastructure — the Solar business
+      will be operable as a fully independent IT entity as of Day 1 (01 Dec 2026).
+    </p>
+    <p>
+      Robert Bosch GmbH acts as <strong>Sponsor Contractor</strong>: it currently owns and operates all Solar Energy IT
+      and will maintain Transitional Service Agreement (TSA) support for the Solar entity until handover completion
+      by <strong>30 May 2027</strong>. The Undisclosed Buyer is the <strong>Sponsor Customer</strong> and will receive
+      a fully operational, standalone IT environment at handover.
+    </p>
+    <p>
+      The programme spans <strong>14 months</strong> across <strong>17 worldwide sites</strong> and <strong>2,600 IT users</strong>
+      in EMEA, Americas and APAC. Given the global footprint, the scale of ERP separation, and a fixed GoLive date
+      of 01 Dec 2026, this is a high-complexity programme requiring start-to-finish strict governance.
+    </p>
+  </div>
+
+  <!-- PROJECT CONTEXT -->
+  <div class="section">
+    <h2><span class="icon">🔍</span> 2. Programme Context and Business Rationale</h2>
+    <p>
+      Robert Bosch GmbH has decided to divest its Solar Energy business as a strategic portfolio decision.
+      The Solar business must be established as a fully independent IT entity, requiring its own:
+    </p>
+    <table>
+      <thead><tr><th>IT Domain</th><th>Current State (Bosch)</th><th>Target State (Solar Standalone)</th></tr></thead>
+      <tbody>
+        <tr><td>ERP (SAP)</td><td>Shared Bosch SAP landscape</td><td>Independent SAP environment — greenfield or shell copy decision at QG2</td></tr>
+        <tr><td>Network / WAN</td><td>Bosch WAN and AD-managed (17 sites)</td><td>Solar-owned WAN contracts, new Active Directory forest (2600 users)</td></tr>
+        <tr><td>Microsoft 365</td><td>Bosch M365 tenant</td><td>New Solar M365 tenant — 2600 mailboxes, Teams, SharePoint, OneDrive</td></tr>
+        <tr><td>Applications</td><td>On Bosch-shared platforms</td><td>Migrated or re-licensed under Solar / Buyer contracts</td></tr>
+        <tr><td>Security &amp; IAM</td><td>Bosch IAM</td><td>Solar standalone IAM — new identity provider</td></tr>
+        <tr><td>Data Centres</td><td>Bosch DC / co-lo</td><td>Solar DC / cloud infrastructure per region</td></tr>
+        <tr><td>Client Devices</td><td>Bosch managed (2600 devices)</td><td>Re-imaged with Solar domain image</td></tr>
+        <tr><td>IT Service Desk</td><td>Bosch service desk</td><td>Solar / Buyer service desk — global 17-site coverage</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:14px;">
+      <strong>Stand Alone model — no Merger Zone:</strong> there is no intermediate hybrid environment.
+      All Solar IT systems are either fully migrated to the Solar standalone environment at Day 1 or remain
+      under Bosch TSA until individually separated. This requires a highly disciplined wave plan and strict
+      cutover sequencing across all 17 global sites.
+    </p>
+  </div>
+
+  <!-- SCOPE -->
+  <div class="section">
+    <h2><span class="icon">📐</span> 3. Scope Statement</h2>
+    <table>
+      <thead><tr><th style="width:28%">Workstream</th><th>In Scope</th><th>Out of Scope / Exclusions</th></tr></thead>
+      <tbody>
+        <tr><td>WS1 – IT Infrastructure</td><td>WAN/LAN for all 17 solar sites; new AD forest; servers; DC/co-lo per region; VPN</td><td>Bosch corporate infrastructure (remains Bosch); DC selection is a QG1 gate</td></tr>
+        <tr><td>WS2 – ERP / SAP</td><td>SAP separation strategy (shell copy or greenfield); Solar ERP data migration; ERP integration testing</td><td>Non-Solar SAP modules retained by Bosch; post-handover SAP optimisation</td></tr>
+        <tr><td>WS3 – Applications</td><td>Full app inventory; wave planning; re-licensing or migration; change-of-control clause review</td><td>Bosch group apps with no Solar usage</td></tr>
+        <tr><td>WS4 – Microsoft 365 / Cloud</td><td>New Solar M365 tenant; 2600 mailbox migration; Azure tenant setup; Teams/OneDrive/SharePoint</td><td>Bosch tenant (remains Bosch-operated)</td></tr>
+        <tr><td>WS5 – Client Devices</td><td>2600 device inventory; re-imaging with Solar domain image; staged rollout across 17 sites</td><td>Bosch devices with no Solar users</td></tr>
+        <tr><td>WS6 – HR IT</td><td>Personnel master data separation; HR self-service; payroll IT for 2600 Solar users</td><td>Bosch HR processes for non-transferred staff</td></tr>
+        <tr><td>WS7 – IT Operations</td><td>Solar service desk setup; global IT Ops model; hypercare plan; TSA SLA monitoring</td><td>Bosch IT operations (business as usual)</td></tr>
+        <tr><td>WS8 – Contracts &amp; Licences</td><td>Change-of-control clauses; SAM audit; software re-licensing; vendor negotiations</td><td>Bosch enterprise agreements with no Solar entitlement</td></tr>
+        <tr><td>WS9 – IT Security</td><td>Solar IAM; CISO alignment; ISO 27001 baseline; GDPR / multi-jurisdictional compliance</td><td>Bosch CISO scope (retained Bosch); Bosch SOC covered by TSA</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- MILESTONES -->
+  <div class="section">
+    <h2><span class="icon">📅</span> 4. Key Milestones and Quality Gates</h2>
+    <div class="ms-list">
+      <div class="ms">
+        <div class="ms-date">01 Apr 2026</div>
+        <div class="ms-body"><div class="ms-title">Programme Kick-Off</div><div class="ms-sub">Project Hamburger officially started; governance setup begins; Frozen Zone planning initiated</div></div>
+      </div>
+      <div class="ms">
+        <div class="ms-date">01 Apr 2026</div>
+        <div class="ms-body"><div class="ms-title">QG0 — Kick-Off Quality Gate</div><div class="ms-sub">Bosch QG0 approves project start; mandate confirmed; resources assigned; Frozen Zone plan accepted</div></div>
+      </div>
+      <div class="ms">
+        <div class="ms-date">09 Apr 2026</div>
+        <div class="ms-body"><div class="ms-title">Signing — Frozen Zone Activated</div><div class="ms-sub">No Solar IT production changes without SteerCo approval from this date</div></div>
+      </div>
+      <div class="ms">
+        <div class="ms-date">30 Jun 2026</div>
+        <div class="ms-body"><div class="ms-title">QG1 — Initialization Complete</div><div class="ms-sub">Charter approved; full inventory confirmed (17 sites, 2600 users); governance accepted; proceed to Concept</div></div>
+      </div>
+      <div class="ms">
+        <div class="ms-date">31 Aug 2026</div>
+        <div class="ms-body"><div class="ms-title">QG2 — Concept Approved</div><div class="ms-sub">Architecture frozen; ERP strategy decided; TSA catalogue defined; migration strategy approved; proceed to Development</div></div>
+      </div>
+      <div class="ms">
+        <div class="ms-date">30 Oct 2026</div>
+        <div class="ms-body"><div class="ms-title">QG3 — Development Complete</div><div class="ms-sub">Solar infra ready; all apps packaged; 2600 devices configured; ERP separated; TSA contracts signed; proceed to Cutover</div></div>
+      </div>
+      <div class="ms">
+        <div class="ms-date">20 Nov 2026</div>
+        <div class="ms-body"><div class="ms-title">UAT Sign-Off</div><div class="ms-sub">All Solar applications and ERP accepted by business key users; Day 1 readiness confirmed</div></div>
+      </div>
+      <div class="ms">
+        <div class="ms-date">27 Nov 2026</div>
+        <div class="ms-body"><div class="ms-title">Go No-Go Readiness Assessment</div><div class="ms-sub">Final SteerCo assessment before Day 1 cutover</div></div>
+      </div>
+      <div class="ms">
+        <div class="ms-date">30 Nov 2026</div>
+        <div class="ms-body"><div class="ms-title">QG4 — Pre-Cutover Gate</div><div class="ms-sub">All readiness criteria met; cutover plan approved; Day 1 confirmed</div></div>
+      </div>
+      <div class="ms">
+        <div class="ms-date">01 Dec 2026</div>
+        <div class="ms-body"><div class="ms-title">☀️ Day 1 = GoLive (D1) — Same Event</div><div class="ms-sub">Legal separation effective; 2600 users operating on Solar standalone IT; Bosch TSA clock starts; hypercare begins (90 calendar days / 3 months, ending 01 Mar 2027)</div></div>
+      </div>
+      <div class="ms">
+        <div class="ms-date">01 Mar 2027</div>
+        <div class="ms-body"><div class="ms-title">Hypercare Complete Milestone (90 Calendar Days from Day 1)</div><div class="ms-sub">90 calendar days hypercare from GoLive complete; TSA fully exited; Solar IT fully independent. This is NOT a QG — proceed to programme closure activities.</div></div>
+      </div>
+      <div class="ms">
+        <div class="ms-date">30 May 2027</div>
+        <div class="ms-body"><div class="ms-title">QG5 — Programme Closure Quality Gate</div><div class="ms-sub">Knowledge transfer complete; all contracts transferred; document archiving complete; Solar IT handed over; Project Hamburger formally closed (Bosch QG5 — final gate)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- APPROACH -->
+  <div class="section">
+    <h2><span class="icon">🗺️</span> 5. Delivery Approach and Model</h2>
+    <p>
+      <strong>Stand Alone model:</strong> the Solar Energy business becomes fully IT-independent rather than merging
+      into a buyer's existing environment. Because the buyer is undisclosed, all Solar IT must be designed as
+      self-sufficient — independent of any buyer system, network, or identity.
+    </p>
+    <p>
+      <strong>No Merger Zone:</strong> Solar IT systems move directly from Bosch to the Solar standalone environment.
+      There is no intermediate hybrid state. Bosch TSA covers continuity only for systems not yet
+      migrated at Day 1 — all TSA services have contractual exit dates.
+    </p>
+    <table>
+      <thead><tr><th>Principle</th><th>Application for Hamburger</th></tr></thead>
+      <tbody>
+        <tr><td>Buyer-agnostic design</td><td>All Solar IT built as fully standalone; no buyer-side integration dependencies in baseline</td></tr>
+        <tr><td>"First make it work, then make it better"</td><td>Day 1 readiness is the goal; optimise Solar IT landscape post-handover</td></tr>
+        <tr><td>TSA = bridge, not permanent state</td><td>All TSA services must have defined exit criteria; maximum TSA duration enforced contractually</td></tr>
+        <tr><td>Regional cutover waves</td><td>17-site global cutover phased by region: EMEA first, then Americas, then APAC</td></tr>
+        <tr><td>Frozen Zone from Signing</td><td>No Solar production changes from 09 Apr 2026 without SteerCo approval</td></tr>
+        <tr><td>ERP on critical path</td><td>SAP separation starts Phase 3 and gates GoLive; dedicated SAP migration partner required</td></tr>
+        <tr><td>Point of No Return</td><td>WAN cutover per site and AD forest switch are Points of No Return; require explicit go/no-go at QG3</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- RACI -->
+  <div class="section">
+    <h2><span class="icon">👥</span> 6. Governance and RACI</h2>
+    <p style="margin-bottom:14px;">R = Responsible · A = Accountable · C = Consulted · I = Informed</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Activity</th>
+          <th>Bosch CIO</th>
+          <th>Erik Ho (BD/MIL-ICC)</th>
+          <th>Solar IT PM</th>
+          <th>Bosch IT Teams</th>
+          <th>Legal / Finance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Programme governance &amp; SteerCo</td><td><span class="raci-dot a">A</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot c">C</span></td><td><span class="raci-dot i">I</span></td><td><span class="raci-dot i">I</span></td></tr>
+        <tr><td>TSA catalogue definition</td><td><span class="raci-dot a">A</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot c">C</span></td><td><span class="raci-dot c">C</span></td></tr>
+        <tr><td>As-is IT inventory (Solar scope)</td><td><span class="raci-dot c">C</span></td><td><span class="raci-dot a">A</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot i">I</span></td></tr>
+        <tr><td>IT architecture design — standalone</td><td><span class="raci-dot c">C</span></td><td><span class="raci-dot a">A</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot i">I</span></td></tr>
+        <tr><td>WAN / infrastructure build (17 sites)</td><td><span class="raci-dot i">I</span></td><td><span class="raci-dot a">A</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot i">I</span></td></tr>
+        <tr><td>SAP separation &amp; ERP migration</td><td><span class="raci-dot i">I</span></td><td><span class="raci-dot a">A</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot c">C</span></td></tr>
+        <tr><td>Licence / contract change-of-control</td><td><span class="raci-dot i">I</span></td><td><span class="raci-dot a">A</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot c">C</span></td><td><span class="raci-dot r">R</span></td></tr>
+        <tr><td>Security &amp; IAM</td><td><span class="raci-dot c">C</span></td><td><span class="raci-dot a">A</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot c">C</span></td><td><span class="raci-dot i">I</span></td></tr>
+        <tr><td>Cutover planning &amp; execution</td><td><span class="raci-dot c">C</span></td><td><span class="raci-dot a">A</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot i">I</span></td></tr>
+        <tr><td>TSA exit &amp; Bosch decommission</td><td><span class="raci-dot a">A</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot r">R</span></td><td><span class="raci-dot c">C</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="two-col">
+    <!-- ASSUMPTIONS -->
+    <div class="section">
+      <h2><span class="icon">✅</span> 7. Key Assumptions</h2>
+      <table>
+        <thead><tr><th>#</th><th>Assumption</th></tr></thead>
+        <tbody>
+          <tr><td>A1</td><td>Buyer identity will be disclosed in time to plan handover in Phase 6; all Solar IT is designed buyer-agnostic</td></tr>
+          <tr><td>A2</td><td>Bosch provides full data access (CMDB, app inventory, contract list) from programme kick-off</td></tr>
+          <tr><td>A3</td><td>Solar IT scope is fixed at all 17 sites and 2600 users — no expansions after QG1 without SteerCo approval</td></tr>
+          <tr><td>A4</td><td>WAN procurement commences immediately after QG1; 8–12 week lead times assumed per region</td></tr>
+          <tr><td>A5</td><td>SAP separation strategy (greenfield or shell copy) decided by QG2; migration partner contracted by QG1</td></tr>
+          <tr><td>A6</td><td>Bosch TSA covers all Solar systems not yet separated at Day 1; maximum TSA duration = 30 May 2027</td></tr>
+          <tr><td>A7</td><td>Budget baseline to be approved at QG1 (currently TBC); cost plan is pre-QG1 estimate</td></tr>
+          <tr><td>A8</td><td>Regional legal counsel engaged by QG2 for data residency and GDPR compliance across all jurisdictions</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- CONSTRAINTS -->
+    <div class="section">
+      <h2><span class="icon">⛔</span> 8. Constraints and Boundaries</h2>
+      <table>
+        <thead><tr><th>#</th><th>Constraint</th></tr></thead>
+        <tbody>
+          <tr><td>C1</td><td>GoLive <strong>01 Dec 2026</strong> is a hard legal deadline — no extension without board approval</td></tr>
+          <tr><td>C2</td><td>Programme completion by <strong>30 May 2027</strong> — all TSA must be exited by this date</td></tr>
+          <tr><td>C3</td><td>Stand Alone model: no Merger Zone; Solar IT must land directly in standalone environment</td></tr>
+          <tr><td>C4</td><td>Frozen Zone from <strong>09 Apr 2026</strong>: all Solar production changes require SteerCo sign-off</td></tr>
+          <tr><td>C5</td><td>Buyer identity undisclosed: no buyer architecture dependencies in any Solar IT design</td></tr>
+          <tr><td>C6</td><td>GDPR, US data law, and APAC data residency compliance mandatory for all cross-border data transfers</td></tr>
+          <tr><td>C7</td><td>Budget and headcount approved through QG gates only; no pre-spend without governance approval</td></tr>
+          <tr><td>C8</td><td>17-site global scope requires regional IT rollout teams; no single-team sequential approach feasible</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TOP RISKS -->
+  <div class="section">
+    <h2><span class="icon">⚠️</span> 9. Top Risks at Charter (from Risk Register)</h2>
+    <table>
+      <thead><tr><th>#</th><th>Risk</th><th>P</th><th>I</th><th>Rating</th><th>Status</th><th>Owner</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>GoLive (01 Dec 2026) at risk — 17-site global cutover complexity with 2600 users</td><td>4</td><td>5</td><td><span class="tag t-red">20 — RED</span></td><td><span class="tag t-red">Red</span></td><td>Erik Ho, IT PM</td></tr>
+        <tr><td>2</td><td>SAP/ERP separation far more complex than initial inventory — shared mandants, custom ABAP</td><td>4</td><td>5</td><td><span class="tag t-red">20 — RED</span></td><td><span class="tag t-red">Red</span></td><td>Bosch ERP / SAP Team</td></tr>
+        <tr><td>3</td><td>Buyer identity unknown — final IT handover scope unclear</td><td>3</td><td>5</td><td><span class="tag t-amber">15 — AMBER</span></td><td><span class="tag t-amber">Amber</span></td><td>Erik Ho, Legal</td></tr>
+        <tr><td>4</td><td>AD migration for 2600 users / 17 sites delayed by tooling or complexity</td><td>3</td><td>4</td><td><span class="tag t-amber">12 — AMBER</span></td><td><span class="tag t-amber">Amber</span></td><td>Bosch AD Team</td></tr>
+        <tr><td>5</td><td>Insufficient Bosch IT resources for 17-site global programme simultaneously</td><td>3</td><td>4</td><td><span class="tag t-amber">12 — AMBER</span></td><td><span class="tag t-amber">Amber</span></td><td>Bosch CIO</td></tr>
+        <tr><td>6</td><td>Programme budget overrun — global WAN/network provisioning complexity</td><td>3</td><td>4</td><td><span class="tag t-amber">12 — AMBER</span></td><td><span class="tag t-amber">Amber</span></td><td>Finance, Procurement</td></tr>
+        <tr><td>7</td><td>Data residency / GDPR compliance gaps across multi-jurisdictions (17 sites)</td><td>3</td><td>4</td><td><span class="tag t-amber">12 — AMBER</span></td><td><span class="tag t-amber">Amber</span></td><td>Legal, Bosch CISO</td></tr>
+        <tr><td>8</td><td>WAN circuit provisioning delays at one or more of the 17 sites</td><td>3</td><td>4</td><td><span class="tag t-amber">12 — AMBER</span></td><td><span class="tag t-amber">Amber</span></td><td>Bosch Infra, WAN Provider</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- BUDGET SUMMARY -->
+  <div class="section">
+    <h2><span class="icon">💶</span> 10. Budget Summary</h2>
+    <table>
+      <thead><tr><th>Category</th><th>Total Days</th><th>Est. Labour Cost (EUR)</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td>Governance / PMO</td><td>390</td><td>€561,600</td><td>Erik Ho (BD/MIL-ICC) as programme lead throughout</td></tr>
+        <tr><td>Bosch IT Team (Seller)</td><td>1,210</td><td>€1,161,600</td><td>Full Bosch IT engagement across all 9 workstreams</td></tr>
+        <tr><td>Buyer / Solar Team</td><td>105</td><td>€84,000</td><td>Buyer IT ramp-up; onboarding from Phase 5</td></tr>
+        <tr><td>External Partners</td><td>450</td><td>€324,000</td><td>SAP Migration Partner, WAN Provider, Global SI</td></tr>
+        <tr><td>Cross-Functional</td><td>600</td><td>€360,000</td><td>App Teams, Legal, Finance, Test, Comms</td></tr>
+        <tr><td>Regional Teams (17 sites)</td><td>220</td><td>€158,400</td><td>EMEA, Americas, APAC regional execution</td></tr>
+        <tr><td colspan="2"><strong>TOTAL LABOUR</strong></td><td><strong>€2,649,600</strong></td><td>Labour only. Hardware / WAN / licences / CAPEX excluded — TBC at QG1</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px;color:var(--warn);font-weight:600;">
+      Budget baseline: TBC — to be approved at QG1 (30 Jun 2026). CAPEX items (WAN circuits, hardware, ERP licences) are material and require firm quotes before QG1.
+    </p>
+  </div>
+
+  <footer>
+    Project Hamburger · IT Carve-Out Programme · Robert Bosch GmbH → Undisclosed Buyer · Solar Energy Business
+    · Stand Alone Model · Generated: 03 Apr 2026 · CONFIDENTIAL — RESTRICTED DISTRIBUTION
+  </footer>
+
+</div>
+</body>
+</html>

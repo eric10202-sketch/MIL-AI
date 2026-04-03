@@ -1,17 +1,20 @@
 import base64, re, os
+from pathlib import Path
 
-with open(r"C:\Users\kho1sgp\OneDrive - Bosch Group\My Work Documents\Carveout\Bosch.png", "rb") as f:
+ROOT = Path(__file__).parent
+
+with open(ROOT / 'Bosch.png', 'rb') as f:
     b64 = base64.b64encode(f.read()).decode()
 
 new_src = f"data:image/png;base64,{b64}"
 
 html_files = [
-    r"C:\Users\kho1sgp\OneDrive - Bosch Group\My Work Documents\Carveout\Falcon\Falcon_Executive_Dashboard.html",
-    r"C:\Users\kho1sgp\OneDrive - Bosch Group\My Work Documents\Carveout\Falcon\Falcon_Project_Charter.html",
-    r"C:\Users\kho1sgp\OneDrive - Bosch Group\My Work Documents\Carveout\Falcon\Falcon_Management_KPI_Dashboard.html",
-    r"C:\Users\kho1sgp\OneDrive - Bosch Group\My Work Documents\Carveout\AlphaX\AlphaX_Executive_Dashboard.html",
-    r"C:\Users\kho1sgp\OneDrive - Bosch Group\My Work Documents\Carveout\AlphaX\AlphaX_Project_Charter.html",
-    r"C:\Users\kho1sgp\OneDrive - Bosch Group\My Work Documents\Carveout\AlphaX\AlphaX_Management_KPI_Dashboard.html",
+    ROOT / 'Falcon' / 'Falcon_Executive_Dashboard.html',
+    ROOT / 'Falcon' / 'Falcon_Project_Charter.html',
+    ROOT / 'Falcon' / 'Falcon_Management_KPI_Dashboard.html',
+    ROOT / 'AlphaX' / 'AlphaX_Executive_Dashboard.html',
+    ROOT / 'AlphaX' / 'AlphaX_Project_Charter.html',
+    ROOT / 'AlphaX' / 'AlphaX_Management_KPI_Dashboard.html',
 ]
 
 pattern = re.compile(r'data:image/(?:avif|png);base64,[A-Za-z0-9+/=]+')

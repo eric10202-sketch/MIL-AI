@@ -1,6 +1,7 @@
 import base64, pathlib, re
 
-logo_path = r'c:\Users\kho1sgp\OneDrive - Bosch Group\My Work Documents\Carveout\Bosch.png'
+ROOT = pathlib.Path(__file__).parent
+logo_path = ROOT / 'Bosch.png'
 b64 = base64.b64encode(pathlib.Path(logo_path).read_bytes()).decode()
 logo_img_sm  = '<img src="data:image/png;base64,' + b64 + '" alt="Bosch — Invented for Life" style="height:36px;display:block;" />'
 logo_img_md  = '<img src="data:image/png;base64,' + b64 + '" alt="Bosch — Invented for Life" style="height:44px;display:block;" />'
@@ -16,7 +17,7 @@ def replace_logo_div(html, logo_img):
     return None
 
 # ------- AlphaX Executive Dashboard -------
-path = r'c:\Users\kho1sgp\OneDrive - Bosch Group\My Work Documents\Carveout\AlphaX\AlphaX_Executive_Dashboard.html'
+path = ROOT / 'AlphaX' / 'AlphaX_Executive_Dashboard.html'
 html = pathlib.Path(path).read_text(encoding='utf-8')
 result = replace_logo_div(html, logo_img_sm)
 if result:
@@ -26,7 +27,7 @@ else:
     print('AlphaX Executive Dashboard: logo div not found.')
 
 # ------- AlphaX Management KPI Dashboard -------
-path2 = r'c:\Users\kho1sgp\OneDrive - Bosch Group\My Work Documents\Carveout\AlphaX\AlphaX_Management_KPI_Dashboard.html'
+path2 = ROOT / 'AlphaX' / 'AlphaX_Management_KPI_Dashboard.html'
 html2 = pathlib.Path(path2).read_text(encoding='utf-8')
 # This one uses <div style="..."><img .../></div> (no bosch-logo class)
 m2 = re.search(r'<div style="[^"]*margin-bottom:[^"]*"><img[^>]*></div>', html2)
@@ -45,7 +46,7 @@ else:
         print('AlphaX KPI Dashboard: could not find logo.')
 
 # ------- AlphaX Project Charter -------
-path3 = r'c:\Users\kho1sgp\OneDrive - Bosch Group\My Work Documents\Carveout\AlphaX\AlphaX_Project_Charter.html'
+path3 = ROOT / 'AlphaX' / 'AlphaX_Project_Charter.html'
 if pathlib.Path(path3).exists():
     html3 = pathlib.Path(path3).read_text(encoding='utf-8')
     result3 = replace_logo_div(html3, logo_img_sm)
@@ -58,7 +59,7 @@ else:
     print('AlphaX Project Charter: file not found, skipping.')
 
 # ------- Falcon Executive Dashboard -------
-path4 = r'c:\Users\kho1sgp\OneDrive - Bosch Group\My Work Documents\Carveout\Falcon\Falcon_Executive_Dashboard.html'
+path4 = ROOT / 'Falcon' / 'Falcon_Executive_Dashboard.html'
 html4 = pathlib.Path(path4).read_text(encoding='utf-8')
 result4 = replace_logo_div(html4, logo_img_sm)
 if result4:
@@ -68,7 +69,7 @@ else:
     print('Falcon Executive Dashboard: logo div not found.')
 
 # ------- Falcon Management KPI Dashboard -------
-path5 = r'c:\Users\kho1sgp\OneDrive - Bosch Group\My Work Documents\Carveout\Falcon\Falcon_Management_KPI_Dashboard.html'
+path5 = ROOT / 'Falcon' / 'Falcon_Management_KPI_Dashboard.html'
 html5 = pathlib.Path(path5).read_text(encoding='utf-8')
 result5 = replace_logo_div(html5, logo_img_sm)
 if result5:
@@ -78,7 +79,7 @@ else:
     print('Falcon KPI Dashboard: logo div not found.')
 
 # ------- Falcon Project Charter -------
-path6 = r'c:\Users\kho1sgp\OneDrive - Bosch Group\My Work Documents\Carveout\Falcon\Falcon_Project_Charter.html'
+path6 = ROOT / 'Falcon' / 'Falcon_Project_Charter.html'
 html6 = pathlib.Path(path6).read_text(encoding='utf-8')
 result6 = replace_logo_div(html6, logo_img_sm)
 if result6:

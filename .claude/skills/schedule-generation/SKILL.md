@@ -46,6 +46,45 @@ These are the exact rules enforced by `generate_msp_xml.py`. Do NOT hand-write o
 | `<Assignments>` section | Must be present | missing |
 | Task 0 (root summary) | Required; `<Duration>PT{total_working_hours}H0M0S` | missing or wrong |
 
+## XML Task Scheduling — Mandatory Elements to Prevent Date Drift
+MS Project recalculates all task dates from the predecessor chain on import unless ALL of the following are present and correctly ordered. Missing or mis-ordered elements cause dates to silently drift (e.g. GoLive appearing months late).
+
+### Project header (required)
+```xml
+<DefaultTaskType>1</DefaultTaskType>
+<NewTasksAreManual>1</NewTasksAreManual>
+```
+
+### Per-task element order (strict — MS Project parses sequentially)
+```xml
+<Task>
+  <UID>…</UID>
+  <ID>…</ID>
+  <Name>…</Name>
+  <TaskMode>1</TaskMode>          <!-- MUST be immediately after <Name> -->
+  <Duration>PT…</Duration>
+  <DurationFormat>7</DurationFormat>
+  <ManualDuration>PT…</ManualDuration>
+  <Start>20YY-MM-DDT08:00:00</Start>
+  <ManualStart>20YY-MM-DDT08:00:00</ManualStart>
+  <Finish>20YY-MM-DDT…</Finish>
+  <ManualFinish>20YY-MM-DDT…</ManualFinish>
+  <OutlineLevel>…</OutlineLevel>
+  <Summary>…</Summary>
+  <Milestone>…</Milestone>
+  <ConstraintType>2</ConstraintType>      <!-- Must Start On — non-summary tasks only -->
+  <ConstraintDate>20YY-MM-DDT08:00:00</ConstraintDate>
+  <CalendarUID>-1</CalendarUID>
+  …
+</Task>
+```
+
+**Rules:**
+- `<TaskMode>1</TaskMode>` placed anywhere other than immediately after `<Name>` is silently ignored — MS Project falls back to auto-scheduling.
+- `<ManualStart>` / `<ManualFinish>` are the fields MS Project actually **displays** for manually-scheduled tasks. `<Start>` / `<Finish>` alone are insufficient.
+- `<ConstraintType>2</ConstraintType>` ("Must Start On") + `<ConstraintDate>` provides a hard date pin independent of scheduling mode.
+- Summary tasks (parent rows) should NOT have `<ConstraintType>` — they inherit bounds from their children.
+
 ## Subprocess Pattern for generate_{ProjectName}_schedule.py
 ```python
 result = subprocess.run(
