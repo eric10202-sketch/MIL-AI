@@ -1,0 +1,871 @@
+﻿Title,Vendor,Source_Project,License_Category,Item_No,Quantity,Metric,Type,Ready_for_Procurement,License_Server_Planned,Priority_Date,Priority_Reason,Changes_Since_Feb_2025,Changes_from_Local_List,Action,Responsible,Due_Date,Comment,Comment_2
+Acrobat Standard DC,Adobe,ASTRA,Paid License,1,12,user,subscription,,,,,,,,,,,
+Acrobat Professional DC,Adobe,ASTRA,Paid License,2,4,user,subscription,,,,,,,,,,,
+Illustrator CC,Adobe,ASTRA,Paid License,3,4,user,subscription,,,,,,,,,,,
+Altair Token,Altair,ASTRA,Paid License,4,1 license +30 tokens,token floating,subscription,,,,,,,,,,,
+Hyperworks,Altair,ASTRA,Paid License,5,1 license +30 tokens,token floating,subscription,,,,,,,,,,,
+Python Enterprice,Anaconda,ASTRA,Paid License,6,16,user,tbd,,,,,,,,,,,
+IQ-FMEA-L,APIS Infromationstechnologie,ASTRA,Paid License,7,4,floating,perpetual,,,,,,,,,,,
+AutoCAD,Autodesk,ASTRA,Paid License,8,8,user,subscription,,,,,,,,,,,
+Inventor Professional,Autodesk,ASTRA,Paid License,9,10,user,subscription,,,,,,,,,,,
+Vault Professional,Autodesk,ASTRA,Paid License,10,2,user,subscription,,,,,,,,,,,
+MindManager,Corel/Alludo,ASTRA,Paid License,11,5,user,subscription,,,,,,,,,,,
+CATIA V5,Dassault Systèmes,ASTRA,Paid License,12,4,concurrent/floating,perpetual,,,,,,,,,,,
+eDrawings Profesional,Dassault Systèmes,ASTRA,Paid License,13,36,user,subscription,,,,,,,,,,,
+SolidWorks,Dassault Systèmes,ASTRA,Paid License,14,13,user,subscription,,,,,,,,,,,
+Abaqus,Dassault Systèmes,ASTRA,Paid License,15,4,concurrent,subscription,,,,,,,,,,,
+Q-DAS 14 Notebook,Hexagon,ASTRA,Paid License,16,5,tbd,tbd,,,,,,,,,,,
+"IBM Doors (""IBM Engineering Requirements Management DOORS family Authorized User License + SW Subscription & Support 12 Months"")",IBM,ASTRA,Paid License,17,2,user,tbd,,,,,,,,,,,
+IrfanView 4.x 64bit,Irfan Skiljan,ASTRA,Paid License,18,210,enterprise/corporate,tbd,,,,,,,,,,,
+ScreenPresso Pro,Learnpulse,ASTRA,Paid License,19,435,enterprise/corporate,tbd,,,,,,,,,,,
+MATLAB,MathWorks,ASTRA,Paid License,20,7,named/specific user,subscription,,,,,,,,,,,
+Signal_Toolbox,MathWorks,ASTRA,Paid License,21,5,named/specific user,subscription,,,,,,,,,,,
+SIMULINK,MathWorks,ASTRA,Paid License,22,5,named/specific user,subscription,,,,,,,,,,,
+Simscape,MathWorks,ASTRA,Paid License,23,4,named/specific user,subscription,,,,,,,,,,,
+Power_System_Blocks,MathWorks,ASTRA,Paid License,24,3,named/specific user,subscription,,,,,,,,,,,
+Signal_Blocks,MathWorks,ASTRA,Paid License,25,3,named/specific user,subscription,,,,,,,,,,,
+Stateflow,MathWorks,ASTRA,Paid License,26,3,named/specific user,subscription,,,,,,,,,,,
+Control_Toolbox,MathWorks,ASTRA,Paid License,27,2,named/specific user,subscription,,,,,,,,,,,
+Fixed_Point_Toolbox,MathWorks,ASTRA,Paid License,28,2,named/specific user,subscription,,,,,,,,,,,
+RF_Blockset,MathWorks,ASTRA,Paid License,29,2,named/specific user,subscription,,,,,,,,,,,
+RF_Toolbox,MathWorks,ASTRA,Paid License,30,2,named/specific user,subscription,,,,,,,,,,,
+SimDriveline,MathWorks,ASTRA,Paid License,31,2,named/specific user,subscription,,,,,,,,,,,
+System_Composer,MathWorks,ASTRA,Paid License,32,2,named/specific user,subscription,,,,,,,,,,,
+AUTOSAR_Blockset,MathWorks,ASTRA,Paid License,33,1,named/specific user,subscription,,,,,,,,,,,
+Cert_Kit_IEC,MathWorks,ASTRA,Paid License,34,1,named/specific user,subscription,,,,,,,,,,,
+Identification_Toolbox,MathWorks,ASTRA,Paid License,35,1,named/specific user,subscription,,,,,,,,,,,
+MATLAB_Coder,MathWorks,ASTRA,Paid License,36,1,named/specific user,subscription,,,,,,,,,,,
+MATLAB_Report_Gen,MathWorks,ASTRA,Paid License,37,1,named/specific user,subscription,,,,,,,,,,,
+Motor_Control_Blockset,MathWorks,ASTRA,Paid License,38,1,named/specific user,subscription,,,,,,,,,,,
+Qual_Kit_DO,MathWorks,ASTRA,Paid License,39,1,named/specific user,subscription,,,,,,,,,,,
+Real-Time_Workshop,MathWorks,ASTRA,Paid License,40,1,named/specific user,subscription,,,,,,,,,,,
+RTW_Embedded_Coder,MathWorks,ASTRA,Paid License,41,1,named/specific user,subscription,,,,,,,,,,,
+SimMechanics,MathWorks,ASTRA,Paid License,42,1,named/specific user,subscription,,,,,,,,,,,
+Simscape_Battery,MathWorks,ASTRA,Paid License,43,1,named/specific user,subscription,,,,,,,,,,,
+Simulink_Control_Design,MathWorks,ASTRA,Paid License,44,1,named/specific user,subscription,,,,,,,,,,,
+Simulink_Coverage,MathWorks,ASTRA,Paid License,45,1,named/specific user,subscription,,,,,,,,,,,
+Simulink_Design_Verifier,MathWorks,ASTRA,Paid License,46,1,named/specific user,subscription,,,,,,,,,,,
+Simulink_HDL_Coder,MathWorks,ASTRA,Paid License,47,1,named/specific user,subscription,,,,,,,,,,,
+Simulink_PLC_Coder,MathWorks,ASTRA,Paid License,48,1,named/specific user,subscription,,,,,,,,,,,
+Simulink_Requirements,MathWorks,ASTRA,Paid License,49,1,named/specific user,subscription,,,,,,,,,,,
+Simulink_Test,MathWorks,ASTRA,Paid License,50,1,named/specific user,subscription,,,,,,,,,,,
+SL_Verification_Validation,MathWorks,ASTRA,Paid License,51,1,named/specific user,subscription,,,,,,,,,,,
+Statistics_Toolbox,MathWorks,ASTRA,Paid License,52,1,named/specific user,subscription,,,,,,,,,,,
+Vehicle_Network_Toolbox,MathWorks,ASTRA,Paid License,53,1,named/specific user,subscription,,,,,,,,,,,
+XPC_Target,MathWorks,ASTRA,Paid License,54,1,named/specific user,subscription,,,,,,,,,,,
+Stages Server License,Methodpark,ASTRA,Paid License,55,1,server,tbd,,,,,,,,,,,
+Stages active users,Methodpark,ASTRA,Paid License,56,10,user,tbd,,,,,,,,,,,
+Process Modeler (MODEL):,Methodpark,ASTRA,Paid License,57,1,concurrent/floating,tbd,,,,,,,,,,,
+Process Contributor,Methodpark,ASTRA,Paid License,58,1,concurrent/floating,tbd,,,,,,,,,,,
+SQL Server Standard,Microsoft,ASTRA,Paid License,59,5 servers x 4 cores,core,tbd,,,,,,,,,,"in clarification, final quantity",
+Microsoft Defender Suite (Defender Suite Sub Per User),Microsoft,ASTRA,Paid License,60,500,user,subscription,,,,,,,,,,required for M365 migration  - 1 month before network cut,
+"Standard IT-User, M365 E3",Microsoft,ASTRA,Paid License,61,500,user,subscription,,,,,,,,,,required for M365 migration - 1 month before network cut,
+Microsoft VisioPro 64-Bit Edition for Office 365 (Visio Professional ALng  with SA),Microsoft,ASTRA,Paid License,62,61,user,perpetual,,,,,,,,,,,
+"Visual Studio Professional w. GitHub Enterprise (Visual Studio Pro with GitHub ALng ; only available in EA/EAS 
+alternatively Visual Studio Pro and GitHub Enterprise as stand-alone license)",Microsoft,ASTRA,Paid License,63,12,user,perpetual,,,,,,,,,,,
+Microsoft SQL Server 2022 Express,Microsoft,ASTRA,Paid License,64,6,tbd,tbd,,,,,,,,,,"in clarification, final quantity",
+Windows Server 2025 Standard (Win Server Standard Core ALng 2CoreLic) => 28 Packs,Microsoft,ASTRA,Paid License,65,56,core,tbd,,,,,,,,,,,
+Exchange Server on Premise (Enterprise) Exchange Server Enterprise ALng LSA,Microsoft,ASTRA,Paid License,66,1,tbd,tbd,,,,,,,,,,,
+Microsoft Copilot Studio User License,Microsoft,ASTRA,Paid License,67,2,user,subscription,,,,,,,,,,,
+Microsoft 365 Audio Conferencing Pay-Per-Minute (Audio Conferencing Pay Per Min Sub Per User),Microsoft,ASTRA,Paid License,68,377,user,subscription,,,,,,,,,,,
+Microsoft System Center Configuration Manager 2022 Client Management License OSE (unknown language) (Microsoft Endpoint Configuration Manager Client Management License per OSE),Microsoft,ASTRA,Paid License,69,600,user,tbd,,,,,,,,,,,
+Microsoft Teams Phone Standard User (Teams Phone Standard Sub Per User),Microsoft,ASTRA,Paid License,70,70,user,subscription,,,,,,,,,,,
+Microsoft Windows Professional,Microsoft,ASTRA,Paid License,71,92,device,perpetual,,,,,,,,,,,
+Microsoft Exchange Online Plan 2 User (Exchange Online P2 Sub Per User),Microsoft,ASTRA,Paid License,72,37,user,subscription,,,,,,,,,,,
+Microsoft Visio Plan 2 (Visio P2 Sub Per User),Microsoft,ASTRA,Paid License,73,23,user,subscription,,,,,,,,,,,
+Microsoft Windows 11 Professional (unknown language) (Windows 11 Pro (Per Device)),Microsoft,ASTRA,Paid License,74,22,device,subscription,,,,,,,,,,,
+Microsoft Project Plan 3 User (Planner & Project P3 Sub Per User),Microsoft,ASTRA,Paid License,75,18,user,subscription,,,,,,,,,,,
+Microsoft Project Professional for Office 365 Client User Application (Project Professional Alng with SA),Microsoft,ASTRA,Paid License,76,20,user,perpetual,,,,,,,,,,,
+Microsoft Visual Studio Professional (Visual Studio Professional Subscription),Microsoft,ASTRA,Paid License,77,15,user,subscription,,,,,,,,,,,
+Windows Server 2025 Data Center Edition (Win Server Datacenter Core ALng 2CoreLic) => 192 packs,Microsoft,ASTRA,Paid License,78,384,core,tbd,,,,,,,,,,,
+Microsoft Power BI Professional User (Power BI Pro Sub Per User),Microsoft,ASTRA,Paid License,79,4,user,subscription,,,,,,,,,,,
+Planner Plan 1 (Web-Version) oder Planner & Project P3,Microsoft,ASTRA,Paid License,80,9,user,subscription,,,,,,,,,,buyer can decide on the option,
+Microsoft Visual Studio 2022 Enterprise (Visual Studio Ent MSDN 2026 Alng),Microsoft,ASTRA,Paid License,81,1,user,subscription,,,,,,,,,,,
+RDS CALs with Software Assurance,Microsoft,ASTRA,Paid License,82,40,user,tbd,,,,,,,,,,,
+Minitab Statistical 22,Minitab,ASTRA,Paid License,83,23,user,subscription,,,,,,,,,,,
+MobaXterm Professional,Mobatek,ASTRA,Paid License,84,2,user,perpetual,,,,,,,,,,,
+Opentext Imaging Windows Viewer,Open Text,ASTRA,Paid License,85,439,enterprise/corporate,tbd,,,,,,,,,,,
+OpenText Enterprise Scan 22,Open Text,ASTRA,Paid License,86,5,enterprise/corporate,tbd,,,,,,,,,,,
+Database Enterprise Edition,Oracle (SAP),ASTRA,Paid License,87,375,named user,perpetual,,,,,,,,,,12 months TSA option,
+Tuning Pack,Oracle (SAP),ASTRA,Paid License,88,375,named user,perpetual,,,,,,,,,,12 months TSA option,
+Partinioning,Oracle (SAP),ASTRA,Paid License,89,375,named user,perpetual,,,,,,,,,,12 months TSA option,
+Advanced Compression,Oracle (SAP),ASTRA,Paid License,90,375,named user,perpetual,,,,,,,,,,12 months TSA option,
+Diagnostics Pack,Oracle (SAP),ASTRA,Paid License,91,375,named user,perpetual,,,,,,,,,,12 months TSA option,
+Database-In-Memory (auf PFK und PF5),Oracle (SAP),ASTRA,Paid License,92,375,named user,perpetual,,,,,,,,,,12 months TSA option,
+Oracle Database Server,Oracle (SAP),ASTRA,Paid License,93,2,core,perpetual,,,,,,,,,,12 months TSA option,
+Creo (Advanced T2),PTC,ASTRA,Paid License,94,30,floating,subscription,,,,,,,,,,,
+"PTC-WindchillPDMLink-Creo (•	Windchill Base
+•	Windchill Creo Data Management & Visualization
+)",PTC,ASTRA,Paid License,95,30,User,subscription,,,,,,,,,,,
+"PTC Creo Standalone (•	Creo Advanced Assembly Extension - Global License
+•	Creo Design Essentials Global (no PLM included)
+)",PTC,ASTRA,Paid License,96,6,User,subscription,,,,,,,,,,,
+PTC-WindchillPDMLink-eBOM-Creo,PTC,ASTRA,Paid License,97,12,User,subscription,,,,,,,,,,,
+PTC-WindchillPDMLink-Contributor (Contributor License),PTC,ASTRA,Paid License,98,9,User,subscription,,,,,,,,,,,
+MathCAD Prime,PTC,ASTRA,Paid License,99,3,user,subscription,,,,,,,,,,,
+Remote Desktop 2024,Rocket Software,ASTRA,Paid License,100,1,enterprise/corporate,tbd,,,,,,,,,,,
+Professional User,SAP,ASTRA,Paid License,101,241,user,perpetual,,,,,,,,,,"waiting for final offer from SAP, based on Bosch conditions",
+"7017272 SAP S/4HANA Cloud Private Edition, product lifecycle management",SAP,ASTRA,Paid License,102,127,user,perpetual,,,,,,,,,,"waiting for final offer from SAP, based on Bosch conditions",
+Logistic User,SAP,ASTRA,Paid License,103,62,user,perpetual,,,,,,,,,,"waiting for final offer from SAP, based on Bosch conditions",
+Worker User,SAP,ASTRA,Paid License,104,60,user,perpetual,,,,,,,,,,"waiting for final offer from SAP, based on Bosch conditions",
+7018211 SAP Enterprise Product Engineering,SAP,ASTRA,Paid License,105,27,user,perpetual,,,,,,,,,,"waiting for final offer from SAP, based on Bosch conditions",
+Development User,SAP,ASTRA,Paid License,106,12,user,perpetual,,,,,,,,,,"waiting for final offer from SAP, based on Bosch conditions",
+"7017375 SAP Shared Service Framework, Human Resources",SAP,ASTRA,Paid License,107,5,user,perpetual,,,,,,,,,,"waiting for final offer from SAP, based on Bosch conditions",
+7017523 SAP Just-in-time Inbound Process for Auto,SAP,ASTRA,Paid License,108,1,calls,perpetual,,,,,,,,,,"waiting for final offer from SAP, based on Bosch conditions",
+TC Visualization Pro Plus,Siemens,ASTRA,Paid License,109,30,concurrent/floating,subscription,,,,,,,,,,,
+JT Bi-Directional Translator for STEP,Siemens,ASTRA,Paid License,110,15,concurrent/floating,subscription,,,,,,,,,,,
+DXF File Open for TC Vis,Siemens,ASTRA,Paid License,111,2,concurrent/floating,subscription,,,,,,,,,,,
+IGES File Open for TC Vis,Siemens,ASTRA,Paid License,112,1,concurrent,subscription,,,,,,,,,,,
+Teamcenter Author,Siemens,ASTRA,Paid License,113,1,user,subscription,,,,,,,,,,,
+NX Gateway,Siemens,ASTRA,Paid License,114,1,user,subscription,,,,,,,,,,,
+NX Assembly,Siemens,ASTRA,Paid License,115,1,user,subscription,,,,,,,,,,,
+NX Drafting,Siemens,ASTRA,Paid License,116,1,user,subscription,,,,,,,,,,,
+NX Solid Modeling,Siemens,ASTRA,Paid License,117,1,user,subscription,,,,,,,,,,,
+NX Features Modeling,Siemens,ASTRA,Paid License,118,1,user,subscription,,,,,,,,,,,
+NX DXFDWG Translator,Siemens,ASTRA,Paid License,119,1,user,subscription,,,,,,,,,,,
+NX STEP AP214 Translator,Siemens,ASTRA,Paid License,120,1,user,subscription,,,,,,,,,,,
+NX Render,Siemens,ASTRA,Paid License,121,1,user,subscription,,,,,,,,,,,
+NX Visualize Shape,Siemens,ASTRA,Paid License,122,1,user,subscription,,,,,,,,,,,
+JT Bi-Directional Translator for CATIA V,Siemens,ASTRA,Paid License,123,1,concurrent/floating,subscription,,,,,,,,,,,
+Enterprise Architect Corporate,Sparx Systems,ASTRA,Paid License,124,9,Floating,perpetual,,,,,,,,,,maintanance can be added,
+Quick Access Enhanced with Recording (TTSPS),TTS,ASTRA,Paid License,125,441,device,subscription,,,,,,,,,,,
+CANape,Vector Informatik,ASTRA,Paid License,126,3,"named user, named user devise",perpetual,,,,,,,,,,maintanance can be added,
+CANdb++,Vector Informatik,ASTRA,Paid License,127,11,"named user, named user devise",perpetual,,,,,,,,,,maintanance can be added,
+vTESTstudio,Vector Informatik,ASTRA,Paid License,128,11,"named user, named user devise",perpetual,,,,,,,,,,maintanance can be added,
+vFlash 7 Standard Win,Vector Informatik,ASTRA,Paid License,129,2,"named user, named user devise",perpetual,,,,,,,,,,maintanance can be added,
+CANoe PRO,Vector Informatik,ASTRA,Paid License,130,2,"named user, named user devise",perpetual,,,,,,,,,,maintanance can be added,
+IMC Famos Professional,Famos,ASTRA,Paid License,131,10,tbd,tbd,,,,,,,,,,,
+IMC Studio Professional,Famos,ASTRA,Paid License,132,8,tbd,tbd,,,,,,,,,,,
+Insider Risk Management,Microsoft,ASTRA,Paid License,133,500,user,subscription,,,,,,,,,,,
+VersionDog,Octoplant,ASTRA,Paid License,134,"6 computers, 1500 components",tbd,tbd,,,,,,,,,,,
+ACS 109 - Streckenabwicklung SD,SAP,ASTRA,Paid License,135,1,corporate license,perpetual,,,,,,,,,,puchase complete,
+ACS 109_3  -  Streckenabwicklung JIT,SAP,ASTRA,Paid License,136,1,corporate license,perpetual,,,,,,,,,,puchase complete,
+ACS 39 - EDI Monitor Lieferavise,SAP,ASTRA,Paid License,137,1,corporate license,perpetual,,,,,,,,,,puchase complete,
+ACS 216 - VDA Formular 4939,SAP,ASTRA,Paid License,138,1,corporate license,perpetual,,,,,,,,,,puchase complete,
+ACS 132  - QM Cockpit,SAP,ASTRA,Paid License,139,1,corporate license,perpetual,,,,,,,,,,puchase complete,
+ACS 133 - QM Customer 8D,SAP,ASTRA,Paid License,140,1,corporate license,perpetual,,,,,,,,,,puchase complete,
+ACS 134  - QM Supplier 8D,SAP,ASTRA,Paid License,141,1,corporate license,perpetual,,,,,,,,,,puchase complete,
+ACS 138  - QM DMS,SAP,ASTRA,Paid License,142,1,corporate license,perpetual,,,,,,,,,,puchase complete,
+Microsoft SQL Server 2019 Express,Microsoft,ASTRA,Paid License,143,3,tbd,tbd,,,,,,,,,,"in clarification, final quantity",
+License for Mandant  SAP system,Bensberg,ASTRA,Paid License,144,1,system,perpetual,,,,,,,,,,quote available,
+Iceberg benchmark portal,Caresoft Global,ASTRA,Paid License,145,,tbd,tbd,,,,,,,,,,"in clarification, final quantity",
+IAM tool,Tenfold Securities,ASTRA,Paid License,146,370,user,perpetual,,,,,,,,,,purchase complete,
+Encryption Software,Digicert,ASTRA,Paid License,147,350,user,perpetual,,,,,,,,,,purchase complete,
+Microsoft Office 2016 Professional Plus,Microsoft,ASTRA,Paid License,148,17,user,tbd,,,,,,,,,,,
+Acrobat Reader DC,Adobe,ASTRA,freeware,1,444,,freeware,,,,,,,,,,proprietory SW - needs to checked with vendor before final installation,
+Hotfix Installation Package for Adobe Reader DC and Acrobat,Adobe,ASTRA,freeware,2,429,,freeware,,,,,,,,,,proprietory SW - needs to checked with vendor before final installation,
+ALM Toolkit for Power BI,ALM Toolkit,ASTRA,Open Source Software (OSS),3,36,,Open Source Software (OSS),,,,,,,,,,,
+OpenJDK 8 - Corretto for Creo,Amazon,ASTRA,Open Source Software (OSS),4,37,,Open Source Software (OSS),,,,,,,,,,,
+Anaconda Python 2020.07,Anaconda,ASTRA,Open Source Software (OSS),5,2,,Open Source Software (OSS),,,,,,,,,,,
+PDF Split and Merge,Andrea Vacondio,ASTRA,Open Source Software (OSS),6,256,,Open Source Software (OSS),,,,,,,,,,,
+HeidiSQL 11.x,Ansgar Becker,ASTRA,Open Source Software (OSS),7,1,,Open Source Software (OSS),,,,,,,,,,,
+Antoine Potten Ant Renamer 2.x,Antoine Potten,ASTRA,freeware,8,1,,freeware,,,,,,,,,,,
+Apple iTunes,Apple,ASTRA,freeware,9,71,,freeware,,,,,,,,,,proprietory SW - needs to checked with vendor before final installation,
+Arduino Labs,Arduino DE,ASTRA,Open Source Software (OSS),10,1,,Open Source Software (OSS),,,,,,,,,,,
+Graphviz 12.x,AT&T,ASTRA,Open Source Software (OSS),11,1,,Open Source Software (OSS),,,,,,,,,,,
+SourceTree,Atlassian,ASTRA,freeware,12,5,,freeware,,,,,,,,,,proprietory SW - needs to checked with vendor before final installation,
+Autodesk Licensing Service 2020,Autodesk,ASTRA,freeware,13,27,,freeware,,,,,,,,,,,
+DWG TrueView 2023,Autodesk,ASTRA,freeware,14,25,,freeware,,,,,,,,,,proprietory SW - needs to checked with vendor before final installation,
+Design Review,Autodesk,ASTRA,freeware,15,9,,freeware,,,,,,,,,,proprietory SW - needs to checked with vendor before final installation,
+AutoHotkey Foundation AutoHotkey 2.x,AutoHotkey Foundation LLC,ASTRA,Open Source Software (OSS),16,1,,Open Source Software (OSS),,,,,,,,,,,
+Bambu Studio,Bambu Lab,ASTRA,Open Source Software (OSS),17,1,,Open Source Software (OSS),,,,,,,,,,,
+Benito van der Zander TeXstudio 2.x,Benito van der Zander,ASTRA,Open Source Software (OSS),18,3,,Open Source Software (OSS),,,,,,,,,,,
+USB Docker,Synaptics,ASTRA,freeware,19,335,,freeware,,,,,,,,,,,
+VMware Workstation 16,Broadcom,ASTRA,freeware,20,1,,freeware,,,,,,,,,,proprietory SW - needs to checked with vendor before final installation,
+VMware Workstation Player 17,Broadcom,ASTRA,freeware,21,1,,freeware,,,,,,,,,,proprietory SW - needs to checked with vendor before final installation,
+InkScape,Bryce Harrington,ASTRA,Open Source Software (OSS),22,6,,Open Source Software (OSS),,,,,,,,,,,
+Path Copy Copy,Charles Lechasseur,ASTRA,Open Source Software (OSS),23,444,,Open Source Software (OSS),,,,,,,,,,,
+MiKTeX 2.x,Christian Schenk,ASTRA,Open Source Software (OSS),24,3,,Open Source Software (OSS),,,,,,,,,,,
+WinAuth,Colin Mackie,ASTRA,Open Source Software (OSS),25,9,,Open Source Software (OSS),,,,,,,,,,,
+DAX Studio,DAX Studio,ASTRA,Open Source Software (OSS),26,36,,Open Source Software (OSS),,,,,,,,,,,
+Freeplane 1.x,Dimitry Polivaev,ASTRA,freeware,27,1,,freeware,,,,,,,,,,,
+KeePass,Dominik Reichl,ASTRA,Open Source Software (OSS),28,249,,Open Source Software (OSS),,,,,,,,,,,
+Notepad++ 64-bit,Don Ho,ASTRA,Open Source Software (OSS),29,190,,Open Source Software (OSS),,,,,,,,,,,
+Eclipse Foundation Temurin 8.x,Eclipse Foundation,ASTRA,Open Source Software (OSS),30,1,,Open Source Software (OSS),,,,,,,,,,,
+EWSoftware Sandcastle 24.x,EWSoftware,ASTRA,Open Source Software (OSS),31,1,,Open Source Software (OSS),,,,,,,,,,,
+Px for Windows,Genotrance-Ganesh Viswanathan,ASTRA,Open Source Software (OSS),32,12,,Open Source Software (OSS),,,,,,,,,,,
+Ghostgum Software RedMon 1.x,Ghostgum Software,ASTRA,freeware,33,41,,freeware,,,,,,,,,,,
+Git for Windows,Git-Team,ASTRA,freeware,34,6,,freeware,,,,,,,,,,,
+TightVNC 2.x,GlavSoft,ASTRA,Open Source Software (OSS),35,11,,Open Source Software (OSS),,,,,,,,,,,
+Google Chrome,Google,ASTRA,freeware,36,229,,freeware,,,,,,,,,,proprietory SW - needs to checked with vendor before final installation,
+Npcap,Gordon Lyon,ASTRA,freeware,37,4,,freeware,,,,,,,,,,,
+GoTo Opener 1.x,GoTo,ASTRA,freeware,38,2,,freeware,,,,,,,,,,,
+OSI Font,hikikomori82,ASTRA,Open Source Software (OSS),39,441,,Open Source Software (OSS),,,,,,,,,,,
+7-Zip,Igor Pavlov,ASTRA,freeware,40,422,,freeware,,,,,,,,,,,
+ImageWriter Developers Win32 Disk Imager 1.x,ImageWriter Developers,ASTRA,Open Source Software (OSS),41,2,,Open Source Software (OSS),,,,,,,,,,,
+Inkscape,Inkscape/Bryce Harrington,ASTRA,Open Source Software (OSS),42,5,,Open Source Software (OSS),,,,,,,,,,,
+item Industrietechnik item MotionSoft 2 Win,item Industrietechnik,ASTRA,freeware,43,1,,freeware,,,,,,,,,,,
+Jabra Xpress 6.x,Jabra/GN Audio,ASTRA,freeware,44,49,,freeware,,,,,,,,,,proprietory SW - needs to checked with vendor before final installation,
+Jabra Direct X20,Jabra/GN Audio,ASTRA,freeware,45,42,,freeware,,,,,,,,,,proprietory SW - needs to checked with vendor before final installation,
+Kaltura Webcast Studio 4.x,Kaltura,ASTRA,Open Source Software (OSS),46,1,,Open Source Software (OSS),,,,,,,,,,,
+Kapacity Tabular Editor 2.x,Kapacity,ASTRA,Open Source Software (OSS),47,26,,Open Source Software (OSS),,,,,,,,,,,
+SumatraPDF 3.x,Krzysztof Kowalczyk,ASTRA,Open Source Software (OSS),48,3,,Open Source Software (OSS),,,,,,,,,,,
+FreeCommander XE,Marek Jasinski,ASTRA,freeware,49,216,,freeware,,,,,,,,,,proprietory SW - needs to checked with vendor before final installation,
+WinSCP FTP Client,Martin Prikryl,ASTRA,Open Source Software (OSS),50,7,,Open Source Software (OSS),,,,,,,,,,,
+The MathWorks MATLAB R2023b,MathWorks,ASTRA,freeware,51,23,,freeware,,,,,,,,,,,
+MATLAB Runtime R2023b,MathWorks,ASTRA,freeware,52,1,,freeware,,,,,,,,,,,
+Meltytech Shotcut 23.x,Meltytech,ASTRA,Open Source Software (OSS),53,1,,Open Source Software (OSS),,,,,,,,,,,
+Visio Studio Code,Microsoft,ASTRA,freeware,54,17,,freeware,,,,,,,,,,,
+Microsoft Visual C++ Runtime Redistributables,Microsoft,ASTRA,freeware,55,448,,freeware,,,,,,,,,,proprietory SW - needs to checked with vendor before final installation,
+.NET Core Desktop Runtime 8.0,Microsoft,ASTRA,Open Source Software (OSS),56,441,,Open Source Software (OSS),,,,,,,,,,,
+Microsoft Edge WebView2,Microsoft,ASTRA,freeware,57,440,,freeware,,,,,,,,,,,
+Microsoft Edge - Chromium,Microsoft,ASTRA,freeware,58,401,,freeware,,,,,,,,,,,
+.NET Framework 4.8 KB5023322,Microsoft,ASTRA,Open Source Software (OSS),59,44,,Open Source Software (OSS),,,,,,,,,,,
+Microsoft Power BI Desktop - Cloud,Microsoft,ASTRA,freeware,60,33,,freeware,,,,,,,,,,,
+.NET Core Desktop Runtime 6.0,Microsoft,ASTRA,Open Source Software (OSS),61,20,,Open Source Software (OSS),,,,,,,,,,,
+NET Core SDK 8.0,Microsoft,ASTRA,Open Source Software (OSS),62,18,,Open Source Software (OSS),,,,,,,,,,,
+Microsoft Power BI - SAP BW drivers,Microsoft,ASTRA,freeware,63,13,,freeware,,,,,,,,,,proprietory SW - needs to checked with vendor before final installation,
+Microsoft Fabric (Free),Microsoft,ASTRA,freeware,64,419,,freeware,,,,,,,,,,,
+Microsoft Internet Explorer 11,Microsoft,ASTRA,freeware,65,444,,freeware,,,,,,,,,,,
+Microsoft SQL Server 2019 Express,Microsoft,ASTRA,freeware,66,3,,freeware,,,,,,,,,,,
+Microsoft SQL Server Management Studio (SSMS) V.19.x,Microsoft,ASTRA,freeware,67,1,,freeware,,,,,,,,,,proprietory SW - needs to checked with vendor before final installation,
+Remote Server Administration Tools,Microsoft,ASTRA,freeware,68,15,,freeware,,,,,,,,,,,
+Reportviewer 2012,Microsoft,ASTRA,freeware,69,4,,freeware,,,,,,,,,,,
+Wireless Display Adapter,Microsoft,ASTRA,freeware,70,7,,freeware,,,,,,,,,,,
+Microsoft Power BI Desktop,Microsoft,ASTRA,freeware,71,42,,freeware,,,,,,,,,,,
+Microsoft Power BI Report Builder,Microsoft,ASTRA,freeware,72,5,,freeware,,,,,,,,,,,
+Microsoft SOAP Toolkit 3.x,Microsoft,ASTRA,freeware,73,2,,freeware,,,,,,,,,,,
+Microsoft OpenJDK 11.x (NLRQ),Microsoft,ASTRA,Open Source Software (OSS),74,1,,Open Source Software (OSS),,,,,,,,,,,
+Microsoft Azure Data Factory 2015 Tools for Visual Studio,Microsoft,ASTRA,freeware,75,1,,freeware,,,,,,,,,,,
+Microsoft Sysinternals Suite,Microsoft Sysinternals,ASTRA,freeware,76,1,,freeware,,,,,,,,,,,
+Desktop Save & Restore,Midox/Jamie O Connell,ASTRA,Open Source Software (OSS),77,223,,Open Source Software (OSS),,,,,,,,,,,
+Firefox 128 ESR,Mozilla,ASTRA,Open Source Software (OSS),78,369,,Open Source Software (OSS),,,,,,,,,,,
+Multimedia Package NextGen,Multimedia,ASTRA,freeware,79,75,,freeware,,,,,,,,,,,
+Node.js Foundation Node.js 20.x,Node.js Foundation,ASTRA,Open Source Software (OSS),80,1,,Open Source Software (OSS),,,,,,,,,,,
+Obs Studio 29.x,OBS Studio Contributors,ASTRA,Open Source Software (OSS),81,52,,Open Source Software (OSS),,,,,,,,,,,
+NDI-Streaming-Tools,OBS Studio Contributors-TriCaster,ASTRA,freeware,82,51,,freeware,,,,,,,,,,,
+Client 19c 32Bits,Oracle,ASTRA,freeware,83,145,,freeware,,,,,,,,,,proprietory SW - needs to checked with vendor before final installation,
+Hotfix Package for Oracle Client 19c 32Bits,Oracle,ASTRA,freeware,84,143,,freeware,,,,,,,,,,proprietory SW - needs to checked with vendor before final installation,
+Client 19c 64Bits,Oracle,ASTRA,freeware,85,1,,freeware,,,,,,,,,,proprietory SW - needs to checked with vendor before final installation,
+Oracle MySQL 8.x Router,Oracle,ASTRA,Open Source Software (OSS),86,1,,Open Source Software (OSS),,,,,,,,,,,
+Oracle MySQL 8.x Workbench CE,Oracle,ASTRA,Open Source Software (OSS),87,1,,Open Source Software (OSS),,,,,,,,,,,
+Hotfix Package for Oracle Client 19c 64Bits,Oracle,ASTRA,freeware,88,1,,freeware,,,,,,,,,,proprietory SW - needs to checked with vendor before final installation,
+Pilz PNOZmulti Configurator 10,Pilz,ASTRA,freeware,89,2,,freeware,,,,,,,,,,,
+Plantronics HUB,Plantronics,ASTRA,freeware,90,207,,freeware,,,,,,,,,,proprietory SW - needs to checked with vendor before final installation,
+PostgreSQL Global Development Group PostgreSQL 9.x,PostgreSQL Global Development Group,ASTRA,Open Source Software (OSS),91,1,,Open Source Software (OSS),,,,,,,,,,,
+PostgreSQL 9.4,PostgreSQL Global Development Group,ASTRA,Open Source Software (OSS),92,1,,Open Source Software (OSS),,,,,,,,,,,
+PuTTY,PuTTY/Simon Tatham,ASTRA,Open Source Software (OSS),93,9,,Open Source Software (OSS),,,,,,,,,,,
+Power BI Helper,RADACAD,ASTRA,freeware,94,1,,freeware,,,,,,,,,,,
+Realtek USB FE Family Controller,Realtek,ASTRA,freeware,95,371,,freeware,,,,,,,,,,proprietory SW - needs to checked with vendor before final installation,
+OpenJDK 8 Redhat,Red Hat,ASTRA,Open Source Software (OSS),96,401,,Open Source Software (OSS),,,,,,,,,,,
+OpenJDK JRE 11.0.9-3-redhat,Red Hat,ASTRA,Open Source Software (OSS),97,1,,Open Source Software (OSS),,,,,,,,,,,
+OpenJDK 11 Red Hat,Red Hat,ASTRA,Open Source Software (OSS),98,1,,Open Source Software (OSS),,,,,,,,,,,
+OpenJDK 17 RedHat,Red Hat,ASTRA,Open Source Software (OSS),99,1,,Open Source Software (OSS),,,,,,,,,,,
+Riverbed Technology WinPcap 4.x,Riverbed Technology,ASTRA,Open Source Software (OSS),100,1,,Open Source Software (OSS),,,,,,,,,,,
+SAP GUI 8.00 (32-bit),SAP,ASTRA,freeware,101,335,,freeware,,,,,,,,,,,
+Engineering Client Viewer 10 for SAP GUI,SAP,ASTRA,freeware,102,242,,freeware,,,,,,,,,,,
+SAP GUI 8.00 (64-bit),SAP,ASTRA,freeware,103,92,,freeware,,,,,,,,,,,
+Business Explorer BW - for SAP GUI 8.00,SAP,ASTRA,freeware,104,31,,freeware,,,,,,,,,,,
+Microsoft Power BI - SAP BW drivers,SAP,ASTRA,freeware,105,13,,freeware,,,,,,,,,,,
+Freemind 1.0.1,SourceForge,ASTRA,Open Source Software (OSS),106,35,,Open Source Software (OSS),,,,,,,,,,,
+SQLBI Bravo for Power BI,SQLBI,ASTRA,Open Source Software (OSS),107,1,,Open Source Software (OSS),,,,,,,,,,,
+Tabular Editor,Tabular Editor,ASTRA,Open Source Software (OSS),108,2,,Open Source Software (OSS),,,,,,,,,,,
+Testo ComSoft Basic 5.x,Testo,ASTRA,freeware,109,1,,freeware,,,,,,,,,,,
+GIMP,The GIMP Team,ASTRA,Open Source Software (OSS),110,10,,Open Source Software (OSS),,,,,,,,,,,
+MATLAB Runtime Compiler R2019b,The MathWorks,ASTRA,freeware,111,2,,freeware,,,,,,,,,,,
+MATLAB Runtime R2020b,The MathWorks,ASTRA,freeware,112,3,,freeware,,,,,,,,,,,
+MATLAB Runtime R2022b,The MathWorks,ASTRA,freeware,113,3,,freeware,,,,,,,,,,,
+The R Foundation for Statistical Computing R (programming language) 3.x,The R Foundation for Statistical Computing,ASTRA,Open Source Software (OSS),114,5,,Open Source Software (OSS),,,,,,,,,,,
+UltraVNC 1.x,UltraVNC,ASTRA,Open Source Software (OSS),115,4,,Open Source Software (OSS),,,,,,,,,,,
+Vector Driver Setup,Vector Informatik,ASTRA,freeware,116,8,,freeware,,,,,,,,,,,
+VideoLAN VLC Media Player 3.x,VideoLAN,ASTRA,freeware,117,4,,freeware,,,,,,,,,,,
+VMware Tools,VMware,ASTRA,freeware,118,9,,freeware,,,,,,,,,,,
+Wireshark for SAW,Wireshark Development Team,ASTRA,Open Source Software (OSS),119,,,Open Source Software (OSS),,,,,,,,,,,
+Wireshark Analyzer Tool,Wireshark Foundation,ASTRA,Open Source Software (OSS),120,1,,Open Source Software (OSS),,,,,,,,,,,
+Setup Utilities 1.x,Zebra Technologies,ASTRA,freeware,121,10,,freeware,,,,,,,,,,proprietory SW - needs to checked with vendor before final installation,
+ZebraDesigner Essensials,Zebra Technologies,ASTRA,freeware,122,1,,freeware,,,,,,,,,,proprietory SW - needs to checked with vendor before final installation,
+Communication Credits,Microsoft,ASTRA,freeware,123,419,,freeware,,,,,,,,,,,
+"SAP ""MaCS"" (PT3)",3E,FRAME,Paid License,1,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_69430
+Acrobat Prof,Adobe,FRAME,Subscription,n/a,125,User,Subscription,n/a,,,,,,,,,,
+Acrobat Standard incl. FRL,Adobe,FRAME,Subscription,n/a,1044,User,Subscription,n/a,,,,,,,,,,
+After Effects,Adobe,FRAME,Subscription,n/a,39,User,Subscription,n/a,,,,,,,,,,
+Animate,Adobe,FRAME,Subscription,n/a,2,User,Subscription,n/a,,,,,,,,,,
+Audition,Adobe,FRAME,Subscription,n/a,6,User,Subscription,n/a,,,,,,,,,,
+Bridge,Adobe,FRAME,Subscription,n/a,33,User,Subscription,n/a,,,,,,,,,,
+Character Animator,Adobe,FRAME,Subscription,n/a,2,User,Subscription,n/a,,,,,,,,,,
+Creative Cloud (all apps) incl FRL,Adobe,FRAME,Subscription,n/a,no longer relevant,User,Subscription,n/a,,,,,,,,,,
+Dreamweaver,Adobe,FRAME,Subscription,n/a,5,User,Subscription,n/a,,,,,,,,,,
+Illustrator,Adobe,FRAME,Subscription,n/a,52,User,Subscription,n/a,,,,,,,,,,
+Incopy,Adobe,FRAME,Subscription,n/a,2,User,Subscription,n/a,,,,,,,,,,
+Indesign,Adobe,FRAME,Subscription,n/a,21,User,Subscription,n/a,,,,,,,,,,
+Lightroom Classic,Adobe,FRAME,Subscription,n/a,3,User,Subscription,n/a,,,,,,,,,,
+Media Encoder,Adobe,FRAME,Subscription,n/a,38,User,Subscription,n/a,,,,,,,,,,
+Photoshop,Adobe,FRAME,Subscription,n/a,46,User,Subscription,n/a,,,,,,,,,,
+Photoshop Elements,Adobe,FRAME,Subscription,n/a,3,User,Subscription,n/a,,,,,,,,,,
+Premiere Elements,Adobe,FRAME,Subscription,n/a,11,User,Subscription,n/a,,,,,,,,,,
+Premiere Pro,Adobe,FRAME,Subscription,n/a,13,User,Subscription,n/a,,,,,,,,,,
+Technical Communication Suite,Adobe,FRAME,Subscription,2,1,User,Subscription,y,,,,,,,,,,
+Acrobat XD,Adobe,FRAME,Subscription,n/a,3,User,Subscription,n/a,,,,,,,,,,
+Acrobat Pro,Adobe,FRAME,Subscription,2,74,User,Subscription,y,,,,,,,,,,
+Acrobat Std,Adobe,FRAME,Subscription,2,807,User,Subscription,y,,,,,,,,,,
+Single App,Adobe,FRAME,Subscription,2,22,User,Subscription,y,,,,2025-05-14 00:00:00,,,,,14.05.2025 Quanity lowered from 24 to 22,
+All Apps,Adobe,FRAME,Subscription,2,46,User,Subscription,y,,,,,,,,,,
+AEB Carrier Connect,AEB,FRAME,Paid License,3,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_27560
+ConnectShip,AEB,FRAME,Paid License,3,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_55189
+GTS - Global Trade Services  (P94) 11.0,AEB,FRAME,Paid License,3,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_52878
+ShipExec,AEB,FRAME,Paid License,3,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_65111
+Helios,AEB,FRAME,Paid License,3,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_71156
+TANGO,AEB,FRAME,Paid License,3,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_64815
+Traco,AEB,FRAME,Paid License,3,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_47196
+CarrierConnect,AEB,FRAME,Paid License,3,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_18084
+Aleph,Aleph,FRAME,Paid License,n/a,1 (user name licenses),,,n/a,,,,2025-04-30 00:00:00,x,,,,not requered,See Email from Dietmar Walter / 30.04.25
+Designer 2023 Desktop,Alteryx,FRAME,Subcription,5,6,User,Subcription,n,,,,,,,,,"30.04: Still in clarification, most likely to be discontinued",Upade 30.04.25: see Email from Andreas Baur to Karl-Heinz Jansen (BT/BDO-DO-ST) - no feedback from Karl-Heinz Jansen
+Server,Alteryx,FRAME,Subcription,5,1,Server,Subcription,n,,,,,,,,,"30.04: Still in clarification, most likely to be discontinued",Upade 30.04.25: see Email from Andreas Baur to Karl-Heinz Jansen (BT/BDO-DO-ST) - no feedback from Karl-Heinz Jansen
+Viewer,Altium,FRAME,Subscription,6,2,User,Subscription,y,WS04a | Altium Infrastructrue Server (AIS),22.06.2025,Set Up Licence Server,,,,,,,
+Designer Enterprise,Altium,FRAME,Subscription,6,8,User,Subscription,y,WS04a | Altium Infrastructrue Server (AIS),22.06.2025,Set Up Licence Server,2025-05-14 00:00:00,,,,,"29.04.2025 Enterprise Edition, 14.05.2025 Quantity adjusted",
+AWS,Amazon,FRAME,Paid License,7,,Pay as you go,,y,,,,,,,,,Setup contract direct or via Cloud Service Provider,
+Python Enterprise,Anaconda,FRAME,Subscription,8,275,User,Subscription,y,"Update. 29.04. Kein Lizenzserver nötig, User beziehen die Lizenz über ihren Client und greifen auf Cloud Anaconda Service zu.",,,x,x,,,,Quantity adjusted,
+ANSYS Workbench Mechanics 19.1,Ansys,FRAME,tbd,9,2,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ANSYS Electronics Enterprise Prep/Post,Ansys,FRAME,tbd,9,7,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ANSYS Electronics Premium HFSS,Ansys,FRAME,tbd,9,6,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ANSYS Electronics Premium Icepak,Ansys,FRAME,tbd,9,2,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ANSYS Electronics Enterprise,Ansys,FRAME,tbd,9,7,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+HPC Pack #3 (up to 132 cores->new 64 cores),Ansys,FRAME,tbd,9,64,cores,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,2025-05-14 00:00:00,,,,,Quantity and metric adjusted,
+ANSYS Discovery Modeling,Ansys,FRAME,tbd,9,4,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ANSYS Geometry Interface for SolidWorks,Ansys,FRAME,tbd,9,1,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ANSYS LS-DYNA,Ansys,FRAME,tbd,9,1,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ANSYS Mechanical Enterprise PrepPost,Ansys,FRAME,tbd,9,3,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ANSYS LS-DYNA HPC,Ansys,FRAME,tbd,9,1,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ANSYS Mechanical Enterprise Solver,Ansys,FRAME,tbd,9,2,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+Simplurer,Ansys,FRAME,tbd,9,1,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+SPEOS,Ansys,FRAME,tbd,9,3,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+SPEOS OST,Ansys,FRAME,tbd,9,1,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+Design Modeler,Ansys,FRAME,tbd,9,1,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+Ansys Zemax OpticStudio Premium,Ansys,FRAME,tbd,9,3,User,tbd,y,WS04a | FlexLM,2025-06-22 00:00:00,Set Up Licence Server,,,,,,decide on licenses model,
+IQ-RM Pro,Apis,FRAME,Perpetual,n/a,195,User,Perpetual,n/a,,,,2025-05-16 00:00:00,,,,,Not requered anymore,"Update 16.05: According to the alignment between Apis and Ronny Jakubasch (BT/QM-ST), no sourcing activities are required, and the license will no longer be needed after the end of 2025"
+IQ-CT Analysis,Apis,FRAME,Perpetual,n/a,195,User,Perpetual,n/a,,,,2025-05-16 00:00:00,,,,,Not requered anymore,"Update 16.05: According to the alignment between Apis and Ronny Jakubasch (BT/QM-ST), no sourcing activities are required, and the license will no longer be needed after the end of 2025"
+Confluence (on Prem),Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-06-22 00:00:00,Go-Live of this product is 05.05.; tbd if this is provided by Bosch; analog to Bitbucket,,,,,,,
+Jira (on Prem),Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-06-22 00:00:00,Go-Live of this product is 05.05.; tbd if this is provided by Bosch; analog to Bitbucket,,,,,,,
+SourceTree,Atlassian,FRAME,tbd,11,2000 (Freeware),User,tbd,Y (freeware),,05.05.025 (Freeware),,x,,,,,Freeware -> but must be procured,"Added application, free Addon"
+Bitbucket Data Center,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-06-22 00:00:00,Need to switch licenses before cut-off,x,,,,,,Data Center edition
+Bitbucket (Source Code 03),Atlassian,FRAME,Subscription,n/a,1,User,Subscription,n/a,,-,,x,,,,,,Consulidated data center edition
+"Announcer for Bitbucket (incl. PegDown, incl. jSoup) V 4.6.2",Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-live of Bitbucket needs licenses,,,,,,,
+Bitbucket PlantUML Plug-in V 1.4.0,Atlassian,FRAME,Subscription,n/a,2000,User,Subscription,n/a,,,,24/04/2025,,,,,will be terminated. Alternative: There is a plugin for Confluence to display code from Bitbucket and it can also render PlantUML diagrams there. https://support.atlassian.com/bitbucket-data-center/kb/display-plantuml-diagrams-in-bitbucket-server-dc-ui-using-markdown/,
+Bitbucket Server - Auto-unapprove Pull Requests V 5.0.0,Atlassian,FRAME,Subscription,11,2000 (Freeware),User,Subscription,Y (freeware),,05.05.025 (Freeware),Go-live of Bitbucket needs licenses (free),2025-04-15 00:00:00,,,,,Freeware -> but must be procured,
+Categories for Bitbucket V 1.6.2,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-live of Bitbucket needs licenses,,,,,,,
+Code Owners for Bitbucket V 6.6.0,Atlassian,FRAME,Subscription,n/a,2000,User,Subscription,n/a,,-,,15.04.2025,,,,,Data Center,no longer required
+Commit Graph for Bitbucket Data Center V 2024.03.31,Atlassian,FRAME,Subscription,11,2000 (Freeware),User,Subscription,Y (freeware),,05.05.025 (Freeware),Go-live of Bitbucket needs licenses (free),x,,,,,Freeware -> but must be procured,"Added application, free Addon"
+Control Freak - Commit Checks and Jira Hooks for Bitbucket V 2024.12.08,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-live of Bitbucket needs licenses,,,,,,Data Center,
+Include Code Quality for Bitbucket V 7.0.2,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-live of Bitbucket needs licenses,,,,,,,
+Repository Templates for Bitbucket Server V 4.2.1,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-live of Bitbucket needs licenses,,,,,,,
+SAML Single Sign On for Bitbucket V 6.11.2,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-live of Bitbucket needs licenses,,,,,,,
+Snippets for Bitbucket Server V 3.2.1.8,Atlassian,FRAME,Subscription,n/a,2000,User,Subscription,n/a,,-,,15.04.2025,,,,,,no longer required
+Yet Another Commit Checker V 1.26.0,Atlassian,FRAME,Subscription,n/a,2000,User,Subscription,n/a,,2025-05-05 00:00:00,Go-live of Bitbucket needs licenses,,,,,,Data Center,no longer required
+ScriptRunner for Jira (Data Center) 2000 Users,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/6820/scriptrunner-for-jira?hosting=datacenter&tab=pricing,Added application
+Clone Plus for Jira (Data Center) 2000 Users,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/44043/clone-plus-for-jira?hosting=datacenter&tab=pricing,Added application
+Xray Test Management for Jira (Data Center) 2000 Users,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/1211769/xray-test-management-for-jira?hosting=datacenter&tab=pricing,Added application
+Jira Misc Workflow Extensions (JMWE) (Data Center) 2000 Users,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/292/jira-misc-workflow-extensions-jmwe?hosting=datacenter&tab=pricing,Added application
+JSU Automation Suite for Jira Workflows (Data Center) 2000 Users,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/5048/jsu-automation-suite-for-jira-workflows?hosting=datacenter&tab=pricing,Added application
+Risk Register (Data Center) 2000 Users,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/1213146/risk-register?hosting=datacenter&tab=overview,"Added application, link to specific product to be identified"
+WBS Gantt - Chart- Enterprise Project Management for Jira (Data Center) 2000 Users,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/1211768/wbs-gantt-chart-for-jira-enterprise-project-management?hosting=datacenter&tab=pricing,Added application
+Easy Agile TeamRhythm - User Story Map & Retrospectives (Data Center) 2000 Users,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/1212078/easy-agile-teamrhythm-user-story-map-retrospectives?hosting=datacenter&tab=pricing,Added application
+easeRequirements - Requirements Management for Jira (R4J),Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/1213064/easerequirements-requirements-management-for-jira-r4j?hosting=datacenter&tab=pricing,Added application
+Bulk Clone Professional for Jira (Data Center) 2000 Users 2000 Users,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/1213028/bulk-clone-professional-for-jira?hosting=datacenter&tab=pricing,Added application
+Last Log for Jira (Data Center) 2000 Users,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/1211604/last-log-for-jira?hosting=datacenter&tab=pricing,Added application
+Jeditor - Rich Text Editor for Jira (Data Center) 2000 Users,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/1210768/jeditor-rich-text-editor-for-jira?hosting=datacenter&tab=pricing,Added application
+Configuration Manager for Jira (Data Center) 2000 Users,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/1211611/configuration-manager-for-jira-cmj?hosting=datacenter&tab=overview,"Added application, link to specific product to be identified"
+Multiple Subtasks for Jira (Data Center) 2000 Users,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/1229293/multiple-subtasks-for-jira?hosting=datacenter&tab=overview,"Added application, link to specific product to be identified"
+Comala Publishing,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/143/comala-publishing?hosting=datacenter&tab=pricing,Added application
+Content Formatting Macros for Confluence,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/247/content-formatting-macros-for-confluence?hosting=cloud&tab=overview,"Added application, link to specific product to be identified"
+draw.io Diagrams & Whiteboards,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/1210933/draw-io-diagrams-whiteboards?hosting=cloud&tab=overview,"Added application, link to specific product to be identified"
+Excel for Confluence,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/216/excel-for-confluence?hosting=datacenter&tab=overview,"Added application, link to specific product to be identified"
+LaTeX Math,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/1216800/latex-math-for-confluence-with-math-editor-texlive-chatgpt?hosting=cloud&tab=overview,"Added application, link to specific product to be identified"
+Linking for Confluence,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/166/linking-for-confluence?hosting=datacenter&tab=pricing,Added application
+MultiExcerpt,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/169/multiexcerpt?hosting=datacenter&tab=pricing,Added application
+Numbered Headings,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/16063/numbered-headings?hosting=cloud&tab=overview,"Added application, link to specific product to be identified"
+PlantUML Diagrams for Confluence,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/41025/plantuml-for-confluence?hosting=datacenter&tab=overview,"Added application, link to specific product to be identified"
+Scroll HTML Exporter for Confluence,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/420604/scroll-html-exporter-for-confluence?hosting=cloud&tab=overview,"Added application, link to specific product to be identified"
+Scroll ImageMap for Confluence,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/253/scroll-imagemap-for-confluence?hosting=datacenter&tab=pricing,Added application
+Scroll PDF Exporter for Confluence,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/7019/scroll-pdf-exporter-for-confluence?hosting=datacenter&tab=pricing,Added application
+Scroll Versions for Confluence,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/1210818/scroll-versions-for-confluence?hosting=datacenter&tab=pricing,Added application
+Scroll Viewport for Confluence,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/1211636/scroll-viewport-for-confluence?hosting=datacenter&tab=pricing,Added application
+"Table Filter, Charts & Spreadsheets for Confluence",Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/27447/table-filter-charts-spreadsheets-for-confluence?hosting=datacenter&tab=pricing,Added application
+Webhook to Jenkins for Bitbucket Server V 6.4.5,Atlassian,FRAME,Subscription,11,2000,User,Subscription,Y,,2025-05-05 00:00:00,Go-live of Bitbucket needs licenses,x,,,,,,Added application
+Scroll Translations for Confluence,Atlassian,FRAME,Subscription,11,2000,User,Subscription,y,,2025-05-05 00:00:00,Go-Live of this product is 05.05.; to be procued by Triton,x,,,,,https://marketplace.atlassian.com/apps/1211616/scroll-translations-for-confluence?hosting=datacenter&tab=pricing,Added application
+Inventor Pro,Autodesk,FRAME,Subscription,12,3,User,Subscription,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,,
+AutoCAD (userbased),Autodesk,FRAME,Subscription,12,66,User,Subscription,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,,
+AutoCAD Architecture (userbased),Autodesk,FRAME,Subscription,12,6,User,Subscription,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,,
+AutoCAD Electrical (SCCM),Autodesk,FRAME,Subscription,n/a,no longer relevant,User,Subscription,n/a,,,,,,,,,,
+AutoCAD Mechanical (userbased),Autodesk,FRAME,Subscription,12,,User,Subscription,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,2025-05-14 00:00:00,,,,,"14.05.2025: Quantity adjusted, product part of Autodesk Autocad",
+Autodesk 3ds Max (userbased),Autodesk,FRAME,Subscription,12,2,User,Subscription,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,,
+Autodesk Revit (userbased),Autodesk,FRAME,Subscription,12,7,User,Subscription,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,,
+Navisworks,Autodesk,FRAME,Subscription,12,1,User,Subscription,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,,
+CAR Tool: nService Software Subscription,Avensoft,FRAME,Paid License,13,1,,,procurement in progress by workstream outside license management,,,,2025-04-09 00:00:00,x,,,,,
+TSIM,Axway,FRAME,Paid License,14,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_18652
+EDI Manager,Axway,FRAME,Paid License,14,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_65527
+Creo AuxApps for DC - EFA,B&W Software,FRAME,unknown,15,1,User,unknown,y,,,,,,,,,,
+Balsamiq Wireframes,Balsamiq,FRAME,tbd,16,30,User,tbd,y,,,,,,,,,decide on licenses model,
+Worksuite Nextcloud,Bechtle,FRAME,Paid License,17,200,User,,already ordered,,,,x,x,,,,,
+Bricscad Pro,Bricsys,FRAME,tbd,18,5,User,tbd,y,WS04a | Reprise Licence Server,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+Symantec Endpoint Protection,Broadcom,FRAME,Subscription,n/a,3523,device,Subscription,n/a,,,,,,,,,no longer required,not required as per Anton P.
+UC4,Broadcom,FRAME,Paid License,19,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_54545
+ESX / vSphere VVS CN,Broadcom (VMWare),FRAME,Subscription,19,64 -> 72 minimum purchase,Cores,Subscription,y,,,,2025-05-14 00:00:00,,,,,,
+ESX / vSphere VVS TW,Broadcom (VMWare),FRAME,Subscription,19,64 -> 72 minimum purchase,Cores,Subscription,y,,,,2025-05-14 00:00:00,,,,,,
+ESX / vSphere VVS US,Broadcom (VMWare),FRAME,Subscription,19,384,Cores,Subscription,y,,,,,,,,,,
+ESX / vSphere VVS MX,Broadcom (VMWare),FRAME,Subscription,19,64 -> 72 minimum purchase,Cores,Subscription,y,,,,2025-05-14 00:00:00,,,,,,
+ESX / vSphere VVS EMEA,Broadcom (VMWare),FRAME,Subscription,19,624,Cores,Subscription,y,,,,,,,,,,
+Cadence OrCAD PSpice 17.4,Cadence Design Systems,FRAME,unknown,20,8,User,unknown,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,,
+OrCAD-CN,Cadence Design Systems,FRAME,unknown,n/a,,,unknown,n/a,WS04a | FlexLM,,,x,,,,,Same product as above - to be removed from the list,"clarified demand, not needed"
+OrCAD Capture 17.4,Cadence Design Systems,FRAME,unknown,20,8,User,unknown,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,clarified demand
+PspiceAD,Cadence Design Systems,FRAME,unknown,n/a,,,unknown,n/a,WS04a | FlexLM,,,x,,,,,,"clarified demand, not needed"
+OrCAD PSpice Designer,Cadence Design Systems,FRAME,unknown,n/a,,,unknown,n/a,WS04a | FlexLM,,,x,,,,,,"clarified demand, not needed"
+OrCAD PSpice Designer Plus,Cadence Design Systems,FRAME,unknown,n/a,,,unknown,n/a,WS04a | FlexLM,,,x,,,,,,"clarified demand, not needed"
+OrCAD PCB Designer Professional + PSpice,Cadence Design Systems,FRAME,unknown,n/a,,,unknown,n/a,WS04a | FlexLM,,,x,,,,,,"clarified demand, not needed"
+OrCAD PCB Designer Standard,Cadence Design Systems,FRAME,unknown,n/a,,,unknown,n/a,WS04a | FlexLM,,,x,,,,,,"clarified demand, not needed"
+Cornerstone 8,Camline,FRAME,Paid License,21,4,User,,y,,,,,,,,,,
+FRAME_Cartel-Infosystems_SOTI_Lizenzen,Cartel Infosystems,FRAME,Cloud Contract,22,400,,Cloud Contract,procurement in progress by workstream outside license management,,,,2025-04-09 00:00:00,,,,,See Email from Dietmar Walter from 09th. April & Info from Bettina Rech,
+CheckMK,CheckMK,FRAME,Paid License,23,,,,procurement in progress by workstream outside license management,,,,,,,,,,
+Cisco AnyConnect Secure Mobility Client 4.10,Cisco,FRAME,n/a,n/a,discontinued,n/a,n/a,n/a,,,,,,,,,,
+Cisco Secure Client 5.x,Cisco,FRAME,n/a,n/a,discontinued,n/a,n/a,n/a,,,,,,,,,,
+Webex,Cisco,FRAME,n/a,n/a,discontinued,n/a,n/a,n/a,,,,,,,,,,
+Workspace / Virtual Desktop,Citrix,FRAME,tbd,n/a,,,tbd,n/a,,,,,,,,,"as of Jan 23, 2025: no Citrix",
+VMware vSphere,Citrix,FRAME,Paid License,,4x32 Cores = 128 Cores,Cores,,procurement in progress by workstream outside license management,,,,2025-06-06 00:00:00,,,,,Add demand - Email 06.06. Pierre Kromat,"06.06.2025: Quantity according Comline input, souring via Triton / or Keenfinity (in discussion) see Email Pierre Kromat"
+ST-LOG/ Order Status Tracking,Cognigy,FRAME,Subscription,24,,,Subscription,procurement in progress by workstream outside license management,,,,,,,,,,Input from BT purchasing and controlling list - entered by Stefan M.
+COMSOL Multiphysics,Comsol,FRAME,tbd,25,2,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ACOUSTICS,Comsol,FRAME,tbd,25,2,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+Design,Comsol,FRAME,tbd,25,1,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+CADIMPORT,Comsol,FRAME,tbd,25,1,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+Congree UCC,Congree Language Technologies GmbH,FRAME,Paid License,n/a,,,,n/a,,,,x,,,,,BT locally ordered,"updated, already ordered locally"
+CorelDRAW Technical Suite,Corel,FRAME,Perpetual,26,11,User,Perpetual,y,,,,,,,,,,
+Corel VideoStudio Pro,Corel,FRAME,tbd,26,6,User,tbd,y,,,,,,,,,decide on licenses model,
+Corel PaintShop Pro,Corel,FRAME,Perpetual,26,2,User,Perpetual,y,,,,,,,,,,
+MindManager 23,Corel,FRAME,Subscription,26,58,User,Subscription,y,Update 27.05: No license server needed – file sharing is sufficient. – KeenIT,,,2025-05-27 00:00:00,,,,,,See Email from Max Zehrt
+BT-ST/ Dealer Locator,Crownpeak,FRAME,Paid License,27,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_25342
+BT-VS/ Webforms (Monday Webforms),Crownpeak,FRAME,Paid License,27,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_88683
+Dynacord Website on First Spirit,Crownpeak,FRAME,Paid License,27,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_15031
+Electro-Voice Website on First Spirit,Crownpeak,FRAME,Paid License,27,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_34472
+NewCo Website WCMS First Spirit Cloud,Crownpeak,FRAME,Paid License,27,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_41304
+Catia V5,Dassault,FRAME,Perpetual,n/a,1,User,Perpetual,n/a,,,,,,,,,no longer used (Sousa Marcia (BT/PUQ2) <Marcia.Sousa@pt.bosch.com>),
+eDrawings Professional Viewer,Dassault,FRAME,tbd,28,20,User,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+SmartTeam,Dassault,FRAME,Perpetual,n/a,1,User,Perpetual,n/a,,,,,,,,,no longer used (Sousa Marcia (BT/PUQ2) <Marcia.Sousa@pt.bosch.com>),
+Solidworks Professional,Dassault,FRAME,tbd,n/a,98,User,tbd,n/a,WS04a | FlexLM,,,x,,,,,20250402: detailed demand specified in other lines,
+Solidworks Composer,Dassault,FRAME,Subscription,28,1,Network,Subscription,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,Added application
+Solidworks Composer,Dassault,FRAME,Subscription,28,4,User,Subscription,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,Added application
+Solidworks Composer,Dassault,FRAME,Subscription (3 months),28,1,User,Subscription (3 months),y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,Added application
+cae_cwdesigner,Dassault,FRAME,tbd,28,1,User China,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+cae_cwpro,Dassault,FRAME,tbd,28,1,User China,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+cae_cwstd,Dassault,FRAME,tbd,28,1,User China,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+camstd,Dassault,FRAME,tbd,28,1,User China,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+edrw,Dassault,FRAME,tbd,28,1,User China,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+solidworks,Dassault,FRAME,tbd,28,9,User China,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,Alternative: 3 Network Licenses,
+swoffice,Dassault,FRAME,tbd,28,1,User China,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+solidworks,Dassault,FRAME,tbd,28,1,User Germany,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+solidworks,Dassault,FRAME,tbd,28,9,User Mexico,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,Alternative: 2 Network Licenses,
+swoffice,Dassault,FRAME,tbd,28,1,User Mexico,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+cae_cwadvpro,Dassault,FRAME,tbd,28,1,User Netherlands,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+cae_cwpro,Dassault,FRAME,tbd,28,2,User Netherlands,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,Alternative: 1 Network Licenses,
+solidworks,Dassault,FRAME,tbd,28,1,User Netherlands,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+cae_cosmosfloworks_elec,Dassault,FRAME,tbd,28,1,User Portugal,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+cae_cosmosfloworkspe,Dassault,FRAME,tbd,28,1,User Portugal,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+cae_cwadvpro,Dassault,FRAME,tbd,28,1,User Portugal,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+cae_cwdesigner,Dassault,FRAME,tbd,28,1,User Portugal,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+cae_cwpro,Dassault,FRAME,tbd,28,1,User Portugal,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+cae_cwstd,Dassault,FRAME,tbd,28,1,User Portugal,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+edrw,Dassault,FRAME,tbd,28,1,User Portugal,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+solidworks,Dassault,FRAME,tbd,28,9,User Portugal,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,Alternative: 2 Network Licenses,
+swoffice,Dassault,FRAME,tbd,28,1,User Portugal,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+composer,Dassault,FRAME,tbd,28,6,User Portugal,tbd,n/a,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,2025-05-16 00:00:00,,,,,,
+toolbox,Dassault,FRAME,tbd,28,2,User Portugal,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+cae_cwadvpro,Dassault,FRAME,tbd,28,1,User US,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+edrw,Dassault,FRAME,tbd,28,1,User US,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+plastics_pro,Dassault,FRAME,tbd,28,1,User US,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+solidworks,Dassault,FRAME,tbd,28,28,User US,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,Alternative: 8 Network Licenses,
+swoffice,Dassault,FRAME,tbd,28,2,User US,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+swofficepremium_cwadvpro,Dassault,FRAME,tbd,28,1,User US,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+swofficepro,Dassault,FRAME,tbd,28,1,User US,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+visustd,Dassault,FRAME,tbd,28,1,User US,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+swofficepremium_cwpro,Dassault,FRAME,tbd,28,1,User US,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+toolbox,Dassault,FRAME,tbd,28,1,User US,tbd,y,WS04a | Dassault Licence Server,22.06.2025,Set Up Licence Server,x,,,,,,
+Docker Desktop Business,Docker,FRAME,Subscription,29,34,User,Subscription,y,,,,2025-05-14 00:00:00,,,,,14.05.2025 Business Edition,
+Docusign,Docusign,FRAME,Subscription,30,410 Envelopes,Envelope,Subscription,y,,,,2025-04-23 00:00:00,,,,,,See Email to Bettina Recha on 23th April
+CAM350 V15.x,Downstream Technologies,FRAME,unknown,31,45,User,unknown,y,WS04a | FlexLM,,,,,,,,,
+Edicom,EDICOMUNICACIONES MEXICO,FRAME,Paid License,n/a,Unlimited (User name licenses),,,n/a,,,,2025-04-30 00:00:00,x,,,,not requered,See Email from Dietmar Walter / 30.04.25
+Empower Charts,Empower,FRAME,Subscription,33,157,User,Subscription,y,,,,,,,,,,
+Entelligence Security Provider,Entrust,FRAME,n/a,n/a,"will be replaced, tbd",User,n/a,n/a,,,,,,,,,,
+Smart Order Processing BT LOG-AM,Eske,FRAME,Paid License,34,,,,procurement in progress by workstream outside license management,,,,,,,,,,Input from BT purchasing and controlling list - entered by Stefan M.
+Figma Organization,Figma,FRAME,Subscription,35,20,User,Subscription,procurement in progress by workstream outside license management,,01.05.2025,Required to move assets from old SaaS with Bosch to new SaaS with KF,2025-04-16 00:00:00,,,,,Purchase order released by Eva Andritschky on 16.04.25,
+InstallShield Premier,Flexera Software,FRAME,Paid License,36,2,User,,y,,,,x,x,,,,,
+Fossid,Fossid,FRAME,Paid License,37,?,,,procurement in progress by workstream outside license management,,11.05.2025,Go-live of FOSSID needs licenses,2025-04-16 00:00:00,,,,,See Email from Thomas Büttner from 16th. April,SOL_63471
+TotalCommander,Ghisler Software GmbH,FRAME,Paid License,38,not defined yet,,,n,,,,x,x,,,,28.04: Still in clarification,Upade 28.04.25: see Email Mr. Ridder to Harald Schoengen - not critical
+Social Coding Access,Github,FRAME,tbd,n/a,see Microsoft,n/a,tbd,n/a,,,,,,,,,,
+BT/BigQuery Webpage traffic measure,Google,FRAME,Paid License,39,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_25868
+Google Maps API Keys for Javascript(DynamicMaps) API: <7000 Requests per month,Google,FRAME,Paid License,39,2,Keys,,y,,,,x,x,,,,https://developers.google.com/maps/documentation/javascript/get-api-key,
+Google Maps API Keys for Javascript(DynamicMaps) API: <10000 Requests per month,Google,FRAME,Paid License,39,1,Keys,,y,,,,x,x,,,,https://developers.google.com/maps/documentation/javascript/get-api-key,
+Google Maps API Keys for Places API:  <5000 Requests  per month,Google,FRAME,Paid License,39,2,Keys,,y,,,,x,x,,,,https://developers.google.com/maps/documentation/places/web-service/get-api-key,
+Q-DAS Notebook V14 (Qs-Stat and Solara),Hexagon,FRAME,unknown,40,12,User,unknown,y,Update 29.04. Template mit Doku wird erstellt (Installationsquelle + Lizenz) -> User kann sich selbst Lizenz installieren. Bereitstellung auf beliebigen Fileserver,,,,,,,,,
+HFM-Financial Statements (YEC),Hyperion,FRAME,Paid License,41,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_23489
+Doors,IBM,FRAME,tbd,n/a,no longer relevant,User,tbd,n/a,,,,,,,,,,
+Rational Token License,IBM,FRAME,tbd,n/a,no longer relevant,Token,tbd,n/a,,,,,,,,,,
+Clearcase,IBM,FRAME,tbd,n/a,no longer relevant,User,tbd,n/a,,,,,,,,,,
+BT_ST_PnL (Planning Analytics),IBM,FRAME,Paid License,42,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_48112
+UltraEdit 20.x,IDM Computer Solutions,FRAME,Paid License,43,,,,n,,,,x,x,,,,28.04: Still in clarification,Upade 28.04.25: see Email Mr. Ridder to Harald Schoengen - not critical
+Irfanview,Irfan Skeljan,FRAME,Perpetual,44,873,User,Perpetual,y,,,,,,,,,,
+Ivalua,Ivalua,FRAME,Paid License,45,,,,procurement in progress by workstream outside license management,,,,,,,,,,Input from BT purchasing and controlling list - entered by Stefan M.
+Treesize,Jam Software,FRAME,Perpetual,46,379,User,Perpetual,y,,,,,,,,,,
+Clion,Jetbrains,FRAME,Subscription,47,5,User,Subscription,y,Update 02.04. Gespräch mit Service Owner -> zukünftig nur noch Webbased Licences. Lizenzserver wird nicht mehr benötigt,,,,,,,,,
+dotUltimate,Jetbrains,FRAME,Subscription,47,6,User,Subscription,y,Update 02.04. Gespräch mit Service Owner -> zukünftig nur noch Webbased Licences. Lizenzserver wird nicht mehr benötigt,,,,,,,,,
+IntelliJ IDEA Ultimate,Jetbrains,FRAME,Subscription,47,18,User,Subscription,y,Update 02.04. Gespräch mit Service Owner -> zukünftig nur noch Webbased Licences. Lizenzserver wird nicht mehr benötigt,,,,,,,,,
+PyCharm,Jetbrains,FRAME,Subscription,47,4,User,Subscription,y,Update 02.04. Gespräch mit Service Owner -> zukünftig nur noch Webbased Licences. Lizenzserver wird nicht mehr benötigt,,,,,,,,,
+JetBrains Licenses all,Jetbrains,FRAME,Subscription,47,79,User,Subscription,y,Update 02.04. Gespräch mit Service Owner -> zukünftig nur noch Webbased Licences. Lizenzserver wird nicht mehr benötigt,,,,,,,,,
+ReSharper Internet,Jetbrains,FRAME,Subscription,47,12,User,Subscription,y,Update 02.04. Gespräch mit Service Owner -> zukünftig nur noch Webbased Licences. Lizenzserver wird nicht mehr benötigt,,,,,,,,,
+WebStorm,Jetbrains,FRAME,Subscription,47,2,User,Subscription,y,Update 02.04. Gespräch mit Service Owner -> zukünftig nur noch Webbased Licences. Lizenzserver wird nicht mehr benötigt,,,,,,,,,
+Artifactory #BoschDevCloud by CI,JFrog,FRAME,Paid License,48,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_44983
+Artifactory Enterprise X,JFrog,FRAME,Paid License,48,3,Instances,,y,,22.06.2025,Need to switch licenses before cut-off,,,,,,,
+RapidResponse,Kinaxis,FRAME,tbd,49,80,User,tbd,procurement in progress by workstream outside license management,,,,,,,,,"decide on licenses model, consider SAP Add on",
+KNIME Analytics Platform,KNIME,FRAME,Subscription,n/a,15,,Subscription,n/a,,,,x,,Not required for Keenfinity,,,no longer required,See Email from Andreas Baur 08.04 - we do not need KNIME for Keenfinity
+Application Portfolio Management,LeanIX (SAP),FRAME,Subscription,51,300,Applications,Subscription,y,,,,,,,,,,
+Architecture and Roadmap Planning (50%),LeanIX (SAP),FRAME,Subscription,n/a,300,Applications,Subscription,n/a,,,,,,,,,currently not relevant (Andreas Baur 17.01.2025),
+LeanIX Technology Risk and Compliance,LeanIX (SAP),FRAME,Subscription,51,300,Applications,Subscription,y,,,,x,,,,,new entry 03/10/25,Added application
+Screenpresso Pro,Learnpulse,FRAME,Perpetual,52,3110,User,Perpetual,y,,,,,,,,,,
+Audio_System_Toolbox,Mathworks,FRAME,tbd,53,1,CN EU,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Compiler,Mathworks,FRAME,tbd,53,1,CN EU,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Distrib_Computing_Toolbox,Mathworks,FRAME,tbd,53,1,CN EU,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Image_Toolbox,Mathworks,FRAME,tbd,53,1,CN EU,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Instr_Control_Toolbox,Mathworks,FRAME,tbd,53,1,CN EU,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+MAP_Toolbox,Mathworks,FRAME,tbd,53,1,CN EU,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+MATLAB,Mathworks,FRAME,tbd,53,1,CN EU,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Signal_Blocks,Mathworks,FRAME,tbd,53,1,CN EU,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Signal_Toolbox,Mathworks,FRAME,tbd,53,2,CN EU,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Stateflow,Mathworks,FRAME,tbd,53,1,CN EU,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Statistics_Toolbox,Mathworks,FRAME,tbd,53,1,CN EU,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Symbolic_Toolbox,Mathworks,FRAME,tbd,53,1,CN EU,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Audio_System_Toolbox,Mathworks,FRAME,tbd,53,1,NNU DE,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+MATLAB,Mathworks,FRAME,tbd,53,3,NNU DE,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Signal_Toolbox,Mathworks,FRAME,tbd,53,1,NNU DE,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Communication_Toolbox,Mathworks,FRAME,tbd,53,1,NNU NL,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Compiler,Mathworks,FRAME,tbd,53,1,NNU NL,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Database_Toolbox,Mathworks,FRAME,tbd,53,8,NNU NL,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Image_Toolbox,Mathworks,FRAME,tbd,53,7,NNU NL,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+MATLAB_Report_Gen,Mathworks,FRAME,tbd,53,2,NNU NL,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Neural_Network_Toolbox,Mathworks,FRAME,tbd,53,1,NNU NL,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Real-Time_Workshop,Mathworks,FRAME,tbd,53,4,NNU NL,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+RTW_Embedded_Coder,Mathworks,FRAME,tbd,53,3,NNU NL,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Simscape,Mathworks,FRAME,tbd,53,1,NNU NL,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Video_and_Image_Blockset,Mathworks,FRAME,tbd,53,1,NNU NL,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Wavelet_Toolbox,Mathworks,FRAME,tbd,53,1,NNU NL,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Audio_System_Toolbox,Mathworks,FRAME,tbd,53,1,CN US,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Compiler,Mathworks,FRAME,tbd,53,1,CN US,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Distrib_Computing_Toolbox,Mathworks,FRAME,tbd,53,1,CN US,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Image_Toolbox,Mathworks,FRAME,tbd,53,1,CN US,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Instr_Control_Toolbox,Mathworks,FRAME,tbd,53,1,CN US,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+MAP_Toolbox,Mathworks,FRAME,tbd,53,1,CN US,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+MATLAB,Mathworks,FRAME,tbd,53,1,CN US,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Signal_Blocks,Mathworks,FRAME,tbd,53,1,CN US,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Signal_Toolbox,Mathworks,FRAME,tbd,53,1,CN US,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Statistics_Toolbox,Mathworks,FRAME,tbd,53,1,CN US,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Symbolic_Toolbox,Mathworks,FRAME,tbd,53,1,CN US,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Antenna_Toolbox,Mathworks,FRAME,tbd,53,1,NNU US,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Audio_System_Toolbox,Mathworks,FRAME,tbd,53,1,NNU US,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Distrib_Computing_Toolbox,Mathworks,FRAME,tbd,53,2,NNU US,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Instr_Control_Toolbox,Mathworks,FRAME,tbd,53,1,NNU US,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+MATLAB,Mathworks,FRAME,tbd,53,14,NNU US,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Optimization_Toolbox,Mathworks,FRAME,tbd,53,1,NNU US,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Phased_Array_System_Toolbox,Mathworks,FRAME,tbd,53,2,NNU US,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+RF_Toolbox,Mathworks,FRAME,tbd,53,1,NNU US,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Robotics_System_Toolbox,Mathworks,FRAME,tbd,53,2,NNU US,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Signal_Blocks,Mathworks,FRAME,tbd,53,2,NNU US,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Signal_Toolbox,Mathworks,FRAME,tbd,53,6,NNU US,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Video_and_Image_Blockset,Mathworks,FRAME,tbd,53,1,NNU US,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Compiler,Mathworks,FRAME,tbd,53,1,NNU Taiwan,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Control System Toolbox,Mathworks,FRAME,tbd,53,1,NNU Taiwan,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Database_Toolbox,Mathworks,FRAME,tbd,53,5,NNU Taiwan,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Image_Toolbox,Mathworks,FRAME,tbd,53,7,NNU Taiwan,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Instr_Control_Toolbox,Mathworks,FRAME,tbd,53,1,NNU Taiwan,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+MAP_Toolbox,Mathworks,FRAME,tbd,53,2,NNU Taiwan,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+MATLAB,Mathworks,FRAME,tbd,53,7,NNU Taiwan,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+MATLAB_Coder,Mathworks,FRAME,tbd,53,1,NNU Taiwan,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+MATLAB_Report_Gen,Mathworks,FRAME,tbd,53,2,NNU Taiwan,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Neural_Network_Toolbox,Mathworks,FRAME,tbd,53,1,NNU Taiwan,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Real-Time_Workshop,Mathworks,FRAME,tbd,53,1,NNU Taiwan,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+RTW_Embedded_Coder,Mathworks,FRAME,tbd,53,1,NNU Taiwan,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Signal_Blocks,Mathworks,FRAME,tbd,53,1,NNU Taiwan,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Signal_Toolbox,Mathworks,FRAME,tbd,53,4,NNU Taiwan,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+SIMULINK,Mathworks,FRAME,tbd,53,3,NNU Taiwan,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Spreadsheet Link,Mathworks,FRAME,tbd,53,1,NNU Taiwan,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Statistics_Toolbox,Mathworks,FRAME,tbd,53,1,NNU Taiwan,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+Symbolic_Toolbox,Mathworks,FRAME,tbd,53,1,NNU Taiwan,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+XPC_Target,Mathworks,FRAME,tbd,53,2,NNU Taiwan,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,x,,,,,,"updated demand details, split into regions"
+TestComplete,MeinTest GmbH Switzerland,FRAME,Paid License,n/a,,,,n/a,,,,x,x,,,,only transfer of existing contract to Keenfinity,
+visECAD Layout Viewer,Mentor (Siemens),FRAME,tbd,54,15,User,tbd,y,WS04a | Safenet Server,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+visECAD Plus,Mentor (Siemens),FRAME,tbd,54,1,User,tbd,y,WS04a | Safenet Server,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+M365 E3 incl. Teams,Microsoft,FRAME,Subscription,55,3251,User,Subscription,y,,,,,,,,,"Bosch can purchase MFST E3 only in bunde with following products: Defender for Endpoint P2, Defender for O365 P1, AAD P2, AIP P2, Cusomer Key, Customer LockBox)",
+Microsoft Entra ID P2,Microsoft,FRAME,Subscription,55,3251,User,Subscription,y,,2025-06-01 00:00:00,,,,,,,,
+Microsoft Teams Shared Devices,Microsoft,FRAME,Subscription,n/a,,Devices,Subscription,n/a,,,,,,Define Quantity,"SWS1, Chris, Claus Giehl",,no relevant,
+Teams Phone Standard,Microsoft,FRAME,Subscription,55,3251,User,Subscription,y,,,,,,,,,,
+Audio Conferencing,Microsoft,FRAME,Subscription,55,3251,User,Subscription,y,,,,,,,,,,
+Visio Plan 2,Microsoft,FRAME,Subscription,55,544,User,Subscription,y,,,,2025-05-14 00:00:00,,,,,14.05.2025: Plan 2,
+ProjectPro,Microsoft,FRAME,Subscription,n/a,duplicate,User,Subscription,n/a,,,,,,,,,,
+Windows Server Data Center,Microsoft,FRAME,tbd,55,1128,Cores,tbd,y,,,,,,,,,,
+Visual Studio Enterprise,Microsoft,FRAME,Subscription,55,55,User,Subscription,y,,22.06.2025,Azure DevOps onprem usage,2025-05-14 00:00:00,,,,,14.05.2025: will initially be procured as Professional as per Keenfinity decision,
+Visual Studio Professional,Microsoft,FRAME,Subscription,55,105,User,Subscription,y,,22.06.2025,Azure DevOps onprem usage,,,,,,,
+AzureDevOps Server CAL (dedicated),Microsoft,FRAME,tbd,55,56,User,tbd,y,,22.06.2025,Azure Devops onprem usage,,,,,,,
+Remote Assist (userbased),Microsoft,FRAME,tbd,n/a,1,User,tbd,n/a,,,,,,,User,,,no need according to user feedback
+Visual Studio Enterprise with GitHub Enterprise,Microsoft,FRAME,tbd,55,165,User,tbd,y,,,,,,,,,,
+Visual Studio Professional with GitHub Enterprise,Microsoft,FRAME,tbd,55,260,User,tbd,y,,,,,,,,,,
+Visual Studio Test Professional,Microsoft,FRAME,tbd,55,7,User,tbd,y,,,,,,,,,,
+SQL Server Standard,Microsoft,FRAME,tbd,55,100,Cores,tbd,y,,,,,,,,,,
+Exchange Server on Premise (Enterprise),Microsoft,FRAME,tbd,55,3,Instances,tbd,y,,,,2025-05-14 00:00:00,,,,,14.05.2025 Enterprise,
+Github Enterprise Cloud,Microsoft,FRAME,Subscription,55,190,User,Subscription,y,,,,45755,,,,,,Cloud edition
+Project Plan P3,Microsoft,FRAME,Subscription,55,224,User,Subscription,y,,,,,,,,,,
+Office 2016 Pro Plus,Microsoft,FRAME,tbd,55,159,User,tbd,y,,,,,,,,,,
+Power BI Desktop - Cloud,Microsoft,FRAME,Subscription,n/a,288,User,Subscription,n/a,,,,,,Assess demand details,SWS7 mit SWS1 and SWO-SME Monja Franken,,replaced by Power BI Pro,
+Power BI Pro,Microsoft,FRAME,Subscription,55,178,User,Subscription,y,,,,,,,,,,
+"Power Platform (Power Apps, Power Automate)",Microsoft,FRAME,Subscription,n/a,not defined yet,User,Subscription,n/a,,,,,,Assess demand details,SWS7 mit SWS1 and SWO-SME Monja Franken,,replaced by following 4 products,
+SEJ-00002 Power Apps Premium Sub Per User,Microsoft,FRAME,Subscription,n/a,15,User,Subscription,n/a,,,,,,,,,duplicate,
+1O4-00001 Power Automate Premium Sub Per User,Microsoft,FRAME,Subscription,55,10,User,Subscription,y,,,,,,,,,,
+8F5-00001 Power Automate Process Sub,Microsoft,FRAME,Subscription,55,2,Process,Subscription,y,,,,,,,,,,
+J8Q-00005	Power Apps Per App Sub 1 App or Website,Microsoft,FRAME,Subscription,55,500,App,Subscription,y,,,,,,,,,,
+SEJ-00002	Power Apps Premium Sub Per User,Microsoft,FRAME,Subscription,55,10,User,Subscription,y,,,,,,,,,,
+J8Q-00005 Power Apps Per App Sub 1 App or Website,Microsoft,FRAME,Subscription,n/a,500,App,Subscription,n/a,,,,,,,,,duplicate,
+Power BI Premium Capacities,Microsoft,FRAME,Subscription,55,,,Subscription,n,,,,,,,,,30.04: Still in clarificaton,Update 30.04.25: Still no update - see email from Karl-Heinz Jansen (BT/BDO-DO-ST) >> to be covered via Azure contract (PAYG); -  Chris Schygulla 3.2.25: Sicher werden Premium Kapazitäten benötigt. Mangels Governance/ Ownership BT kann der Umfang nicht bewertet werden: 11.33.25: auf Nachfrage keine weiteren Details derzeit verfügbar
+Github Copilot Business,Microsoft,FRAME,Subscription,55,150,User,Subscription,y,,,,,,,,,,
+RDS Cal,Microsoft,FRAME,tbd,55,200,User,tbd,y,,,,,,,,,,
+E5 Security Add On,Microsoft,FRAME,Subscription,n/a,3251,User,Subscription,n/a,,,,x,,,,,no longer required,will not be used as per Anton (3/14/2025)
+Windows 10/11 Enterprise,Microsoft,FRAME,tbd,55,331,Devices,tbd,y,KMS,,,x,,,,,,added application
+Github Advanced Security,Microsoft,FRAME,Subscription,55,12,User,Subscription,y,,,,x,,,,,,
+Azure,Microsoft,FRAME,Paid License,55,,Pay as you go,,y,,,,,,,,,Setup contract direct or via Cloud Service Provider,
+MinIO,"MinIO, Inc.",FRAME,Paid License,57,based on capacity / storage: 12k/100tb yearly,,,already ordered locally,,,,2025-05-14 00:00:00,x,,,,14.05.2025 already ordered,
+Minitab Statistical,Minitab,FRAME,Subscription,58,178,User,Subscription,y,,,,,,,,,,
+Miro Enterprise,Miro,FRAME,Subscription,59,250,User,Subscription,procurement in progress by workstream outside license management,,2025-05-26 00:00:00,Instance has to be available for migration,2025-05-13 00:00:00,,,Stefan Müller,,Will be purchesed via Keenfinity,13.05: Email to Michal & Davide to start purchasing process
+MobaXterm Professional,Mobatek,FRAME,Perpetual,60,34,User,Perpetual,y,,,,,,,,,,
+MongoDB,Mongodb,FRAME,Paid License,n/a,1,,,n/a,,,,x,x,,,,migration of existing service to new AWS contract,
+EConnect Pro Control,"MX Transmite, SAPI de CV",FRAME,Paid License,n/a,Unlimited (User name licenses),,,n/a,,,,2025-04-30 00:00:00,x,,,,not requered,See Email from Dietmar Walter / 30.04.25
+maiConnect,Nagarro ES GmbH,FRAME,Paid License,62,,,,procurement in progress by workstream outside license management,,,,,,,,,,Input from BT purchasing and controlling list - entered by Stefan M.
+LabVIEW Professional Development System,National Instrument,FRAME,tbd,63,64,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabWindows/CVI Full Development System,National Instrument,FRAME,tbd,63,64,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+NI Measurement Studio Enterprise Edition,National Instrument,FRAME,tbd,63,64,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabVIEW MathScript Module,National Instrument,FRAME,tbd,63,64,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabVIEW Unit Test Framework Toolkit,National Instrument,FRAME,tbd,63,64,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabVIEW VI Analyzer Toolkit,National Instrument,FRAME,tbd,63,64,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabVIEW Digital Filter Design Toolkit,National Instrument,FRAME,tbd,63,64,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabVIEW Advanced Signal Processing Toolkit,National Instrument,FRAME,tbd,63,64,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabVIEW Desktop Execution Trace Toolkit,National Instrument,FRAME,tbd,63,64,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabWindows/CVI Signal Processing Toolkit,National Instrument,FRAME,tbd,63,64,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabVIEW DataFinder Toolkit*,National Instrument,FRAME,tbd,63,64,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+NI SignalExpress*,National Instrument,FRAME,tbd,63,64,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabVIEW for Mac and Linux,National Instrument,FRAME,tbd,63,27,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabVIEW Electrical Power Toolkit,National Instrument,FRAME,tbd,63,27,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ECU Measurement and Calibration Toolkit,National Instrument,FRAME,tbd,63,27,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+Automotive Diagnostic Command Set,National Instrument,FRAME,tbd,63,27,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabWindows/CVI PID Control Toolkit,National Instrument,FRAME,tbd,63,27,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabWindows/CVI SQL Toolkit,National Instrument,FRAME,tbd,63,27,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+NI-Industrial Communications for Ethernet/IP,National Instrument,FRAME,tbd,63,27,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabVIEW Statechart Module*,National Instrument,FRAME,tbd,63,27,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+Analog Waveform Editor*,National Instrument,FRAME,tbd,63,27,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+Digital Waveform Editor*,National Instrument,FRAME,tbd,63,27,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+TestStand,National Instrument,FRAME,tbd,63,38,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+Switch Executive,National Instrument,FRAME,tbd,63,38,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+TestStand ATML Toolkit,National Instrument,FRAME,tbd,63,38,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+Requirements Gateway,National Instrument,FRAME,tbd,63,21,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabVIEW Real-Time Module,National Instrument,FRAME,tbd,63,30,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabVIEW FPGA Module,National Instrument,FRAME,tbd,63,30,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabVIEW Analytics and Machine Learning,National Instrument,FRAME,tbd,63,10,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabVIEW FPGA Compilation Tools,National Instrument,FRAME,tbd,63,10,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabWindows/CVI Real-Time Module,National Instrument,FRAME,tbd,63,10,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabVIEW OPC UA Toolkit,National Instrument,FRAME,tbd,63,10,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+NI Motion Assistant*,National Instrument,FRAME,tbd,63,7,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabVIEW Sound and Vibration Toolkit,National Instrument,FRAME,tbd,63,7,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+Vision Development Module,National Instrument,FRAME,tbd,63,7,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+Vision Builder for Automated Inspection,National Instrument,FRAME,tbd,63,7,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabVIEW Modulation Toolkit,National Instrument,FRAME,tbd,63,7,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabVIEW SoftMotion Module*,National Instrument,FRAME,tbd,63,7,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabVIEW Datalogging and Supervisory Control Module,National Instrument,FRAME,tbd,63,4,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabVIEW Control Design and Simulation Module,National Instrument,FRAME,tbd,63,4,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+LabVIEW Model Interface Toolkit,National Instrument,FRAME,tbd,63,4,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+VeriStand,National Instrument,FRAME,tbd,63,4,User,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+NetApp,NetApp,FRAME,Paid License,64,,,,procurement in progress by workstream outside license management,,,,,,,,,,Input Chris Schneider
+,nextapp.co,FRAME,Sue Saeger 19.12.,n/a,,,Sue Saeger 19.12.,n/a,,,,,,,,,"not in scope, local",
+Nexthink Collector,Nexthink,FRAME,SWS1,n/a,duplicate,,SWS1,n/a,,,,,,,,,,
+Collector,Nextthink,FRAME,tbd,n/a,3523,device,tbd,n/a,,,,,,,SWS1,,Product discontinued,
+SAAE,Nía International Systems SA de CV,FRAME,Paid License,n/a,Unlimited (User name licenses),,,n/a,,,,2025-04-30 00:00:00,x,,,,not requered,See Email from Dietmar Walter / 30.04.25
+"GTXXI, SAAE  (maquiladora)","Nia, Roca",FRAME,Paid License,66,,,,procurement in progress by workstream outside license management,,,,,,,,,,Input from BT purchasing and controlling list - entered by Stefan M.
+Nvidia vGPU,NVIDIA Corporation & affiliates,FRAME,Paid License,n/a,not defined yet,,,n/a,,,,x,x,,,,no need,
+BT-ST Open Text: StreamServer 16.6.5,OpenText,FRAME,Paid License,67,,,,procurement in progress by workstream outside license management,,,,,,,,,,Input from BT purchasing and controlling list - entered by Stefan M.
+Bosch Transfer Price Management (Optravis),Optravis,FRAME,Paid License,68,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_32907
+Transferprice Management Tool (Optravis),Optravis,FRAME,Paid License,68,,,,procurement in progress by workstream outside license management,,,,,,,,,,RBCM2363
+Database Standard Edition 2,Oracle,FRAME,Perpetual,69,2,Sockets,Perpetual,In discussion: 12 Months TSA,,,,,,,,,,"Falco: 2 Standorte, je 1 Server, 1 CPU pro Server"
+Oracle JRE (Java),Oracle,FRAME,Subscription,69,4300,User,Subscription,y,,,,,,,SWS1,,,
+Virtualbox,Oracle,FRAME,Subscription,69,214,User,Subscription,y,,,,,,,,,,
+SQL 2022???,Oracle,FRAME,SOL 99057,n/a,,,SOL 99057,n/a,,,,x,,,,,clarified with Jose: MS SQL already covered by Input from Falco,"clarified, Vendor Microsoft, Covered"
+Database Enterprise Edition,Oracle (SAP DB),FRAME,Perpetual or Term License,69,1930,Named User Plus,Perpetual or Term License,In discussion: 12 Months TSA,,,,,,Clarify TSA,SWS2,,Alternative to Named User: license 168 Oracle Processors (equals 7 Hosts with 48 cores each),
+Tuning Pack,Oracle (SAP DB),FRAME,Perpetual or Term License,69,1930,Named User Plus,Perpetual or Term License,In discussion: 12 Months TSA,,,,,,Clarify TSA,SWS2,,Alternative to Named User: license 168 Oracle Processors (equals 7 Hosts with 48 cores each),
+Partinioning,Oracle (SAP DB),FRAME,Perpetual or Term License,69,1930,Named User Plus,Perpetual or Term License,In discussion: 12 Months TSA,,,,,,Clarify TSA,SWS2,,Alternative to Named User: license 168 Oracle Processors (equals 7 Hosts with 48 cores each),
+Advanced Compression,Oracle (SAP DB),FRAME,Perpetual or Term License,69,1930,Named User Plus,Perpetual or Term License,In discussion: 12 Months TSA,,,,,,Clarify TSA,SWS2,,Alternative to Named User: license 168 Oracle Processors (equals 7 Hosts with 48 cores each),
+Diagnostics Pack,Oracle (SAP DB),FRAME,Perpetual or Term License,69,1930,Named User Plus,Perpetual or Term License,In discussion: 12 Months TSA,,,,,,Clarify TSA,SWS2,,Alternative to Named User: license 168 Oracle Processors (equals 7 Hosts with 48 cores each),
+Database-In-Memory (auf PFK und PF5),Oracle (SAP DB),FRAME,Perpetual or Term License,69,1930,Named User Plus,Perpetual or Term License,In discussion: 12 Months TSA,,,,,,Clarify TSA,SWS2,,Alternative to Named User: license 168 Oracle Processors (equals 7 Hosts with 48 cores each),
+Taris,Pathlock,FRAME,Paid License,70,"15 Systems, 4400 User",,,procurement in progress by workstream outside license management,,,,,,,,,,
+iQ-Audit 2.3,Peak Avenue,FRAME,Paid License,71,,,,procurement in progress by workstream outside license management,,,,,,,,,"not part of the project, this solution will not be provided by the project",SOL_64843
+IQ-Audit by AHP,Peak Avenue,FRAME,Paid License,71,,,,procurement in progress by workstream outside license management,,,,,,,,,"not part of the project, this solution will not be provided by the project",SOL_18364
+eISIR,Peak Avenue,FRAME,Paid License,71,,,,procurement in progress by workstream outside license management,,,,,,,,,"not part of the project, this solution will not be provided by the project",SOL_83961
+Pit-CAD,pit-cup,FRAME,unknown,72,2,User,unknown,n/a,,,,2025-04-15 00:00:00,,,,,"Update 03.06: Continuation of the previous solution is not possible; therefore, no license procurement is required.","Update 03.06.25: Continuation of the previous solution is not possible; therefore, no license procurement is required. Alternative solution is the responsibility of the Real Estate Workstream (Stefan Reinhardt) - See also SOL. Aligned with Christian Schygula & Thomas Buettner. See also teams massage to Tobias Müller Keenfinity."
+Pit-FM,pit-cup,FRAME,unknown,72,6,User,unknown,n/a,,,,2025-04-15 00:00:00,,,,,"Update 03.06:Continuation of the previous solution is not possible; therefore, no license procurement is required.","Update 03.06.25: Continuation of the previous solution is not possible; therefore, no license procurement is required. Alternative solution is the responsibility of the Real Estate Workstream (Stefan Reinhardt) - See also SOL. Aligned with Christian Schygula & Thomas Buettner. See also teams massage to Tobias Müller Keenfinity."
+Postman Basic Plan,"Postman, Inc.",FRAME,Paid License,73,25,User,,y,,,,x,x,,,,https://www.postman.com/pricing/ ($14/month per user if billed annually),
+GTXXI,PRISMA Tecnología Computacional SA de CV,FRAME,Paid License,n/a,Unlimited (User name licenses),,,n/a,,,,2025-04-30 00:00:00,x,,,,not requered,See Email from Dietmar Walter / 30.04.25
+BT-VS productboard.com,productboard,FRAME,Paid License,75,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_99086
+Loadmaster (VLM-1G) with Enterprise Plus Subscription,Progress,FRAME,Subscription,76,4,Instances,Subscription,y,,,,,,,,,,
+Edifact,Proveedor Autorizado de Certificacion EdifactMX SA de CV,FRAME,Paid License,n/a,20 (user name licenses),,,n/a,,,,2025-04-30 00:00:00,x,,,,not requered,See Email from Dietmar Walter / 30.04.25
+PTC-WindchillPDMLink-Contributor,PTC,FRAME,Subscription,n/a,29,User,Subscription,n/a,,,,,,,,,,
+PTC-WindchillPDMLink-Creo,PTC,FRAME,Subscription,n/a,58,User,Subscription,n/a,,,,,,,,,,
+PTC-WindchillPDMLink-eBOM,PTC,FRAME,Subscription,n/a,5,User,Subscription,n/a,,,,,,,,,,
+PTC-WindchillPDMLink-eBOM-ACAD,PTC,FRAME,Subscription,n/a,3,User,Subscription,n/a,,,,,,,,,,
+PTC-WindchillPDMLink-eBOM-Creo,PTC,FRAME,Subscription,n/a,28,User,Subscription,n/a,,,,,,,,,,
+PTC-WindchillPDMLink-eBOM-Creo-ACAD,PTC,FRAME,Subscription,n/a,4,User,Subscription,n/a,,,,,,,,,,
+PTC-WindchillPDMLink-Viewer,PTC,FRAME,Subscription,n/a,6,User,Subscription,n/a,,,,,,,,,,
+Service: PTC-Creo-Stand-Alone / License: Creo Advanced Assembly Extension - Global License,PTC,FRAME,Subscription,78,25,Global Floating,Subscription,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,2025-05-16 00:00:00,,,,,11 users + 63 user from Windchill base: -> 25 global floating,"license details added, quantity updated"
+Service: PTC-Creo-Stand-Alone / License: Creo Design Essentials Global (no PLM included),PTC,FRAME,Subscription,78,25,Global Floating,Subscription,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,2025-05-16 00:00:00,,,,,11 users + 63 user from Windchill base: -> 25 global floating,"license details added, quantity updated"
+PTC-CreoView-Stand-Alone,PTC,FRAME,Subscription,n/a,10,User,Subscription,n/a,WS04a | FlexLM,22.06.2025,Set Up Licence Server,2025-05-16 00:00:00,,,,,"Recoomendation Martin Lehrke: do not use, Windchill users have functionality included, standalone is around the process",
+Service: PTC-WindchillPDMLink-Creo / License:	Windchill Base,PTC,FRAME,Subscription,78,73,User,Subscription,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,2025-06-06 00:00:00,,,,,"Update 06.06: Quantity adjusted from 63 to 73 according Email from Max Zehrt >> Email to Dietmar Walter to inform Triton accordingly
+license details added, quantity updated","Update 06.06: Quantity adjusted from 63 to 73 according Email from Max Zehrt >> Email to Dietmar Walter to inform Triton accordingly
+license details added, quantity updated"
+Service: PTC-WindchillPDMLink-Creo / License: Windchill Creo Data Management & Visualization,PTC,FRAME,Subscription,78,73,User,Subscription,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,2025-06-06 00:00:00,,,,,"Update 06.06: Quantity adjusted from 63 to 73 according Email from Max Zehrt >> Email to Dietmar Walter to inform Triton accordingly
+license details added, quantity updated","Update 06.06: Quantity adjusted from 63 to 73 according Email from Max Zehrt >> Email to Dietmar Walter to inform Triton accordingly
+license details added, quantity updated"
+Tool Design Option,PTC,FRAME,Subscription,78,1,User,Subscription,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,,
+Complete Machining Option,PTC,FRAME,Subscription,78,2,User,Subscription,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,,
+Creo Advanced Assembly Extension (former,PTC,FRAME,Subscription,n/a,71,User,Subscription,n/a,WS04a | FlexLM,22.06.2025,Set Up Licence Server,2025-04-29 00:00:00,,,,,duplicate,
+Creo View Validate (formerly ProductView),PTC,FRAME,Subscription,78,4,User,Subscription,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,,
+Mathcad Prime,PTC,FRAME,Subscription,78,13,User,Subscription,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,,
+Arbortext,PTC,FRAME,Subscription,n/a,6,User,Subscription,n/a,WS04a | FlexLM,22.06.2025,Set Up Licence Server,15.04.2025,,,,,,consolidated into PTC-Arbortext-IsoDraw-CreoIllustrate
+IsoDraw,PTC,FRAME,Subscription,n/a,6,User,Subscription,n/a,WS04a | FlexLM,22.06.2025,Set Up Licence Server,15.04.2025,,,,,,consolidated into PTC-Arbortext-IsoDraw-CreoIllustrate
+Creo Elements / Direct - Modeling subscr. (SPN-CC200-F-),PTC,FRAME,Subscription,78,12,,Subscription,Y,,22.06.2025,,2025-05-16 00:00:00,,,,,Added on 15.05.2025,
+Creo Elements / Direct -  Model Manager subscr. (SPN-CC210-F-),PTC,FRAME,Subscription,78,14,,Subscription,Y,,22.06.2025,,2025-05-16 00:00:00,,,,,Added on 15.05.2025,
+Creo Elements / Direct -  Workflow Client subscr.,PTC,FRAME,Subscription,78,7,,Subscription,Y,,22.06.2025,,2025-05-16 00:00:00,,,,,Added on 15.05.2025,
+Creo Elements / Direct -  WM Documents subscr.,PTC,FRAME,Subscription,78,7,,Subscription,Y,,22.06.2025,,2025-05-16 00:00:00,,,,,Added on 15.05.2025,
+Creo Elements / Direct -  Interface for Adobe 3D PDF subscr.,PTC,FRAME,Subscription,78,1,,Subscription,Y,,22.06.2025,,2025-05-16 00:00:00,,,,,Added on 15.05.2025,
+Creo Elements / Direct -  Surfacing subscr. (SPN-CC250-F-),PTC,FRAME,Subscription,78,1,,Subscription,Y,,22.06.2025,,2025-05-16 00:00:00,,,,,Added on 15.05.2025,
+Creo Elements / Direct -  Sheet Metal subscr.(SPN-CC320-F-),PTC,FRAME,Subscription,78,1,,Subscription,Y,,22.06.2025,,2025-05-16 00:00:00,,,,,Added on 15.05.2025,
+Creo Elements / Direct -  Finite Element Analysis subscr. (SPN-CC345-F-),PTC,FRAME,Subscription,78,1,,Subscription,Y,,22.06.2025,,2025-05-16 00:00:00,,,,,Added on 15.05.2025,
+Service: PTC-Arbortext-IsoDraw-CreoIllustrate / License: Arbortex Editor & Styler,PTC,FRAME,Subscription,n/a,7,User,Subscription,n/a,,,,2025-04-29 00:00:00,,,,,no longer required,Update 29.04: See Email from Max Zehrt - not longer required
+Service: PTC-Arbortext-IsoDraw-CreoIllustrate / License: illustrate,PTC,FRAME,Subscription,n/a,7,User,Subscription,n/a,,,,2025-04-29 00:00:00,,,,,no longer required,Update 29.04: See Email from Max Zehrt - not longer required
+Service: PTC-Arbortext-IsoDraw-CreoIllustrate / License: arbortext IsoDraw,PTC,FRAME,Subscription,n/a,7,User,Subscription,n/a,,,,2025-04-29 00:00:00,,,,,no longer required,Update 29.04: See Email from Max Zehrt - not longer required
+Creo Simulation Live	(•	Creo Simulation Live),PTC,FRAME,Subscription,78,1,Floating,Subscription,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,15.04.2025,,,,,line item added,line item added
+Qualtrics,Qualtrics,FRAME,Paid License,79,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_53289
+Quanos ST-Server 24,Quanos,FRAME,Paid License,80,,,,procurement in progress by workstream outside license management,,,,,,,,,,Input from BT purchasing and controlling list - entered by Stefan M.
+UltraMon,Realtime Soft,FRAME,Paid License,81,,,,n/a,,,,2025-05-15 00:00:00,x,,,,"15.05: no purchase needed, purchase perpetual license locally long time ago",Updade 28.04.25: see Email Mr. Ridder to Harald Schoengen - not critical
+"Redhat Enterprise Linux Standard Support, bundled with Satellite",Redhat,FRAME,Subscription,82,40,Node,Subscription,y,,,,,,,SWS1,,,
+Satellite,Redhat,FRAME,Subscription,n/a,40,,Subscription,n/a,,,,,,,,,,
+Integration Point GTV,Reuters,FRAME,Paid License,83,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_77915
+Revizto,Revizto,FRAME,Paid License,84,2,User,,y,,,,,,,,,,
+iTWO Baseline,RiB,FRAME,unknown,85,3,Concurrent User,unknown,y,,,,,,,,,,
+iTWO 5D,RiB,FRAME,unknown,85,3,Concurrent User,unknown,y,,,,,,,,,,
+iTWO tx Volumen 3.000,RiB,FRAME,unknown,85,3,Packs,unknown,y,,,,,,,,,,
+Passolo,RWS,FRAME,Paid License,n/a,2,,,n/a,WS04a | FlexLM,,,x,x,,,,,
+Passolo Professional Edition (Network SN),RWS (Trados),FRAME,Paid License,n/a,1,User,,n/a,WS04a | FlexLM,,,04.04.2025,x,,,,already purchased,
+Passolo .NET Add-in,RWS (Trados),FRAME,Paid License,n/a,1,User,,n/a,WS04a | FlexLM,,,04.04.2025,x,,,,already purchased,
+Passolo Delphi Add-in,RWS (Trados),FRAME,Paid License,n/a,,User,,n/a,WS04a | FlexLM,,,04.04.2025,x,,,,already purchased,
+Passolo Java Add-in,RWS (Trados),FRAME,Paid License,n/a,,User,,n/a,WS04a | FlexLM,,,04.04.2025,x,,,,already purchased,
+eForms NG,S.A.X.,FRAME,tbd,n/a,3251,User,tbd,n/a,,,,,,,,,WS3: out of scope,
+7017299	SAP Single Sign-On,SAP,FRAME,Perpetual,86,38,User,Perpetual,"In discussion: Procurement by Bosch, Transfer",,,,,,,,,SSO no longer available. Successor „Secure Logging Service for SAP GUI“ only available as cloud product.​,
+7017328	SAP CRM Sales,SAP,FRAME,Perpetual,86,694,User,Perpetual,"In discussion: Procurement by Bosch, Transfer",,,,,,,,,Product discontinued,
+7017330	SAP CRM Service,SAP,FRAME,Perpetual,86,1005,User,Perpetual,"In discussion: Procurement by Bosch, Transfer",,,,,,,,,Product discontinued,
+"7018629	SAP Landscape Transformation, enterprise edition",SAP,FRAME,Perpetual,n/a,6,,Perpetual,n/a,,,,,,,,,no longer required,
+7018652	SAP S/4HANA Enterprise Management for Professional use,SAP,FRAME,Perpetual,86,1429,User,Perpetual,"In discussion: Procurement by Bosch, Transfer",,,,x,,,,,Agree on dual use right for ECC​; evaluate user license types based on STAR-Report,updated based on STAR report
+7018653	SAP S/4HANA Enterprise Management for Productivity use,SAP,FRAME,Perpetual,86,185,User,Perpetual,"In discussion: Procurement by Bosch, Transfer",,,,x,,,,,,updated based on STAR report
+7018654	SAP S/4HANA Enterprise Management for Functional use,SAP,FRAME,Perpetual,86,150,User,Perpetual,"In discussion: Procurement by Bosch, Transfer",,,,x,,,,,,updated based on STAR report
+"7018682	SAP S/4HANA, Developer access",SAP,FRAME,Perpetual,86,30,User,Perpetual,"In discussion: Procurement by Bosch, Transfer",,,,,,,,,,
+"BRIM: 7018705	SAP S/4HANA for convergent invoicing, 11 to 30 units",SAP,FRAME,Perpetual,86,23 blocks a 50.000.000,units,Perpetual,"In discussion: Procurement by Bosch, Transfer",,,,,,,,,,
+7019741	SAP Shared Service Framework for S/4HANA,SAP,FRAME,Perpetual,86,15,units,Perpetual,"In discussion: Procurement by Bosch, Transfer",,,,,,,,,,
+"7020280	SAP S/4HANA Digital Access, 5001 to 10000 units",SAP,FRAME,Perpetual,86,5001,units,Perpetual,"In discussion: Procurement by Bosch, Transfer",,,,,,,,,,
+"7020287	SAP Application Interface Framework, up to 50 units",SAP,FRAME,Perpetual,86,5,units,Perpetual,"In discussion: Procurement by Bosch, Transfer",,,,,,,,,,
+"7020302	SAP S/4HANA Finance for cash management, 11 to 50 units",SAP,FRAME,Perpetual,86,12,units,Perpetual,"In discussion: Procurement by Bosch, Transfer",,,,,,,,,,
+"7020309	SAP S/4HANA Finance for receivables management, 11 to 100 units",SAP,FRAME,Perpetual,86,12,Blocks of 100mill EUR revenue,Perpetual,"In discussion: Procurement by Bosch, Transfer",,,,,,,,,,
+"7020500	SAP S/4HANA contract, lease and real estate management, 1501 to 5000 units",SAP,FRAME,Perpetual,86,50,units,Perpetual,"In discussion: Procurement by Bosch, Transfer",,,,,,,,,,
+"7020617	SAP Document and Reporting Compliance for S/4HANA, 11 to 100 units",SAP,FRAME,Perpetual,86,33,units,Perpetual,"In discussion: Procurement by Bosch, Transfer",,,,,,,,,,
+"7021400	SAP S/4HANA Supply Chain for extended warehouse management, up to 15 units",SAP,FRAME,Perpetual,86,600000,Documents,Perpetual,"In discussion: Procurement by Bosch, Transfer",,,,x,,,,,,added application
+Commerce Service Portal,SAP,FRAME,Cloud Contract,86,13487 external / 50 internal,User,Cloud Contract,procurement in progress by workstream outside license management,,,,,,,,,,
+Commerce ST Portal,SAP,FRAME,Cloud Contract,86,4781,User,Cloud Contract,procurement in progress by workstream outside license management,,,,,,,,,,
+Convergent Charging Server,SAP,FRAME,Paid License,n/a,,,,n/a,,,,x,,,,,,"updated, not required, covered in different line item"
+Digital Access,SAP,FRAME,Perpetual,n/a,1.000.000,Documents,Perpetual,n/a,,,,,,Perform SAP Measurement,SWS2,,duplicate,
+ERP Foundation / Starter Pack,SAP,FRAME,Perpetual,86,1,Piece,Perpetual,"In discussion: Procurement by Bosch, Transfer",,,,,,,,,,
+Hana DB,SAP,FRAME,Perpetual,86,15% of license value SAP,%,Perpetual,"In discussion: Procurement by Bosch, Transfer",,,,,,,,,,
+SAP Business Objects (Normal User),SAP,FRAME,Perpetual,86,160,Concurrent Sessions,Perpetual,"In discussion: Procurement by Bosch, Transfer",,,,,,Perform SAP Measurement,SWS2,,,
+SAP Business Objects (TopUser),SAP,FRAME,Perpetual,86,50,Standard User,Perpetual,"In discussion: Procurement by Bosch, Transfer",,,,,,Perform SAP Measurement,SWS2,,,
+BRIM: CRM:SOM Subscription Order Management,SAP,FRAME,Perpetual,86,23 blocks a 50.000.000,units,Perpetual,"In discussion: Procurement by Bosch, Transfer",,,,,,,,,,
+BRIM: CC:Convergent Charging,SAP,FRAME,Perpetual,86,23 blocks a 50.000.000,units,Perpetual,"In discussion: Procurement by Bosch, Transfer",,,,,,,,,,
+SAP Business Warehouse,SAP,FRAME,Perpetual,n/a,676,User,Perpetual,n/a,,,,x,,,,,on Prem BW free of charge,"updated, not required, covered in different line item"
+SAP CRM,SAP,FRAME,tbd,n/a,1300,User,tbd,n/a,,,,,,Perform SAP Measurement,SWS2,,duplicate,
+SAP EWM (auf Hana DB),SAP,FRAME,Perpetual,n/a,307,User,Perpetual,n/a,,,,x,,,,,covered with 7021400	SAP S/4HANA Supply Chain for extended warehouse management,"updated, not required, covered in different line item"
+IdM Reporting 2.0,Saviynt,FRAME,Paid License,87,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_19086
+Identity Management (oneIdM),Saviynt,FRAME,Paid License,87,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_22941
+CARDIO,Saviynt,FRAME,Paid License,87,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_3508
+Packassistant,Scapos,FRAME,unknown,88,2,User,unknown,y,,,,,,,,,,
+Beyond Compare,Scooter Software,FRAME,Perpetual,89,598,User,Perpetual,y,,,,,,,,,,
+Sharedien MAM/DAM Shared Cloud,Sharadien,FRAME,Paid License,90,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_92937
+Teamcenter Product Cost Management,Siemens PLM,FRAME,tbd,n/a,3,User,tbd,n/a,WS04a | FlexLM,,,,,,SWS4,,,
+Visualization,Siemens PLM,FRAME,tbd,n/a,116,User,tbd,n/a,WS04a | FlexLM,,,,,,SWS4,,,
+Teamcenter NX,Siemens PLM,FRAME,tbd,n/a,1,User,tbd,n/a,WS04a | FlexLM,,,,,,SWS4,,,
+Teamcenter NX CAE,Siemens PLM,FRAME,tbd,n/a,1,User,tbd,n/a,WS04a | FlexLM,,,,,,SWS4,,,
+DPnE Prod Plan,Siemens PLM,FRAME,tbd,n/a,1,User,tbd,n/a,WS04a | FlexLM,,,,,,SWS4,,,
+ProCodex (userbased),Siemens PLM,FRAME,tbd,n/a,17,User,tbd,n/a,WS04a | FlexLM,,,,,,SWS4,,,
+Digital Thread Navigation XaaS,Siemens PLM,FRAME,tbd,91,1,Regional Floating EMEA,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,,
+Digital Thread Navigation XaaS,Siemens PLM,FRAME,tbd,91,1,Regional Floating AM,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,,
+DXF File Open for TC Vis,Siemens PLM,FRAME,tbd,91,1,Global Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,,
+IGES File Open for TC Vis,Siemens PLM,FRAME,tbd,91,1,Global Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,,
+JT Bi-Directional Translator for STEP,Siemens PLM,FRAME,tbd,91,3,Global Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,,
+Plant Simulation Professional Concurrent,Siemens PLM,FRAME,tbd,91,1,Regional Floating EMEA,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,,
+TC Visualization Mockup,Siemens PLM,FRAME,tbd,91,1,Regional Floating EMEA,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,,
+TC Visualization Pro Plus,Siemens PLM,FRAME,tbd,91,10,Global Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,,
+Teamcenter Visualization Animation,Siemens PLM,FRAME,tbd,91,1,Global Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,,
+Variation Analysis (Concurrent),Siemens PLM,FRAME,tbd,91,1,Regional Floating EMEA,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,,
+BT/ Percolate (SaaS),Siesmic,FRAME,Paid License,92,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_11408
+DALI 1.0,Snowflake,FRAME,Paid License,93,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_61692
+REDLake Data Provisioning Service,SNP,FRAME,Paid License,94,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_74324
+SNP Glue,SNP,FRAME,Subcription,94,,,Subcription,procurement in progress by workstream outside license management,,,,,,,,,,Input from BT purchasing and controlling list - entered by Stefan M.
+GETPAID 1.0,SoaPoeple,FRAME,Paid License,95,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_74590
+Sonarqube Server Enterprise,SonarSource,FRAME,Subscription,96,5000000,lines of code,Subscription,y,,22.06.2025,Need to switch licenses before cut-off,,,,,,,
+SOTI MobiControl,Soti Inc.,FRAME,Paid License,97,400,,,procurement in progress by workstream outside license management,,,,2025-04-09 00:00:00,,,,,See Email from Dietmar Walter / 09.04.25,See Email from Dietmar Walter / 09.04.25
+Enterprise Architect Corporate,Sparx,FRAME,tbd,98,30,Floating User,tbd,y,WS04a | Sparx specific,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+W-ELP,Stethos,FRAME,Paid License,99,,,,procurement in progress by workstream outside license management,,,,,,,,,,"Mail S. Müller Nov 8, 2024"
+Shared-PIM-STEP,Stibo Systems,FRAME,Paid License,100,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_46174
+EuroLog,SupplyON,FRAME,Paid License,101,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_21368
+SupplyON,SupplyON,FRAME,Paid License,101,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_92241
+SupplyON Web EDI,SupplyON,FRAME,Paid License,101,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_35401
+TOMs,SupplyON,FRAME,Paid License,101,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_33552
+Desktop,Tableau,FRAME,Subscription,102,3,User,Subscription,y,,,,,,,,,,
+Prep Builder,Tableau,FRAME,Subscription,102,1,User,Subscription,y,,,,,,,,,,
+Talend,Talend,FRAME,Paid License,103,,,,procurement in progress by workstream outside license management,,,,,,,,,,Input from BT purchasing and controlling list - entered by Stefan M.
+Teamviewer Enterprise Edition,Teamviewer,FRAME,Paid License,104,55,User,,y,,,,2025-05-02 00:00:00,,,,,,03.05.2025: Decide to procure
+Camtasia,Techsmith,FRAME,tbd,105,7,User,tbd,y,,,,,,,,,decide on licenses model,
+TBarCode Office Enterprise 2D,TEC-IT Datenverarbeitung,FRAME,Perpetual,106,3,User,Perpetual,y,,,,,,,,,,
+TBarcodeOCX 11,TEC-IT Datenverarbeitung,FRAME,Perpetual,106,11,User,Perpetual,y,,,,,,,,,,
+Codesoft BT,TEKLYNX,FRAME,tbd,107,103,User,tbd,already ordered,,,,2025-05-14 00:00:00,,,,,14.05.2025 already ordered,
+Testrail onprem,testrail.com,FRAME,Paid License,108,10,User,,already ordered locally,,,,x,x,,,,"14.05.: details added, edition still in clarification",Upade 28.04.25: see Email Mr. Ridder to Harald Schoengen - not critical
+NetApp-AV-Server (TrendMicro),TrendMicro,FRAME,Paid License,109,,,,procurement in progress by workstream outside license management,,,,,,,,,,Input Chris Schneider
+Server-AV (TrendMicro),TrendMicro,FRAME,Paid License,109,,,,procurement in progress by workstream outside license management,,,,,,,,,,Input Chris Schneider
+SketchUp Pro 2024,Trimble,FRAME,Subscription,110,9,User,Subscription,y,,,,,,,,,,
+SAP Addons,Various,FRAME,Paid License,n/a,,,,n/a,,,,2025-05-02 00:00:00,,,,,,Upate 02.05.25: Specify in respective line item
+Veeam Data platform Foundation Universal,Veeam,FRAME,Subscription,112,30,Packs a 10 Instances,Subscription,procurement in progress by workstream outside license management,,,,,,,SWS1,,,"wird über Comline beschafft, Angebot ist angefordert"
+Vertex BT O-Series,Vertex,FRAME,Paid License,113,,,,procurement in progress by workstream outside license management,,,,,,,,,,SOL_52178
+VisualSVN Enterprise (1000 User),VisualSVN,FRAME,unknown,114,1,Instance,unknown,procurement in progress by workstream outside license management,,10.05.2025,Go live of Subversion needs license,2025-04-16 00:00:00,,,,,Purchase order released by Eva Andritschky on 16.04.25,
+FiftyOne Enterprise,Voxel51,FRAME,Paid License,115,10,Users,,y,,,,x,x,,,,,
+Visual Assist Standard Edition,Whole tomato,FRAME,Paid License,116,11,,,y,,,,x,x,,,,Personal Edition not for commercial use (organizations),
+ZX1601   PC-Z1601-W1-L Design Gateway,Zuken,FRAME,tbd,117,6,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+"ZX9001 die Hauptlizenz für Design Force, in den GX-Paketen enthalten",Zuken,FRAME,tbd,117,6,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZX9050 ZX9050I-W1-L    DFM Elements,Zuken,FRAME,tbd,117,8,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZX4601 ZX4601I-W1-L    Components Editor,Zuken,FRAME,tbd,117,4,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZX9011 ZX9011I-W1-L    Intelligent Place and Route,Zuken,FRAME,tbd,117,3,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZX9038 ZX9038I-W1-L    DF EMD Collaborator,Zuken,FRAME,tbd,117,3,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZX3301 PC-Z3301-W1-L Board Viewer Advance,Zuken,FRAME,tbd,117,3,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZX4602 Interface-Lizenzen für ZX4601 Components Editor,Zuken,FRAME,tbd,117,2,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZX4904 ZX4904I-W1-L    Scenario EX,Zuken,FRAME,tbd,117,2,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+"ZX9043 eine Zusatzlizenz für Design Force, in den GX-Paketen enthalten",Zuken,FRAME,tbd,117,2,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZX1602 PC-Z1602-W1-L DG Standard ASCII Input/Output Module,Zuken,FRAME,tbd,117,2,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZX1605 PC-Z1605-W1-L DG Library Editor,Zuken,FRAME,tbd,117,1,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZX1607 PC-Z1607-W1-L DG PDF Compiler,Zuken,FRAME,tbd,117,1,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZX1610 PC-Z1610-W1-L DG Circuit Difference Output/Confirmation,Zuken,FRAME,tbd,117,1,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZX1617 PC-Z1617-W1-L DG Destination Management,Zuken,FRAME,tbd,117,1,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZX4901 ZX4901I-W1-L    Design Force SI,Zuken,FRAME,tbd,117,1,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZX4903 ZX4903I-W1-L    Design Force PI/EMI,Zuken,FRAME,tbd,117,1,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZX9013 ZX9013-W1-L     Dragon EX,Zuken,FRAME,tbd,117,1,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZX9014  ZX9014I-W1-L    Multi Object Design,Zuken,FRAME,tbd,117,1,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZX9019  ZX9019I-W1-L    SiP Design,Zuken,FRAME,tbd,117,1,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZX9030  ZX9030I-W1-L    DF ODB++ Export,Zuken,FRAME,tbd,117,1,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZX9032  ZX9032I-W1-L    DF ANSYS ANF I/F,Zuken,FRAME,tbd,117,1,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZX9039  ZX9039I-W1-L    Advanced STEP Generator,Zuken,FRAME,tbd,117,1,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZX9040I-W1-L    DF Unidat 2.1 Output,Zuken,FRAME,tbd,117,1,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZX9041  ZX9041I-W1-L    Power/Ground Plane Area Calculator,Zuken,FRAME,tbd,117,1,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZX9057  XX-Z9057-W1-L IPC-D-356 Export,Zuken,FRAME,tbd,117,1,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZXN000AL        Framework Engine (user),Zuken,FRAME,tbd,117,5,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZXN011AL        EDA Library Master (user),Zuken,FRAME,tbd,117,5,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+ZXN008YK3      WAN - Global WAN (3 Zones)  Server License,Zuken,FRAME,tbd,117,1,Floating,tbd,y,WS04a | FlexLM,22.06.2025,Set Up Licence Server,,,,,,decide on licenses model,
+"DS-CR, Layout, Schematic",Zuken,FRAME,tbd,n/a,,unknown,tbd,n/a,WS04a | FlexLM,,,,,,,,see comment in LDL,
