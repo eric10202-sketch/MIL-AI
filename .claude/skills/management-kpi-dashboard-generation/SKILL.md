@@ -17,6 +17,24 @@ Create the operational steering dashboard for PMO and SteerCo.
 - SharePoint offline compatibility.
 - Embedded Bosch logo in the dashboard header.
 
+## Colour Theme — Blue as Primary
+Use **Blue** as the primary/hero colour for all new HTML outputs. Do NOT use Bosch Red (`#E20015`) as the dominant background or header colour.
+
+| Role | Recommended value |
+|---|---|
+| Hero / header background | `#003b6e` (deep navy blue) |
+| Accent / highlight | `#0066CC` (Bosch mid-blue) |
+| Section header bar | `#005199` |
+| Link / interactive | `#0077BB` |
+| Status: GREEN | `#007A33` |
+| Status: AMBER | `#E8A000` |
+| Status: RED | `#CC0000` |
+| Body background | `#f4f6f9` |
+| Card background | `#ffffff` |
+| Body text | `#1a1a1a` |
+
+Bosch Red may still appear for red-status RAG badges or critical-path indicators, but must **not** be the primary brand colour of the document.
+
 ## Bosch Logo Embedding
 Read `Bosch.png` from workspace root and base64-encode it, then use:
 ```html

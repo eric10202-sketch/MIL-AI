@@ -23,3 +23,18 @@ Create scheduled executive PDF status reports with current-date calculations.
 - Filename month/year must auto-refresh from runtime date.
 - Maintain single-page A4 report layout.
 - Keep Bosch Digital color mapping.
+
+## Colour Theme — Blue as Primary
+Use **Blue** as the primary/hero colour for all new PDF outputs. Do NOT use Bosch Red (`#E20015`) as the dominant header colour.
+
+| Role | Recommended value |
+|---|---|
+| Header / hero band | `#003b6e` (deep navy blue) |
+| Accent / section bar | `#0066CC` |
+| Status: GREEN | `#007A33` |
+| Status: AMBER | `#E8A000` |
+| Status: RED | `#CC0000` |
+| Body background | `#f4f6f9` |
+| Body text | `#1a1a1a` |
+
+Bosch Red may still appear for red-status RAG badges, but must **not** be the primary brand colour of the report.
