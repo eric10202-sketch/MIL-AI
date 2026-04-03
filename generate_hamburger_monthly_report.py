@@ -424,4 +424,11 @@ def build_report():
 
 
 if __name__ == "__main__":
-    build_report()
+    from datetime import datetime as _dt
+    _t0 = _dt.now()
+    print(f"Started : {_t0.strftime('%Y-%m-%d %H:%M:%S')}")
+    try:
+        build_report()
+    finally:
+        _t1 = _dt.now()
+        print(f"Finished: {_t1.strftime('%Y-%m-%d %H:%M:%S')}  ({(_t1-_t0).total_seconds():.1f}s elapsed)")

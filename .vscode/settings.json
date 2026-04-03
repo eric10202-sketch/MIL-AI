@@ -1,0 +1,19 @@
+{
+  "files.exclude": {
+    "**/*.py": true,
+    "**/logo_b64.txt": true,
+    "**/Bosch_color_theme_png_b64.txt": true,
+    "**/Bosch_png_b64.txt": true,
+    "references/": true,
+    "archive/": true,
+    ".claude/": true,
+    "Carveout/": true,
+    "Trinity_Project_Cost_Plan.csv": true,
+    "Trinity_Project_Schedule.csv": true,
+    "REPOSITORY_CONTENT_STRUCTURE.md": true,
+    "20240718_FRAME_IT Risk Assessment_completed.csv": true,
+    "FRAME_IT_OPL_vFINAL.csv": true
+  },
+  "workbench.startupEditor": "none",
+  "workbench.editor.restoreViewState": true
+}

@@ -218,22 +218,29 @@ def write_csv(path: Path):
 
 
 if __name__ == "__main__":
-    # 1. Write CSV
-    write_csv(CSV_PATH)
+    from datetime import datetime as _dt
+    _t0 = _dt.now()
+    print(f"Started : {_t0.strftime('%Y-%m-%d %H:%M:%S')}")
+    try:
+        # 1. Write CSV
+        write_csv(CSV_PATH)
 
-    # 2. Generate XML via generate_msp_xml.py
-    import subprocess
-    result = subprocess.run(
-        [sys.executable,
-         str(HERE / "generate_msp_xml.py"),
-         "--csv", str(CSV_PATH),
-         "--out", str(XML_PATH)],
-        capture_output=True, text=True
-    )
-    if result.returncode == 0:
-        print(result.stdout.strip())
-        print(f"\nXML written: {XML_PATH}")
-    else:
-        print("generate_msp_xml.py error:")
-        print(result.stderr)
-        sys.exit(1)
+        # 2. Generate XML via generate_msp_xml.py
+        import subprocess
+        result = subprocess.run(
+            [sys.executable,
+             str(HERE / "generate_msp_xml.py"),
+             "--csv", str(CSV_PATH),
+             "--out", str(XML_PATH)],
+            capture_output=True, text=True
+        )
+        if result.returncode == 0:
+            print(result.stdout.strip())
+            print(f"\nXML written: {XML_PATH}")
+        else:
+            print("generate_msp_xml.py error:")
+            print(result.stderr)
+            sys.exit(1)
+    finally:
+        _t1 = _dt.now()
+        print(f"Finished: {_t1.strftime('%Y-%m-%d %H:%M:%S')}  ({(_t1-_t0).total_seconds():.1f}s elapsed)")

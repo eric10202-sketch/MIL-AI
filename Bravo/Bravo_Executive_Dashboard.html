@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Project Bravo – Executive Dashboard</title>
+  <style>
+    :root {
+      --navy:#003b6e; --mid:#005199; --acc:#0066CC; --lt:#e4edf9;
+      --bg:#f4f6f9;   --card:#fff;    --ink:#1a1a1a; --muted:#5a6478;
+      --line:#d8dde8; --good:#007A33; --warn:#E8A000; --bad:#CC0000;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:"Segoe UI",system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:13px;line-height:1.6}
+    .page{max-width:1100px;margin:0 auto;padding:24px 20px 56px}
+
+    /* ── HEADER ── */
+    .header{
+      background:linear-gradient(135deg,#001f45 0%,var(--navy) 55%,var(--acc) 100%);
+      border-radius:16px;color:#fff;padding:28px 32px 24px;margin-bottom:16px;
+      display:flex;justify-content:space-between;align-items:flex-start;
+    }
+    .header-left h1{font-size:26px;font-weight:700;margin-bottom:4px}
+    .header-left .sub{font-size:13px;opacity:.85}
+    .header-right{text-align:right;font-size:12px;opacity:.85}
+    .header-right .days{font-size:22px;font-weight:700;color:#ffd700}
+    .bosch-logo{display:flex;align-items:center;background:#fff;padding:4px 8px;border-radius:4px;width:fit-content;margin-bottom:12px}
+
+    /* ── COUNTDOWN STRIP ── */
+    .strip{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;
+    }
+    .strip-card{
+      background:var(--navy);border-radius:10px;color:#fff;
+      padding:14px 16px;text-align:center;
+    }
+    .strip-card .n{font-size:28px;font-weight:800;color:#ffd700}
+    .strip-card .lbl{font-size:11px;opacity:.8;margin-top:2px}
+    .strip-card .dt {font-size:11px;opacity:.65;margin-top:2px}
+
+    /* ── SECTIONS ── */
+    .section{background:var(--card);border-radius:12px;padding:20px 22px;margin-bottom:14px}
+    .section-title{
+      font-size:13px;font-weight:700;text-transform:uppercase;
+      letter-spacing:.8px;color:#fff;background:var(--mid);
+      padding:6px 14px;border-radius:6px;margin-bottom:14px;display:inline-block;
+    }
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .grid-6{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:14px}
+
+    /* ── STAT BOXES ── */
+    .stat{background:var(--lt);border-radius:8px;padding:14px;text-align:center}
+    .stat .n{font-size:26px;font-weight:800;color:var(--navy)}
+    .stat .lbl{font-size:11px;color:var(--muted);margin-top:2px}
+
+    /* ── PHASE TIMELINE ── */
+    .timeline{display:flex;gap:4px;margin-top:10px;border-radius:8px;overflow:hidden}
+    .tphase{flex:1;padding:10px 8px;text-align:center;font-size:11px;font-weight:700;color:#fff}
+    .p1{background:#005199}
+    .p2{background:#0066CC}
+    .p3{background:#0088E0}
+    .p4{background:#007A33}
+    .p5{background:#005E27}
+
+    /* ── MILESTONES TABLE ── */
+    table{width:100%;border-collapse:collapse}
+    th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);font-size:12px}
+    th{background:var(--lt);font-weight:700;color:var(--navy)}
+    .pill{display:inline-block;padding:2px 10px;border-radius:12px;font-size:11px;font-weight:700;color:#fff}
+    .g{background:var(--good)} .a{background:var(--warn);color:#1a1a1a} .r{background:var(--bad)}
+
+    /* ── WORKSTREAM GRID ── */
+    .ws-card{background:var(--lt);border-radius:8px;padding:12px 14px}
+    .ws-title{font-weight:700;color:var(--navy);font-size:12px;margin-bottom:6px}
+    .ws-body{font-size:11px;color:var(--muted);line-height:1.5}
+    .ws-conf{font-size:11px;font-weight:700;margin-top:6px;padding:2px 8px;border-radius:10px;display:inline-block}
+    .c-high{background:#cce8d5;color:#007A33}
+    .c-med {background:#fff3cc;color:#b06000}
+    .c-low {background:#fdd;color:#aa0000}
+
+    /* ── RISK CARDS ── */
+    .risk-card{border-left:4px solid var(--bad);padding:10px 14px;background:#fff8f8;border-radius:0 6px 6px 0;margin-bottom:8px;font-size:12px}
+    .risk-card.amber{border-color:var(--warn);background:#fff8e1}
+    .risk-card .rt{font-weight:700;color:var(--ink);margin-bottom:2px}
+    .risk-card .rm{color:var(--muted)}
+
+    /* ── BUDGET ── */
+    .bcat{display:flex;align-items:center;margin-bottom:8px;font-size:12px}
+    .bcat .label{width:220px;color:var(--ink)}
+    .bcat .bar-wrap{flex:1;background:#eee;border-radius:4px;height:14px;overflow:hidden;margin:0 10px}
+    .bcat .bar{height:100%;background:var(--acc);border-radius:4px}
+    .bcat .val{width:80px;text-align:right;font-weight:700;color:var(--navy)}
+
+    /* ── FOOTER ── */
+    .footer{background:var(--lt);border-radius:10px;padding:12px;margin-top:18px;font-size:11px;color:var(--muted);text-align:center}
+
+    /* ── PRINT ── */
+    @media print {
+      .page-break{page-break-before:always}
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <div class="bosch-logo">
+        <img src="data:image/png;base64,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" alt="Bosch" style="height:36px;display:block;"/>
+      </div>
+      <h1>Project Bravo — Executive Dashboard</h1>
+      <div class="sub">BGSW AI Business Carve-Out → 50/50 JV with Tata &nbsp;|&nbsp; Bosch Leadership Control &nbsp;|&nbsp; Combination Model</div>
+      <div class="sub" style="margin-top:6px">Seller: Bosch BGSW &nbsp;|&nbsp; Buyer: Tata &nbsp;|&nbsp; PM: Riyaz Ahmed Syed Ahmed (BD/MIL-PSM4)</div>
+    </div>
+    <div class="header-right">
+      <div style="font-size:12px;opacity:.8">Dashboard date: 03 Apr 2026</div>
+      <div class="days">89</div>
+      <div style="font-size:12px">days to GoLive (01 Jul 2026)</div>
+      <div style="margin-top:8px;font-size:11px;opacity:.7">Total Duration: 7 months</div>
+    </div>
+  </div>
+
+  <!-- COUNTDOWN STRIP -->
+  <div class="strip">
+    <div class="strip-card">
+      <div class="n">27</div>
+      <div class="lbl">Days to QG0</div>
+      <div class="dt">30 Apr 2026</div>
+    </div>
+    <div class="strip-card">
+      <div class="n">84</div>
+      <div class="lbl">Days to QG1/2/3</div>
+      <div class="dt">26 Jun 2026</div>
+    </div>
+    <div class="strip-card">
+      <div class="n">89</div>
+      <div class="lbl">Days to GoLive</div>
+      <div class="dt">01 Jul 2026</div>
+    </div>
+    <div class="strip-card">
+      <div class="n">210</div>
+      <div class="lbl">Days to Programme Close</div>
+      <div class="dt">30 Oct 2026</div>
+    </div>
+  </div>
+
+  <!-- OVERVIEW + STATS -->
+  <div class="section">
+    <span class="section-title">Programme Overview</span>
+    <div class="grid-2">
+      <div>
+        <p><strong>Objective:</strong> Carve out Bosch BGSW's AI Business into a newly formed 50/50 Tata–Bosch Joint Venture with Bosch retaining leadership control. The JV operates effectively as a Bosch-governed entity — eliminating the need for a TSA, Merger Zone, or antitrust filings.</p>
+        <p style="margin-top:10px"><strong>Scope:</strong> 17 AI applications, 70 users, 2 India sites. No ERP or SAP in scope. Single-wave application migration. No TSA post-GoLive.</p>
+        <p style="margin-top:10px"><strong>Key Simplification:</strong> Bosch's operational leadership of the JV dramatically reduces separation complexity versus a full Stand Alone model. BGSW governance and escalation paths remain intact post-GoLive.</p>
+      </div>
+      <div>
+        <div class="grid-2" style="gap:10px">
+          <div class="stat"><div class="n">2</div><div class="lbl">India Sites</div></div>
+          <div class="stat"><div class="n">70</div><div class="lbl">IT Users</div></div>
+          <div class="stat"><div class="n">17</div><div class="lbl">AI Applications</div></div>
+          <div class="stat"><div class="n">0</div><div class="lbl">ERP Systems</div></div>
+          <div class="stat"><div class="n">7</div><div class="lbl">Months Duration</div></div>
+          <div class="stat"><div class="n">0</div><div class="lbl">TSA Services</div></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:14px">
+      <div style="font-size:12px;font-weight:700;margin-bottom:6px;color:var(--navy)">Phase Timeline</div>
+      <div class="timeline">
+        <div class="tphase p1" style="flex:22">Phase 1: Initialization<br/><span style="font-weight:400;font-size:10px">01 Apr – 30 Apr 2026</span></div>
+        <div class="tphase p2" style="flex:21">Phase 2: Concept &amp; Architecture<br/><span style="font-weight:400;font-size:10px">01 May – 29 May 2026</span></div>
+        <div class="tphase p3" style="flex:20">Phase 3: Build &amp; Test<br/><span style="font-weight:400;font-size:10px">01 Jun – 26 Jun 2026</span></div>
+        <div class="tphase p4" style="flex:4">P4<br/><span style="font-weight:400;font-size:10px">29 Jun–2 Jul</span></div>
+        <div class="tphase p5" style="flex:85">Phase 5: Hypercare &amp; Closure<br/><span style="font-weight:400;font-size:10px">06 Jul – 30 Oct 2026</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MILESTONES + BUDGET -->
+  <div class="grid-2" style="margin-bottom:14px">
+    <!-- Milestones -->
+    <div class="section">
+      <span class="section-title">Key Milestones &amp; Quality Gates</span>
+      <table>
+        <tr><th>Gate</th><th>Date</th><th>Days</th><th>Status</th></tr>
+        <tr><td>Signing – Frozen Zone</td><td>07 Apr 2026</td><td>+4</td><td><span class="pill g">DONE</span></td></tr>
+        <tr><td>QG0 – Initialization</td><td>30 Apr 2026</td><td>+27</td><td><span class="pill a">UPCOMING</span></td></tr>
+        <tr><td>GoLive (Day 1) – 01 Jul 2026</td><td>01 Jul 2026</td><td>+89</td><td><span class="pill a">PLANNED</span></td></tr>
+        <tr><td>QG1/2/3 – Combined Gate</td><td>26 Jun 2026</td><td>+84</td><td><span class="pill a">PLANNED</span></td></tr>
+        <tr><td>QG4 – GoLive Gate</td><td>02 Jul 2026</td><td>+90</td><td><span class="pill a">PLANNED</span></td></tr>
+        <tr><td>Hypercare Close</td><td>25 Sep 2026</td><td>+175</td><td><span class="pill a">PLANNED</span></td></tr>
+        <tr><td>QG5 – Programme Closure</td><td>30 Oct 2026</td><td>+210</td><td><span class="pill a">PLANNED</span></td></tr>
+      </table>
+    </div>
+    <!-- Budget -->
+    <div class="section">
+      <span class="section-title">Budget Distribution</span>
+      <p style="font-size:28px;font-weight:800;color:var(--navy)">EUR 554K</p>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:14px">Labour only &nbsp;|&nbsp; CAPEX TBC – to be approved at QG0</p>
+      <div class="bcat"><div class="label">Programme Management</div><div class="bar-wrap"><div class="bar" style="width:30%"></div></div><div class="val">EUR 164K</div></div>
+      <div class="bcat"><div class="label">IT Project Management</div><div class="bar-wrap"><div class="bar" style="width:21%"></div></div><div class="val">EUR 114K</div></div>
+      <div class="bcat"><div class="label">Hypercare &amp; Closure</div><div class="bar-wrap"><div class="bar" style="width:15%"></div></div><div class="val">EUR 86K</div></div>
+      <div class="bcat"><div class="label">Infrastructure &amp; Cloud</div><div class="bar-wrap"><div class="bar" style="width:11%"></div></div><div class="val">EUR 59K</div></div>
+      <div class="bcat"><div class="label">Application Migration</div><div class="bar-wrap"><div class="bar" style="width:11%"></div></div><div class="val">EUR 58K</div></div>
+      <div class="bcat"><div class="label">Architecture &amp; Design</div><div class="bar-wrap"><div class="bar" style="width:6%"></div></div><div class="val">EUR 32K</div></div>
+      <div class="bcat"><div class="label">Legal &amp; Compliance</div><div class="bar-wrap"><div class="bar" style="width:4%"></div></div><div class="val">EUR 24K</div></div>
+      <div class="bcat"><div class="label">Client Workplace</div><div class="bar-wrap"><div class="bar" style="width:3%"></div></div><div class="val">EUR 14K</div></div>
+      <div class="bcat"><div class="label">HR IT</div><div class="bar-wrap"><div class="bar" style="width:1%"></div></div><div class="val">EUR 4K</div></div>
+    </div>
+  </div>
+
+  <!-- PAGE BREAK -->
+  <div class="page-break"></div>
+
+  <!-- WORKSTREAM COVERAGE -->
+  <div class="section">
+    <span class="section-title">IT Workstream Coverage</span>
+    <div class="grid-3">
+      <div class="ws-card">
+        <div class="ws-title">WS1 – PMO &amp; Governance</div>
+        <div class="ws-body">Programme setup, RACI, SteerCo facilitation, QG management, change control</div>
+        <div class="ws-conf c-high">HIGH Confidence</div>
+      </div>
+      <div class="ws-card">
+        <div class="ws-title">WS2 – JV Legal &amp; Entity Setup</div>
+        <div class="ws-body">India MCA registration (50/50 Tata-Bosch; Bosch leadership); no antitrust filing</div>
+        <div class="ws-conf c-med">MEDIUM Confidence</div>
+      </div>
+      <div class="ws-card">
+        <div class="ws-title">WS3 – Infrastructure &amp; Cloud</div>
+        <div class="ws-body">JV AD forest, M365 &lt;70 mailboxes, Azure tenant, network on 2 India sites</div>
+        <div class="ws-conf c-high">HIGH Confidence</div>
+      </div>
+      <div class="ws-card">
+        <div class="ws-title">WS4 – Application Migration</div>
+        <div class="ws-body">17 AI apps in single wave; re-point to JV domain/AD/M365; no ERP dependency</div>
+        <div class="ws-conf c-high">HIGH Confidence</div>
+      </div>
+      <div class="ws-card">
+        <div class="ws-title">WS5 – Data Separation</div>
+        <div class="ws-body">AI business data separated from BGSW; model artefacts, training data ownership mapped</div>
+        <div class="ws-conf c-med">MEDIUM Confidence</div>
+      </div>
+      <div class="ws-card">
+        <div class="ws-title">WS6 – Client Workplace</div>
+        <div class="ws-body">70 devices; JV standard image; reimaging across 2 India sites; no travel required</div>
+        <div class="ws-conf c-high">HIGH Confidence</div>
+      </div>
+      <div class="ws-card">
+        <div class="ws-title">WS7 – Security &amp; IAM</div>
+        <div class="ws-body">JV-independent security platform; ISO 27001 baseline; BGSW CISO standards retained</div>
+        <div class="ws-conf c-high">HIGH Confidence</div>
+      </div>
+      <div class="ws-card">
+        <div class="ws-title">WS8 – HR IT</div>
+        <div class="ws-body">India payroll &amp; HR mapping for 70 AI business users; 2 India site coverage</div>
+        <div class="ws-conf c-high">HIGH Confidence</div>
+      </div>
+      <div class="ws-card">
+        <div class="ws-title">WS9 – Licence &amp; Procurement</div>
+        <div class="ws-body">Change-of-control review on 17 AI app licences; M365/Azure JV procurement</div>
+        <div class="ws-conf c-med">MEDIUM Confidence</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QG TRACKER + RISKS -->
+  <div class="grid-2" style="margin-bottom:14px">
+    <!-- QG Tracker -->
+    <div class="section">
+      <span class="section-title">Quality Gate Tracker</span>
+      <table>
+        <tr><th>Gate</th><th>Date</th><th>Criteria</th></tr>
+        <tr>
+          <td><strong>QG0</strong></td><td>30 Apr 2026</td>
+          <td>Charter approved; 17-app inventory confirmed; JV model &amp; governance agreed; proceed to Concept</td>
+        </tr>
+        <tr>
+          <td><strong>QG1/2/3</strong></td><td>26 Jun 2026</td>
+          <td>Architecture approved; all 17 apps tested; 70 devices configured; JV infra ready; UAT passed; proceed to Cutover</td>
+        </tr>
+        <tr>
+          <td><strong>QG4</strong></td><td>02 Jul 2026</td>
+          <td>Day 1 GoLive confirmed; all 17 apps live in JV; 70 users on JV domain; Bosch-led JV operational; no TSA; proceed to Hypercare</td>
+        </tr>
+        <tr>
+          <td><strong>QG5</strong></td><td>30 Oct 2026</td>
+          <td>Hypercare stable; JV IT fully operational; all 17 apps stable; Project Bravo formally closed</td>
+        </tr>
+      </table>
+    </div>
+    <!-- Risks -->
+    <div class="section">
+      <span class="section-title">Key Risk Indicators</span>
+      <div class="risk-card amber">
+        <div class="rt">BGSW/JV Bandwidth — P4×I4 = 16 ● AMBER</div>
+        <div class="rm">3-month sprint Apr–Jun; split focus. Dedicated lead + SteerCo cadence in place.</div>
+      </div>
+      <div class="risk-card amber">
+        <div class="rt">JV Legal Registration (India MCA) — P3×I5 = 15 ● AMBER</div>
+        <div class="rm">4–8 week MCA processing time. External India counsel engaged immediately.</div>
+      </div>
+      <div class="risk-card amber">
+        <div class="rt">Jun Build — Key BGSW Staff Unavailable — P3×I4 = 12 ● AMBER</div>
+        <div class="rm">June leave freeze enforced; backups identified by 29 May.</div>
+      </div>
+      <div class="risk-card" style="border-color:var(--good);background:#f0fff5">
+        <div class="rt" style="color:var(--good)">AD JV Forest Separation — P2×I5 = 10 ● GREEN</div>
+        <div class="rm">AD build starts Jun 1; dress rehearsal Jun 24–26; no backout plan needed.</div>
+      </div>
+      <div class="risk-card" style="border-color:var(--good);background:#f0fff5">
+        <div class="rt" style="color:var(--good)">UAT Window Compressed — P3×I4 = 12 ● GREEN</div>
+        <div class="rm">UAT leads engaged May 1; test environment ready Jun 1; smoke tests daily from Jun 15.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE BREAK -->
+  <div class="page-break"></div>
+
+  <!-- APPLICATION MIGRATION -->
+  <div class="section">
+    <span class="section-title">Application Migration — 17 AI Apps (Single Wave)</span>
+    <div class="grid-2">
+      <div>
+        <p><strong>Strategy:</strong> All 17 AI applications migrate in a single wave during Phase 3 (Jun 2026). The small app count and the Bosch-led JV model (same AD/security standards) makes a multi-wave approach unnecessary.</p>
+        <p style="margin-top:10px"><strong>Approach:</strong> Re-point each app from BGSW domain / M365 / Azure to JV domain / M365 / Azure. No ERP dependencies. No SAP. Licence change-of-control reviewed by 14 May 2026.</p>
+        <p style="margin-top:10px"><strong>Day 1 Activation:</strong> All 17 apps go live simultaneously on 1 Jul 2026 following UAT sign-off on 24 Jun 2026.</p>
+      </div>
+      <div>
+        <table>
+          <tr><th>Wave</th><th>Apps</th><th>Window</th><th>Status</th></tr>
+          <tr>
+            <td><strong>Wave 1 (only wave)</strong></td>
+            <td>All 17 AI apps</td>
+            <td>01 Jun – 26 Jun 2026</td>
+            <td><span class="pill a">PLANNED</span></td>
+          </tr>
+          <tr>
+            <td>App Reconfig</td>
+            <td>17 apps</td>
+            <td>01–16 Jun 2026</td>
+            <td><span class="pill a">PLANNED</span></td>
+          </tr>
+          <tr>
+            <td>Integration Testing</td>
+            <td>17 apps</td>
+            <td>15–23 Jun 2026</td>
+            <td><span class="pill a">PLANNED</span></td>
+          </tr>
+          <tr>
+            <td>UAT (70 users)</td>
+            <td>17 apps</td>
+            <td>18–24 Jun 2026</td>
+            <td><span class="pill a">PLANNED</span></td>
+          </tr>
+          <tr>
+            <td>Day 1 Activation</td>
+            <td>17 apps</td>
+            <td>01 Jul 2026</td>
+            <td><span class="pill a">PLANNED</span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- REGIONAL SCOPE + CRITICAL PATH -->
+  <div class="grid-2" style="margin-bottom:14px">
+    <!-- Regional -->
+    <div class="section">
+      <span class="section-title">Regional Scope (India Only)</span>
+      <table>
+        <tr><th>Site</th><th>Role</th><th>Users</th><th>Devices</th></tr>
+        <tr><td><strong>India Site 1</strong></td><td>Primary JV Hub</td><td>~45</td><td>~45</td></tr>
+        <tr><td><strong>India Site 2</strong></td><td>Secondary JV Site</td><td>~25</td><td>~25</td></tr>
+        <tr><td><strong>Total</strong></td><td>India (domestic only)</td><td><strong>70</strong></td><td><strong>~70</strong></td></tr>
+      </table>
+      <div style="margin-top:12px;font-size:12px;color:var(--muted)">
+        Domestic India connectivity only. No international WAN circuits required. Cloud-first approach (Azure India) minimises on-premise footprint.
+      </div>
+    </div>
+    <!-- Critical Path -->
+    <div class="section">
+      <span class="section-title">Critical Path</span>
+      <ol style="font-size:12px;margin-left:18px">
+        <li style="margin-bottom:8px"><strong>JV Legal Entity Registration (India)</strong> — Must be filed in week 1 of Apr; completed by 30 Apr (QG0). <span class="pill a" style="font-size:10px">CRITICAL</span></li>
+        <li style="margin-bottom:8px"><strong>BGSW Resource Commitment (Jun)</strong> — BGSW infra, AD, and dev teams reserved for all of Jun. <span class="pill a" style="font-size:10px">CRITICAL</span></li>
+        <li style="margin-bottom:8px"><strong>AD JV Forest Build (Jun 1–12)</strong> — Foundation for all 70 users and 17 apps. No parallel path. <span class="pill a" style="font-size:10px">CRITICAL</span></li>
+        <li style="margin-bottom:8px"><strong>UAT Sign-Off (24 Jun)</strong> — Enables QG1/2/3 on 26 Jun; enables GoLive on 1 Jul. <span class="pill a" style="font-size:10px">CRITICAL</span></li>
+        <li style="margin-bottom:8px"><strong>Day 1 GoLive (1 Jul 2026)</strong> — Legal JV effective date; tied to JV shareholder agreement. <span class="pill r" style="font-size:10px">HARD DATE</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="footer">
+    <strong>Project Bravo | Executive Dashboard</strong> &nbsp;|&nbsp;
+    Seller: Bosch BGSW &nbsp;|&nbsp; Buyer: Tata &nbsp;|&nbsp;
+    Date: 03 Apr 2026 &nbsp;|&nbsp;
+    Data: Bravo_Project_Schedule.csv / Bravo_Risk_Register.xlsx / Bravo_Cost_Plan.csv &nbsp;|&nbsp;
+    Confidential — Internal Use Only
+  </div>
+
+</div>
+</body>
+</html>
