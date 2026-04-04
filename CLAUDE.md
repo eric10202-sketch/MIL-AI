@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-> **Last reviewed:** April 2026
+> **Last reviewed:** April 2026 — risk register template lookup and matrix formatting rules updated
 
 This file contains always-on rules for this repository. Detailed workflows are split into specialized skills under `.claude/skills/`.
 
@@ -53,7 +53,7 @@ If any are missing:
 
 For a confirmed new engagement, create all mandatory deliverables in this exact dependency order:
 
-1. Schedule (CSV + XML)
+1. Schedule (XLSX + XML)
 2. Risk register (Excel template format: XLS/XLSX)
 3. Cost plan
 4. Project charter
@@ -68,10 +68,17 @@ The cost plan must be cross-checked against both the schedule and the risk regis
 
 ### 5) Output Format Standards
 
-- Schedule must always be delivered in both CSV and MS Project XML formats.
-  - XML must always be generated via `generate_msp_xml.py` — never hand-written.
+- Schedule must always be delivered in two files: **XLSX** (primary human-readable) and MS Project XML.
+  - XLSX: formatted Bosch blue theme workbook (see `schedule-generation` skill for formatting rules).
+  - XML must always be generated via `generate_msp_xml.py` — never hand-written. The script uses a temporary CSV internally; no CSV file is kept in the output folder.
   - The XML generator enforces critical MSPDI rules (TaskMode ordering, ManualStart/Finish, ConstraintType) that are required for MS Project to honour task dates. See `schedule-generation` skill for full rules.
-- Risk register must always be delivered in Excel template format (XLS/XLSX) aligned with `Risk_analysis_template.xlsx` structure.
+- Cost plan must always be delivered as a **formatted XLSX workbook** (Bosch blue theme). CSV is no longer the primary cost plan format. See `cost-plan-generation` skill for formatting rules.
+- Risk register must always be delivered in Excel template format (XLS/XLSX) aligned with `BD_Risk-Register_template_en_V1.0_Dec2023.xlsx` structure.
+  - Use the template-owned lookup blocks as-is: categories `D140:D156`, sources `D171:D175`, impact `D182:E186`, probability `D189:E193`, traffic-light thresholds `D196:E199`, strategy `D202:D208`, status `D213:D217`.
+  - Impact labels must match the template exactly: `Very Low`, `Low`, `Moderate`, `High`, `Very High`.
+  - For generated lookup formulas in columns `M`, `O`, `AC`, and `AE`, use the template-compatible `=_xlfn.IFNA(VLOOKUP(...),"")` pattern.
+  - If a workbook is re-saved through `openpyxl`, explicitly force black font on yellow-filled cells in the `Matrix ` sheet so Excel does not render unreadable light-on-yellow text.
+  - Prefer plain ASCII punctuation in generated workbook text to avoid special-character corruption in Excel-bound outputs.
 - Project charter, executive dashboard, and management KPI dashboard must include an embedded Bosch logo in the document header/cover.
   - Default logo file: `Bosch.png` (workspace root) — embed as `data:image/png;base64,...` at `height:36px`.
   - `.bosch-logo` container CSS: `display:flex; align-items:center;` (do **not** use fixed `width`/`height` or `display:grid` — those clip the image).

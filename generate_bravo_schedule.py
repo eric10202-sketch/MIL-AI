@@ -1,6 +1,6 @@
 """
 generate_bravo_schedule.py
-Generates Bravo_Project_Schedule.csv and Bravo_Project_Schedule.xml
+Generates Bravo_Project_Schedule.xlsx and Bravo_Project_Schedule.xml
 
 Project Bravo: BGSW AI Business Carve-Out into 50/50 JV with Tata
 Seller: Bosch BGSW | Buyer: Tata
@@ -9,8 +9,9 @@ PM: Riyaz Ahmed Syed Ahmed (BD/MIL-PSM4)
 Bosch leadership control on JV; not antitrust relevant
 
 Run:  python generate_bravo_schedule.py
-Output: Bravo\Bravo_Project_Schedule.csv
-        Bravo\Bravo_Project_Schedule.xml
+Output: Bravo\\Bravo_Project_Schedule.xlsx
+    Bravo\\Bravo_Project_Schedule.xml
+Note:   A temporary CSV is created internally for the XML generator and deleted automatically.
 """
 
 import csv
@@ -22,8 +23,8 @@ HERE = Path(__file__).parent
 OUT_DIR = HERE / "Bravo"
 OUT_DIR.mkdir(exist_ok=True)
 
-CSV_PATH = OUT_DIR / "Bravo_Project_Schedule.csv"
-XML_PATH = OUT_DIR / "Bravo_Project_Schedule.xml"
+XLSX_PATH = OUT_DIR / "Bravo_Project_Schedule.xlsx"
+XML_PATH  = OUT_DIR / "Bravo_Project_Schedule.xml"
 
 # Columns: ID, Outline Level, Name, Duration, Start, Finish,
 #          Predecessors, Resource Names, Notes, Milestone
@@ -129,27 +130,128 @@ HEADERS = ["ID", "Outline Level", "Name", "Duration", "Start", "Finish",
            "Predecessors", "Resource Names", "Notes", "Milestone"]
 
 
-def write_csv(path: Path):
+def _write_temp_csv(path: Path):
+    """Write tasks to a temporary CSV file used only as input for generate_msp_xml.py."""
     with open(path, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(HEADERS)
         for t in TASKS:
             writer.writerow(list(t))
-    print(f"CSV written: {path}  ({len(TASKS)} tasks)")
+
+
+def write_xlsx(path: Path):
+    from openpyxl import Workbook
+    from openpyxl.styles import Font, PatternFill, Alignment, Border, Side, numbers
+    from openpyxl.utils import get_column_letter
+
+    # Colour palette (Bosch blue theme)
+    PHASE_FILL   = PatternFill("solid", fgColor="003B6E")   # dark Bosch blue — Phase 1 rows
+    SECTION_FILL = PatternFill("solid", fgColor="0066CC")   # mid blue — level-2 sections
+    MILESTONE_FILL = PatternFill("solid", fgColor="FFF2CC") # light amber — milestones
+    ALT_FILL     = PatternFill("solid", fgColor="EFF4FB")   # very light blue — alternating
+    HEADER_FILL  = PatternFill("solid", fgColor="002147")   # near-black blue — header row
+
+    thin = Side(style="thin", color="CCCCCC")
+    cell_border = Border(left=thin, right=thin, top=thin, bottom=thin)
+
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Project Schedule"
+
+    # ── Column widths ─────────────────────────────────────────────────────────
+    col_widths = [6, 7, 60, 12, 13, 13, 16, 32, 60, 10]
+    for i, w in enumerate(col_widths, start=1):
+        ws.column_dimensions[get_column_letter(i)].width = w
+
+    # Freeze pane below header
+    ws.freeze_panes = "A2"
+
+    # ── Header row ────────────────────────────────────────────────────────────
+    for col_idx, header in enumerate(HEADERS, start=1):
+        cell = ws.cell(row=1, column=col_idx, value=header)
+        cell.font = Font(bold=True, color="FFFFFF", name="Calibri", size=10)
+        cell.fill = HEADER_FILL
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        cell.border = cell_border
+    ws.row_dimensions[1].height = 22
+
+    # ── Data rows ─────────────────────────────────────────────────────────────
+    for row_idx, task in enumerate(TASKS, start=2):
+        task_id, outline, name, duration, start, finish, preds, resources, notes, milestone = task
+        is_milestone = (milestone == "Yes")
+        is_phase = (outline == 1)
+        is_section = (outline == 2)
+
+        values = [task_id, outline, name, duration, start, finish, preds, resources, notes, milestone]
+
+        # Indentation via prefix spaces on Name column (col 3)
+        indent = ""
+        if outline == 2:
+            indent = "  "
+        elif outline == 3:
+            indent = "    "
+
+        for col_idx, value in enumerate(values, start=1):
+            cell = ws.cell(row=row_idx, column=col_idx)
+            if col_idx == 3:
+                cell.value = indent + str(value)
+            else:
+                cell.value = value
+            cell.border = cell_border
+            cell.alignment = Alignment(vertical="center", wrap_text=(col_idx in (3, 8, 9)))
+            cell.font = Font(name="Calibri", size=9,
+                             bold=(is_phase or is_section or is_milestone),
+                             color="FFFFFF" if is_phase else "000000")
+
+        # Row fill
+        if is_phase:
+            row_fill = PHASE_FILL
+        elif is_milestone:
+            row_fill = MILESTONE_FILL
+        elif is_section:
+            row_fill = SECTION_FILL
+        elif row_idx % 2 == 0:
+            row_fill = ALT_FILL
+        else:
+            row_fill = None
+
+        if row_fill:
+            for col_idx in range(1, len(HEADERS) + 1):
+                ws.cell(row=row_idx, column=col_idx).fill = row_fill
+
+        # Fix font colour for section rows (override above) — skip milestones (amber fill needs black text)
+        if is_section and not is_milestone:
+            for col_idx in range(1, len(HEADERS) + 1):
+                ws.cell(row=row_idx, column=col_idx).font = Font(
+                    name="Calibri", size=9, bold=True, color="FFFFFF")
+
+        ws.row_dimensions[row_idx].height = 16
+
+    # ── Auto-filter on header ─────────────────────────────────────────────────
+    ws.auto_filter.ref = f"A1:{get_column_letter(len(HEADERS))}1"
+
+    wb.save(path)
+    print(f"XLSX written: {path}  ({len(TASKS)} tasks)")
 
 
 if __name__ == "__main__":
+    import subprocess, tempfile
     from datetime import datetime as _dt
     _t0 = _dt.now()
     print(f"Started : {_t0.strftime('%Y-%m-%d %H:%M:%S')}")
+    _tmp_csv = None
     try:
-        write_csv(CSV_PATH)
+        # Write temp CSV (input for XML generator only — not kept as output)
+        _fd, _tmp_csv = tempfile.mkstemp(suffix=".csv")
+        os.close(_fd)
+        _write_temp_csv(Path(_tmp_csv))
 
-        import subprocess
+        write_xlsx(XLSX_PATH)
+
         result = subprocess.run(
             [sys.executable,
              str(HERE / "generate_msp_xml.py"),
-             "--csv", str(CSV_PATH),
+             "--csv", _tmp_csv,
              "--out", str(XML_PATH),
              "--project", "Project Bravo"],
             capture_output=True, text=True
@@ -162,5 +264,10 @@ if __name__ == "__main__":
             print(result.stderr)
             sys.exit(1)
     finally:
+        if _tmp_csv:
+            try:
+                os.unlink(_tmp_csv)
+            except OSError:
+                pass
         _t1 = _dt.now()
         print(f"Finished: {_t1.strftime('%Y-%m-%d %H:%M:%S')}  ({(_t1-_t0).total_seconds():.1f}s elapsed)")

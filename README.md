@@ -62,9 +62,9 @@ Open Copilot Chat in Agent mode and provide the following details:
 
 Copilot will enforce the compliance gate, then generate all deliverables in the correct order:
 
-1. Schedule (CSV + MS Project XML)
-2. Risk register (Excel)
-3. Cost plan (CSV)
+1. Schedule (XLSX + MS Project XML)
+2. Risk register (Excel using `BD_Risk-Register_template_en_V1.0_Dec2023.xlsx`)
+3. Cost plan (XLSX)
 4. Project charter (HTML)
 5. Executive dashboard (HTML)
 6. Management KPI dashboard (HTML)
@@ -96,7 +96,7 @@ Carveout/
 ├── archive/                 # Closed projects
 ├── references/              # Methodology reference materials
 ├── templates/               # Document templates
-├── Risk_analysis_template.xlsx
+├── BD_Risk-Register_template_en_V1.0_Dec2023.xlsx
 ├── Bosch.png                # Logo used in generated documents
 └── README.md                # This file
 ```

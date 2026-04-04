@@ -1,18 +1,18 @@
 ---
 name: cost-plan-generation
-description: "Use when deriving labor-only carve-out cost plans from schedule resource assignments, including category subtotals, totals, phase and category breakdowns, and CAPEX exclusions."
+description: "Use when deriving labor-only carve-out cost plans from schedule resource assignments, including category subtotals, totals, phase and category breakdowns, and CAPEX exclusions. Output is XLSX."
 ---
 
 # Cost Plan Generation
 
 ## Purpose
 Create a standardized draft IT labor cost plan from schedule assignments, cross-checked against the risk register.
+Output is a **formatted Excel workbook (XLSX)**. CSV is no longer the primary deliverable format.
 
 ## Canonical Sources
-- `{ProjectName}/{ProjectName}_Project_Schedule.csv` — **required input**
+- `{ProjectName}/{ProjectName}_Project_Schedule.xlsx` — **required input** (task/resource data)
 - `{ProjectName}/{ProjectName}_Risk_Register.xlsx` — **required input**
-- `AlphaX/AlphaX_Cost_Plan.csv` — reference structure only
-- `Trinity_Project_Cost_Plan.csv` — reference structure only
+- `generate_bravo_cost_plan.py` — canonical generator pattern (XLSX output, Bosch blue theme)
 
 ## Generation Sequence
 The cost plan is the **3rd deliverable** in the mandatory generation sequence:
@@ -33,7 +33,7 @@ The cost plan is the **3rd deliverable** in the mandatory generation sequence:
 Before writing any cost figures, perform all checks below. Fix any gap before proceeding.
 
 ### 1 — Schedule alignment
-- Phase names and date ranges in cost plan **must match** phase names and dates in `{ProjectName}_Project_Schedule.csv`.
+- Phase names and date ranges in cost plan **must match** phase names and dates in `{ProjectName}_Project_Schedule.xlsx`.
 - Phase breakdown rows must cover every phase present in the schedule — no phase missing, none added.
 - Resource names in cost plan category blocks must map to resource names used in the schedule `Resource Names` column. If a schedule resource has no matching cost line, add one. If a cost line has no schedule counterpart, remove or rename it.
 
@@ -49,21 +49,49 @@ Before writing any cost figures, perform all checks below. Fix any gap before pr
 - Each `+`-split token that appears in the schedule must be traceable to at least one cost plan line.
 - Do not invent resource labels that are not present in the schedule (e.g. `Integration Team` if the schedule says `App Teams + Test Team`).
 
-## Required Columns
+## Required Columns (data schema)
 `CATEGORY, RESOURCE, TOTAL DAYS, TOTAL HRS, HOURLY RATE (EUR), TOTAL COST (EUR)`
 
-## Mandatory Sections
-1. Header block — include `Based on: {ProjectName}_Project_Schedule.csv` **and** `Risk-aligned: {ProjectName}_Risk_Register.xlsx`
-2. Cost category blocks with SUBTOTAL rows
-3. OVERALL PROJECT TOTAL section
-4. Cost breakdown by category
-5. Cost breakdown by phase (phase names and dates must match schedule exactly)
-6. CAPEX / additional costs (excluded from labor total) — must include risk-driven contingency lines
-7. Notes — include cross-reference note to risk register for each contingency line
+## Mandatory Worksheet Sections (in order)
+1. Header block — include `Based on: {ProjectName}_Project_Schedule.xlsx` **and** `Risk-aligned: {ProjectName}_Risk_Register.xlsx`, grey fill
+4. **Cost category blocks** — one section per category; mid blue category header, alternating white/light-blue data rows, light blue SUBTOTAL row
+5. **Overall Project Total** — dark Bosch blue fill, white bold, number-formatted EUR
+6. **Cost breakdown by category** — mid blue section header, alternating rows
+7. **Cost breakdown by phase** — phase names and dates must match schedule exactly
+8. **CAPEX / additional costs** — excluded from labour total; must include risk-driven contingency lines
+9. **Notes** — grey fill, italic; cross-reference risk register for each contingency line
+
+## XLSX Formatting Standards
+Follow the Bosch blue theme used in `generate_bravo_cost_plan.py`:
+
+| Element | Fill | Font |
+|---|---|---|
+| Title banner | `#003B6E` | White bold 13pt |
+| Column headers | `#0066CC` | White bold 9pt |
+| Metadata rows | `#F2F2F2` | Black 8pt |
+| Category section header | `#0066CC` | White bold 9pt |
+| Detail rows (alternating) | White / `#EFF4FB` | Black 9pt |
+| Subtotal rows | `#C6D4E8` | Black bold 9pt |
+| Overall total | `#003B6E` | White bold 10pt |
+| Notes rows | `#F2F2F2` | Black italic 8pt |
+
+- Number format `#,##0` on all EUR cost and rate cells.
+- Column widths: A=52, B=32, C=10, D=10, E=16, F=16.
+- Freeze pane below column header row.
+
+## Generator Script Pattern
+Create `generate_{ProjectName}_cost_plan.py` following `generate_bravo_cost_plan.py`:
+- Define CATEGORIES, PHASE_BREAKDOWN, CAPEX_ROWS, NOTES as data structures.
+- `write_xlsx(path)` function handles all formatting.
+- Output path: `{ProjectName}/{ProjectName}_Cost_Plan.xlsx`.
 
 ## Rules
-- Labor only totals in core plan.
-- Hardware, licences, WAN, co-lo, travel excluded from labor total.
+- Labour only totals in core plan.
+- Hardware, licences, WAN, co-lo, travel excluded from labour total.
 - Stand Alone and Integration model notes must differ.
-- Budget baseline state must be explicit (`TBC - to be approved at QG1` if unknown).
+- Budget baseline state must be explicit (`TBC - to be approved at QG0` or QG1 if unknown).
 - Do not recycle resource names or CAPEX lines from reference projects (AlphaX, Trinity).
+
+## Output Completeness
+Cost plan output is complete when this file exists:
+- `{ProjectName}/{ProjectName}_Cost_Plan.xlsx` ← **primary deliverable** (XLSX, not CSV)

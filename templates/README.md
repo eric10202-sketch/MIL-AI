@@ -10,5 +10,5 @@ Rules:
 Suggested naming:
 - <artifact>_template.<ext>
 Examples:
-- schedule_template.csv
+- schedule_template.xlsx
 - risk_register_template.xlsx
