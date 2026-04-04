@@ -31,21 +31,27 @@ def days_to_iso(days: int) -> str:
 
 
 def to_xml_start(date_str: str) -> str:
-    """Parse MM/DD/YY → 20YY-MM-DDT08:00:00."""
+    """Parse MM/DD/YY or YYYY-MM-DD → YYYY-MM-DDT08:00:00."""
     date_str = (date_str or "").strip()
     if not date_str:
         return ""
+    if "-" in date_str:
+        # ISO format: YYYY-MM-DD
+        return f"{date_str}T08:00:00"
     mm, dd, yy = date_str.split("/")
     return f"20{yy}-{mm.zfill(2)}-{dd.zfill(2)}T08:00:00"
 
 
 def to_xml_finish(date_str: str, is_milestone: bool = False) -> str:
-    """Parse MM/DD/YY → 20YY-MM-DDT17:00:00 (or T08:00:00 for 0-day milestones)."""
+    """Parse MM/DD/YY or YYYY-MM-DD → YYYY-MM-DDT17:00:00 (or T08:00:00 for 0-day milestones)."""
     date_str = (date_str or "").strip()
     if not date_str:
         return ""
-    mm, dd, yy = date_str.split("/")
     time = "T08:00:00" if is_milestone else "T17:00:00"
+    if "-" in date_str:
+        # ISO format: YYYY-MM-DD
+        return f"{date_str}{time}"
+    mm, dd, yy = date_str.split("/")
     return f"20{yy}-{mm.zfill(2)}-{dd.zfill(2)}{time}"
 
 
@@ -178,6 +184,15 @@ def xml_task(t: dict, summary_ids: set) -> list:
         lines.append(f"      <Notes>{escape(note_text)}</Notes>")
 
     for pred_id in t["predecessors"]:
+        # NEVER write predecessor links on summary tasks — MS Project derives
+        # summary scheduling from children; explicit preds on summaries cause
+        # "circular relationship detected" on import.
+        if is_summary:
+            break
+        # Also skip links pointing TO summary tasks — a detail task depending
+        # on a summary causes indirect circular relationships in MS Project.
+        if pred_id in summary_ids:
+            continue
         lines += [
             "      <PredecessorLink>",
             f"        <PredecessorUID>{pred_id}</PredecessorUID>",
