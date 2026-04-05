@@ -1,0 +1,97 @@
+---
+name: executive-dashboard-generation
+description: "Use when creating executive carve-out dashboards in self-contained HTML with Bosch palette, timeline and milestones, workstream confidence, regional scope, risks, and critical path sections."
+---
+
+# Executive Dashboard Generation
+
+## Purpose
+Produce a strategic executive dashboard from schedule, cost, and risk data.
+
+## Canonical Format — Project Trinity
+The reference layout is **Project Trinity — Executive Dashboard.pdf** (A4, 3-page portrait).
+All new dashboards must replicate this layout.
+
+### Canonical Sources (in priority order)
+1. `Project Trinity — Executive Dashboard.pdf` — **visual/layout reference only** (page structure, section arrangement)
+2. Existing project dashboards (e.g. `AlphaX/AlphaX_Executive_Dashboard.html`) — **HTML/CSS structure reference only**; never copy their project-specific content, dates, parties, budget figures, risk data, or narrative text
+
+## Content Generation Rules
+- **Never copy programme overview text, budget figures, risk indicators, milestone dates, workstream descriptions, or any narrative from another project.**
+- All content must be derived from the current project's schedule, cost plan, and risk register.
+- Dates, countdown calculations, and phase timelines must reflect the current project's actual timeline.
+- Workstream coverage must match the current project's scope (applications, SAP, infrastructure, etc.).
+- Regional distribution must reflect the current project's site locations.
+- Key parties, buyer/seller, and carve-out model must be from the current project's intake data.
+
+## Non-Negotiables
+- Self-contained HTML (no external CDN/fonts/URLs).
+- Bosch palette and system font stack only.
+- Bosch logo: embed `Bosch.png` as `data:image/png;base64,...` in an `<img>` tag.
+  - File: `Bosch.png` (workspace root)
+  - Size the `<img>` at `height:36px` inside the header.
+- Print-safe page-break rules (`page-break-before:always` on `.page-break`).
+- SharePoint offline rendering support.
+
+## Colour Theme — Blue as Primary
+Use **Blue** as the primary/hero colour for all new HTML outputs. Do NOT use Bosch Red (`#E20015`) as the dominant background or header colour.
+
+| Role | Recommended value |
+|---|---|
+| Hero / header background | `#003b6e` (deep navy blue) |
+| Accent / highlight | `#0066CC` (Bosch mid-blue) |
+| Section header bar | `#005199` |
+| Link / interactive | `#0077BB` |
+| Status: GREEN | `#007A33` |
+| Status: AMBER | `#E8A000` |
+| Status: RED | `#CC0000` |
+| Body background | `#f4f6f9` |
+| Card background | `#ffffff` |
+| Body text | `#1a1a1a` |
+
+Bosch Red may still appear for red-status RAG badges or critical-path indicators, but must **not** be the primary brand colour of the document.
+
+## Bosch Logo Embedding
+Read `Bosch.png` from workspace root and base64-encode it, then use:
+```html
+<img src="data:image/png;base64,<BASE64>" alt="Bosch — Invented for Life" style="height:36px;display:block;" />
+```
+Wrap it in a white background container (e.g. `background:#fff; padding:4px 8px; border-radius:4px;`).
+
+## Trinity 3-Page Layout Specification
+
+### Page 1
+1. **Header band** (dark navy gradient): Bosch logo (top-left) | Programme title + buyer/seller subtitle | date/countdown (top-right)
+2. **Days-to-key-events strip** (Bosch red): countdown boxes for Kickoff, Day-1 Closing, TSA Exit
+3. **PROJECT OVERVIEW section**: 2-column — left: narrative paragraph; right: Carve-Out Model box + Key Parties + Programme Budget + Governance
+4. **Stats row** (6 icons): Global Sites · Employees · Client Devices · Applications · Project Duration · TSA Duration
+5. **Phase Timeline bar**: horizontal colour-coded segments with date labels below
+6. **Two-column lower half**:
+   - Left: KEY MILESTONES & QUALITY GATES table (icon | name+desc | date | days-from-today | status pill)
+   - Right: BUDGET DISTRIBUTION (total figure + labour-only caveat + donut/bar breakdown by resource category)
+
+### Page 2
+7. **Continued milestones** (QG4 through QG6 if overflow from Page 1)
+8. **IT WORKSTREAM COVERAGE**: 3×3 grid (WS1–WS9) with title, bullet detail, confidence tag
+9. **QUALITY GATE TRACKER**: list — date | gate name+days-from-today | criteria paragraph
+10. **SCOPE & SCALE INDICATORS** (2-column):
+    - Left: REGIONAL SITE DISTRIBUTION — bar per region with site count
+    - Right: KEY RISK INDICATORS — HIGH/MEDIUM/LOW cards with P·I·Rating scores
+
+### Page 3
+11. **APPLICATION MIGRATION WAVES**: wave rows with bar chart widths and app counts
+12. **COUNTRY-SPECIFIC COMPLEXITY HOTSPOTS**: 2×2 or 2×3 grid per country flag
+13. **Stats strip** (dark navy background): Total Tasks · Resource Groups · Person-Hours · Regional DC Hubs
+14. **CRITICAL PATH & GUIDING PRINCIPLES**: 4-column grid — Infrastructure CP | ERP CP | Client Workplace | Programme Principles
+15. **Footer**: project name | dashboard date | data source CSV files | confidentiality notice
+
+## Required Content (summary)
+- Programme overview and countdown
+- Timeline and milestones
+- Budget summary with resource-category breakdown
+- Workstream confidence (9 workstreams)
+- QG tracker (all gates with criteria)
+- Regional scope and site distribution
+- Risk indicators (HIGH/MEDIUM/LOW with P×I ratings)
+- App waves and country hotspots
+- Critical path and principles

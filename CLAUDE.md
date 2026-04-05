@@ -1,8 +1,8 @@
 # CLAUDE.md
 
-> **Last reviewed:** April 2026 — risk register template lookup and matrix formatting rules updated
+> **Last reviewed:** April 2026 — skill coverage completed for charter, stakeholder presentation, and reconciliation gate
 
-This file contains always-on rules for this repository. Detailed workflows are split into specialized skills under `.claude/skills/`.
+This file contains always-on rules for this repository. Detailed workflows are split into specialized skills under `.agents/skills/`.
 
 ## Purpose
 
@@ -17,6 +17,8 @@ Use reference assets for methodology only. Do not copy reference project facts i
 - Reference folders and historical files are methodology-only.
 - Never copy reference parties, scope, dates, or organization names into active engagement deliverables.
 - Every generated artifact must reflect the current engagement only.
+- **When creating generator scripts for a new project, write them from scratch.** Do NOT copy-paste an existing project's generator and find-replace the project name. Each project's task lists, risk entries, cost categories, dashboard content, report narratives, and all other project-specific data must be independently created based on that project's unique input parameters (scope, timeline, sites, users, applications, carve-out model, TSA involvement, etc.).
+- Existing project generators may be used as **format/structure reference only** (e.g. XLSX styling, HTML layout, XML element ordering) — never as content sources.
 
 ### 2) Mandatory Inputs Before Any Deliverable Generation
 
@@ -60,11 +62,16 @@ For a confirmed new engagement, create all mandatory deliverables in this exact 
 5. Executive dashboard
 6. Management KPI dashboard
 7. Monthly status report
+8. Management stakeholder presentation (PPTX) — final executive communication artifact
+9. Multi-document reconciliation gate — final quality assurance before stakeholder handoff
 
 Do not generate Open Points List unless explicitly requested.
 
 **Each deliverable depends on all preceding ones being complete and consistent.**
+**The schedule, risk register, and cost plan are the authoritative baseline documents; every downstream artifact must reconcile to them before handoff.**
 The cost plan must be cross-checked against both the schedule and the risk register before generation (see cost-plan-generation skill).
+The PowerPoint presentation synthesizes key facts from all prior artifacts into a concise visual executive brief.
+**Before marking deliverables complete, execute the multi-document reconciliation gate (see multi-document-reconciliation-gate skill). No handoff until gate passes.**
 
 ### 5) Output Format Standards
 
@@ -82,6 +89,11 @@ The cost plan must be cross-checked against both the schedule and the risk regis
 - Project charter, executive dashboard, and management KPI dashboard must include an embedded Bosch logo in the document header/cover.
   - Default logo file: `Bosch.png` (workspace root) — embed as `data:image/png;base64,...` at `height:36px`.
   - `.bosch-logo` container CSS: `display:flex; align-items:center;` (do **not** use fixed `width`/`height` or `display:grid` — those clip the image).
+- **PowerPoint stakeholder presentation** must use the Bosch presentation template (`Bosch presentation template.pptx`) as a base.
+  - Cover slide: project name, carve-out model, report date.
+  - Content slides: title + subtitle + bullet points or visual content (timeline, KPI cards, graphics).
+  - Each slide includes Bosch branding (header bar, footer, accent graphics).
+  - Format: Generated via `python-pptx` using template placeholders so styling is consistent across projects.
 
 ## Skill Routing
 
@@ -91,21 +103,27 @@ Use these skills for detailed execution:
 - schedule-generation
 - cost-plan-generation
 - risk-register-generation
+- project-charter-generation
 - executive-dashboard-generation
 - management-kpi-dashboard-generation
 - monthly-status-report-generation
+- stakeholder-presentation-generation
+- multi-document-reconciliation-gate (final quality gate — invoked after all 8 deliverables complete)
 - repository-governance-updates
 
 ## Skill Locations
 
-- `.claude/skills/intake-compliance-gate/SKILL.md`
-- `.claude/skills/schedule-generation/SKILL.md`
-- `.claude/skills/cost-plan-generation/SKILL.md`
-- `.claude/skills/risk-register-generation/SKILL.md`
-- `.claude/skills/executive-dashboard-generation/SKILL.md`
-- `.claude/skills/management-kpi-dashboard-generation/SKILL.md`
-- `.claude/skills/monthly-status-report-generation/SKILL.md`
-- `.claude/skills/repository-governance-updates/SKILL.md`
+- `.agents/skills/intake-compliance-gate/SKILL.md`
+- `.agents/skills/schedule-generation/SKILL.md`
+- `.agents/skills/cost-plan-generation/SKILL.md`
+- `.agents/skills/risk-register-generation/SKILL.md`
+- `.agents/skills/project-charter-generation/SKILL.md`
+- `.agents/skills/executive-dashboard-generation/SKILL.md`
+- `.agents/skills/management-kpi-dashboard-generation/SKILL.md`
+- `.agents/skills/monthly-status-report-generation/SKILL.md`
+- `.agents/skills/stakeholder-presentation-generation/SKILL.md`
+- `.agents/skills/multi-document-reconciliation-gate/SKILL.md`
+- `.agents/skills/repository-governance-updates/SKILL.md`
 
 ## Repository Maintenance
 

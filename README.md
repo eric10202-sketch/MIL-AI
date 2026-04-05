@@ -68,7 +68,9 @@ Copilot will enforce the compliance gate, then generate all deliverables in the 
 4. Project charter (HTML)
 5. Executive dashboard (HTML)
 6. Management KPI dashboard (HTML)
-7. Monthly status report (Markdown/PDF)
+7. Monthly status report (PDF)
+8. Management stakeholder presentation (PPTX) — final executive brief
+9. Multi-document reconciliation gate — final quality check before handoff
 
 ---
 
@@ -88,7 +90,7 @@ git push origin main
 
 ```
 Carveout/
-├── .claude/skills/          # AI skill instructions (loaded automatically)
+├── .agents/skills/          # Active AI skill instructions (loaded on demand)
 ├── .github/                 # Copilot workspace instructions
 ├── AlphaX/                  # Example project — reference only
 ├── Falcon/                  # Example project — reference only
