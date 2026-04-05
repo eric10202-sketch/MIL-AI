@@ -18,10 +18,12 @@ from pptx.util import Inches, Pt
 
 HERE = Path(__file__).parent
 PROJECT_NAME = "Trinity-CAM (GPT)"
+OUTPUT_FOLDER_NAME = "Trinity-CAM (GPT) v1.1"
+DOCUMENT_VERSION = "Version 1.1 - Change Request 1"
 REPORT_DATE = date(2026, 4, 5)
 TEMPLATE = HERE / "Reference" / "Bosch presentation template.pptx"
 LOGO = HERE / "Bosch.png"
-OUTPUT_DIR = HERE / "active-projects" / PROJECT_NAME
+OUTPUT_DIR = HERE / "active-projects" / OUTPUT_FOLDER_NAME
 OUTPUT = OUTPUT_DIR / f"{PROJECT_NAME}_Stakeholder_Presentation.pptx"
 
 SCHEDULE_PATH = OUTPUT_DIR / f"{PROJECT_NAME}_Project_Schedule.xlsx"
@@ -269,7 +271,7 @@ def add_cover_slide(prs: Presentation) -> None:
     add_textbox(slide, Inches(1.12), Inches(1.75), Inches(8.8), Inches(0.8), PROJECT_NAME, 28, BLUE_DARK, bold=True)
     add_textbox(slide, Inches(1.14), Inches(2.45), Inches(8.7), Inches(0.45), "Management Stakeholder Presentation", 20, BLUE)
     add_textbox(slide, Inches(1.14), Inches(3.05), Inches(9.3), Inches(1.05), "Integration model carve-out from JCI to Bosch via an Infosys-operated merger zone", 24, BLACK, bold=True)
-    add_textbox(slide, Inches(1.14), Inches(4.45), Inches(7.8), Inches(0.3), f"Report date: {REPORT_DATE.strftime('%d %B %Y')}", 14, GREY)
+    add_textbox(slide, Inches(1.14), Inches(4.45), Inches(7.8), Inches(0.3), f"Report date: {REPORT_DATE.strftime('%d %B %Y')} | {DOCUMENT_VERSION}", 14, GREY)
     add_textbox(slide, Inches(1.14), Inches(4.8), Inches(8.8), Inches(0.5), "48 sites | 12,000 IT users | 1,800+ applications | GoLive 01 Jan 2028", 16, GREY)
     add_textbox(slide, Inches(0.75), Inches(6.88), Inches(6.5), Inches(0.2), "Seller: Johnson Controls International | Buyer: Robert Bosch GmbH", 10, WHITE)
     add_textbox(slide, Inches(9.05), Inches(6.88), Inches(3.55), Inches(0.2), "Prepared from generated schedule, risk, cost, and status outputs", 9, WHITE, align=PP_ALIGN.RIGHT)
@@ -279,7 +281,7 @@ def add_cover_slide(prs: Presentation) -> None:
 
 def add_summary_slide(prs: Presentation, milestones, labour_total, risks):
     slide = prs.slides.add_slide(prs.slide_layouts[19])
-    add_branding(slide, "Executive Summary", "April 2026 baseline view before programme kickoff on 01 Jul 2026")
+    add_branding(slide, "Executive Summary", "April 2026 change-request view with approved seller-side buffer through 31 Jul 2027")
 
     add_bullets(
         slide,
@@ -290,7 +292,7 @@ def add_summary_slide(prs: Presentation, milestones, labour_total, risks):
         [
             "The carve-out transfers the JCI air conditioning business into Bosch using a temporary merger zone operated by Infosys.",
             "All 12,000 users and 1,800+ applications start on the JCI side; the programme therefore depends on a clean JCI to merger-zone to Bosch transition path.",
-            "TSA operations conclude on 30 Jun 2026, followed by immediate programme mobilization and QG0 kickoff on 01 Jul 2026.",
+            "JCI has approved a TSA extension through 31 Jul 2027 so users can remain in the legacy environment while Infosys continues merger-zone build-up.",
             f"The derived external labour baseline is {money_compact(labour_total)}; CAPEX and contingency decisions remain gated to QG1.",
             f"The current register holds {len(risks)} threats with the highest exposure concentrated in SAP critical path, merger-zone readiness, and pre-GoLive quality gates.",
         ],
@@ -327,7 +329,7 @@ def add_scope_slide(prs: Presentation):
     right = [
         "Global scope covers 48 sites and 12,000 IT users.",
         "Application estate exceeds 1,800 systems including a major SAP landscape.",
-        "TSA supports continuity until the programme start boundary and remains central to exit planning.",
+        "TSA now supports continuity through 31 Jul 2027 and removes near-term pressure from Bosch without changing the overall programme timeline.",
         "GoLive marks Day 1 operation in the merger zone; Bosch steady-state handover completes by QG5.",
     ]
     add_bullets(slide, Inches(1.0), Inches(3.1), Inches(5.45), Inches(2.75), left, 17)
@@ -454,7 +456,7 @@ def add_decisions_slide(prs: Presentation, milestones):
     set_shape_fill(right, GREY_LIGHT)
     right.line.color.rgb = WHITE
     add_textbox(slide, Inches(9.02), Inches(2.05), Inches(2.7), Inches(0.28), "Key dates", 13, GREY, bold=True)
-    add_textbox(slide, Inches(9.02), Inches(2.42), Inches(2.7), Inches(1.6), "QG1: 01 Oct 2026\nQG2/QG3: 31 Jul 2027\nQG4: 10 Dec 2027\nGoLive: 01 Jan 2028\nQG5: 01 Apr 2028", 18, BLUE_DARK)
+    add_textbox(slide, Inches(9.02), Inches(2.42), Inches(2.7), Inches(1.9), "QG1: 01 Oct 2026\nApproved JCI TSA end: 31 Jul 2027\nQG2/QG3: 31 Jul 2027\nQG4: 10 Dec 2027\nGoLive: 01 Jan 2028\nQG5: 01 Apr 2028", 16, BLUE_DARK)
     add_textbox(slide, Inches(9.02), Inches(4.65), Inches(2.6), Inches(1.0), "Programme principle:\nNo hidden scope transfer from JCI to Bosch without governance, budget, and exit evidence.", 12, BLUE)
 
 

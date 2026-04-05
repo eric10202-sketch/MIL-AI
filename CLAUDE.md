@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-> **Last reviewed:** April 2026 — skill coverage completed for charter, stakeholder presentation, and reconciliation gate
+> **Last reviewed:** April 2026 — versioning convention, autonomous execution rule, and package runtime tracking added for project folders and deliverables
 
 This file contains always-on rules for this repository. Detailed workflows are split into specialized skills under `.agents/skills/`.
 
@@ -73,7 +73,29 @@ The cost plan must be cross-checked against both the schedule and the risk regis
 The PowerPoint presentation synthesizes key facts from all prior artifacts into a concise visual executive brief.
 **Before marking deliverables complete, execute the multi-document reconciliation gate (see multi-document-reconciliation-gate skill). No handoff until gate passes.**
 
+### 4a) Autonomous Step Progression
+
+- Once intake is confirmed and the user has asked the AI to proceed, do **not** pause to ask permission before each next deliverable step.
+- The AI should continue through the mandatory package sequence automatically according to the deliverable orchestration rules in this file.
+- Only stop and ask the user if a mandatory input is missing, a blocking dependency is unavailable, a material conflict is detected, or the user explicitly changes scope or mode.
+- This applies to the full package run, including reconciliation, unless the user explicitly instructs otherwise.
+
+### 4b) Full Package Runtime Tracking
+
+- For any full package run, the AI must record the package start time when execution begins and the package end time after the multi-document reconciliation gate finishes.
+- The AI must calculate the total elapsed runtime for the full package run.
+- The AI must report that elapsed runtime to the user in the final handoff message after the reconciliation check.
+- Where practical, the AI should also write the start time, end time, and elapsed runtime into a reconciliation or handoff record inside the project output folder.
+
 ### 5) Output Format Standards
+
+- Every active project deliverable set must follow repository versioning.
+  - Initial project creation output folder and document set = `v1.0`.
+  - Minor change requests or incremental updates = `v1.x` where only the minor digit increases, for example `v1.1`, `v1.2`.
+  - Major rebaselines or major scope changes = `x.0` where only the major digit increases, for example `v2.0`, `v3.0`.
+  - New versioned outputs must be written into a new project folder rather than overwriting the prior approved version.
+  - Folder naming convention for new work: `{Project Name} v1.0`, `{Project Name} v1.1`, `{Project Name} v2.0`.
+  - Generated documents should display the document or bundle version when the output format supports visible metadata.
 
 - Schedule must always be delivered in two files: **XLSX** (primary human-readable) and MS Project XML.
   - XLSX: formatted Bosch blue theme workbook (see `schedule-generation` skill for formatting rules).
@@ -130,9 +152,12 @@ Use these skills for detailed execution:
 Keep repository metadata current when:
 
 - A new project folder is created
+- A new project version folder is created
 - A new generator script is added
 - A new active project file is introduced
 - A template/spec changes
 - A project status moves active <-> closed
+
+When versioning changes, update any affected project inventory and folder references so the latest approved version is explicit.
 
 When repository metadata changes, update Last reviewed.

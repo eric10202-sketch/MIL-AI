@@ -16,7 +16,8 @@ from openpyxl.styles import Alignment, Font, PatternFill
 
 HERE = Path(__file__).parent
 PROJECT_NAME = "Trinity-CAM (GPT)"
-PROJECT_DIR = HERE / "active-projects" / PROJECT_NAME
+OUTPUT_FOLDER_NAME = "Trinity-CAM (GPT) v1.1"
+PROJECT_DIR = HERE / "active-projects" / OUTPUT_FOLDER_NAME
 SCHEDULE_PATH = PROJECT_DIR / f"{PROJECT_NAME}_Project_Schedule.xlsx"
 RISK_PATH = PROJECT_DIR / f"{PROJECT_NAME}_Risk_Register.xlsx"
 OUTPUT_PATH = PROJECT_DIR / f"{PROJECT_NAME}_Cost_Plan.xlsx"
@@ -243,7 +244,7 @@ def write_xlsx(category_rows: list[dict], phase_rows: list[dict], phase_costs: d
         ("Based on", f"{PROJECT_NAME}_Project_Schedule.xlsx"),
         ("Risk-aligned", f"{PROJECT_NAME}_Risk_Register.xlsx"),
         ("Budget Baseline", "TBC - to be approved at QG1"),
-        ("Note", "Bosch and JCI internal resource lines are tracked at zero rate for schedule traceability and excluded from the billable labour baseline."),
+        ("Note", "Bosch and JCI internal resource lines are tracked at zero rate for schedule traceability and excluded from the billable labour baseline. Change Request 1 confirms the approved JCI TSA extension through 31 Jul 2027 as additional delivery buffer rather than a programme-progress reset."),
     ]
     for label, value in metadata_rows:
         sheet.cell(row, 1).value = label
@@ -378,9 +379,9 @@ def write_xlsx(category_rows: list[dict], phase_rows: list[dict], phase_costs: d
         "1. Derived from the generated schedule and aligned to the generated risk register rather than copied from any legacy project.",
         "2. Phase names and dates match the schedule exactly: Phase 0 through Phase 5 as generated for Trinity-CAM (GPT).",
         "3. Every schedule resource token has a matching cost line; Bosch and JCI internal roles are tracked at zero rate to preserve resource traceability without inflating the external labour baseline.",
-        "4. Integration-model note: the merger zone is a temporary operational bridge between JCI and Bosch, so platform and security contingencies are carried separately from labour totals.",
+        "4. Integration-model note: the merger zone is a temporary operational bridge between JCI and Bosch, so platform and security contingencies are carried separately from labour totals. The approved TSA extension through 31 Jul 2027 reduces pressure on Bosch and gives Infosys more build-up time while users remain on legacy JCI.",
         "5. High-priority risk references for contingency lines: R001, R002, R003, R007, R012, R014, and R020.",
-        "6. Budget baseline remains TBC - to be approved at QG1.",
+        "6. Budget baseline remains TBC - to be approved at QG1. The approved TSA extension is treated as schedule buffer and commercial protection, not as labour-plan progress change.",
     ]
     for note in notes:
         sheet.merge_cells(f"A{row}:F{row}")

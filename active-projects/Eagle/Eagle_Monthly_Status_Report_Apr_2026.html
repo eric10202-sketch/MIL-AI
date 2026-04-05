@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Eagle Project Monthly Status Report - April 2026</title>
+    <style>
+        body {font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #fff; color: #333; font-size: 10px; line-height: 1.4;}
+        .page {page-break-after: always; max-width: 8.5in; height: 11in; margin: 0 auto; padding: 0.4in; box-sizing: border-box;}
+        .header {background: linear-gradient(135deg, #003b6e 0%, #005199 100%); color: white; padding: 12px 16px; margin: -0.4in -0.4in 0.2in -0.4in;}
+        .header h1 {margin: 0; font-size: 14px;}
+        .header p {margin: 2px 0 0 0; font-size: 9px;}
+        .countdown {display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 12px;}
+        .count-box {background: #CC0000; color: white; padding: 8px; text-align: center; font-weight: bold;}
+        .count-box .num {font-size: 16px;}
+        .count-box .lbl {font-size: 7px; margin-top: 2px;}
+        .section {margin-bottom: 12px; page-break-inside: avoid;}
+        .section h2 {background: #0066CC; color: white; padding: 6px 8px; margin: 0; font-size: 9px; text-transform: uppercase;}
+        .section p {margin: 6px 0; color: #333;}
+        table {width: 100%; border-collapse: collapse; font-size: 9px; margin: 6px 0;}
+        th {background: #0066CC; color: white; padding: 4px 6px; text-align: left; font-weight: bold;}
+        td {padding: 4px 6px; border-bottom: 1px solid #ddd;}
+        .status-green {color: #007A33; font-weight: bold;}
+        .status-amber {color: #E8A000; font-weight: bold;}
+        .status-red {color: #CC0000; font-weight: bold;}
+        ul {margin: 4px 0; padding-left: 16px;}
+        li {margin: 2px 0;}
+        @media print {body {margin: 0; padding: 0;} .page {page-break-after: always;}}
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <h1>Eagle Project — Monthly Status Report</h1>
+            <p>Security Camera Carve-Out | April 4, 2026 | Status: On Track</p>
+        </div>
+
+        <div class="countdown">
+            <div class="count-box">
+                <div class="num">83</div>
+                <div class="lbl">DAYS TO QG0 (Jun 26)</div>
+            </div>
+            <div class="count-box">
+                <div class="num">139</div>
+                <div class="lbl">DAYS TO QG1 (Aug 21)</div>
+            </div>
+            <div class="count-box">
+                <div class="num">217</div>
+                <div class="lbl">DAYS TO GO-LIVE (Nov 7)</div>
+            </div>
+            <div class="count-box">
+                <div class="num">368</div>
+                <div class="lbl">DAYS TO PROJECT CLOSE (Apr 7, 2027)</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Project Overview</h2>
+            <p>
+                <strong>Scope:</strong> Stand-alone IT carve-out for Security Camera Business | 3 Singapore sites | 300 users | 15+ applications<br/>
+                <strong>Timeline:</strong> Jun 1, 2026 – Apr 7, 2027 (310 days) | Go-Live: Nov 7, 2026 | TSA Hypercare: 90 days (Nov 8 – Feb 6, 2027)<br/>
+                <strong>Budget:</strong> EUR 580–650K (labour + contingency)<br/>
+                <strong>Current Phase:</strong> Intake & Planning | <span class="status-green">ON TRACK</span>
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Schedule Performance</h2>
+            <table>
+                <tr><th>Phase</th><th>Target Dates</th><th>Status</th><th>SPI</th><th>Note</th></tr>
+                <tr><td>Intake & Planning</td><td>Apr 4 – Jun 26</td><td><span class="status-green">ON TRACK</span></td><td>1.0</td><td>Baseline; no variance</td></tr>
+                <tr><td>Build & Lab</td><td>Jun 1 – Jul 14</td><td>Not Started</td><td>TBD</td><td>ISP/hardware procurement critical path</td></tr>
+                <tr><td>Phase 2: Migration & UAT</td><td>Jul 15 – Oct 29</td><td>Planned</td><td>TBD</td><td>Data mapping at risk (Risk #2)</td></tr>
+                <tr><td>Phase 3: UAT</td><td>Oct 30 – Nov 1</td><td>Planned</td><td>TBD</td><td>3-day window; HIGH RISK (Risk #3)</td></tr>
+                <tr><td>Go-Live & Hypercare</td><td>Nov 7 – Feb 6, 2027</td><td>Planned</td><td>TBD</td><td>Manufacturing Q4 cutover risk (Risk #9)</td></tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Top 5 Risks (P×I ≥ 12)</h2>
+            <table>
+                <tr><th>Risk ID</th><th>Category</th><th>Description</th><th>P×I</th><th>Status</th></tr>
+                <tr><td>#3</td><td>Schedule</td><td>Phase 3 UAT compression (27 days only; 300 users × 15 apps)</td><td>30</td><td><span class="status-red">RED</span></td></tr>
+                <tr><td>#2</td><td>Technology</td><td>SAP data separation incomplete; GL posting failures; 200+ hrs rework</td><td>25</td><td><span class="status-red">RED</span></td></tr>
+                <tr><td>#21</td><td>Legal & Compliance</td><td>SAP MSA change-of-control renegotiation delays Build phase</td><td>25</td><td><span class="status-red">RED</span></td></tr>
+                <tr><td>#4</td><td>Technology</td><td>ISV certification withheld; licensing EUR 30–50K impact</td><td>20</td><td><span class="status-amber">AMBER</span></td></tr>
+                <tr><td>#15</td><td>Budget</td><td>Hypercare staffing burnout; potential extension beyond Feb 6</td><td>20</td><td><span class="status-amber">AMBER</span></td></tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Critical Actions (Next 30 Days)</h2>
+            <ul>
+                <li><strong>By May 15:</strong> Finalize ISP RFQ; confirm WAN circuit provisioning timeline</li>
+                <li><strong>By May 20:</strong> Complete data lineage audit; finalize SAP licensing agreement</li>
+                <li><strong>By Jun 26:</strong> QG0 Gate Review; confirm team mobilization and resource allocation</li>
+                <li><strong>By Jun 15:</strong> Kickoff Phase 1 planning; finalize infrastructure procurement</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Budget & Cost Status</h2>
+            <p><strong>Total Budget:</strong> EUR 580–650K | <strong>CPI:</strong> 1.0 (baseline phase) | <strong>Approval:</strong> Pending QG0 (Jun 26)<br/>
+            <strong>Material Risks with Budget Impact:</strong> ISV licensing (#4, EUR 30–50K), hypercare extension (#15, EUR 40–60K), data rework (#2, EUR 20–30K)</p>
+        </div>
+    </div>
+</body>
+</html>

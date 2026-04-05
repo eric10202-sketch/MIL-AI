@@ -1,6 +1,6 @@
 # Carveout AI Toolkit
 
-AI-assisted document generation for IT carve-out projects, powered by GitHub Copilot (Claude).
+AI-assisted document generation for IT carve-out projects, powered by GitHub Copilot (GPT-5.4).
 
 ---
 
@@ -71,6 +71,14 @@ Copilot will enforce the compliance gate, then generate all deliverables in the 
 7. Monthly status report (PDF)
 8. Management stakeholder presentation (PPTX) — final executive brief
 9. Multi-document reconciliation gate — final quality check before handoff
+
+All newly created projects must use repository versioning:
+
+1. Initial project creation = `v1.0`
+2. Minor approved change = `v1.x`
+3. Major approved change or rebaseline = `v2.0`, `v3.0`, and so on
+
+For new work, store outputs in a versioned active-project folder such as `Project Phoenix v1.0`. Create a new versioned folder for later updates instead of overwriting the prior approved version.
 
 ---
 

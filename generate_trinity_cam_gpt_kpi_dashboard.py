@@ -12,13 +12,14 @@ from openpyxl import load_workbook
 
 BASE_DIR = Path(__file__).parent
 PROJECT_NAME = "Trinity-CAM (GPT)"
+OUTPUT_FOLDER_NAME = "Trinity-CAM (GPT) v1.1"
 SELLER = "Johnson Controls International (JCI)"
 BUYER = "Robert Bosch GmbH"
 MODEL = "Integration"
 SITE_COUNT = 48
 USER_COUNT = 12000
 APPLICATION_COUNT = 1800
-PROJECT_DIR = BASE_DIR / "active-projects" / PROJECT_NAME
+PROJECT_DIR = BASE_DIR / "active-projects" / OUTPUT_FOLDER_NAME
 SCHEDULE_PATH = PROJECT_DIR / f"{PROJECT_NAME}_Project_Schedule.xlsx"
 RISK_PATH = PROJECT_DIR / f"{PROJECT_NAME}_Risk_Register.xlsx"
 COST_PATH = PROJECT_DIR / f"{PROJECT_NAME}_Cost_Plan.xlsx"
@@ -278,7 +279,7 @@ table.kpi-tbl{{width:100%;border-collapse:collapse;font-size:10px;}}
   <div class="rag-box"><div class="rag-label">Schedule (SPI)</div><div class="rag-val rv-a">SPI {spi:.2f}</div><div class="rag-sub">Pre-kickoff baseline view</div></div>
   <div class="rag-box"><div class="rag-label">Cost (CPI)</div><div class="rag-val rv-a">CPI {cpi:.2f}</div><div class="rag-sub">No actual cost booked yet</div></div>
   <div class="rag-box"><div class="rag-label">Day 1 Readiness</div><div class="rag-val rv-a">{readiness_pct}%</div><div class="rag-sub">No milestones passed yet</div></div>
-  <div class="rag-box"><div class="rag-label">TSA Confidence</div><div class="rag-val rv-a">{tsa_confidence}</div><div class="rag-sub">Merger-zone dependency remains material</div></div>
+    <div class="rag-box"><div class="rag-label">TSA Confidence</div><div class="rag-val rv-a">{tsa_confidence}</div><div class="rag-sub">Pressure reduced by approved seller-side buffer</div></div>
   <div class="rag-box"><div class="rag-label">Top Risk</div><div class="rag-val rv-r">Score {risks['top_score']}</div><div class="rag-sub">SAP carve-out critical path</div></div>
   <div class="rag-box"><div class="rag-label">Overall RAG</div><div class="rag-val rv-a">{overall_rag}</div><div class="rag-sub">Planning baseline before QG0</div></div>
 </div>
@@ -288,7 +289,7 @@ table.kpi-tbl{{width:100%;border-collapse:collapse;font-size:10px;}}
   <div class="kpi-card col-3"><div class="kpi-title">Schedule Performance (SPI)</div><div class="kpi-body"><div class="gauge-wrap"><div style="font-size:34px;font-weight:700;color:#1a1a1a;">{spi:.2f}</div><div style="font-size:10px;color:#666;">EV / PV baseline before kick-off</div></div><div style="margin-top:8px;font-size:10px;"><div style="display:flex;justify-content:space-between;"><span>Planned Value (PV)</span><span>{fmt_eur(pv)}</span></div><div style="display:flex;justify-content:space-between;"><span>Earned Value (EV)</span><span>{fmt_eur(ev)}</span></div><div style="display:flex;justify-content:space-between;font-weight:600;margin-top:3px;"><span>SPI Status</span><span class="pill p-a">BASELINE</span></div></div></div></div>
   <div class="kpi-card col-3"><div class="kpi-title">Cost Performance (CPI)</div><div class="kpi-body"><div class="gauge-wrap"><div style="font-size:34px;font-weight:700;color:#1a1a1a;">{cpi:.2f}</div><div style="font-size:10px;color:#666;">No actuals booked before programme start</div></div><div style="margin-top:8px;font-size:10px;"><div style="display:flex;justify-content:space-between;"><span>Budget at Completion</span><span>{fmt_eur(costs['total_labour'])}</span></div><div style="display:flex;justify-content:space-between;"><span>Actual Cost (AC)</span><span>{fmt_eur(ac)}</span></div><div style="display:flex;justify-content:space-between;font-weight:600;margin-top:3px;"><span>CPI Status</span><span class="pill p-a">BASELINE</span></div></div></div></div>
   <div class="kpi-card col-3"><div class="kpi-title">Day 1 Readiness</div><div class="kpi-body"><div class="gauge-wrap"><div style="font-size:34px;font-weight:700;color:#0066CC;">{readiness_pct}%</div><div style="font-size:10px;color:#666;">Milestone completion based</div></div><div style="margin-top:8px;font-size:10px;"><div style="display:flex;justify-content:space-between;"><span>Gates Passed</span><span>0 / 6</span></div><div style="display:flex;justify-content:space-between;"><span>Time Elapsed</span><span>{schedule['time_elapsed_pct']}%</span></div><div style="display:flex;justify-content:space-between;font-weight:600;margin-top:3px;"><span>Target GoLive</span><span>{fmt_date(golive)}</span></div></div></div></div>
-  <div class="kpi-card col-3"><div class="kpi-title">TSA and Integration Confidence</div><div class="kpi-body"><div style="text-align:center;padding:6px 0 8px;"><div style="font-size:28px;font-weight:700;color:#E8A000;">{tsa_confidence}</div><div style="font-size:10px;color:#666;margin-top:3px;">Seller to merger-zone to buyer transition</div></div><div style="font-size:10px;margin-top:6px;"><div style="display:flex;justify-content:space-between;margin:3px 0;"><span>JCI TSA end</span><span class="pill p-a">30 Jun 2026</span></div><div style="display:flex;justify-content:space-between;margin:3px 0;"><span>Infosys role</span><span class="pill p-blue">ACTIVE</span></div><div style="display:flex;justify-content:space-between;margin:3px 0;"><span>Merger-zone design</span><span class="pill p-a">DUE QG1</span></div><div style="display:flex;justify-content:space-between;margin:3px 0;"><span>Model</span><span class="pill p-blue">{html_escape(MODEL)}</span></div></div></div></div>
+    <div class="kpi-card col-3"><div class="kpi-title">TSA and Integration Confidence</div><div class="kpi-body"><div style="text-align:center;padding:6px 0 8px;"><div style="font-size:28px;font-weight:700;color:#E8A000;">{tsa_confidence}</div><div style="font-size:10px;color:#666;margin-top:3px;">Seller to merger-zone to buyer transition</div></div><div style="font-size:10px;margin-top:6px;"><div style="display:flex;justify-content:space-between;margin:3px 0;"><span>Approved JCI TSA end</span><span class="pill p-a">31 Jul 2027</span></div><div style="display:flex;justify-content:space-between;margin:3px 0;"><span>Infosys role</span><span class="pill p-blue">ACTIVE</span></div><div style="display:flex;justify-content:space-between;margin:3px 0;"><span>User position</span><span class="pill p-blue">LEGACY JCI</span></div><div style="display:flex;justify-content:space-between;margin:3px 0;"><span>Model</span><span class="pill p-blue">{html_escape(MODEL)}</span></div></div></div></div>
 </div>
 
 <div class="grid">
@@ -298,7 +299,7 @@ table.kpi-tbl{{width:100%;border-collapse:collapse;font-size:10px;}}
 
 <div class="grid">
   <div class="kpi-card col-7"><div class="kpi-title">Top Risk Table</div><div class="kpi-body"><table class="kpi-tbl"><tr><th>ID</th><th>Risk</th><th>Category</th><th>Score</th><th>Owner</th></tr>{top_risk_rows}</table></div></div>
-  <div class="kpi-card col-5"><div class="kpi-title">Model Key Differences</div><div class="kpi-body"><table class="kpi-tbl"><tr><th>Area</th><th>Current Programme Position</th></tr><tr><td>Transition path</td><td>JCI services move first into a temporary Infosys-operated merger zone before Bosch handover.</td></tr><tr><td>TSA dependency</td><td>Seller service exit and buyer readiness are linked to successful merger-zone stabilisation.</td></tr><tr><td>GoLive definition</td><td>Day 1 means all in-scope services operate from the merger zone with Bosch acceptance path prepared.</td></tr><tr><td>Post-GoLive scope</td><td>Only stabilisation, TSA exit, and Bosch handover remain after GoLive; no new migration scope.</td></tr></table></div></div>
+    <div class="kpi-card col-5"><div class="kpi-title">Model Key Differences</div><div class="kpi-body"><table class="kpi-tbl"><tr><th>Area</th><th>Current Programme Position</th></tr><tr><td>Transition path</td><td>JCI services move first into a temporary Infosys-operated merger zone before Bosch handover.</td></tr><tr><td>TSA dependency</td><td>Approved seller-service coverage through 31 Jul 2027 lets users remain on legacy JCI while Infosys completes the merger-zone build, reducing pressure without changing overall programme progress.</td></tr><tr><td>GoLive definition</td><td>Day 1 means all in-scope services operate from the merger zone with Bosch acceptance path prepared.</td></tr><tr><td>Post-GoLive scope</td><td>Only stabilisation, TSA exit, and Bosch handover remain after GoLive; no new migration scope.</td></tr></table></div></div>
 </div>
 
 <div class="grid">

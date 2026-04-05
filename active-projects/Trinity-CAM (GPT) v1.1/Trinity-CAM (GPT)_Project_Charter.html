@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trinity-CAM (GPT) Project Charter</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; color: #122033; background: linear-gradient(180deg, #eef4fb 0%, #f8fafc 260px, #eef2f7 100%); }
+  .hero { background: linear-gradient(135deg, #003b6e 0%, #00569b 58%, #0f7ac7 100%); color: #fff; padding: 28px 34px 32px; }
+  .bosch-logo { display: flex; align-items: center; }
+  .hero-top { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .hero h1 { margin: 18px 0 8px; font-size: 34px; line-height: 1.1; }
+  .hero p { margin: 0; max-width: 980px; font-size: 15px; line-height: 1.6; opacity: 0.95; }
+  .hero-meta { display: grid; grid-template-columns: repeat(4, minmax(120px, 1fr)); gap: 12px; margin-top: 22px; }
+  .hero-meta div { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.16); border-radius: 10px; padding: 12px 14px; }
+  .hero-meta span { display: block; }
+  .hero-meta .k { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.78; margin-bottom: 5px; }
+  .hero-meta .v { font-size: 16px; font-weight: 700; }
+  .page { max-width: 1180px; margin: 0 auto; padding: 24px 24px 48px; }
+  .section { background: rgba(255,255,255,0.94); border: 1px solid #d8e3ef; border-radius: 16px; box-shadow: 0 12px 30px rgba(7, 37, 73, 0.07); margin-bottom: 18px; overflow: hidden; }
+  .section h2 { margin: 0; padding: 15px 18px; background: #e7f0fb; color: #003b6e; font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; }
+  .section-body { padding: 18px; }
+  .grid-2 { display: grid; grid-template-columns: 1.25fr 1fr; gap: 18px; }
+  .facts { display: grid; grid-template-columns: 210px 1fr; gap: 8px 14px; font-size: 13px; }
+  .facts .k { color: #54657a; font-weight: 700; }
+  .facts .v { color: #122033; }
+  .callout { background: #eef6ff; border-left: 4px solid #0f7ac7; border-radius: 8px; padding: 12px 14px; font-size: 13px; line-height: 1.6; }
+  .milestones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .milestone-card { background: linear-gradient(180deg, #0d5c99 0%, #003b6e 100%); color: #fff; border-radius: 12px; padding: 14px; min-height: 94px; display: flex; flex-direction: column; justify-content: space-between; }
+  .milestone-name { font-size: 13px; font-weight: 700; line-height: 1.35; }
+  .milestone-date { font-size: 12px; opacity: 0.88; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  th { background: #003b6e; color: #fff; text-align: left; padding: 10px 12px; font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; }
+  td { border-bottom: 1px solid #e2ebf4; padding: 10px 12px; vertical-align: top; line-height: 1.5; }
+  tr:nth-child(even) td { background: #f7fbff; }
+  ul { margin: 0; padding-left: 20px; }
+  li { margin: 0 0 8px; line-height: 1.55; }
+  .budget-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+  .budget-strip div { background: linear-gradient(180deg, #f3f8fd 0%, #e8f1fb 100%); border: 1px solid #d6e4f2; border-radius: 12px; padding: 12px 14px; }
+  .budget-strip .k { display: block; color: #5b6d83; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+  .budget-strip .v { display: block; color: #003b6e; font-size: 18px; font-weight: 800; }
+  .risk-badge { display: inline-flex; width: 34px; height: 34px; border-radius: 999px; align-items: center; justify-content: center; color: #fff; font-weight: 800; }
+  .risk-badge.high { background: #c53d2c; }
+  .risk-badge.medium { background: #d28a12; }
+  .risk-badge.low { background: #2c8a53; }
+  .signoff { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  .signoff-card { border: 1px solid #d8e3ef; border-radius: 12px; padding: 14px; background: #fbfdff; }
+  .signoff-card .role { color: #5b6d83; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; }
+  .signoff-card .name { margin-top: 8px; font-weight: 700; min-height: 42px; }
+  .signoff-card .line { margin-top: 22px; border-top: 1px solid #b8c8da; }
+  .signoff-card .date { margin-top: 8px; color: #6b7b90; font-size: 11px; }
+  @media (max-width: 900px) {
+    .hero-meta, .budget-strip, .milestones, .signoff, .grid-2 { grid-template-columns: 1fr; }
+    .facts { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-top">
+      <div class="bosch-logo"><img src="data:image/png;base64,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" style="height:36px;" alt="Bosch"></div>
+      <div>Project Charter | Version 1.1 - Change Request 1 | 05 April 2026</div>
+    </div>
+    <h1>Trinity-CAM (GPT) - IT Carve-out Charter</h1>
+    <p>Johnson Controls International (JCI) is divesting the Air conditioning business to Robert Bosch GmbH. Change Request 1 records the approved JCI TSA extension through 31 Jul 2027. This does not change programme progress, milestone dates, or GoLive; it gives Infosys more merger-zone build-up time while users continue to work in the legacy JCI environment and therefore reduces pressure on Bosch.</p>
+    <div class="hero-meta">
+      <div><span class="k">Model</span><span class="v">Integration</span></div>
+      <div><span class="k">Sites</span><span class="v">48</span></div>
+      <div><span class="k">Users</span><span class="v">12,000</span></div>
+      <div><span class="k">Applications</span><span class="v">1,800+</span></div>
+    </div>
+  </div>
+  <div class="page">
+    <div class="section">
+      <h2>Project Frame</h2>
+      <div class="section-body grid-2">
+        <div class="facts">
+          <div class="k">Project Name</div><div class="v">Trinity-CAM (GPT)</div>
+          <div class="k">Project Code</div><div class="v">TCMGPT-2026</div>
+          <div class="k">Seller</div><div class="v">Johnson Controls International (JCI)</div>
+          <div class="k">Buyer</div><div class="v">Robert Bosch GmbH</div>
+          <div class="k">Business</div><div class="v">Air conditioning business</div>
+          <div class="k">PMO / Methodology Lead</div><div class="v">KPMG</div>
+          <div class="k">IT Delivery Partner</div><div class="v">Infosys</div>
+          <div class="k">Project Start</div><div class="v">01.07.2026</div>
+          <div class="k">GoLive</div><div class="v">01.01.2028</div>
+          <div class="k">Completion</div><div class="v">01.04.2028</div>
+        </div>
+        <div>
+          <div class="callout"><strong>Delivery model:</strong> Seller IT -> Merger Zone -> Buyer IT. The merger zone is a temporary operating bridge built and run by Infosys so that user, application, data, and service migrations can be sequenced without forcing direct cutover from JCI into Bosch.</div>
+          <div class="callout" style="margin-top:12px;"><strong>TSA position:</strong> JCI has approved a TSA extension through 31 July 2027 because the merger zone is not yet ready and existing-user migration cannot start earlier. Users remain on the legacy JCI environment during this buffer period while Infosys continues the merger-zone build, and the overall programme milestones remain unchanged.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Objectives</h2>
+      <div class="section-body grid-2">
+        <div>
+          <ul>
+            <li>Establish a controlled separation path for 12,000 users currently operating on JCI infrastructure across 48 sites.</li>
+            <li>Prepare and migrate 1,800+ applications, including the major SAP estate, through the merger zone into Bosch-ready landing patterns.</li>
+            <li>Reach QG4 with completed user migration, stable application hosting, validated security controls, and no unresolved blocking defects.</li>
+            <li>Execute GoLive on 01.01.2028 and close all remaining TSA dependencies during post-GoLive stabilisation, using the approved seller-side buffer to remove avoidable pre-GoLive pressure on Bosch.</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>Maintain business continuity for manufacturing, supply chain, finance, workplace, and service operations throughout build, migration, and cutover.</li>
+            <li>Keep governance, cost, and risk control aligned across Bosch, JCI, KPMG, and Infosys for the full programme duration.</li>
+            <li>Hand over a stable operating model to Bosch by 01.04.2028 after 90 days of hypercare.</li>
+          </ul>
+          <div class="callout"><strong>Opportunity in register:</strong> R023 - Phase 1 architecture and application triage identify a meaningful subset of applications and infrastructure services that can be landed in a more modern, lower-cost pattern inside the merger zone without delaying GoLive.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Scope</h2>
+      <div class="section-body">
+        <table>
+          <tr><th>Domain</th><th>In Scope</th><th>Out of Scope</th></tr>
+          <tr><td>Applications</td><td>Full JCI Air Conditioning application estate, SAP carve-out build, interface rewiring, migration waves, and merger-zone landing.</td><td>Post-hypercare Bosch optimisation and long-term application rationalisation.</td></tr>
+          <tr><td>Infrastructure</td><td>Merger-zone hosting, network connectivity, identity services, workplace services, monitoring, and security controls required for migration and stabilisation.</td><td>Broader Bosch infrastructure transformation outside the carve-out landing scope.</td></tr>
+          <tr><td>Users and Devices</td><td>User move planning, collaboration migration, access transition, support readiness, and site-by-site deployment execution.</td><td>Large-scale hardware refresh not required for separation readiness.</td></tr>
+          <tr><td>Data and Compliance</td><td>Data segregation, transfer controls, legal and works-council coordination, and cross-border compliance handling for the migration path.</td><td>Long-term data archival redesign after formal handover.</td></tr>
+          <tr><td>Hypercare and Exit</td><td>Stabilisation, incident handling, knowledge transfer, TSA exit closure, and Bosch operational handover through QG5.</td><td>Business-as-usual support after programme closure.</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Milestones and Phases</h2>
+      <div class="section-body">
+        <div class="milestones"><div class="milestone-card"><span class="milestone-name">QG0 - Programme kickoff approved</span><span class="milestone-date">01 Jul 2026</span></div><div class="milestone-card"><span class="milestone-name">QG1 - Concept and transition model approved</span><span class="milestone-date">01 Oct 2026</span></div><div class="milestone-card"><span class="milestone-name">QG2 and QG3 - Build complete and test entry approved</span><span class="milestone-date">31 Jul 2027</span></div><div class="milestone-card"><span class="milestone-name">QG4 - Pre-GoLive gate approved</span><span class="milestone-date">10 Dec 2027</span></div><div class="milestone-card"><span class="milestone-name">GoLive - Day 1 cutover to merger zone complete</span><span class="milestone-date">01 Jan 2028</span></div><div class="milestone-card"><span class="milestone-name">QG5 - Project completion approved</span><span class="milestone-date">01 Apr 2028</span></div></div>
+        <table style="margin-top:16px;">
+          <tr><th>Phase</th><th>Start</th><th>Finish</th><th>Purpose</th></tr>
+          <tr><td>Phase 0: Mobilize carve-out governance and TSA baseline</td><td>01 Jul 2026</td><td>01 Oct 2026</td><td>Programme launch, TSA framing, approved extension control, partner mobilisation, and QG1 concept approval under change request version 1.1.</td></tr><tr><td>Phase 1: Discover landscape and design the merger zone</td><td>02 Oct 2026</td><td>31 Jan 2027</td><td>Detailed discovery of applications, SAP, sites, data, and target merger zone design.</td></tr><tr><td>Phase 2: Build merger zone and prepare transition factory</td><td>01 Feb 2027</td><td>31 Jul 2027</td><td>Build core platforms, prepare migration factory, and complete test readiness for QG2 and QG3.</td></tr><tr><td>Phase 3: Test, migrate to merger zone, and prepare Bosch landing</td><td>01 Aug 2027</td><td>10 Dec 2027</td><td>Formal testing, migration waves, Bosch operational readiness, and QG4 entry.</td></tr><tr><td>Phase 4: Final readiness and GoLive decision</td><td>11 Dec 2027</td><td>01 Jan 2028</td><td>Mandatory buffer between QG4 and GoLive for closure, checks, rollback rehearsal, and sign-off.</td></tr><tr><td>Phase 5: Hypercare, TSA exit, and Bosch handover</td><td>02 Jan 2028</td><td>01 Apr 2028</td><td>Ninety-day stabilization only; no new development or migration after GoLive.</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Governance</h2>
+      <div class="section-body">
+        <table>
+          <tr><th>Role</th><th>Organisation</th><th>Accountability</th></tr>
+          <tr><td>Sponsor Customer</td><td>Robert Bosch GmbH</td><td>Buyer governance, budget sponsorship, GoLive approval, and post-cutover operating acceptance.</td></tr>
+          <tr><td>Sponsor Contractor</td><td>Johnson Controls International (JCI)</td><td>Seller transition support, source-environment access, data quality cooperation, and TSA adherence.</td></tr>
+          <tr><td>PMO Lead</td><td>KPMG</td><td>Integrated plan control, RAID governance, steering cadence, and workstream coordination.</td></tr>
+          <tr><td>IT Delivery Partner</td><td>Infosys</td><td>Merger-zone build and operation, migration execution, test support, cutover readiness, and hypercare delivery.</td></tr>
+          <tr><td>Steering Committee</td><td>Bosch + JCI + KPMG</td><td>Decision-making above PMO authority, gate approvals, funding decisions, and escalation handling.</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Risk Position</h2>
+      <div class="section-body">
+        <table>
+          <tr><th>ID</th><th>Category</th><th>Risk Event</th><th>Score</th><th>Owner</th></tr>
+          <tr><td><strong>R001</strong></td><td>Technology, R&amp;D</td><td>SAP carve-out build and system copy into the merger zone reveal shared master data, hard-coded integrations, or sequence dependencies that exceed the planned Phase 2 window and delay QG2 and QG3 on 2027-07-31.</td><td><span class="risk-badge high">20</span></td><td>KPMG SAP Architect</td></tr><tr><td><strong>R003</strong></td><td>Schedule</td><td>The programme reaches late November 2027 with unresolved critical defects, incomplete migration evidence, or missing steering approvals, causing QG4 to fail or move materially.</td><td><span class="risk-badge high">15</span></td><td>KPMG PMO Lead</td></tr><tr><td><strong>R002</strong></td><td>Technology, R&amp;D</td><td>Merger-zone core infrastructure is not operational by the planned Phase 2 entry date or remains unstable through build, preventing application onboarding and delaying user migration readiness.</td><td><span class="risk-badge medium">12</span></td><td>Infosys Programme Manager</td></tr><tr><td><strong>R004</strong></td><td>Budget</td><td>Approved scope expands during Phase 2 or Phase 3 without matching cost governance, producing cumulative Infosys and third-party cost changes above the planned labour envelope.</td><td><span class="risk-badge medium">12</span></td><td>Bosch Programme Sponsor</td></tr><tr><td><strong>R005</strong></td><td>Resources</td><td>One or more key technical or business resources leave the programme during build or testing, and replacements require several weeks to gain knowledge of the JCI source landscape and the merger-zone design.</td><td><span class="risk-badge medium">12</span></td><td>KPMG PMO Lead</td></tr><tr><td><strong>R008</strong></td><td>Technology, R&amp;D</td><td>Application compatibility with merger-zone hosting, identity, or connectivity is lower than forecast, creating a remediation backlog in Waves 2 and 3 that cannot be closed before QG4.</td><td><span class="risk-badge medium">12</span></td><td>Infosys Application Lead</td></tr>
+        </table>
+        <div class="callout" style="margin-top:14px;"><strong>Register summary:</strong> 24 total entries, including 2 opportunity item(s). Highest current pressure remains on SAP carve-out complexity, merger-zone readiness, and late-stage QG4 readiness control.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Budget Summary</h2>
+      <div class="section-body">
+        <div class="budget-strip">
+          <div><span class="k">External Labour Total</span><span class="v">EUR 6,258,880</span></div>
+          <div><span class="k">Infosys Labour</span><span class="v">EUR 3,231,760</span></div>
+          <div><span class="k">KPMG Labour</span><span class="v">EUR 3,027,120</span></div>
+          <div><span class="k">Baseline Status</span><span class="v">TBC - to be approved at QG1</span></div>
+        </div>
+        <table>
+          <tr><th>Category</th><th>Labour Cost</th></tr>
+          <tr><td>Infosys - Application and Data Delivery</td><td>EUR 820,640</td></tr><tr><td>Infosys - Platform, Security, and Workplace</td><td>EUR 1,154,080</td></tr><tr><td>Infosys - Programme and Service Delivery</td><td>EUR 832,480</td></tr><tr><td>Infosys - SAP Delivery</td><td>EUR 424,560</td></tr><tr><td>KPMG - Architecture and Migration Advisory</td><td>EUR 1,325,800</td></tr><tr><td>KPMG - Programme Governance</td><td>EUR 892,800</td></tr><tr><td>KPMG - SAP Advisory</td><td>EUR 423,360</td></tr><tr><td>KPMG - Testing, Deployment, and Readiness</td><td>EUR 385,160</td></tr>
+        </table>
+        <table style="margin-top:16px;">
+          <tr><th>CAPEX / Additional Cost</th><th>Link to Risk</th><th>Status / Range</th></tr>
+          <tr><td>SAP expert support and rehearsal contingency</td><td>Risk Register R001 - external SAP carve-out support, rehearsal environment, and specialist remediation capacity.</td><td>600,000 - 1,200,000</td></tr><tr><td>Merger-zone platform acceleration reserve</td><td>Risk Register R002 - additional platform engineering or temporary capacity if merger-zone build slips.</td><td>400,000 - 900,000</td></tr><tr><td>Cutover command-center and rollback reserve</td><td>Risk Register R003 - final cutover defect sprint, extended command center, and rollback rehearsal support.</td><td>250,000 - 500,000</td></tr><tr><td>Cyber control uplift and incident readiness</td><td>Risk Register R007 - DLP, logging, security review, and cyber readiness controls for the merger zone.</td><td>250,000 - 500,000</td></tr><tr><td>Platform procurement and fallback capacity</td><td>Risk Register R012 - long-lead platform and connectivity fallback capacity.</td><td>200,000 - 450,000</td></tr><tr><td>Regional hosting and legal compliance provision</td><td>Risk Register R014 - data sovereignty remediation or local hosting design changes if required.</td><td>TBC - confirm at QG1</td></tr><tr><td>Third-party audit and supplier-governance provision</td><td>Risk Register R020 - subcontractor audit and compliance assurance if external delivery layers expand.</td><td>100,000 - 200,000</td></tr>
+        </table>
+        <div class="callout" style="margin-top:14px;">Bosch and JCI internal resource lines are tracked at zero rate for schedule traceability and excluded from the billable labour baseline. Change Request 1 confirms the approved JCI TSA extension through 31 Jul 2027 as additional delivery buffer rather than a programme-progress reset.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Assumptions and Constraints</h2>
+      <div class="section-body grid-2">
+        <div>
+          <ul>
+            <li>Infosys remains the primary delivery partner for merger-zone setup, operation, and migration execution.</li>
+            <li>JCI continues to provide timely source-system access, SME availability, and TSA support through the approved extension date of 31 Jul 2027 while users remain on the legacy environment.</li>
+            <li>Major application and SAP dependency mapping reaches sufficient fidelity during early discovery to maintain the current phase plan.</li>
+            <li>Buyer-side landing patterns remain stable enough to avoid repeated redesign of merger-zone controls.</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>01.01.2028 remains a hard business target and cannot absorb broad late-phase scope growth.</li>
+            <li>Cross-border data transfer and local labour-law constraints may force country-specific sequencing decisions.</li>
+            <li>Budget baseline and non-labour contingency funding remain subject to QG1 approval.</li>
+            <li>Post-GoLive work is limited to stabilisation, TSA exit, and Bosch handover, not new transformation scope.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Approval</h2>
+      <div class="section-body">
+        <div class="signoff">
+          <div class="signoff-card"><div class="role">Sponsor Customer</div><div class="name">Robert Bosch GmbH</div><div class="line"></div><div class="date">Date: ____________________</div></div>
+          <div class="signoff-card"><div class="role">Sponsor Contractor</div><div class="name">Johnson Controls International (JCI)</div><div class="line"></div><div class="date">Date: ____________________</div></div>
+          <div class="signoff-card"><div class="role">PMO Lead</div><div class="name">KPMG</div><div class="line"></div><div class="date">Date: ____________________</div></div>
+          <div class="signoff-card"><div class="role">IT Delivery Partner</div><div class="name">Infosys</div><div class="line"></div><div class="date">Date: ____________________</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

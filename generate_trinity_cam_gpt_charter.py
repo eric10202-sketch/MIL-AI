@@ -12,6 +12,8 @@ from openpyxl import load_workbook
 
 BASE_DIR = Path(__file__).parent
 PROJECT_NAME = "Trinity-CAM (GPT)"
+OUTPUT_FOLDER_NAME = "Trinity-CAM (GPT) v1.1"
+DOCUMENT_VERSION = "Version 1.1 - Change Request 1"
 PROJECT_CODE = "TCMGPT-2026"
 SELLER = "Johnson Controls International (JCI)"
 BUYER = "Robert Bosch GmbH"
@@ -27,7 +29,7 @@ START_DATE = "01.07.2026"
 GOLIVE_DATE = "01.01.2028"
 COMPLETION_DATE = "01.04.2028"
 
-PROJECT_DIR = BASE_DIR / "active-projects" / PROJECT_NAME
+PROJECT_DIR = BASE_DIR / "active-projects" / OUTPUT_FOLDER_NAME
 SCHEDULE_PATH = PROJECT_DIR / f"{PROJECT_NAME}_Project_Schedule.xlsx"
 RISK_PATH = PROJECT_DIR / f"{PROJECT_NAME}_Risk_Register.xlsx"
 COST_PATH = PROJECT_DIR / f"{PROJECT_NAME}_Cost_Plan.xlsx"
@@ -52,11 +54,11 @@ PROBABILITY_SCORES = {
 
 
 def fmt_date(value: datetime | date | str) -> str:
-    if isinstance(value, datetime):
-        return value.strftime("%d %b %Y")
-    if isinstance(value, date):
-        return value.strftime("%d %b %Y")
-    return str(value)
+  if isinstance(value, datetime):
+    return value.strftime("%d %b %Y")
+  if isinstance(value, date):
+    return value.strftime("%d %b %Y")
+  return str(value)
 
 
 def fmt_eur(value: int | float) -> str:
@@ -85,7 +87,6 @@ def load_schedule() -> tuple[list[dict[str, object]], list[dict[str, object]]]:
             "id": task_id,
             "outline_level": outline_level,
             "name": str(name).strip(),
-            "duration": duration,
             "start": start,
             "finish": finish,
             "predecessors": predecessors,
@@ -97,7 +98,6 @@ def load_schedule() -> tuple[list[dict[str, object]], list[dict[str, object]]]:
         if str(milestone).strip().lower() == "yes":
             milestones.append(item)
     return phases, milestones
-
 
 def load_risks() -> list[dict[str, object]]:
     ws = load_workbook(RISK_PATH, data_only=True)["Risk Register"]
@@ -319,10 +319,10 @@ def build_html() -> str:
   <div class=\"hero\">
     <div class=\"hero-top\">
       <div class=\"bosch-logo\">{logo_tag}</div>
-      <div>Project Charter | {html_escape(report_date)}</div>
+      <div>Project Charter | {html_escape(DOCUMENT_VERSION)} | {html_escape(report_date)}</div>
     </div>
     <h1>{html_escape(PROJECT_NAME)} - IT Carve-out Charter</h1>
-    <p>{html_escape(SELLER)} is divesting the {html_escape(BUSINESS)} to {html_escape(BUYER)}. The programme separates users, applications, data, and services from JCI, lands them in an Infosys-operated merger zone, and then transitions them into Bosch IT by the committed GoLive date.</p>
+    <p>{html_escape(SELLER)} is divesting the {html_escape(BUSINESS)} to {html_escape(BUYER)}. Change Request 1 records the approved JCI TSA extension through 31 Jul 2027. This does not change programme progress, milestone dates, or GoLive; it gives Infosys more merger-zone build-up time while users continue to work in the legacy JCI environment and therefore reduces pressure on Bosch.</p>
     <div class=\"hero-meta\">
       <div><span class=\"k\">Model</span><span class=\"v\">{html_escape(MODEL)}</span></div>
       <div><span class=\"k\">Sites</span><span class=\"v\">{SITE_COUNT}</span></div>
@@ -348,7 +348,7 @@ def build_html() -> str:
         </div>
         <div>
           <div class=\"callout\"><strong>Delivery model:</strong> Seller IT -> Merger Zone -> Buyer IT. The merger zone is a temporary operating bridge built and run by Infosys so that user, application, data, and service migrations can be sequenced without forcing direct cutover from JCI into Bosch.</div>
-          <div class=\"callout\" style=\"margin-top:12px;\"><strong>TSA position:</strong> JCI provides transition services until 30 June 2026. The carve-out programme starts on 1 July 2026 and carries all TSA exits through hypercare and handover.</div>
+          <div class=\"callout\" style=\"margin-top:12px;\"><strong>TSA position:</strong> JCI has approved a TSA extension through 31 July 2027 because the merger zone is not yet ready and existing-user migration cannot start earlier. Users remain on the legacy JCI environment during this buffer period while Infosys continues the merger-zone build, and the overall programme milestones remain unchanged.</div>
         </div>
       </div>
     </div>
@@ -361,7 +361,7 @@ def build_html() -> str:
             <li>Establish a controlled separation path for {USER_COUNT:,} users currently operating on JCI infrastructure across {SITE_COUNT} sites.</li>
             <li>Prepare and migrate {APPLICATION_COUNT_TEXT} applications, including the major SAP estate, through the merger zone into Bosch-ready landing patterns.</li>
             <li>Reach QG4 with completed user migration, stable application hosting, validated security controls, and no unresolved blocking defects.</li>
-            <li>Execute GoLive on {html_escape(GOLIVE_DATE)} and close all TSA dependencies during post-GoLive stabilisation.</li>
+            <li>Execute GoLive on {html_escape(GOLIVE_DATE)} and close all remaining TSA dependencies during post-GoLive stabilisation, using the approved seller-side buffer to remove avoidable pre-GoLive pressure on Bosch.</li>
           </ul>
         </div>
         <div>
@@ -452,7 +452,7 @@ def build_html() -> str:
         <div>
           <ul>
             <li>Infosys remains the primary delivery partner for merger-zone setup, operation, and migration execution.</li>
-            <li>JCI continues to provide timely source-system access, SME availability, and TSA support through each planned migration wave.</li>
+            <li>JCI continues to provide timely source-system access, SME availability, and TSA support through the approved extension date of 31 Jul 2027 while users remain on the legacy environment.</li>
             <li>Major application and SAP dependency mapping reaches sufficient fidelity during early discovery to maintain the current phase plan.</li>
             <li>Buyer-side landing patterns remain stable enough to avoid repeated redesign of merger-zone controls.</li>
           </ul>

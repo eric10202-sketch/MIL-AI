@@ -15,6 +15,7 @@ from reportlab.pdfgen import canvas
 
 BASE_DIR = Path(__file__).parent
 PROJECT_NAME = "Trinity-CAM (GPT)"
+OUTPUT_FOLDER_NAME = "Trinity-CAM (GPT) v1.1"
 SELLER = "Johnson Controls International (JCI)"
 BUYER = "Robert Bosch GmbH"
 BUSINESS = "Air conditioning business"
@@ -24,7 +25,7 @@ DELIVERY_PARTNER = "Infosys"
 SITE_COUNT = 48
 USER_COUNT = 12000
 APPLICATION_COUNT = 1800
-PROJECT_DIR = BASE_DIR / "active-projects" / PROJECT_NAME
+PROJECT_DIR = BASE_DIR / "active-projects" / OUTPUT_FOLDER_NAME
 SCHEDULE_PATH = PROJECT_DIR / f"{PROJECT_NAME}_Project_Schedule.xlsx"
 RISK_PATH = PROJECT_DIR / f"{PROJECT_NAME}_Risk_Register.xlsx"
 COST_PATH = PROJECT_DIR / f"{PROJECT_NAME}_Cost_Plan.xlsx"
@@ -251,7 +252,7 @@ def build_report() -> None:
     c.setStrokeColor(C_LINE)
     c.roundRect(left, y - 74, content_width, 74, 4, fill=0, stroke=1)
     summary_lines = [
-        f"{PROJECT_NAME} remains in pre-kickoff mobilisation as of {TODAY.strftime('%B %Y')}. The formal carve-out start is {fmt_date(qg0)} after JCI TSA expiry.",
+        f"{PROJECT_NAME} remains in pre-kickoff mobilisation as of {TODAY.strftime('%B %Y')}. Change Request 1 confirms an approved JCI TSA extension through 31 Jul 2027 so users can continue to work in the legacy environment while Infosys completes merger-zone build-up.",
         f"Overall status is AMBER because the critical SAP carve-out risk ({risks[0]['id'] if risks else 'n/a'}) remains open while merger-zone design, application inventory, and legal/data controls are still driving toward QG1 on {fmt_date(qg1)}.",
         f"No schedule or cost variance is recorded yet. External labour baseline is {fmt_money(costs['total'])} with budget approval still marked as '{costs['baseline']}'.",
     ]
@@ -307,7 +308,7 @@ def build_report() -> None:
     c.drawString(left + 230, y - 12, "COMMENT")
     row_y = y - 24
     phase_comments = [
-        ("Phase 0", "AMBER", "Mobilisation underway; governance, partner onboarding, and TSA baseline drive QG0/QG1 readiness."),
+        ("Phase 0", "AMBER", "Mobilisation underway; governance, partner onboarding, and approved TSA buffer drive QG0/QG1 readiness without changing the overall programme timeline."),
         ("Top risks", "AMBER", f"{risks[0]['id'] if risks else 'R001'} and {risks[1]['id'] if len(risks) > 1 else 'R003'} remain the primary threats to SAP and final readiness."),
         ("Budget", "BLUE", f"External labour baseline {fmt_money(costs['total'])}; Phase 0 share {fmt_money(costs['phase_zero'])}; approval remains {costs['baseline'].lower()}."),
         ("Gate path", "BLUE", f"QG1 {fmt_date(qg1)}, QG2&3 {fmt_date(qg23)}, QG4 {fmt_date(qg4)}, GoLive {fmt_date(golive)}."),

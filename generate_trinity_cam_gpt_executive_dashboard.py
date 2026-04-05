@@ -12,13 +12,14 @@ from openpyxl import load_workbook
 
 BASE_DIR = Path(__file__).parent
 PROJECT_NAME = "Trinity-CAM (GPT)"
+OUTPUT_FOLDER_NAME = "Trinity-CAM (GPT) v1.1"
 SELLER = "Johnson Controls International (JCI)"
 BUYER = "Robert Bosch GmbH"
 BUSINESS = "Air conditioning business"
 MODEL = "Integration"
 PMO = "KPMG"
 DELIVERY_PARTNER = "Infosys"
-PROJECT_DIR = BASE_DIR / "active-projects" / PROJECT_NAME
+PROJECT_DIR = BASE_DIR / "active-projects" / OUTPUT_FOLDER_NAME
 SCHEDULE_PATH = PROJECT_DIR / f"{PROJECT_NAME}_Project_Schedule.xlsx"
 RISK_PATH = PROJECT_DIR / f"{PROJECT_NAME}_Risk_Register.xlsx"
 COST_PATH = PROJECT_DIR / f"{PROJECT_NAME}_Cost_Plan.xlsx"
@@ -611,9 +612,9 @@ body{{font-family:'Segoe UI',Arial,sans-serif;font-size:12px;color:#1a1a1a;backg
   <div class="card-title">Project Overview</div>
   <div class="card-body overview-grid">
     <div class="overview-text">
-      <p>{html_escape(PROJECT_NAME)} is the IT carve-out programme for the sale of the air conditioning business from JCI to Bosch. The programme moves {USER_COUNT:,} users, {APPLICATION_COUNT:,}+ applications, and a major SAP landscape away from seller-controlled services and into a controlled transitional merger zone before Bosch operating handover.</p>
-      <p>The delivery model is a true integration carve-out: JCI IT services remain the source estate, Infosys builds and operates the merger zone as the temporary landing environment, and Bosch accepts the stabilised operating model after GoLive and hypercare. The plan is governed by KPMG across six formal milestones from QG0 through QG5.</p>
-      <p>The largest execution pressure remains on SAP carve-out complexity, merger-zone platform readiness, and final QG4 evidence closure ahead of the hard GoLive target on {html_escape(fmt_date(golive))}.</p>
+    <p>{html_escape(PROJECT_NAME)} is the IT carve-out programme for the sale of the air conditioning business from JCI to Bosch. Change Request 1 updates the baseline to reflect JCI approval of a TSA extension through 31 Jul 2027 so users can continue to work in the legacy JCI environment while Infosys completes merger-zone build-up.</p>
+    <p>The delivery model remains a true integration carve-out: JCI IT services remain the source estate, Infosys builds and operates the merger zone as the temporary landing environment, and Bosch accepts the stabilised operating model after GoLive and hypercare. Programme progress and milestone dates remain unchanged; the extension simply adds buffer and removes near-term pressure from Bosch.</p>
+    <p>The largest execution pressure remains on SAP carve-out complexity, merger-zone platform readiness, and final QG4 evidence closure ahead of the hard GoLive target on {html_escape(fmt_date(golive))}, but the approved TSA buffer materially improves the run-up to migration start.</p>
     </div>
     <div>
       <div class="fact-box">
@@ -646,7 +647,7 @@ body{{font-family:'Segoe UI',Arial,sans-serif;font-size:12px;color:#1a1a1a;backg
   <div class="stat-tile"><div class="si">&#128187;</div><div class="sn">{DEVICE_COUNT:,}</div><div class="sl">Client Devices</div></div>
   <div class="stat-tile"><div class="si">&#9881;</div><div class="sn">{APPLICATION_COUNT:,}+</div><div class="sl">Applications</div></div>
   <div class="stat-tile"><div class="si">&#128197;</div><div class="sn">{schedule['duration_months']} mo</div><div class="sl">Programme Duration</div></div>
-  <div class="stat-tile"><div class="si">&#127975;</div><div class="sn">30 Jun 2026</div><div class="sl">TSA End State</div></div>
+    <div class="stat-tile"><div class="si">&#127975;</div><div class="sn">31 Jul 2027</div><div class="sl">Approved JCI TSA End</div></div>
 </div>
 
 <div class="card">
@@ -777,7 +778,7 @@ body{{font-family:'Segoe UI',Arial,sans-serif;font-size:12px;color:#1a1a1a;backg
         <div class="cp-title">Programme Principles</div>
         <div class="cp-item">GoLive on {html_escape(fmt_date(golive))} remains the hard business commitment.</div>
         <div class="cp-item">No new transformation scope enters after QG4.</div>
-        <div class="cp-item">TSA exit and Bosch handover complete during hypercare, not later.</div>
+        <div class="cp-item">The approved TSA extension reduces pressure before migration start; formal TSA exit and Bosch handover still complete during hypercare, not later.</div>
       </div>
     </div>
   </div>

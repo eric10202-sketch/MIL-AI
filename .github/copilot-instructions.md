@@ -1,6 +1,6 @@
 # Carveout AI Toolkit — Copilot Instructions
 
-> **Last reviewed:** April 2026 — skill coverage completed for charter, stakeholder presentation, and reconciliation gate
+> **Last reviewed:** April 2026 — versioning convention added for project folders and deliverables
 
 This file is automatically loaded by GitHub Copilot for all users of this workspace.
 `CLAUDE.md` is the canonical repository policy for guardrails, mandatory inputs, orchestration, and output standards.
@@ -15,6 +15,7 @@ Before generating or modifying any deliverable:
 - Follow the mandatory deliverable sequence defined in `CLAUDE.md`.
 - Treat the schedule, risk register, and cost plan as the authoritative baseline documents.
 - Reconcile every downstream artifact to those baseline documents before handoff.
+- Apply repository versioning from `CLAUDE.md`: initial creation = `v1.0`, minor change = `v1.x`, major change = `v2.0`, `v3.0`, etc.
 
 ---
 
@@ -43,3 +44,4 @@ When executing a task, read the relevant skill file from this workspace before p
 ## Repository Maintenance
 
 When repository metadata changes, update `CLAUDE.md`, this file, and any affected inventories or folder-structure references.
+When a new project version is created, update the affected markdown inventories so the current approved version is clear.

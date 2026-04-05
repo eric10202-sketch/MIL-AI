@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Trinity-CAM (GPT) Executive Dashboard</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',Arial,sans-serif;font-size:12px;color:#1a1a1a;background:#f4f6f9;}
+.hdr{background:linear-gradient(135deg,#003b6e 0%,#005199 100%);color:#fff;padding:16px 28px;display:flex;align-items:center;gap:20px;}
+.bosch-logo{display:flex;align-items:center;background:#fff;padding:4px 8px;border-radius:4px;}
+.hdr-center{flex:1;}
+.hdr-center h1{font-size:18px;font-weight:700;letter-spacing:.4px;}
+.hdr-center h2{font-size:11px;font-weight:400;opacity:.85;margin-top:3px;}
+.hdr-right{text-align:right;font-size:11px;opacity:.85;white-space:nowrap;}
+.hdr-right strong{font-size:14px;display:block;}
+.countdown-strip{background:#003b6e;display:flex;gap:0;}
+.cd-box{flex:1;border-right:1px solid rgba(255,255,255,.15);padding:8px 14px;color:#fff;}
+.cd-box:last-child{border-right:none;}
+.cd-label{font-size:9px;text-transform:uppercase;letter-spacing:.5px;opacity:.75;}
+.cd-n{font-size:22px;font-weight:700;}
+.cd-sub{font-size:9px;opacity:.7;}
+.page{max-width:1140px;margin:0 auto;padding:16px 20px 8px;}
+.page-break{page-break-before:always;border-top:3px solid #003b6e;margin:24px 0 0;}
+.card{background:#fff;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,.08);margin-bottom:14px;overflow:hidden;}
+.card-title{background:#005199;color:#fff;font-size:11px;font-weight:700;padding:7px 14px;letter-spacing:.4px;text-transform:uppercase;}
+.card-body{padding:12px 14px;}
+.overview-grid{display:grid;grid-template-columns:1fr 340px;gap:12px;}
+.overview-text p{font-size:12px;line-height:1.55;margin:0 0 8px;}
+.fact-box{background:#EFF4FB;border-radius:4px;padding:10px;font-size:11px;}
+.fact-box .fact-label{font-size:9px;text-transform:uppercase;letter-spacing:.4px;color:#555;margin-bottom:2px;}
+.fact-box .fact-val{font-weight:700;font-size:13px;color:#003b6e;}
+.fact-sep{border-top:1px solid #ccd8ed;margin:6px 0;}
+.stat-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;}
+.stat-tile{background:#fff;border-radius:5px;box-shadow:0 1px 3px rgba(0,0,0,.07);padding:10px 8px;text-align:center;}
+.stat-tile .si{font-size:22px;}
+.stat-tile .sn{font-size:16px;font-weight:700;color:#003b6e;}
+.stat-tile .sl{font-size:9px;color:#666;text-transform:uppercase;letter-spacing:.4px;margin-top:2px;}
+.phase-bar{display:flex;height:36px;border-radius:4px;overflow:hidden;}
+.pb-seg{display:flex;align-items:center;justify-content:center;color:#fff;font-size:9px;font-weight:700;text-align:center;white-space:nowrap;overflow:hidden;padding:2px;}
+.phase-labels{display:flex;font-size:9px;color:#555;margin-top:3px;}
+.phase-labels span{flex:1;white-space:nowrap;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.four-col{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.ms-table{width:100%;border-collapse:collapse;font-size:11px;}
+.ms-table th{background:#003b6e;color:#fff;padding:6px 8px;text-align:left;font-size:10px;}
+.ms-table td{padding:6px 8px;border-bottom:1px solid #e8ecf2;vertical-align:middle;}
+.ms-table tr:nth-child(even){background:#EFF4FB;}
+.pill{display:inline-block;padding:2px 7px;border-radius:10px;font-size:9px;font-weight:700;}
+.pill-future{background:#EFF4FB;color:#005199;}
+.pill-active{background:#FFF2CC;color:#c07000;}
+.pill-done{background:#d5f5e3;color:#1e8449;}
+.budget-summary{text-align:center;padding:6px 0;}
+.budget-total{font-size:22px;font-weight:700;color:#003b6e;}
+.budget-sub{font-size:10px;color:#666;margin-bottom:8px;}
+.budget-bar-wrap{margin:6px 0;}
+.budget-bar{height:16px;border-radius:8px;overflow:hidden;display:flex;}
+.bb-seg{height:100%;}
+.budget-legend{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:6px;font-size:9px;}
+.bl-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:3px;}
+.ws-card{background:#EFF4FB;border-radius:4px;padding:8px 10px;border-left:4px solid #0066CC;}
+.ws-title{font-weight:700;font-size:11px;color:#003b6e;margin-bottom:4px;}
+.ws-bullets{font-size:10px;color:#333;line-height:1.5;padding-left:16px;}
+.ws-bullets li{margin:2px 0;}
+.ws-conf{display:inline-block;margin-top:6px;padding:2px 7px;border-radius:10px;font-size:9px;font-weight:700;}
+.conf-g{background:#27ae60;color:#fff;}
+.conf-a{background:#f39c12;color:#fff;}
+.conf-r{background:#e74c3c;color:#fff;}
+.qg-row{display:flex;gap:10px;padding:7px 0;border-bottom:1px solid #e8ecf2;align-items:flex-start;}
+.qg-row:last-child{border-bottom:none;}
+.qg-date{min-width:90px;font-size:10px;font-weight:600;color:#003b6e;}
+.qg-name{font-weight:700;font-size:11px;}
+.qg-sub{font-size:10px;color:#666;margin-top:2px;}
+.qg-cd{min-width:70px;text-align:right;font-size:10px;font-weight:600;color:#0066CC;}
+.risk-card{border-radius:4px;padding:8px 10px;}
+.risk-high{background:#fdecea;border-left:4px solid #e74c3c;}
+.risk-med{background:#fff9ec;border-left:4px solid #f39c12;}
+.risk-low{background:#eafbf1;border-left:4px solid #27ae60;}
+.risk-id{font-weight:700;font-size:10px;}
+.risk-title{font-size:11px;font-weight:600;margin:2px 0;}
+.risk-score{font-size:9px;color:#666;}
+.wave-row{display:flex;align-items:center;gap:8px;margin:5px 0;}
+.wave-label{min-width:150px;font-size:10px;font-weight:600;}
+.wave-bar{height:16px;border-radius:3px;display:flex;align-items:center;padding-left:6px;color:#fff;font-size:9px;font-weight:700;}
+.wave-n{min-width:120px;font-size:10px;color:#555;}
+.hotspot-card{background:#EFF4FB;border-radius:4px;padding:8px 10px;}
+.hs-country{font-weight:700;font-size:12px;margin-bottom:4px;color:#003b6e;}
+.hotspot-card div{font-size:10px;color:#333;line-height:1.5;}
+.cp-cell{background:#EFF4FB;border-radius:4px;padding:8px 10px;}
+.cp-title{font-weight:700;font-size:11px;color:#003b6e;margin-bottom:5px;border-bottom:2px solid #0066CC;padding-bottom:3px;}
+.cp-item{font-size:10px;line-height:1.5;padding:2px 0;border-bottom:1px dotted #c8d4e8;}
+.cp-item:last-child{border-bottom:none;}
+.region-row{display:flex;align-items:center;gap:8px;margin:4px 0;font-size:11px;}
+.region-name{min-width:80px;color:#333;}
+.region-bar{height:14px;background:#0066CC;border-radius:2px;}
+.region-n{font-size:10px;color:#555;min-width:50px;}
+.footer{text-align:center;font-size:9px;color:#aaa;padding:10px 0 20px;}
+.stats-dark{background:#003b6e;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-radius:5px;overflow:hidden;margin-bottom:12px;}
+.sd-cell{padding:10px 12px;border-right:1px solid rgba(255,255,255,.12);color:#fff;text-align:center;}
+.sd-cell:last-child{border-right:none;}
+.sd-n{font-size:22px;font-weight:700;}
+.sd-l{font-size:9px;opacity:.75;text-transform:uppercase;letter-spacing:.4px;margin-top:2px;}
+@media print { .page-break { page-break-before: always; } }
+</style>
+</head>
+<body>
+<div class="hdr">
+  <div class="bosch-logo"><img src="data:image/png;base64,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" alt="Bosch" style="height:36px;display:block;" /></div>
+  <div class="hdr-center">
+    <h1>Trinity-CAM (GPT) - IT Carve-out Executive Dashboard</h1>
+    <h2>Johnson Controls International (JCI) -> Robert Bosch GmbH | Air conditioning business | Integration Model</h2>
+  </div>
+  <div class="hdr-right">
+    <strong>05 April 2026</strong>
+    GoLive: 01 Jan 2028 | +636 days
+  </div>
+</div>
+
+<div class="countdown-strip">
+  <div class="cd-box"><div class="cd-label">Days to Kickoff</div><div class="cd-n">87</div><div class="cd-sub">01 Jul 2026 - QG0</div></div>
+  <div class="cd-box"><div class="cd-label">Days to Day 1</div><div class="cd-n">636</div><div class="cd-sub">01 Jan 2028 - GoLive</div></div>
+  <div class="cd-box"><div class="cd-label">Days to TSA Exit Close</div><div class="cd-n">727</div><div class="cd-sub">01 Apr 2028 - QG5</div></div>
+  <div class="cd-box"><div class="cd-label">Programme Duration</div><div class="cd-n">21</div><div class="cd-sub">months from 01 Jul 2026</div></div>
+</div>
+
+<div class="page">
+<div class="card">
+  <div class="card-title">Project Overview</div>
+  <div class="card-body overview-grid">
+    <div class="overview-text">
+    <p>Trinity-CAM (GPT) is the IT carve-out programme for the sale of the air conditioning business from JCI to Bosch. Change Request 1 updates the baseline to reflect JCI approval of a TSA extension through 31 Jul 2027 so users can continue to work in the legacy JCI environment while Infosys completes merger-zone build-up.</p>
+    <p>The delivery model remains a true integration carve-out: JCI IT services remain the source estate, Infosys builds and operates the merger zone as the temporary landing environment, and Bosch accepts the stabilised operating model after GoLive and hypercare. Programme progress and milestone dates remain unchanged; the extension simply adds buffer and removes near-term pressure from Bosch.</p>
+    <p>The largest execution pressure remains on SAP carve-out complexity, merger-zone platform readiness, and final QG4 evidence closure ahead of the hard GoLive target on 01 Jan 2028, but the approved TSA buffer materially improves the run-up to migration start.</p>
+    </div>
+    <div>
+      <div class="fact-box">
+        <div class="fact-label">Carve-out Model</div>
+        <div class="fact-val">Integration</div>
+        <div style="font-size:10px;color:#444;margin-top:3px;">Seller IT -> Infosys merger zone -> Buyer IT</div>
+        <div class="fact-sep"></div>
+        <div class="fact-label">Buyer / Sponsor Customer</div>
+        <div class="fact-val">Robert Bosch GmbH</div>
+        <div class="fact-sep"></div>
+        <div class="fact-label">Seller / Sponsor Contractor</div>
+        <div class="fact-val">Johnson Controls International (JCI)</div>
+        <div class="fact-sep"></div>
+        <div class="fact-label">PMO / Method Lead</div>
+        <div class="fact-val">KPMG</div>
+        <div class="fact-label" style="margin-top:4px;">IT Delivery Partner</div>
+        <div class="fact-val">Infosys</div>
+        <div class="fact-sep"></div>
+        <div class="fact-label">Programme Labour</div>
+        <div class="fact-val">EUR 6,258,880</div>
+        <div style="font-size:9px;color:#888;">TBC - to be approved at QG1 | non-labour contingencies tracked separately</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="stat-strip" style="margin-bottom:14px;">
+  <div class="stat-tile"><div class="si">&#127758;</div><div class="sn">48</div><div class="sl">Global Sites</div></div>
+  <div class="stat-tile"><div class="si">&#128100;</div><div class="sn">12,000</div><div class="sl">IT Users</div></div>
+  <div class="stat-tile"><div class="si">&#128187;</div><div class="sn">12,000</div><div class="sl">Client Devices</div></div>
+  <div class="stat-tile"><div class="si">&#9881;</div><div class="sn">1,800+</div><div class="sl">Applications</div></div>
+  <div class="stat-tile"><div class="si">&#128197;</div><div class="sn">21 mo</div><div class="sl">Programme Duration</div></div>
+    <div class="stat-tile"><div class="si">&#127975;</div><div class="sn">31 Jul 2027</div><div class="sl">Approved JCI TSA End</div></div>
+</div>
+
+<div class="card">
+  <div class="card-title">Programme Phase Timeline</div>
+  <div class="card-body">
+    <div class="phase-bar">
+      <div class="pb-seg" style="flex:92;background:#357ab7;">Phase 0<br>Mobilise</div>
+      <div class="pb-seg" style="flex:121;background:#0066CC;">Phase 1<br>Discover and Design</div>
+      <div class="pb-seg" style="flex:180;background:#005199;">Phase 2<br>Build</div>
+      <div class="pb-seg" style="flex:131;background:#003b6e;">Phase 3<br>Test and Migrate</div>
+      <div class="pb-seg" style="flex:21;background:#1a1a6e;">Phase 4<br>Readiness</div>
+      <div class="pb-seg" style="flex:90;background:#4a4a4a;">Phase 5<br>Hypercare</div>
+    </div>
+    <div class="phase-labels">
+      <span>01 Jul 2026</span>
+      <span>01 Oct 2026</span>
+      <span>31 Jul 2027</span>
+      <span>10 Dec 2027</span>
+      <span>01 Jan 2028</span>
+      <span style="text-align:right;">01 Apr 2028</span>
+    </div>
+  </div>
+</div>
+
+<div class="two-col">
+  <div class="card">
+    <div class="card-title">Key Milestones and Quality Gates</div>
+    <div class="card-body" style="padding:8px;">
+      <table class="ms-table">
+        <tr><th>Gate</th><th>Description</th><th>Date</th><th>Countdown</th><th>Status</th></tr>
+        <tr><td><strong>QG0</strong></td><td>Programme kickoff and partner mobilisation confirmed</td><td>01 Jul 2026</td><td style="font-size:10px;color:#0066CC;">+87 days</td><td><span class="pill pill-future">PLANNED</span></td></tr><tr><td><strong>QG1</strong></td><td>Concept sign-off and transition model approval</td><td>01 Oct 2026</td><td style="font-size:10px;color:#0066CC;">+179 days</td><td><span class="pill pill-future">PLANNED</span></td></tr><tr><td><strong>QG2&amp;3</strong></td><td>Build complete, test entry, and migration factory readiness</td><td>31 Jul 2027</td><td style="font-size:10px;color:#0066CC;">+482 days</td><td><span class="pill pill-future">PLANNED</span></td></tr><tr><td><strong>QG4</strong></td><td>Pre-GoLive gate with evidence, defects, and rollback closure</td><td>10 Dec 2027</td><td style="font-size:10px;color:#0066CC;">+614 days</td><td><span class="pill pill-future">PLANNED</span></td></tr><tr><td><strong>GoLive</strong></td><td>Day 1 cutover to merger zone operating model</td><td>01 Jan 2028</td><td style="font-size:10px;color:#0066CC;">+636 days</td><td><span class="pill pill-active">TARGET</span></td></tr><tr><td><strong>QG5</strong></td><td>Hypercare complete, TSA exit closed, and Bosch handover done</td><td>01 Apr 2028</td><td style="font-size:10px;color:#0066CC;">+727 days</td><td><span class="pill pill-future">PLANNED</span></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Budget Distribution</div>
+    <div class="card-body">
+      <div class="budget-summary">
+        <div class="budget-total">EUR 6,258,880</div>
+        <div class="budget-sub">External labour baseline only | TBC - to be approved at QG1</div>
+      </div>
+      <div class="budget-bar-wrap"><div class="budget-bar"><div class="bb-seg" style="flex:13.11;background:#003b6e;" title="Infosys - Application and Data Delivery 13.1%"></div><div class="bb-seg" style="flex:18.44;background:#005199;" title="Infosys - Platform, Security, and Workplace 18.4%"></div><div class="bb-seg" style="flex:13.30;background:#0066CC;" title="Infosys - Programme and Service Delivery 13.3%"></div><div class="bb-seg" style="flex:6.78;background:#357ab7;" title="Infosys - SAP Delivery 6.8%"></div><div class="bb-seg" style="flex:21.18;background:#5b9bd5;" title="KPMG - Architecture and Migration Advisory 21.2%"></div><div class="bb-seg" style="flex:14.26;background:#7db4de;" title="KPMG - Programme Governance 14.3%"></div><div class="bb-seg" style="flex:6.76;background:#9ccce8;" title="KPMG - SAP Advisory 6.8%"></div><div class="bb-seg" style="flex:6.15;background:#b8dff2;" title="KPMG - Testing, Deployment, and Readiness 6.2%"></div></div></div>
+      <div class="budget-legend"><div><span class="bl-dot" style="background:#003b6e;"></span>Infosys - Application and Data Delivery 13.1%</div><div><span class="bl-dot" style="background:#005199;"></span>Infosys - Platform, Security, and Workplace 18.4%</div><div><span class="bl-dot" style="background:#0066CC;"></span>Infosys - Programme and Service Delivery 13.3%</div><div><span class="bl-dot" style="background:#357ab7;"></span>Infosys - SAP Delivery 6.8%</div><div><span class="bl-dot" style="background:#5b9bd5;"></span>KPMG - Architecture and Migration Advisory 21.2%</div><div><span class="bl-dot" style="background:#7db4de;"></span>KPMG - Programme Governance 14.3%</div><div><span class="bl-dot" style="background:#9ccce8;"></span>KPMG - SAP Advisory 6.8%</div><div><span class="bl-dot" style="background:#b8dff2;"></span>KPMG - Testing, Deployment, and Readiness 6.2%</div></div>
+      <table style="width:100%;border-collapse:collapse;font-size:10px;margin-top:10px;">
+        <tr><th style="background:#003b6e;color:#fff;padding:4px 6px;text-align:left;">Phase</th><th style="background:#003b6e;color:#fff;padding:4px 6px;text-align:right;">EUR</th><th style="background:#003b6e;color:#fff;padding:4px 6px;text-align:right;">%</th></tr>
+        <tr><td style="padding:3px 6px;border-bottom:1px solid #e8ecf2;">Phase 0: Mobilize carve-out governance and TSA baseline</td><td style="padding:3px 6px;text-align:right;border-bottom:1px solid #e8ecf2;">388,440</td><td style="padding:3px 6px;text-align:right;border-bottom:1px solid #e8ecf2;">6%</td></tr><tr><td style="padding:3px 6px;border-bottom:1px solid #e8ecf2;">Phase 1: Discover landscape and design the merger zone</td><td style="padding:3px 6px;text-align:right;border-bottom:1px solid #e8ecf2;">1,319,320</td><td style="padding:3px 6px;text-align:right;border-bottom:1px solid #e8ecf2;">21%</td></tr><tr><td style="padding:3px 6px;border-bottom:1px solid #e8ecf2;">Phase 2: Build merger zone and prepare transition factory</td><td style="padding:3px 6px;text-align:right;border-bottom:1px solid #e8ecf2;">2,493,560</td><td style="padding:3px 6px;text-align:right;border-bottom:1px solid #e8ecf2;">40%</td></tr><tr><td style="padding:3px 6px;border-bottom:1px solid #e8ecf2;">Phase 3: Test, migrate to merger zone, and prepare Bosch landing</td><td style="padding:3px 6px;text-align:right;border-bottom:1px solid #e8ecf2;">1,194,440</td><td style="padding:3px 6px;text-align:right;border-bottom:1px solid #e8ecf2;">19%</td></tr><tr><td style="padding:3px 6px;border-bottom:1px solid #e8ecf2;">Phase 4: Final readiness and GoLive decision</td><td style="padding:3px 6px;text-align:right;border-bottom:1px solid #e8ecf2;">53,560</td><td style="padding:3px 6px;text-align:right;border-bottom:1px solid #e8ecf2;">1%</td></tr><tr><td style="padding:3px 6px;border-bottom:1px solid #e8ecf2;">Phase 5: Hypercare, TSA exit, and Bosch handover</td><td style="padding:3px 6px;text-align:right;border-bottom:1px solid #e8ecf2;">809,560</td><td style="padding:3px 6px;text-align:right;border-bottom:1px solid #e8ecf2;">13%</td></tr>
+        <tr style="font-weight:700;background:#C6D4E8;"><td style="padding:4px 6px;">Total Labour</td><td style="padding:4px 6px;text-align:right;">6,258,880</td><td style="padding:4px 6px;text-align:right;">100%</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<div class="card">
+  <div class="card-title">IT Workstream Coverage - Confidence Overview</div>
+  <div class="card-body"><div class="three-col"><div class="ws-card"><div class="ws-title">WS1 - PMO and Governance</div><ul class="ws-bullets"><li>Integrated planning, gate control, RAID cadence, and steering governance.</li><li>Cross-party dependency control across Bosch, JCI, KPMG, and Infosys.</li></ul><span class="ws-conf conf-g">HIGH CONFIDENCE</span></div><div class="ws-card"><div class="ws-title">WS2 - Merger Zone Platform</div><ul class="ws-bullets"><li>Hosting, network, monitoring, backup, and operational control plane build.</li><li>Temporary landing platform between seller IT and buyer IT.</li></ul><span class="ws-conf conf-g">HIGH CONFIDENCE</span></div><div class="ws-card"><div class="ws-title">WS3 - SAP Carve-out</div><ul class="ws-bullets"><li>System copy, interface rewiring, role redesign, rehearsal cutovers, and rollback proof.</li><li>Direct critical-path dependency to QG2/QG3 and QG4 readiness.</li></ul><span class="ws-conf conf-a">MEDIUM CONFIDENCE</span></div><div class="ws-card"><div class="ws-title">WS4 - Application Migration</div><ul class="ws-bullets"><li>Wave-based movement of 1,800+ applications plus validation and remediation handling.</li><li>Critical app cohort, standard cohort, and long-tail closure managed separately.</li></ul><span class="ws-conf conf-a">MEDIUM CONFIDENCE</span></div><div class="ws-card"><div class="ws-title">WS5 - Identity and Workplace</div><ul class="ws-bullets"><li>AD trust, privileged access, M365, endpoint management, and site support readiness.</li><li>User migration path for 12,000 people across four user waves.</li></ul><span class="ws-conf conf-g">HIGH CONFIDENCE</span></div><div class="ws-card"><div class="ws-title">WS6 - Security and Compliance</div><ul class="ws-bullets"><li>Control uplift for merger-zone access, logging, DLP, and security review.</li><li>Cross-border privacy, labour-law, and data-transfer constraints built into sequencing.</li></ul><span class="ws-conf conf-a">MEDIUM CONFIDENCE</span></div><div class="ws-card"><div class="ws-title">WS7 - Data Migration</div><ul class="ws-bullets"><li>Segregation, movement, reconciliation, and evidence across SAP and non-SAP data domains.</li><li>Audit-ready validation for each migration wave and cutover rehearsal.</li></ul><span class="ws-conf conf-g">HIGH CONFIDENCE</span></div><div class="ws-card"><div class="ws-title">WS8 - Regional Change and Deployment</div><ul class="ws-bullets"><li>Site playbooks, communications, floorwalking, and local readiness across 48 sites.</li><li>Country-specific sequencing driven by legal and operational constraints.</li></ul><span class="ws-conf conf-a">MEDIUM CONFIDENCE</span></div><div class="ws-card"><div class="ws-title">WS9 - Hypercare and Handover</div><ul class="ws-bullets"><li>24x7 command-center support, hotfix-only stabilisation, TSA exit, and Bosch handover.</li><li>No new transformation scope after GoLive; stabilisation only.</li></ul><span class="ws-conf conf-g">HIGH CONFIDENCE</span></div></div></div>
+</div>
+
+<div class="card">
+  <div class="card-title">Quality Gate Tracker</div>
+  <div class="card-body"><div class="qg-row"><div class="qg-date">01 Jul 2026</div><div style="flex:1;"><div class="qg-name">QG0 - Programme Kickoff</div><div class="qg-sub">PMO governance active, Infosys mobilised, TSA baseline fixed, and steering cadence launched.</div></div><div class="qg-cd">+87 days</div><div style="min-width:70px;text-align:right;"><span class="pill pill-future">PLANNED</span></div></div><div class="qg-row"><div class="qg-date">01 Oct 2026</div><div style="flex:1;"><div class="qg-name">QG1 - Concept Approved</div><div class="qg-sub">Application inventory, merger-zone architecture, wave plan, and baseline controls approved for build.</div></div><div class="qg-cd">+179 days</div><div style="min-width:70px;text-align:right;"><span class="pill pill-future">PLANNED</span></div></div><div class="qg-row"><div class="qg-date">31 Jul 2027</div><div style="flex:1;"><div class="qg-name">QG2&amp;3 - Build Complete and Test Entry</div><div class="qg-sub">Core platform, SAP build path, pilot readiness, and migration factory evidence accepted.</div></div><div class="qg-cd">+482 days</div><div style="min-width:70px;text-align:right;"><span class="pill pill-future">PLANNED</span></div></div><div class="qg-row"><div class="qg-date">10 Dec 2027</div><div style="flex:1;"><div class="qg-name">QG4 - Pre-GoLive Gate</div><div class="qg-sub">All users, applications, readiness evidence, and defect closure complete before final buffer period.</div></div><div class="qg-cd">+614 days</div><div style="min-width:70px;text-align:right;"><span class="pill pill-future">PLANNED</span></div></div><div class="qg-row"><div class="qg-date">01 Jan 2028</div><div style="flex:1;"><div class="qg-name">GoLive - Day 1</div><div class="qg-sub">Cutover command center active and all in-scope services running from the merger zone.</div></div><div class="qg-cd">+636 days</div><div style="min-width:70px;text-align:right;"><span class="pill pill-active">TARGET</span></div></div><div class="qg-row"><div class="qg-date">01 Apr 2028</div><div style="flex:1;"><div class="qg-name">QG5 - Project Completion</div><div class="qg-sub">Stabilisation, TSA exit, and Bosch operations handover complete after 90 days of hypercare.</div></div><div class="qg-cd">+727 days</div><div style="min-width:70px;text-align:right;"><span class="pill pill-future">PLANNED</span></div></div></div>
+</div>
+
+<div class="two-col">
+  <div class="card">
+    <div class="card-title">Regional Site Distribution</div>
+    <div class="card-body">
+      <div class="region-row"><span class="region-name">EMEA</span><div class="region-bar" style="width:240px;"></div><span class="region-n">22 sites</span></div><div class="region-row"><span class="region-name">APAC</span><div class="region-bar" style="width:152px;"></div><span class="region-n">14 sites</span></div><div class="region-row"><span class="region-name">Americas</span><div class="region-bar" style="width:130px;"></div><span class="region-n">12 sites</span></div>
+      <div style="margin-top:12px;font-size:10px;color:#555;">Planning geography for dashboard tracking covers the main concentration points used in regional sequencing and local readiness management.</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">Key Risk Indicators</div>
+    <div class="card-body" style="display:flex;flex-direction:column;gap:6px;">
+      <div class="risk-card risk-high"><div class="risk-id">R001 - Technology, R&amp;D</div><div class="risk-title">SAP carve-out build and system copy into the merger zone reveal shared master data, hard-coded integrations, or sequence dependencies that exceed the planned Phase 2 window and delay QG2 and QG3 on 2027-07-31.</div><div class="risk-score">P 70% x I Very High | Score: <strong>20</strong> | Owner: KPMG SAP Architect</div></div><div class="risk-card risk-high"><div class="risk-id">R003 - Schedule</div><div class="risk-title">The programme reaches late November 2027 with unresolved critical defects, incomplete migration evidence, or missing steering approvals, causing QG4 to fail or move materially.</div><div class="risk-score">P 50% x I Very High | Score: <strong>15</strong> | Owner: KPMG PMO Lead</div></div><div class="risk-card risk-med"><div class="risk-id">R002 - Technology, R&amp;D</div><div class="risk-title">Merger-zone core infrastructure is not operational by the planned Phase 2 entry date or remains unstable through build, preventing application onboarding and delaying user migration readiness.</div><div class="risk-score">P 50% x I High | Score: <strong>12</strong> | Owner: Infosys Programme Manager</div></div><div class="risk-card risk-med"><div class="risk-id">R004 - Budget</div><div class="risk-title">Approved scope expands during Phase 2 or Phase 3 without matching cost governance, producing cumulative Infosys and third-party cost changes above the planned labour envelope.</div><div class="risk-score">P 50% x I High | Score: <strong>12</strong> | Owner: Bosch Programme Sponsor</div></div><div class="risk-card risk-med"><div class="risk-id">R005 - Resources</div><div class="risk-title">One or more key technical or business resources leave the programme during build or testing, and replacements require several weeks to gain knowledge of the JCI source landscape and the merger-zone design.</div><div class="risk-score">P 50% x I High | Score: <strong>12</strong> | Owner: KPMG PMO Lead</div></div>
+      <div style="font-size:10px;color:#666;margin-top:4px;">Threat profile: 2 high, 8 medium, 12 lower-score threats, plus 2 opportunity entries in the register.</div>
+    </div>
+  </div>
+</div>
+
+<div class="page-break"></div>
+
+<div class="card">
+  <div class="card-title">Application Migration Waves</div>
+  <div class="card-body">
+    <div style="margin-bottom:8px;font-size:11px;color:#555;">Wave planning follows the generated schedule: critical applications first, then core business services, then regional and long-tail closure, with SAP running as a dedicated parallel track.</div>
+    <div class="wave-row"><div class="wave-label">SAP Track</div><div class="wave-bar" style="flex:0 0 380px;background:#003b6e;">Apr 2027 -&gt; Nov 2027</div><div class="wave-n">Approx. 50 SAP systems</div></div><div class="wave-row"><div class="wave-label">Wave 1 - Critical apps</div><div class="wave-bar" style="flex:0 0 180px;background:#0066CC;">Aug 2027 -&gt; Sep 2027</div><div class="wave-n">Approx. 450 apps</div></div><div class="wave-row"><div class="wave-label">Wave 2 - Core business apps</div><div class="wave-bar" style="flex:0 0 280px;background:#357ab7;">Sep 2027 -&gt; Nov 2027</div><div class="wave-n">Approx. 800 apps</div></div><div class="wave-row"><div class="wave-label">Wave 3 - Long tail and local apps</div><div class="wave-bar" style="flex:0 0 220px;background:#5b9bd5;">Oct 2027 -&gt; Dec 2027</div><div class="wave-n">Approx. 500 apps</div></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Country-Specific Complexity Hotspots</div>
+  <div class="card-body"><div class="three-col"><div class="hotspot-card"><div class="hs-country">Germany (6 sites)</div><div>Largest EMEA labour-law and works-council exposure for user transition windows.</div><div>High SAP and shared-service dependency concentration raises cutover sensitivity.</div><div>Major governance focus for consultation timing before mass migration waves.</div></div><div class="hotspot-card"><div class="hs-country">France (3 sites)</div><div>Local consultation requirements may delay workplace and access changes if sequencing slips.</div><div>Customer-facing service continuity remains sensitive during late migration waves.</div><div>Data-transfer controls need explicit approval before merger-zone landing activities.</div></div><div class="hotspot-card"><div class="hs-country">USA (8 sites)</div><div>Largest Americas cluster and major Wave 2 business-volume concentration.</div><div>Manufacturing and customer-service dependencies make downtime tolerance very low.</div><div>Operational readiness and local support coverage must scale for peak user moves.</div></div><div class="hotspot-card"><div class="hs-country">China (5 sites)</div><div>Regional application and connectivity constraints increase merger-zone compatibility risk.</div><div>Country-specific data-handling and network controls require early design validation.</div><div>Late remediation would compress Wave 3 closure and final readiness buffer.</div></div><div class="hotspot-card"><div class="hs-country">Japan (3 sites)</div><div>Time-zone and local support-window constraints affect rehearsal and floorwalking coverage.</div><div>Local service continuity expectations tighten acceptable migration-window duration.</div><div>Regional business validation must complete early enough to avoid QG4 drag.</div></div><div class="hotspot-card"><div class="hs-country">India (3 sites)</div><div>Strong delivery overlap with Infosys execution teams supports pilot and test throughput.</div><div>Useful early-wave location for proving workplace, service desk, and runbook patterns.</div><div>Needs disciplined separation of delivery access from business-user migration access paths.</div></div></div></div>
+</div>
+
+<div class="stats-dark">
+  <div class="sd-cell"><div class="sd-n">87</div><div class="sd-l">Schedule Tasks</div></div>
+  <div class="sd-cell"><div class="sd-n">8</div><div class="sd-l">Resource Categories</div></div>
+  <div class="sd-cell"><div class="sd-n">52,456</div><div class="sd-l">Person-Hours</div></div>
+  <div class="sd-cell"><div class="sd-n">3</div><div class="sd-l">Regional Clusters</div></div>
+</div>
+
+<div class="card">
+  <div class="card-title">Critical Path and Guiding Principles</div>
+  <div class="card-body">
+    <div class="four-col">
+      <div class="cp-cell">
+        <div class="cp-title">Merger Zone Platform</div>
+        <div class="cp-item">Hosting, identity, and network stack must be stable before broad migration starts.</div>
+        <div class="cp-item">Operational monitoring and DR controls need proof before test exit.</div>
+        <div class="cp-item">Any platform delay compresses all downstream migration windows.</div>
+      </div>
+      <div class="cp-cell">
+        <div class="cp-title">SAP Critical Path</div>
+        <div class="cp-item">System copy, role redesign, and interface rewiring drive the highest schedule exposure.</div>
+        <div class="cp-item">Mock cutovers and rollback evidence must close before QG4.</div>
+        <div class="cp-item">SAP remains the single most material path to GoLive risk.</div>
+      </div>
+      <div class="cp-cell">
+        <div class="cp-title">User and Site Migration</div>
+        <div class="cp-item">All four user waves and all 48 sites must complete before final gate approval.</div>
+        <div class="cp-item">Local readiness, legal consultation, and support coverage affect wave throughput.</div>
+        <div class="cp-item">Post-GoLive work is stabilisation only, not deferred migration.</div>
+      </div>
+      <div class="cp-cell">
+        <div class="cp-title">Programme Principles</div>
+        <div class="cp-item">GoLive on 01 Jan 2028 remains the hard business commitment.</div>
+        <div class="cp-item">No new transformation scope enters after QG4.</div>
+        <div class="cp-item">The approved TSA extension reduces pressure before migration start; formal TSA exit and Bosch handover still complete during hypercare, not later.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">Trinity-CAM (GPT) Executive Dashboard | 05 April 2026 | Data sources: Trinity-CAM (GPT)_Project_Schedule.xlsx, Trinity-CAM (GPT)_Risk_Register.xlsx, Trinity-CAM (GPT)_Cost_Plan.xlsx | CONFIDENTIAL</div>
+</div>
+</body>
+</html>

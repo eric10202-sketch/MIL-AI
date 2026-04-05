@@ -15,14 +15,15 @@ from openpyxl.styles import Font
 
 HERE = Path(__file__).parent
 PROJECT_NAME = "Trinity-CAM (GPT)"
+OUTPUT_FOLDER_NAME = "Trinity-CAM (GPT) v1.1"
 PROJECT_CODE = "TCMGPT-2026"
-DOCUMENT_ID = "TCMGPT-RR-001"
+DOCUMENT_ID = "TCMGPT-RR-001-CR1"
 OWNER = "KPMG PMO Lead"
 REPORT_DATE = "05.04.2026"
 CREATION_DATE = "05.04.2026"
 
 TEMPLATE_PATH = HERE / "Reference" / "BD_Risk-Register_template_en_V1.0_Dec2023.xlsx"
-OUTPUT_PATH = HERE / "active-projects" / PROJECT_NAME / f"{PROJECT_NAME}_Risk_Register.xlsx"
+OUTPUT_PATH = HERE / "active-projects" / OUTPUT_FOLDER_NAME / f"{PROJECT_NAME}_Risk_Register.xlsx"
 OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 
@@ -46,7 +47,7 @@ RISKS = [
         "measure": "Complete a detailed SAP object and interface inventory by 2026-11-15; run rehearsal extraction and copy exercises before Phase 2 build; reserve dedicated Infosys SAP carve-out resources; maintain weekly critical-path tracking from QG1 onward.",
         "due_date": "2026-11-15",
         "status": "not started",
-        "notes": "Highest schedule and cost exposure in the register.",
+        "notes": "Highest schedule and cost exposure in the register. Change Request 1 adds approved seller-side buffer through 31 Jul 2027, reducing immediate pressure on Bosch while preserving SAP as the key critical-path exposure.",
     },
     {
         "id": "R002",
@@ -67,7 +68,7 @@ RISKS = [
         "measure": "Approve the target architecture at QG1, establish milestone-based acceptance for hosting, identity, and connectivity, and run a weekly joint build board with KPMG, Bosch, and Infosys to clear blockers within five business days.",
         "due_date": "2026-10-01",
         "status": "not started",
-        "notes": "Single-vendor dependency risk.",
+        "notes": "Single-vendor dependency risk remains, but the approved TSA extension reduces immediate Bosch pressure by keeping users on legacy JCI while Infosys completes the merger-zone build.",
     },
     {
         "id": "R003",
@@ -88,7 +89,7 @@ RISKS = [
         "measure": "Define QG4 entrance criteria by 2027-09-01, run bi-weekly readiness reviews from September onward, maintain a single defect burn-down across SAP, apps, and workplace, and escalate any unresolved P1 issue within 24 hours.",
         "due_date": "2027-09-01",
         "status": "not started",
-        "notes": "Direct linkage to GoLive commitment.",
+        "notes": "Direct linkage to GoLive commitment remains, although the approved TSA extension improves near-term schedule buffer without changing milestone dates.",
     },
     {
         "id": "R004",

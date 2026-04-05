@@ -6,7 +6,7 @@
     "**/Bosch_png_b64.txt": true,
     "references/": true,
     "archive/": true,
-    ".claude/": true,
+    ".claude/": false,
     "Carveout/": true,
     "Trinity_Project_Cost_Plan.csv": true,
     "Trinity_Project_Schedule.csv": true,

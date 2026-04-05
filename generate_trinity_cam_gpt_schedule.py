@@ -11,6 +11,8 @@ import sys
 
 HERE = Path(__file__).parent
 PROJECT_NAME = "Trinity-CAM (GPT)"
+OUTPUT_FOLDER_NAME = "Trinity-CAM (GPT) v1.1"
+DOCUMENT_VERSION = "Version 1.1 - Change Request 1"
 SELLER = "Johnson Controls (JCI)"
 BUYER = "Bosch"
 BUSINESS = "Air conditioning business"
@@ -23,8 +25,9 @@ APPLICATIONS = 1800
 START_DATE = datetime(2026, 7, 1)
 GOLIVE_DATE = datetime(2028, 1, 1)
 COMPLETION_DATE = datetime(2028, 4, 1)
+APPROVED_TSA_END_DATE = datetime(2027, 7, 31)
 
-OUTPUT_DIR = HERE / "active-projects" / PROJECT_NAME
+OUTPUT_DIR = HERE / "active-projects" / OUTPUT_FOLDER_NAME
 XLSX_PATH = OUTPUT_DIR / f"{PROJECT_NAME}_Project_Schedule.xlsx"
 CSV_PATH = OUTPUT_DIR / f"{PROJECT_NAME}_Project_Schedule.csv"
 XML_PATH = OUTPUT_DIR / f"{PROJECT_NAME}_Project_Schedule.xml"
@@ -71,7 +74,7 @@ TASKS = [
         "Phase 0: Mobilize carve-out governance and TSA baseline",
         0,
         92,
-        notes="Programme launch, TSA framing, partner mobilisation, and QG1 concept approval.",
+        notes="Programme launch, TSA framing, approved extension control, partner mobilisation, and QG1 concept approval under change request version 1.1.",
     ),
     make_task(2, 2, "0.1 Governance and partner mobilization", 0, 60, notes="PMO setup with JCI, Bosch, KPMG, and Infosys."),
     make_task(
@@ -81,12 +84,12 @@ TASKS = [
         0,
         0,
         resources="KPMG PMO Lead + JCI Sponsor + Bosch Sponsor",
-        notes="Formal launch of the carve-out starting 2026-07-01 after the TSA period.",
+        notes="Formal launch of the carve-out starting 2026-07-01. Users continue to work in the legacy JCI environment while Infosys builds the merger zone and the approved TSA extension remains available through 2027-07-31.",
         milestone=True,
     ),
     make_task(4, 3, "Stand up PMO, governance cadence, and workstream RACI", 0, 14, "3", "KPMG PMO Lead + KPMG Project Manager", "Weekly governance, steering, RAID, and reporting in place."),
     make_task(5, 3, "Onboard Infosys for merger zone delivery and managed services", 1, 30, "3", "KPMG PMO Lead + Infosys Programme Manager", "Delivery scope confirms merger zone setup, operations, and migration execution."),
-    make_task(6, 3, "Baseline TSA towers, service owners, and exit principles", 14, 60, "4,5", "KPMG Project Manager + JCI IT Manager + Bosch IT Manager", "JCI TSA catalogue and exit logic defined for all in-scope IT towers."),
+    make_task(6, 3, "Baseline TSA towers, service owners, and exit principles", 14, 60, "4,5", "KPMG Project Manager + JCI IT Manager + Bosch IT Manager", "JCI TSA catalogue, approved extension through 2027-07-31, and exit logic defined for all in-scope IT towers."),
     make_task(7, 2, "0.2 Separation compliance and stakeholder alignment", 10, 92, notes="Legal, privacy, communications, and regional alignment."),
     make_task(8, 3, "Define legal perimeter, contracts, and supplier dependencies", 10, 45, "4", "KPMG Project Manager + JCI Legal Counsel + Bosch Legal Counsel", "Commercial and legal separation perimeter agreed."),
     make_task(9, 3, "Assess privacy, works council, and cross-border data constraints", 20, 70, "8", "KPMG Data Architect + JCI Legal Counsel", "Regional data transfer and employee impact constraints captured."),
@@ -120,7 +123,7 @@ TASKS = [
     make_task(20, 3, "Design workplace, M365, collaboration, and service management stack", 120, 185, "18", "Infosys Cloud Lead + KPMG Workplace Lead", "Email, M365, Teams, endpoint management, and service desk operating design complete."),
     make_task(21, 3, "Design Bosch landing zone integration for post-merger-zone operations", 160, 205, "18,19,20", "Bosch IT Manager + KPMG Infrastructure Architect + Infosys Programme Manager", "Bosch target interfaces, identity landing, and support integration agreed."),
     make_task(22, 2, "1.3 TSA, migration, and site sequencing design", 120, 214, notes="TSA service tower design, migration controls, and regional sequencing."),
-    make_task(23, 3, "Define TSA service towers, KPIs, and operational reporting", 120, 155, "6,11", "KPMG Project Manager + JCI IT Manager + Bosch IT Manager", "Service lines and TSA metrics defined for transition governance."),
+    make_task(23, 3, "Define TSA service towers, KPIs, and operational reporting", 120, 155, "6,11", "KPMG Project Manager + JCI IT Manager + Bosch IT Manager", "Service lines and TSA metrics defined for transition governance with the approved seller-service buffer through 2027-07-31."),
     make_task(24, 3, "Define exit criteria, acceptance tests, and service cutover checkpoints", 155, 190, "23", "KPMG Project Manager + Bosch IT Manager", "Each tower receives explicit readiness and exit conditions."),
     make_task(25, 3, "Define data separation controls and reconciliation approach", 130, 175, "14,15", "KPMG Data Architect + Infosys Data Migration Lead", "Controls for business data separation, validation, and audit trail agreed."),
     make_task(26, 3, "Sequence 48 sites and 12,000 users into migration waves", 160, 200, "16,20", "KPMG Deployment Lead + Infosys Service Delivery Lead", "Regional wave plan balances business criticality and support capacity."),
@@ -177,7 +180,7 @@ TASKS = [
     make_task(53, 3, "Run performance, security, and disaster recovery validation", 410, 470, "49,34", "Infosys Security Lead + Infosys Infrastructure Architect", "Capacity, resilience, and control effectiveness validated for GoLive load."),
     make_task(54, 3, "Run UAT with business teams across all regions and site groups", 430, 485, "46,52", "KPMG Test Lead + JCI Business Lead + Bosch Business Lead", "Business users validate SAP and non-SAP journeys needed at cutover."),
     make_task(55, 3, "Close defects, run regression, and obtain UAT closure evidence", 460, 500, "52,53,54", "Infosys QA Lead + KPMG Test Lead", "Critical and high defects resolved before final readiness stage."),
-    make_task(56, 2, "3.2 Migration waves into merger zone", 410, 520, notes="Users, applications, and data moved from JCI to the merger zone before QG4."),
+    make_task(56, 2, "3.2 Migration waves into merger zone", 410, 520, notes="Users, applications, and data move from JCI to the merger zone after the approved TSA buffer period while overall programme progress and GoLive remain unchanged."),
     make_task(57, 3, "Migrate user waves 1 and 2 with workplace and identity cutover", 410, 470, "44,49", "Infosys Service Delivery Lead + Infosys Workplace Lead + JCI IT Manager", "First half of the user base transitions from JCI to merger zone services."),
     make_task(58, 3, "Migrate user waves 3 and 4 and complete 48-site onboarding", 470, 520, "57,55", "Infosys Service Delivery Lead + Infosys Workplace Lead + JCI IT Manager", "All 12,000 users operate from the merger zone before QG4."),
     make_task(59, 3, "Execute wave 1 application and data migration into merger zone", 410, 455, "39,52", "Infosys Application Lead + Infosys Data Migration Lead", "Critical application and data moves completed with reconciliation."),
@@ -395,6 +398,8 @@ if __name__ == "__main__":
         print(f"XML generation failed:\n{result.stderr}")
         sys.exit(1)
 
+    print(f"  Output folder version: {OUTPUT_FOLDER_NAME} | {DOCUMENT_VERSION}")
+    print(f"  Approved TSA end: {APPROVED_TSA_END_DATE:%Y-%m-%d}")
     print(f"  XLSX: {XLSX_PATH}")
     print(f"  CSV:  {CSV_PATH}")
     print(f"  XML:  {XML_PATH}")

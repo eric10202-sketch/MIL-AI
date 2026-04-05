@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Trinity-CAM Management KPI Dashboard</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',Arial,sans-serif;font-size:12px;color:#1a1a1a;background:#f4f6f9;}
+
+/* --- HEADER --- */
+.hdr{background:linear-gradient(135deg,#003b6e 0%,#005199 100%);color:#fff;padding:14px 28px;display:flex;align-items:center;gap:20px;}
+.bosch-logo{display:flex;align-items:center;background:#fff;padding:4px 8px;border-radius:4px;}
+.hdr-center{flex:1;}
+.hdr-center h1{font-size:17px;font-weight:700;letter-spacing:0.4px;}
+.hdr-center h2{font-size:11px;font-weight:400;opacity:.85;margin-top:3px;}
+.hdr-right{text-align:right;font-size:11px;opacity:.85;}
+.hdr-right strong{font-size:13px;display:block;}
+
+/* --- RAG STRIP --- */
+.rag-strip{background:#003b6e;display:flex;gap:0;border-top:2px solid rgba(255,255,255,.1);}
+.rag-box{flex:1;border-right:1px solid rgba(255,255,255,.12);padding:7px 14px;}
+.rag-box:last-child{border-right:none;}
+.rag-label{font-size:9px;color:#fff;opacity:.7;text-transform:uppercase;letter-spacing:.4px;}
+.rag-val{font-size:13px;font-weight:700;}
+.rag-sub{font-size:9px;color:#fff;opacity:.6;}
+.rv-g{color:#2ecc71;} .rv-a{color:#f1c40f;} .rv-r{color:#e74c3c;} .rv-b{color:#5dade2;}
+
+/* --- PAGE --- */
+.page{max-width:1200px;margin:0 auto;padding:14px 18px 30px;}
+
+/* --- 12-COL GRID SYSTEM --- */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;margin-bottom:12px;}
+.col-3{grid-column:span 3;}
+.col-4{grid-column:span 4;}
+.col-5{grid-column:span 5;}
+.col-6{grid-column:span 6;}
+.col-7{grid-column:span 7;}
+.col-8{grid-column:span 8;}
+.col-12{grid-column:span 12;}
+
+/* --- KPI CARD --- */
+.kpi-card{background:#fff;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,.08);overflow:hidden;}
+.kpi-title{background:#005199;color:#fff;font-size:10px;font-weight:700;padding:6px 12px;letter-spacing:.4px;text-transform:uppercase;}
+.kpi-body{padding:10px 12px;}
+
+/* --- GAUGE RING (CSS) --- */
+.gauge-wrap{text-align:center;padding:4px 0 8px;}
+.gauge-ring{display:inline-flex;align-items:center;justify-content:center;width:80px;height:80px;border-radius:50%;font-size:18px;font-weight:700;color:#fff;margin:0 auto;}
+.g-green{background:conic-gradient(#007A33 var(--pct),#e8ecf2 0);color:#007A33;background-clip:border-box;}
+.gauge-inner{background:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#1a1a1a;}
+.gauge-label{font-size:10px;color:#666;margin-top:4px;}
+
+/* --- CONFIDENCE BAR --- */
+.conf-bar-wrap{margin:4px 0;}
+.conf-bar-label{display:flex;justify-content:space-between;font-size:10px;margin-bottom:2px;}
+.conf-bar-outer{height:10px;background:#e8ecf2;border-radius:5px;overflow:hidden;}
+.conf-bar-inner{height:100%;border-radius:5px;}
+
+/* --- MILESTONE TIMELINE --- */
+.ms-timeline{position:relative;padding:8px 0;}
+.ms-line{position:absolute;top:22px;left:12px;right:12px;height:3px;background:#dee3ed;border-radius:2px;}
+.ms-nodes{display:flex;justify-content:space-between;position:relative;padding:0 6px;}
+.ms-node{text-align:center;width:80px;}
+.ms-dot{width:20px;height:20px;border-radius:50%;margin:0 auto 4px;border:3px solid #fff;box-shadow:0 0 0 2px #005199;background:#005199;}
+.ms-dot.done{background:#007A33;box-shadow:0 0 0 2px #007A33;}
+.ms-dot.active{background:#E8A000;box-shadow:0 0 0 2px #E8A000;}
+.ms-node-name{font-size:9px;font-weight:700;color:#003b6e;}
+.ms-node-date{font-size:8px;color:#888;}
+.ms-node-cd{font-size:8px;color:#0066CC;font-weight:600;}
+
+/* --- TABLES --- */
+table.kpi-tbl{width:100%;border-collapse:collapse;font-size:10px;}
+.kpi-tbl th{background:#003b6e;color:#fff;padding:5px 7px;text-align:left;font-size:9px;font-weight:600;}
+.kpi-tbl td{padding:5px 7px;border-bottom:1px solid #e8ecf2;vertical-align:top;}
+.kpi-tbl tr:nth-child(even){background:#EFF4FB;}
+
+/* --- PILL --- */
+.pill{display:inline-block;padding:2px 6px;border-radius:10px;font-size:8px;font-weight:700;}
+.p-g{background:#e9f7ef;color:#007A33;} .p-a{background:#fef9e7;color:#b7770d;} .p-r{background:#fde;color:#CC0000;}
+.p-blue{background:#EFF4FB;color:#005199;}
+
+/* --- SCORE BADGE --- */
+.score-badge{display:inline-block;width:22px;height:22px;border-radius:50%;font-size:10px;font-weight:700;text-align:center;line-height:22px;color:#fff;}
+.sb-r{background:#e74c3c;} .sb-a{background:#f39c12;} .sb-g{background:#27ae60;}
+
+/* --- 90-DAY ACTIONS --- */
+.action-row{display:flex;gap:8px;padding:5px 0;border-bottom:1px solid #e8ecf2;align-items:flex-start;font-size:10px;}
+.action-row:last-child{border-bottom:none;}
+.action-cat{min-width:90px;font-weight:600;color:#005199;}
+.action-text{flex:1;color:#333;}
+.action-due{min-width:75px;text-align:right;font-size:9px;color:#888;}
+
+/* --- MODEL DIFF TABLE --- */
+.model-tbl td:first-child{font-weight:600;color:#003b6e;width:30%;}
+
+/* --- FOOTER --- */
+.footer{text-align:center;font-size:9px;color:#aaa;padding:8px 0 16px;}
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<div class="hdr">
+  <div class="bosch-logo"><img src="data:image/png;base64,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" alt="Bosch" style="height:36px;display:block;" /></div>
+  <div class="hdr-center">
+    <h1>Trinity-CAM &mdash; Management KPI Dashboard</h1>
+    <h2>JCI Aircondition &rarr; Merger Zone (Infosys) &rarr; Robert Bosch GmbH &nbsp;|&nbsp; Integration Model &nbsp;|&nbsp; 48 Sites &nbsp;|&nbsp; 12,000 Users</h2>
+  </div>
+  <div class="hdr-right">
+    <strong>05 April 2026</strong>
+    GoLive: 1 Jan 2028 &nbsp;(636 days)
+  </div>
+</div>
+
+<!-- RAG STRIP -->
+<div class="rag-strip">
+  <div class="rag-box"><div class="rag-label">Schedule (SPI)</div><div class="rag-val rv-a">SPI 1.00</div><div class="rag-sub">On plan — QG0 baseline</div></div>
+  <div class="rag-box"><div class="rag-label">Cost (CPI)</div><div class="rag-val rv-a">CPI 1.00</div><div class="rag-sub">On budget — QG0 baseline</div></div>
+  <div class="rag-box"><div class="rag-label">Day 1 Readiness</div><div class="rag-val rv-a">12%</div><div class="rag-sub">Initiation phase</div></div>
+  <div class="rag-box"><div class="rag-label">TSA Confidence</div><div class="rag-val rv-a">AMBER</div><div class="rag-sub">TSA expired; R014 open</div></div>
+  <div class="rag-box"><div class="rag-label">Top Risk</div><div class="rag-val rv-r">Score 20</div><div class="rag-sub">R001 SAP complexity</div></div>
+  <div class="rag-box"><div class="rag-label">Overall RAG</div><div class="rag-val rv-a">AMBER</div><div class="rag-sub">Baseline programme</div></div>
+</div>
+
+<!-- ========== PAGE BODY ========== -->
+<div class="page">
+
+<!-- ROW 1: SPI | CPI | Day-1 Readiness | TSA Confidence -->
+<div class="grid">
+
+  <div class="kpi-card col-3">
+    <div class="kpi-title">Schedule Performance (SPI)</div>
+    <div class="kpi-body">
+      <div class="gauge-wrap">
+        <div style="position:relative;display:inline-block;width:80px;height:80px;">
+          <svg viewBox="0 0 80 80" width="80" height="80">
+            <circle cx="40" cy="40" r="34" fill="none" stroke="#e8ecf2" stroke-width="8"/>
+            <circle cx="40" cy="40" r="34" fill="none" stroke="#E8A000" stroke-width="8"
+              stroke-dasharray="213.6" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 40 40)"/>
+          </svg>
+          <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:16px;font-weight:700;color:#1a1a1a;">1.00</div>
+        </div>
+      </div>
+      <div class="gauge-label" style="text-align:center;">SPI = EV / PV</div>
+      <div style="margin-top:8px;font-size:10px;">
+        <div style="display:flex;justify-content:space-between;"><span>Planned Value (PV)</span><span>EUR 629K</span></div>
+        <div style="display:flex;justify-content:space-between;"><span>Earned Value (EV)</span><span>EUR 629K</span></div>
+        <div style="display:flex;justify-content:space-between;font-weight:600;margin-top:3px;"><span>SPI Status</span><span class="pill p-a">ON PLAN</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="kpi-card col-3">
+    <div class="kpi-title">Cost Performance (CPI)</div>
+    <div class="kpi-body">
+      <div class="gauge-wrap">
+        <div style="position:relative;display:inline-block;width:80px;height:80px;">
+          <svg viewBox="0 0 80 80" width="80" height="80">
+            <circle cx="40" cy="40" r="34" fill="none" stroke="#e8ecf2" stroke-width="8"/>
+            <circle cx="40" cy="40" r="34" fill="none" stroke="#E8A000" stroke-width="8"
+              stroke-dasharray="213.6" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 40 40)"/>
+          </svg>
+          <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:16px;font-weight:700;color:#1a1a1a;">1.00</div>
+        </div>
+      </div>
+      <div class="gauge-label" style="text-align:center;">CPI = EV / AC</div>
+      <div style="margin-top:8px;font-size:10px;">
+        <div style="display:flex;justify-content:space-between;"><span>Budget at Completion</span><span>EUR 7.87M</span></div>
+        <div style="display:flex;justify-content:space-between;"><span>Actual Cost (AC)</span><span>EUR 629K</span></div>
+        <div style="display:flex;justify-content:space-between;font-weight:600;margin-top:3px;"><span>CPI Status</span><span class="pill p-a">ON BUDGET</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="kpi-card col-3">
+    <div class="kpi-title">Day 1 GoLive Readiness</div>
+    <div class="kpi-body">
+      <div class="gauge-wrap">
+        <div style="position:relative;display:inline-block;width:80px;height:80px;">
+          <svg viewBox="0 0 80 80" width="80" height="80">
+            <circle cx="40" cy="40" r="34" fill="none" stroke="#e8ecf2" stroke-width="8"/>
+            <circle cx="40" cy="40" r="34" fill="none" stroke="#0066CC" stroke-width="8"
+              stroke-dasharray="213.6" stroke-dashoffset="186" stroke-linecap="round" transform="rotate(-90 40 40)"/>
+          </svg>
+          <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:16px;font-weight:700;color:#1a1a1a;">12%</div>
+        </div>
+      </div>
+      <div class="gauge-label" style="text-align:center;">Based on completed milestones</div>
+      <div style="margin-top:8px;font-size:10px;">
+        <div style="display:flex;justify-content:space-between;"><span>Gates Passed</span><span>0 / 6</span></div>
+        <div style="display:flex;justify-content:space-between;"><span>Phase</span><span>Initiation</span></div>
+        <div style="display:flex;justify-content:space-between;font-weight:600;margin-top:3px;"><span>Target GoLive</span><span>01 Jan 2028</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="kpi-card col-3">
+    <div class="kpi-title">TSA &amp; Integration Confidence</div>
+    <div class="kpi-body">
+      <div style="text-align:center;padding:6px 0 8px;">
+        <div style="font-size:28px;font-weight:700;color:#E8A000;">AMBER</div>
+        <div style="font-size:10px;color:#666;margin-top:3px;">TSA expired 30 Jun 2026</div>
+      </div>
+      <div style="font-size:10px;margin-top:6px;">
+        <div style="display:flex;justify-content:space-between;margin:3px 0;"><span>JCI TSA Status</span><span class="pill p-a">EXPIRED</span></div>
+        <div style="display:flex;justify-content:space-between;margin:3px 0;"><span>Infosys SOW</span><span class="pill p-g">SIGNED</span></div>
+        <div style="display:flex;justify-content:space-between;margin:3px 0;"><span>MZ Architecture</span><span class="pill p-a">PENDING QG1</span></div>
+        <div style="display:flex;justify-content:space-between;margin:3px 0;"><span>GDPR Clearance</span><span class="pill p-a">IN PROGRESS</span></div>
+        <div style="display:flex;justify-content:space-between;margin:3px 0;"><span>Integration Model</span><span class="pill p-blue">INTEGRATION</span></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /ROW 1 -->
+
+<!-- ROW 2: Workstream Confidence | Milestone Controls -->
+<div class="grid">
+
+  <div class="kpi-card col-5">
+    <div class="kpi-title">Workstream Confidence Scores</div>
+    <div class="kpi-body">
+      <div class="conf-bar-wrap"><div class="conf-bar-label"><span>WS1 MZ Infrastructure</span><span style="color:#007A33;font-weight:600;">82%</span></div><div class="conf-bar-outer"><div class="conf-bar-inner" style="width:82%;background:#007A33;"></div></div></div>
+      <div class="conf-bar-wrap"><div class="conf-bar-label"><span>WS2 SAP Migration</span><span style="color:#E8A000;font-weight:600;">55%</span></div><div class="conf-bar-outer"><div class="conf-bar-inner" style="width:55%;background:#E8A000;"></div></div></div>
+      <div class="conf-bar-wrap"><div class="conf-bar-label"><span>WS3 Application Migration (1,800+)</span><span style="color:#E8A000;font-weight:600;">60%</span></div><div class="conf-bar-outer"><div class="conf-bar-inner" style="width:60%;background:#E8A000;"></div></div></div>
+      <div class="conf-bar-wrap"><div class="conf-bar-label"><span>WS4 End-User Workplace (12,000)</span><span style="color:#007A33;font-weight:600;">80%</span></div><div class="conf-bar-outer"><div class="conf-bar-inner" style="width:80%;background:#007A33;"></div></div></div>
+      <div class="conf-bar-wrap"><div class="conf-bar-label"><span>WS5 Identity &amp; Access Management</span><span style="color:#007A33;font-weight:600;">85%</span></div><div class="conf-bar-outer"><div class="conf-bar-inner" style="width:85%;background:#007A33;"></div></div></div>
+      <div class="conf-bar-wrap"><div class="conf-bar-label"><span>WS6 Security &amp; Compliance (GDPR)</span><span style="color:#E8A000;font-weight:600;">62%</span></div><div class="conf-bar-outer"><div class="conf-bar-inner" style="width:62%;background:#E8A000;"></div></div></div>
+      <div class="conf-bar-wrap"><div class="conf-bar-label"><span>WS7 Data Migration</span><span style="color:#007A33;font-weight:600;">78%</span></div><div class="conf-bar-outer"><div class="conf-bar-inner" style="width:78%;background:#007A33;"></div></div></div>
+      <div class="conf-bar-wrap"><div class="conf-bar-label"><span>WS8 TSA Exit &amp; HR/Legal</span><span style="color:#E8A000;font-weight:600;">58%</span></div><div class="conf-bar-outer"><div class="conf-bar-inner" style="width:58%;background:#E8A000;"></div></div></div>
+      <div class="conf-bar-wrap"><div class="conf-bar-label"><span>WS9 Programme Control &amp; Hypercare</span><span style="color:#007A33;font-weight:600;">88%</span></div><div class="conf-bar-outer"><div class="conf-bar-inner" style="width:88%;background:#007A33;"></div></div></div>
+    </div>
+  </div>
+
+  <div class="kpi-card col-7">
+    <div class="kpi-title">Milestone Gate Control Timeline</div>
+    <div class="kpi-body">
+      <div class="ms-timeline">
+        <div class="ms-line"></div>
+        <div class="ms-nodes">
+          <div class="ms-node">
+            <div class="ms-dot active"></div>
+            <div class="ms-node-name">QG0</div>
+            <div class="ms-node-date">01 Jul 2026</div>
+            <div class="ms-node-cd" style="color:#E8A000;">87 days</div>
+          </div>
+          <div class="ms-node">
+            <div class="ms-dot"></div>
+            <div class="ms-node-name">QG1</div>
+            <div class="ms-node-date">01 Oct 2026</div>
+            <div class="ms-node-cd">179 days</div>
+          </div>
+          <div class="ms-node">
+            <div class="ms-dot"></div>
+            <div class="ms-node-name">QG2&amp;3</div>
+            <div class="ms-node-date">31 Jul 2027</div>
+            <div class="ms-node-cd">482 days</div>
+          </div>
+          <div class="ms-node">
+            <div class="ms-dot"></div>
+            <div class="ms-node-name">QG4</div>
+            <div class="ms-node-date">08 Dec 2027</div>
+            <div class="ms-node-cd">612 days</div>
+          </div>
+          <div class="ms-node">
+            <div class="ms-dot"></div>
+            <div class="ms-node-name">GoLive</div>
+            <div class="ms-node-date">01 Jan 2028</div>
+            <div class="ms-node-cd">636 days</div>
+          </div>
+          <div class="ms-node">
+            <div class="ms-dot"></div>
+            <div class="ms-node-name">QG5</div>
+            <div class="ms-node-date">01 Apr 2028</div>
+            <div class="ms-node-cd">727 days</div>
+          </div>
+        </div>
+      </div>
+      <table class="kpi-tbl" style="margin-top:10px;">
+        <tr><th>Gate</th><th>Date</th><th>Countdown</th><th>Key Criterion</th><th>Status</th></tr>
+        <tr><td><b>QG0</b></td><td>01 Jul 2026</td><td>87 days</td><td>PMO + Infosys mobilised; Steering constituted</td><td><span class="pill p-a">ACTIVE</span></td></tr>
+        <tr><td><b>QG1</b></td><td>01 Oct 2026</td><td>179 days</td><td>App inventory complete; MZ arch approved; CAPEX budget</td><td><span class="pill p-blue">PLANNED</span></td></tr>
+        <tr><td><b>QG2&amp;3</b></td><td>31 Jul 2027</td><td>482 days</td><td>MZ DC live; SAP copy complete; Wave 1 validated</td><td><span class="pill p-blue">PLANNED</span></td></tr>
+        <tr><td><b>QG4</b></td><td>08 Dec 2027</td><td>612 days</td><td>12,000 users + 1,800 apps migrated; Mock 2 passed</td><td><span class="pill p-blue">PLANNED</span></td></tr>
+        <tr><td><b>GoLive</b></td><td>01 Jan 2028</td><td>636 days</td><td>Day 1 cutover; hypercare active; all P1 defects zero</td><td><span class="pill p-blue">PLANNED</span></td></tr>
+        <tr><td><b>QG5</b></td><td>01 Apr 2028</td><td>727 days</td><td>90-day hypercare done; TSA exit; Bosch handover</td><td><span class="pill p-blue">PLANNED</span></td></tr>
+      </table>
+    </div>
+  </div>
+
+</div><!-- /ROW 2 -->
+
+<!-- ROW 3: TOP RISKS + MODEL DIFFERENCES -->
+<div class="grid">
+
+  <div class="kpi-card col-7">
+    <div class="kpi-title">Top Risk Register (from Trinity-CAM_Risk_Register.xlsx)</div>
+    <div class="kpi-body" style="padding:8px;">
+      <table class="kpi-tbl">
+        <tr><th>ID</th><th>Risk Description</th><th>Category</th><th>P</th><th>I</th><th>Score</th><th>Owner</th><th>Status</th></tr>
+        <tr>
+          <td><b>R001</b></td>
+          <td>SAP landscape complexity delays system copy; QG2&amp;3 at risk</td>
+          <td>Technology</td><td>70%</td><td>VH</td>
+          <td><span class="score-badge sb-r">20</span></td>
+          <td>KPMG SAP Arch</td>
+          <td><span class="pill p-r">OPEN</span></td>
+        </tr>
+        <tr>
+          <td><b>R003</b></td>
+          <td>SAP Mock Cutover 2 defects prevent QG4; GoLive delayed</td>
+          <td>Schedule</td><td>50%</td><td>VH</td>
+          <td><span class="score-badge sb-r">15</span></td>
+          <td>KPMG PMO Lead</td>
+          <td><span class="pill p-r">OPEN</span></td>
+        </tr>
+        <tr>
+          <td><b>R002</b></td>
+          <td>Infosys MZ delivery delay; Phase 3 start pushed</td>
+          <td>Technology</td><td>50%</td><td>H</td>
+          <td><span class="score-badge sb-a">12</span></td>
+          <td>Infosys PM</td>
+          <td><span class="pill p-a">MONITORED</span></td>
+        </tr>
+        <tr>
+          <td><b>R007</b></td>
+          <td>1,800+ app compatibility; wave capacity exceeded</td>
+          <td>Technology</td><td>50%</td><td>H</td>
+          <td><span class="score-badge sb-a">12</span></td>
+          <td>Infosys App Lead</td>
+          <td><span class="pill p-a">MONITORED</span></td>
+        </tr>
+        <tr>
+          <td><b>R006</b></td>
+          <td>GDPR/PII breach during 18-month migration; EUR 20M exposure</td>
+          <td>Security</td><td>30%</td><td>VH</td>
+          <td><span class="score-badge sb-a">10</span></td>
+          <td>Infosys Sec Lead</td>
+          <td><span class="pill p-a">MITIGATING</span></td>
+        </tr>
+        <tr>
+          <td><b>R005</b></td>
+          <td>TUPE non-compliance Germany/France blocks Wave 1 user migration</td>
+          <td>Legal</td><td>30%</td><td>VH</td>
+          <td><span class="score-badge sb-a">10</span></td>
+          <td>JCI Legal</td>
+          <td><span class="pill p-a">MITIGATING</span></td>
+        </tr>
+        <tr>
+          <td><b>R004</b></td>
+          <td>JCI IT cooperation falls short; data quality issues; ETL delays</td>
+          <td>Governance</td><td>40%</td><td>H</td>
+          <td><span class="score-badge sb-a">8</span></td>
+          <td>KPMG PMO Lead</td>
+          <td><span class="pill p-a">MONITORED</span></td>
+        </tr>
+        <tr>
+          <td><b>R025</b></td>
+          <td><em>OPPORTUNITY: MZ cloud modernisation saves EUR 3-5M/yr Bosch OPEX</em></td>
+          <td>Technology</td><td>50%</td><td>H</td>
+          <td><span class="score-badge sb-g">12</span></td>
+          <td>Infosys Cloud</td>
+          <td><span class="pill p-g">PURSUING</span></td>
+        </tr>
+      </table>
+      <div style="font-size:9px;color:#888;margin-top:6px;">Total: 25 risks | 24 threats, 1 opportunity | Full register: Trinity-CAM_Risk_Register.xlsx</div>
+    </div>
+  </div>
+
+  <div class="kpi-card col-5">
+    <div class="kpi-title">Integration Model — Key Characteristics</div>
+    <div class="kpi-body" style="padding:8px;">
+      <table class="kpi-tbl model-tbl">
+        <tr><th>Characteristic</th><th>Stand-Alone</th><th style="background:#005199;">Integration (Trinity-CAM)</th></tr>
+        <tr><td>Merger Zone</td><td style="color:#888;">Not required</td><td style="color:#005199;font-weight:600;">Required — Infosys build &amp; operate</td></tr>
+        <tr><td>Migration Path</td><td style="color:#888;">JCI direct</td><td style="color:#005199;font-weight:600;">JCI &rarr; MZ &rarr; Bosch IT</td></tr>
+        <tr><td>TSA Role</td><td style="color:#888;">Extended TSA</td><td style="color:#005199;font-weight:600;">TSA expired; MZ provides continuity</td></tr>
+        <tr><td>SAP Strategy</td><td style="color:#888;">New Bosch instance</td><td style="color:#005199;font-weight:600;">Copied JCI SAP lands on MZ then integrates</td></tr>
+        <tr><td>Identity Strategy</td><td style="color:#888;">Separate AD</td><td style="color:#005199;font-weight:600;">MZ AD forest; federation then merge</td></tr>
+        <tr><td>Site Connectivity</td><td style="color:#888;">Maintained</td><td style="color:#005199;font-weight:600;">New SD-WAN; 48 sites re-pointed to MZ</td></tr>
+        <tr><td>Hypercare</td><td style="color:#888;">30 days</td><td style="color:#005199;font-weight:600;">90 days (Infosys L3); complex SAP estate</td></tr>
+        <tr><td>Wave Strategy</td><td style="color:#888;">Direct migration</td><td style="color:#005199;font-weight:600;">3 app waves + parallel SAP track</td></tr>
+        <tr><td>DR Architecture</td><td style="color:#888;">JCI DR remains</td><td style="color:#005199;font-weight:600;">MZ DR built by Infosys; validated pre-QG4</td></tr>
+        <tr><td>GoLive Risk</td><td style="color:#888;">Lower (simpler)</td><td style="color:#005199;font-weight:600;">Higher — 1,800 apps, 12,000 users, SAP</td></tr>
+      </table>
+    </div>
+  </div>
+
+</div><!-- /ROW 3 -->
+
+<!-- ROW 4: NEXT 90 DAYS + BUDGET CONTROL -->
+<div class="grid">
+
+  <div class="kpi-card col-8">
+    <div class="kpi-title">Next 90-Day Action Forecast (Programme Control)</div>
+    <div class="kpi-body" style="padding:8px 10px;">
+      <div class="action-row">
+        <div class="action-cat">Programme</div>
+        <div class="action-text">KPMG Programme Director and all workstream leads confirmed and mobilised. Initial SteerCo meeting convened. Programme plan v1 baselined and distributed to JCI and Bosch sponsors.</div>
+        <div class="action-due">Jul 2026 — QG0</div>
+      </div>
+      <div class="action-row">
+        <div class="action-cat">Applications</div>
+        <div class="action-text">Complete application inventory: catalogue all 1,800+ JCI Aircon applications. Assign ownership, category (SAP / core / non-core), and migration wave. Target completion by 15 Aug 2026.</div>
+        <div class="action-due">Aug 2026</div>
+      </div>
+      <div class="action-row">
+        <div class="action-cat">MZ Architecture</div>
+        <div class="action-text">Infosys to submit Merger Zone architecture proposal (DC vs cloud, SD-WAN topology, security model) for KPMG technical review and Bosch steering approval at QG1.</div>
+        <div class="action-due">Sep 2026</div>
+      </div>
+      <div class="action-row">
+        <div class="action-cat">SAP</div>
+        <div class="action-text">KPMG SAP Architect to complete SAP landscape discovery: system count, client topology, interface inventory, Z-programs, and data volumes. Deliver SAP migration strategy document for QG1.</div>
+        <div class="action-due">Sep 2026</div>
+      </div>
+      <div class="action-row">
+        <div class="action-cat">Legal / GDPR</div>
+        <div class="action-text">Engage GDPR counsel in Germany, France, China, Japan, and USA. Establish legal basis for each data transfer. Complete Data Protection Impact Assessment (DPIA) framework for MZ data flow.</div>
+        <div class="action-due">Sep 2026</div>
+      </div>
+      <div class="action-row">
+        <div class="action-cat">CAPEX</div>
+        <div class="action-text">Infosys to submit Merger Zone infrastructure cost model (CAPEX) to Bosch finance for QG1 approval. Includes DC hardware / cloud, WAN links, and software licences (M365, ITSM).</div>
+        <div class="action-due">Sep 2026 — QG1</div>
+      </div>
+      <div class="action-row">
+        <div class="action-cat">Risk</div>
+        <div class="action-text">Escalate R001 (SAP complexity) response plan to steering: assign dedicated SAP copy environment, appoint Infosys SAP offshore lead, schedule 2 dry-run weeks before full system copy in Apr 2027.</div>
+        <div class="action-due">Aug 2026</div>
+      </div>
+      <div class="action-row">
+        <div class="action-cat">TSA</div>
+        <div class="action-text">Formal TSA exit audit: confirm zero residual service dependencies. Any emergency clauses invoked must be registered as scope issues. Produce clean TSA exit report for QG1 sign-off.</div>
+        <div class="action-due">Oct 2026 — QG1</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="kpi-card col-4">
+    <div class="kpi-title">Budget &amp; Cost Control</div>
+    <div class="kpi-body">
+      <div style="text-align:center;margin-bottom:10px;">
+        <div style="font-size:22px;font-weight:700;color:#003b6e;">EUR 9,054,640</div>
+        <div style="font-size:10px;color:#888;">Labour incl. 15% contingency | CAPEX TBC at QG1</div>
+      </div>
+      <table class="kpi-tbl">
+        <tr><th>Phase</th><th>EUR</th><th>%</th></tr>
+        <tr><td>Ph1 Initiation</td><td>629,888</td><td>8%</td></tr>
+        <tr><td>Ph2 MZ Build</td><td>2,755,760</td><td>35%</td></tr>
+        <tr><td>Ph3 Test &amp; Migrate</td><td>2,362,080</td><td>30%</td></tr>
+        <tr><td>Ph4 Final Readiness</td><td>708,624</td><td>9%</td></tr>
+        <tr><td>GoLive &amp; Cutover</td><td>236,208</td><td>3%</td></tr>
+        <tr><td>Ph5 Hypercare</td><td>1,181,040</td><td>15%</td></tr>
+        <tr style="font-weight:700;background:#C6D4E8;"><td>Labour Total</td><td>7,873,600</td><td>100%</td></tr>
+        <tr><td>Contingency (15%)</td><td>1,181,040</td><td>&mdash;</td></tr>
+        <tr><td>CAPEX (infra)</td><td>TBC at QG1</td><td>&mdash;</td></tr>
+      </table>
+      <div style="margin-top:10px;">
+        <div style="font-size:10px;font-weight:600;margin-bottom:4px;">Resource Split (Labour)</div>
+        <div style="display:flex;justify-content:space-between;font-size:10px;"><span>KPMG (PMO + Arch + SAP)</span><span>32.5%</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:10px;margin-top:2px;"><span>Infosys (all streams)</span><span>67.5%</span></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /ROW 4 -->
+
+<!-- FOOTER -->
+<div class="footer">
+  Trinity-CAM Management KPI Dashboard &nbsp;|&nbsp; 05 April 2026 &nbsp;|&nbsp;
+  Sources: Trinity-CAM_Project_Schedule.xlsx, Trinity-CAM_Risk_Register.xlsx, Trinity-CAM_Cost_Plan.xlsx &nbsp;|&nbsp; CONFIDENTIAL &mdash; KPMG / Bosch Internal
+</div>
+
+</div><!-- /page -->
+</body>
+</html>

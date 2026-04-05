@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>Gamma Management KPI Dashboard</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: #f4f6f9; color: #1a1a1a; }
+    .dashboard { max-width: 1220px; margin: 0 auto; padding: 20px; }
+    .header { background: linear-gradient(135deg, #002147 0%, #003b6e 100%); color: #fff; border-radius: 12px; padding: 20px 22px; margin-bottom: 18px; display:flex; justify-content:space-between; align-items:center; }
+    .bosch-logo { display:flex; align-items:center; background:#fff; padding:4px 8px; border-radius:4px; width:fit-content; margin-bottom:10px; }
+    .header h1 { margin: 0 0 4px; font-size: 28px; }
+    .header p { margin: 0; font-size: 12px; opacity: 0.9; }
+    .header-right { text-align:right; font-size:12px; }
+    .grid { display:grid; grid-template-columns: repeat(12, 1fr); gap:12px; }
+    .card { background:#fff; border-radius:10px; padding:16px; box-shadow:0 2px 6px rgba(0,0,0,0.08); }
+    .span-12 { grid-column: span 12; } .span-8 { grid-column: span 8; } .span-6 { grid-column: span 6; } .span-4 { grid-column: span 4; } .span-3 { grid-column: span 3; }
+    .card-header { font-weight:700; font-size:13px; color:#003b6e; margin-bottom:10px; padding-bottom:8px; border-bottom:1px solid #e7edf6; }
+    .kpi-value { font-size:30px; font-weight:700; color:#003b6e; margin:8px 0 4px; }
+    .subtle { color:#5d6d83; font-size:12px; }
+    .status { display:inline-block; padding:3px 8px; border-radius:12px; font-size:11px; font-weight:700; color:#fff; text-transform:uppercase; }
+    .status.green { background:#007A33; }
+    .status.amber { background:#E8A000; color:#1a1a1a; }
+    .status.red { background:#CC0000; }
+    .progress { height:12px; background:#e1e7f0; border-radius:999px; overflow:hidden; margin:8px 0 10px; }
+    .progress div { height:100%; background:linear-gradient(90deg, #0066CC, #003b6e); }
+    .milestones { list-style:none; padding:0; margin:0; }
+    .milestones li { display:grid; grid-template-columns: 1.6fr .8fr .4fr; gap:10px; align-items:center; padding:8px 0; border-bottom:1px solid #edf1f7; font-size:12px; }
+    .ws-row { display:grid; grid-template-columns: 1.4fr 2fr .5fr; gap:10px; align-items:center; margin-bottom:10px; font-size:12px; }
+    .ws-bar { background:#e1e7f0; border-radius:999px; overflow:hidden; height:12px; }
+    .ws-bar div { height:100%; }
+    .ws-bar .green { background:#007A33; }
+    .ws-bar .amber { background:#E8A000; }
+    .ws-bar .red { background:#CC0000; }
+    table { width:100%; border-collapse:collapse; font-size:12px; }
+    th, td { padding:8px 10px; text-align:left; border-bottom:1px solid #edf1f7; vertical-align:top; }
+    th { background:#eff4fb; color:#003b6e; }
+    .action-item { border-left:4px solid #0066CC; background:#f9fbfe; border-radius:8px; padding:12px; margin-bottom:10px; font-size:12px; }
+    .action-item.high { border-left-color:#CC0000; }
+    .action-item.medium { border-left-color:#E8A000; }
+    .action-item.low { border-left-color:#007A33; }
+    .model-box { background:#eff4fb; border-radius:10px; padding:12px; font-size:12px; line-height:1.6; }
+    .mini-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:10px; }
+    .mini { background:#f8fbff; border:1px solid #dfe8f5; border-radius:8px; padding:10px; }
+  </style>
+</head>
+<body>
+  <div class='dashboard'>
+    <div class='header'>
+      <div>
+        <div class='bosch-logo'><img src='data:image/png;base64,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' alt='Bosch - Invented for Life' style='height:36px;display:block;' /></div>
+        <h1>Gamma</h1>
+        <p>Management KPI Dashboard | Pre-start baseline view for Robert Bosch China to Alibaba cloud carve-out</p>
+      </div>
+      <div class='header-right'>
+        <div><strong>Report Date:</strong> 05 Apr 2026</div>
+        <div><strong>Overall Status:</strong> <span class='status amber'>Pre-start baseline</span></div>
+        <div><strong>GoLive:</strong> 01 Feb 2027</div>
+      </div>
+    </div>
+
+    <div class='grid'>
+      <div class='card span-3'>
+        <div class='card-header'>SCHEDULE PERFORMANCE</div>
+        <div class='kpi-value'>1.00</div>
+        <div class='progress'><div style='width:100%;'></div></div>
+        <div class='subtle'>Baseline SPI held at 1.00 because Gamma is still pre-kickoff and no execution slippage is booked yet.</div>
+        <div style='margin-top:8px;'><span class='status green'>Baseline aligned</span></div>
+      </div>
+
+      <div class='card span-3'>
+        <div class='card-header'>COST PERFORMANCE</div>
+        <div class='kpi-value'>1.00</div>
+        <div class='progress'><div style='width:100%;'></div></div>
+        <div class='subtle'>Cost baseline is established at 2,164,080 EUR labour plus 265,000 EUR contingency and CAPEX.</div>
+        <div style='margin-top:8px;'><span class='status green'>Budget aligned</span></div>
+      </div>
+
+      <div class='card span-3'>
+        <div class='card-header'>DAY 1 READINESS CONFIDENCE</div>
+        <div class='kpi-value'>40%</div>
+        <div class='progress'><div style='width:40%;'></div></div>
+        <div class='subtle'>Calculated from the current Gamma high-risk burden, especially legal timing, infrastructure separation, and QG4 readiness exposure.</div>
+        <div style='margin-top:8px;'><span class='status red'>red</span></div>
+      </div>
+
+      <div class='card span-3'>
+        <div class='card-header'>JV TRANSITION CONFIDENCE</div>
+        <div class='kpi-value'>58%</div>
+        <div class='progress'><div style='width:58%;'></div></div>
+        <div class='subtle'>Combination-model confidence reflects legal, strategy, and governance exposure around the 50/50 JV decision model.</div>
+        <div style='margin-top:8px;'><span class='status amber'>amber</span></div>
+      </div>
+
+      <div class='card span-8'>
+        <div class='card-header'>MILESTONE GATE CONTROL TIMELINE</div>
+        <ul class='milestones'>
+          <li><span>QG0 - Mobilization approved</span><span>04 Sep 2026</span><span class='status red'>+152d</span></li>
+<li><span>QG1 - Concept approved</span><span>29 Oct 2026</span><span class='status red'>+207d</span></li>
+<li><span>QG2 and QG3 - Build and test approved</span><span>11 Jan 2027</span><span class='status red'>+281d</span></li>
+<li><span>QG4 - Pre-GoLive approved</span><span>25 Jan 2027</span><span class='status red'>+295d</span></li>
+<li><span>GoLive - Day 1 cutover complete</span><span>01 Feb 2027</span><span class='status red'>+302d</span></li>
+<li><span>QG5 - Project completion approved</span><span>10 May 2027</span><span class='status red'>+400d</span></li>
+<li><span>Closure - Gamma programme archived</span><span>31 May 2027</span><span class='status red'>+421d</span></li>
+        </ul>
+      </div>
+
+      <div class='card span-4'>
+        <div class='card-header'>PROGRAMME SNAPSHOT</div>
+        <div class='mini-grid'>
+          <div class='mini'><strong>66</strong><br/>Total tasks</div>
+          <div class='mini'><strong>35</strong><br/>Resource groups</div>
+          <div class='mini'><strong>19,248</strong><br/>Planned person-hours</div>
+          <div class='mini'><strong>16</strong><br/>High threat risks</div>
+        </div>
+      </div>
+
+      <div class='card span-6'>
+        <div class='card-header'>WORKSTREAM CONFIDENCE</div>
+        <div class='ws-row'><div class='ws-label'>Governance & Confidentiality</div><div class='ws-bar'><div class='red' style='width:72%;'></div></div><div class='ws-score'>72%</div></div>
+<div class='ws-row'><div class='ws-label'>Infrastructure & Cloud</div><div class='ws-bar'><div class='amber' style='width:62%;'></div></div><div class='ws-score'>62%</div></div>
+<div class='ws-row'><div class='ws-label'>Security & Identity</div><div class='ws-bar'><div class='amber' style='width:68%;'></div></div><div class='ws-score'>68%</div></div>
+<div class='ws-row'><div class='ws-label'>Applications & Data</div><div class='ws-bar'><div class='green' style='width:74%;'></div></div><div class='ws-score'>74%</div></div>
+<div class='ws-row'><div class='ws-label'>Testing & Readiness</div><div class='ws-bar'><div class='amber' style='width:72%;'></div></div><div class='ws-score'>72%</div></div>
+<div class='ws-row'><div class='ws-label'>Hypercare & Handover</div><div class='ws-bar'><div class='green' style='width:70%;'></div></div><div class='ws-score'>70%</div></div>
+      </div>
+
+      <div class='card span-6'>
+        <div class='card-header'>TOP RISK TABLE</div>
+        <table>
+          <tr><th>Risk</th><th>Category</th><th>Score</th><th>Owner</th><th>Event</th></tr>
+          <tr><td>#5</td><td>Technology, R&D</td><td>20</td><td>Bosch China Infrastructure Lead</td><td>Previously undocumented shared service dependencies are discovered during build or SIT, requiring late redesign of the target hosting and connectivity model.</td></tr>
+<tr><td>#1</td><td>Strategy & Portfolio</td><td>16</td><td>Bosch China Legal Lead</td><td>Legal confirmation on JV perimeter and approval mechanics arrives after the 29/10/2026 QG1 concept gate, forcing redesign of Day 1 scope, transition governance, and the interim service model.</td></tr>
+<tr><td>#3</td><td>Schedule</td><td>16</td><td>EY PMO Lead</td><td>Inventory confirmation and dependency mapping remain incomplete by 03/09/2026, causing QG0 output quality gaps and compressing the concept phase.</td></tr>
+<tr><td>#8</td><td>Quality</td><td>16</td><td>EY Test Lead</td><td>The reduced UAT group fails to cover critical business and operational scenarios across the 20 applications and the core infrastructure workflows.</td></tr>
+<tr><td>#2</td><td>Legal & Compliance</td><td>15</td><td>EY PMO Lead</td><td>Sensitive JV information is shared beyond the approved clean-team perimeter during discovery or design workshops, triggering legal escalation and an immediate freeze on collaboration sessions.</td></tr>
+<tr><td>#6</td><td>Security & Data Protection</td><td>15</td><td>Bosch China Security Lead</td><td>JV users or administrators retain inherited Bosch China privileges after cutover, leaving over-entitled access to shared directories, service consoles, or operational tooling.</td></tr>
+        </table>
+      </div>
+
+      <div class='card span-4'>
+        <div class='card-header'>MODEL KEY DIFFERENCES</div>
+        <div class='model-box'>
+          <p><strong>Combination model:</strong> Gamma uses a transitional operating path, but the target state is a jointly managed JV rather than a long-term shared environment.</p>
+          <p><strong>No SAP:</strong> The technical burden is concentrated in infrastructure, identity, and operations rather than ERP separation.</p>
+          <p><strong>Confidentiality:</strong> Clean-team restrictions are a delivery mechanic, not only a communications issue.</p>
+        </div>
+      </div>
+
+      <div class='card span-8'>
+        <div class='card-header'>NEXT 90 DAYS ACTION FORECAST</div>
+        <div class='action-item high'><strong>High</strong> - Freeze the antitrust decision path and clean-team escalation model before 04 Jul 2026 to protect QG0 and QG1 assumptions.</div>
+<div class='action-item high'><strong>High</strong> - Lock named infrastructure, security, and legal SMEs into the restricted Gamma team so mobilisation can start on 01 Aug 2026 without approval gaps.</div>
+<div class='action-item medium'><strong>Medium</strong> - Pre-stage shared-service dependency evidence and vendor pre-reads so concept design can accelerate immediately after kickoff despite disclosure limits.</div>
+<div class='action-item medium'><strong>Medium</strong> - Prepare the controlled communication pack and stakeholder expansion criteria for use once legal confirms the next disclosure step.</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
